@@ -1,0 +1,6006 @@
+<?php session_start();
+//print_r($_POST);echo "<br>";
+if ($_POST['pass1'] != $_POST['pass2']) {
+    echo "Verification Do Not Match!";
+    die();
+}
+//print_r($_POST);
+function enc($d)
+{
+    $d = htmlspecialchars(stripslashes(trim($d)));
+    return $d;
+}
+
+$_SESSION['tracker'] = $_POST['tracker'];
+//schedule visit
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['Schedule_a_Visit'] != "") {
+
+    //get all POST values
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "Please contact the customer below to schedule a tour at voffice
+                            <tr><td>First Name: </td><td>" . $_POST['firstname'] . "</td></tr>
+                            <tr><td>Last Name: </td><td>" . $_POST['lastname'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>eMail: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>Service: </td><td>" . $_POST['service'] . "</td></tr>
+                            <tr><td>Date: </td><td>" . $_POST['date'] . "</td></tr>
+                            <tr><td>Pax: </td><td>" . $_POST['pax'] . "</td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    $mail->SetFrom('contact@voffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['firstname']);
+    $mail->Subject = ('Schedule a Visit @ voffice.co.id (From Website)');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddCC('astrid@voffice.co.id');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//flexible serviced office Inquire
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['Schedule_a_Visit_flexible'] != "") {
+
+    //get all POST values
+    $plan = enc($_POST["plan"]);
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $capacity = enc($_POST["capacity"]);
+    $location = enc($_POST["location"]);
+
+    if ($plan == "hr") {
+        $plan = "Hourly";
+    } elseif ($plan == "dl") {
+        $plan = "Daily";
+    } elseif ($plan == "mn") {
+        $plan = "Monthly";
+    } elseif ($plan == "lt") {
+        $plan = "Long Term";
+    }
+
+    if ($capacity == "1") {
+        $capacity = "1 Orang";
+    } else if ($capacity == "2") {
+        $capacity = " 2 Orang";
+    } else if ($capacity == "3") {
+        $capacity = " 3 Orang";
+    } else if ($capacity == "4") {
+        $capacity = " 4 Orang";
+    } else if ($capacity == "5") {
+        $capacity = " 5 Orang";
+    } else if ($capacity == "6+") {
+        $capacity = " Lebih dari 6 Orang";
+    }
+
+    if ($location == "office8") {
+        $location = "Office 8, Jakarta Selatan";
+    } else if ($location == "MR") {
+        $location = " Menara Rajawali, Jakarta Selatan";
+    } else if ($location == "CT") {
+        $location = "Centennial Tower, Jakarta Selatan";
+    } else if ($location == "MK") {
+        $location = " Menara Kuningan, Jakarta Selatan";
+    } else if ($location == "MT") {
+        $location = " Metropolitan Tower, Jakarta Selatan";
+    } else if ($location == "TCB") {
+        $location = "The CEO Building, Jakarta Selatan";
+    } else if ($location == "GS") {
+        $location = "Graha Surveyor, Jakarta Selatan";
+    } else if ($location == "TCT") {
+        $location = "The City Tower, Jakarta Pusat";
+    } else if ($location == "KT") {
+        $location = "Kencana Tower, Jakarta Barat";
+    } else if ($location == "GS") {
+        $location = "Grand Slipi Tower, Jakarta Barat";
+    } else if ($location == "K2T") {
+        $location = "Kirana 2 Tower, Jakarta Utara";
+    } else if ($location == "PIK") {
+        $location = "PIK Avenue, Jakarta Utara";
+    } else if ($location == "BMT1") {
+        $location = "JAPFA Tower II, Surabaya";
+    } else if ($location == "BMT2") {
+        $location = "JAPFA Tower II, Surabaya";
+    } else if ($location == "IT") {
+        $location = "Intiland Tower, Surabaya";
+    } else if ($location == "SPAZIO") {
+        $location = "Spazio, Surabaya";
+    } else if ($location == "IBIS") {
+        $location = "Ibis Style, Surabaya";
+    } else if ($location == "JH") {
+        $location = "Jimbaran Hub, Bali";
+    } else if ($location == "KIH") {
+        $location = "Kembali Innovation Hub, Bali";
+    } else if ($location == "honey-lady") {
+        $location = "Honey Lady, Jakarta Utara";
+    } else if ($location == "plaza-bekasi") {
+        $location = "Plaza Summarecon, Bekasi";
+    } else if ($location == "mensana-tower") {
+        $location = "Mensana Tower, Cibubur";
+    }
+
+    $body = "Name : " . $name . "<br/>";
+    $body .= "Phone : " . $phone . "<br/>";
+    $body .= "Email : " . $email . "<br/>";
+    $body .= "Plan : " . $plan . "<br/>";
+    $body .= "Lokasi : " . $location . "<br/>";
+    $body .= "Kapasitas Orang : " . $capacity . "<br/>";
+    $body .= "Message : " . $message . "<br/>";
+
+    include_once "../sendmail/sendmail.php";
+
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->Subject = "[New]Contact Us Inquiry Serviced Office Flexible";
+    $mail->Body = $body;
+    $mail->IsHTML(true);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddCC('astrid@voffice.co.id');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//flexible serviced office
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['serviced_office_flexible'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $capacity = enc($_POST["capacity"]);
+    $location = enc($_POST["location"]);
+
+    if ($capacity == "1") {
+        $capacity = "1 Orang";
+    } else if ($capacity == "2") {
+        $capacity = " 2 Orang";
+    } else if ($capacity == "3") {
+        $capacity = " 3 Orang";
+    } else if ($capacity == "4") {
+        $capacity = " 4 Orang";
+    } else if ($capacity == "5") {
+        $capacity = " 5 Orang";
+    } else if ($capacity == "6+") {
+        $capacity = " Lebih dari 6 Orang";
+    }
+
+    if ($location == "office8") {
+        $location = "Office 8, Jakarta Selatan";
+    } else if ($location == "MR") {
+        $location = " Menara Rajawali, Jakarta Selatan";
+    } else if ($location == "CT") {
+        $location = "Centennial Tower, Jakarta Selatan";
+    } else if ($location == "MK") {
+        $location = " Menara Kuningan, Jakarta Selatan";
+    } else if ($location == "MT") {
+        $location = " Metropolitan Tower, Jakarta Selatan";
+    } else if ($location == "TCB") {
+        $location = "The CEO Building, Jakarta Selatan";
+    } else if ($location == "GS") {
+        $location = "Graha Surveyor, Jakarta Selatan";
+    } else if ($location == "TCT") {
+        $location = "The City Tower, Jakarta Pusat";
+    } else if ($location == "KT") {
+        $location = "Kencana Tower, Jakarta Barat";
+    } else if ($location == "GS") {
+        $location = "Grand Slipi Tower, Jakarta Barat";
+    } else if ($location == "K2T") {
+        $location = "Kirana 2 Tower, Jakarta Utara";
+    } else if ($location == "PIK") {
+        $location = "PIK Avenue, Jakarta Utara";
+    } else if ($location == "BMT1") {
+        $location = "JAPFA Tower II, Surabaya";
+    } else if ($location == "BMT2") {
+        $location = "JAPFA Tower II, Surabaya";
+    } else if ($location == "IT") {
+        $location = "Intiland Tower, Surabaya";
+    } else if ($location == "SPAZIO") {
+        $location = "Spazio, Surabaya";
+    } else if ($location == "IBIS") {
+        $location = "Ibis Style, Surabaya";
+    } else if ($location == "JH") {
+        $location = "Jimbaran Hub, Bali";
+    } else if ($location == "KIH") {
+        $location = "Kembali Innovation Hub, Bali";
+    } else if ($location == "honey-lady") {
+        $location = "Honey Lady, Jakarta Utara";
+    } else if ($location == "plaza-bekasi") {
+        $location = "Plaza Summarecon, Bekasi";
+    } else if ($location == "mensana-tower") {
+        $location = "Mensana Tower, Cibubur";
+    }
+
+    $body = "Name : " . $name . "<br/>";
+    $body .= "Phone : " . $phone . "<br/>";
+    $body .= "Email : " . $email . "<br/>";
+    $body .= "Lokasi : " . $location . "<br/>";
+    $body .= "Kapasitas Orang : " . $capacity . "<br/>";
+    $body .= "Message : " . $message . "<br/>";
+
+    include_once "../sendmail/sendmail.php";
+
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->Subject = "[New]Contact Us Contact Us Serviced Office Flexible";
+    $mail->Body = $body;
+    $mail->IsHTML(true);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddCC('astrid@voffice.co.id');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//serviced office standard
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['serviced_office_standard'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $capacity = enc($_POST["capacity"]);
+    $location = enc($_POST["location"]);
+
+    if ($capacity == "1") {
+        $capacity = "1 Orang";
+    } else if ($capacity == "2") {
+        $capacity = " 2 Orang";
+    } else if ($capacity == "3") {
+        $capacity = " 3 Orang";
+    } else if ($capacity == "4") {
+        $capacity = " 4 Orang";
+    } else if ($capacity == "5") {
+        $capacity = " 5 Orang";
+    } else if ($capacity == "6+") {
+        $capacity = " Lebih dari 6 Orang";
+    }
+
+    if ($location == "office8") {
+        $location = "Office 8, Jakarta Selatan";
+    } else if ($location == "MR") {
+        $location = " Menara Rajawali, Jakarta Selatan";
+    } else if ($location == "CT") {
+        $location = "Centennial Tower, Jakarta Selatan";
+    } else if ($location == "MK") {
+        $location = " Menara Kuningan, Jakarta Selatan";
+    } else if ($location == "MT") {
+        $location = " Metropolitan Tower, Jakarta Selatan";
+    } else if ($location == "TCB") {
+        $location = "The CEO Building, Jakarta Selatan";
+    } else if ($location == "GS") {
+        $location = "Graha Surveyor, Jakarta Selatan";
+    } else if ($location == "TCT") {
+        $location = "The City Tower, Jakarta Pusat";
+    } else if ($location == "KT") {
+        $location = "Kencana Tower, Jakarta Barat";
+    } else if ($location == "GS") {
+        $location = "Grand Slipi Tower, Jakarta Barat";
+    } else if ($location == "K2T") {
+        $location = "Kirana 2 Tower, Jakarta Utara";
+    } else if ($location == "PIK") {
+        $location = "PIK Avenue, Jakarta Utara";
+    } else if ($location == "BMT1") {
+        $location = "JAPFA Tower II, Surabaya";
+    } else if ($location == "BMT2") {
+        $location = "JAPFA Tower II, Surabaya";
+    } else if ($location == "IT") {
+        $location = "Intiland Tower, Surabaya";
+    } else if ($location == "SPAZIO") {
+        $location = "Spazio, Surabaya";
+    } else if ($location == "IBIS") {
+        $location = "Ibis Style, Surabaya";
+    } else if ($location == "JH") {
+        $location = "Jimbaran Hub, Bali";
+    } else if ($location == "KIH") {
+        $location = "Kembali Innovation Hub, Bali";
+    } else if ($location == "honey-lady") {
+        $location = "Honey Lady, Jakarta Utara";
+    } else if ($location == "plaza-bekasi") {
+        $location = "Plaza Summarecon, Bekasi";
+    } else if ($location == "mensana-tower") {
+        $location = "Mensana Tower, Cibubur";
+    }
+
+    $body = "Name : " . $name . "<br/>";
+    $body .= "Phone : " . $phone . "<br/>";
+    $body .= "Email : " . $email . "<br/>";
+    $body .= "Lokasi : " . $location . "<br/>";
+    $body .= "Kapasitas Orang : " . $capacity . "<br/>";
+    $body .= "Message : " . $message . "<br/>";
+
+    include_once "../sendmail/sendmail.php";
+
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->Subject = "[New]Contact Us Serviced Office Standard";
+    $mail->Body = $body;
+    $mail->IsHTML(true);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddCC('astrid@voffice.co.id');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//serviced office premium
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['serviced_office_premium'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $capacity = enc($_POST["capacity"]);
+    $location = enc($_POST["location"]);
+
+    if ($capacity == "1") {
+        $capacity = "1 Orang";
+    } else if ($capacity == "2") {
+        $capacity = " 2 Orang";
+    } else if ($capacity == "3") {
+        $capacity = " 3 Orang";
+    } else if ($capacity == "4") {
+        $capacity = " 4 Orang";
+    } else if ($capacity == "5") {
+        $capacity = " 5 Orang";
+    } else if ($capacity == "6+") {
+        $capacity = " Lebih dari 6 Orang";
+    }
+
+    if ($location == "office8") {
+        $location = "Office 8, Jakarta Selatan";
+    } else if ($location == "MR") {
+        $location = " Menara Rajawali, Jakarta Selatan";
+    } else if ($location == "CT") {
+        $location = "Centennial Tower, Jakarta Selatan";
+    } else if ($location == "MK") {
+        $location = " Menara Kuningan, Jakarta Selatan";
+    } else if ($location == "MT") {
+        $location = " Metropolitan Tower, Jakarta Selatan";
+    } else if ($location == "TCB") {
+        $location = "The CEO Building, Jakarta Selatan";
+    } else if ($location == "GS") {
+        $location = "Graha Surveyor, Jakarta Selatan";
+    } else if ($location == "TCT") {
+        $location = "The City Tower, Jakarta Pusat";
+    } else if ($location == "KT") {
+        $location = "Kencana Tower, Jakarta Barat";
+    } else if ($location == "GS") {
+        $location = "Grand Slipi Tower, Jakarta Barat";
+    } else if ($location == "K2T") {
+        $location = "Kirana 2 Tower, Jakarta Utara";
+    } else if ($location == "PIK") {
+        $location = "PIK Avenue, Jakarta Utara";
+    } else if ($location == "BMT1") {
+        $location = "JAPFA Tower II, Surabaya";
+    } else if ($location == "BMT2") {
+        $location = "JAPFA Tower II, Surabaya";
+    } else if ($location == "IT") {
+        $location = "Intiland Tower, Surabaya";
+    } else if ($location == "SPAZIO") {
+        $location = "Spazio, Surabaya";
+    } else if ($location == "IBIS") {
+        $location = "Ibis Style, Surabaya";
+    } else if ($location == "JH") {
+        $location = "Jimbaran Hub, Bali";
+    } else if ($location == "KIH") {
+        $location = "Kembali Innovation Hub, Bali";
+    } else if ($location == "honey-lady") {
+        $location = "Honey Lady, Jakarta Utara";
+    } else if ($location == "plaza-bekasi") {
+        $location = "Plaza Summarecon, Bekasi";
+    } else if ($location == "mensana-tower") {
+        $location = "Mensana Tower, Cibubur";
+    }
+
+    $body = "Name : " . $name . "<br/>";
+    $body .= "Phone : " . $phone . "<br/>";
+    $body .= "Email : " . $email . "<br/>";
+    $body .= "Lokasi : " . $location . "<br/>";
+    $body .= "Kapasitas Orang : " . $capacity . "<br/>";
+    $body .= "Message : " . $message . "<br/>";
+
+    include_once "../sendmail/sendmail.php";
+
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->Subject = "[New]Contact Us Serviced Office Premium";
+    $mail->Body = $body;
+    $mail->IsHTML(true);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddCC('astrid@voffice.co.id');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//dedicated desk
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['request_dedicateddesk'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $plan = enc($_POST["plan"]);
+
+    if ($plan == "sdd") {
+        $plan = "Standard Dedicated Desk";
+    } else {
+        $plan = "Corporate Dedicated Desk";
+    }
+
+    $body = "Name : " . $name . "<br/>";
+    $body .= "Phone : " . $phone . "<br/>";
+    $body .= "Email : " . $email . "<br/>";
+    $body .= "Plan : " . $plan . "<br/>";
+    $body .= "Message : " . $message . "<br/>";
+
+    include_once "../sendmail/sendmail.php";
+
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->Subject = "[New]Contact Us Dedicated Desk";
+    $mail->Body = $body;
+    $mail->IsHTML(true);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddCC('astrid@voffice.co.id');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//coworking space
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['request_coworkingspace'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $plan = enc($_POST["plan"]);
+    $message = enc($_POST["message"]);
+
+    if ($plan == "Daily") {
+        $plan = "Daily Plan";
+    } elseif ($plan == "Weekly") {
+        $plan = "Weekly Plan";
+    }
+
+    $body = "Name : " . $name . "<br/>";
+    $body .= "Phone : " . $phone . "<br/>";
+    $body .= "Email : " . $email . "<br/>";
+    $body .= "Plan : " . $plan . "<br/>";
+    $body .= "Message : " . $message . "<br/>";
+
+    include_once "../sendmail/sendmail.php";
+
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->Subject = "[New]Contact Us Coworking Space vOffice";
+    $mail->Body = $body;
+    $mail->IsHTML(true);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddCC('astrid@voffice.co.id');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//Corporate Desking
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['corpdesk'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] Corporate Dedicated Desk, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[Corporate Dedicated Desk] Contact Us | from Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddCC('astrid@voffice.co.id');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//==================================================================== New Code ====================================================================
+
+//notify email
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['notify_email'] != "") {
+
+    //get all POST values
+    $email = enc($_POST["notify_email"]);
+
+    include_once "../sendmail/sendmail.php";
+
+    $msg = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $msg .= "Notify Me of vOffice Indonesia offers :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['notify_email'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $msg .= "</tbody>
+            </table>";
+
+    $mail->SetFrom('contact@vOffice.co.id', 'Notify Me');
+    $mail->Subject = ('Notify Me of vOffice offers | From Website vOffice.co.id');
+    $mail->MsgHTML($msg);
+    //      $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+
+//notify email homepage
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['notify_me'] != "") {
+
+    //get all POST values
+    $email = enc($_POST["notify_email"]);
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+
+    include_once "../sendmail/sendmail.php";
+
+    $msg = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $msg .= "Notify Me of vOffice Indonesia offers :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['notify_email'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $msg .= "</tbody>
+            </table>";
+
+    $mail->SetFrom('contact@vOffice.co.id', 'Notify Me');
+    $mail->Subject = ('Notify Me of vOffice offers | From Website vOffice.co.id');
+    $mail->MsgHTML($msg);
+    //      $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+
+//Virtual Office Plan Page
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['contactvo'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $plan = enc($_POST["subject"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] Virtual Office, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Plan: </td><td>" . $_POST['subject'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[Virtual Office] Inquiry | From Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//Virtual Office Promo Page
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['contactvopromo'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $plan = enc($_POST["subject"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] Signup Promo Juni Virtual Office, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Plan: </td><td>" . $_POST['subject'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[Virtual Office Promo] Promo Juni Signup | From Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//Pembuatan PT/CV + Virtual Office vOffice Page
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['proposal_haki'] != "") {
+
+    //get all POST values
+    $service = enc($_POST["service"]);
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $domisili = enc($_POST["domisili"]);
+
+    if ($service == "PENGECEKAN-MEREK") {
+        $service = "Pesan Pengecekan Merek";
+    } elseif ($service == "PENDAFTARAN-MEREK") {
+        $service = "Pesan Pendaftaran Merek";
+    } elseif ($service == "PERPANJANGAN-MEREK") {
+        $service = "Pesan Perpanjangan Merek";
+    } elseif ($service == "PENGALIHAN-MEREK") {
+        $service = "Pesan Pengalihan Merek";
+    } elseif ($service == "PENDAFTARAN-HAK-CIPTA") {
+        $service = "Pesan Pendaftaran Hak Cipta";
+    } elseif ($service == "HAK-CIPTA-KOMPUTER") {
+        $service = "Pesan Hak Cipta Komputer";
+    } elseif ($service == "HAK-Paten") {
+        $service = "Pesan Hak Paten";
+    } elseif ($service == "DESAIN-INDUSTRI") {
+        $service = "Pesan Desain Industri";
+    }
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] Pembuatan PT/CV + Virtual Office, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Service: </td><td>" . $service . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>Anda memiliki domisili perusahaan?: </td><td>" . $_POST['domisili'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = "[Pendaftaran Haki] Inquiry | From Website vOffice.co.id";
+    $mail->MsgHTML($message);
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddCC('astrid@voffice.co.id');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//Pembuatan PT/CV + Virtual Office vOffice Page
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['request_proposal'] != "") {
+
+    //get all POST values
+    $service = enc($_POST["service"]);
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $domisili = enc($_POST["domisili"]);
+
+    if ($service == "PT-LITE") {
+        $service = "Buat PT Lite";
+    } elseif ($service == "PT-FULL") {
+        $service = "Buat PT Full";
+    } elseif ($service == "PT-FULL-VO") {
+        $service = "Buat PT Full + Virtual Office Lite";
+    } elseif ($service == "PT-FULL-VO-PRE") {
+        $service = "Buat PT Full + Virtual Office Premium";
+    } elseif ($service == "CV") {
+        $service = "Buat CV";
+    } elseif ($service == "CV-VO") {
+        $service = "Buat CV + Virtual Office Lite";
+    } elseif ($service == "CV-VO-PRE") {
+        $service = "Buat CV + Virtual Office Premium";
+    } elseif ($service == "OTHER") {
+        $service = "Other Services";
+    }
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] Pembuatan PT/CV + Virtual Office, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Service: </td><td>" . $service . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>Anda memiliki domisili perusahaan?: </td><td>" . $_POST['domisili'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = "[Buat PT/CV + Virtual Office] Inquiry | From Website vOffice.co.id";
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//Serviced office Location Quick Form
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['servicedoffice_inquiry'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "Quick Form, please contact them:
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('Quick Form Serviced Office @ voffice.co.id (From Website)');
+    $mail->MsgHTML($message);
+    //        $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddCC('astrid@voffice.co.id');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//Event Space Page
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['eventspace_inquiry'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $perusahaan = enc($_POST["namaPerusahaan"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "Customer would like to book our Eventspace, please contact them
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Nama Perusahaan: </td><td>" . $perusahaan . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[Event Space] Inquiry | From Website voffice.co.id');
+    $mail->MsgHTML($message);
+    //        $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    // $mail->AddAddress("hadiyusuf.voffice@gmail.com");
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddCC('astrid@voffice.co.id');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//Virtual Office Plan Page
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['contactvospk'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $plan = enc($_POST["subject"]);
+    $message = enc($_POST["message"]);
+    $result = enc($_POST["result"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] Virtual Office, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Plan: </td><td>" . $_POST['subject'] . "</td></tr>
+                            <tr><td>Result spk: </td><td>" . $_POST['result'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[Virtual Office] Inquiry | From Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    // $mail->AddAddress('aulia@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//Contact Us Page
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['contact_us_refer'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $coname = enc($_POST["coname"]);
+    $plan = enc($_POST["subject"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[Contact Us] Customer having inquiries, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Company Name: </td><td>" . $_POST['coname'] . "</td></tr>
+                            <tr><td>Plan: </td><td>" . $_POST['subject'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[Contact Us] From Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//Gallery Page | Contact Us Pop Up
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['contact_us'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $plan = enc($_POST["service"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[Contact Us] Customer having inquiries, please contact them :
+                        <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                        <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                        <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                        <tr><td>eMail: </td><td>" . $_POST['email'] . "</td></tr>
+                        <tr><td>Service: </td><td>" . $_POST['service'] . "</td></tr>
+                        <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                        <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                        <tr><td>Source: </td><td> Website </td></tr>
+                        <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                    ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[Contact Us] From Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//Serviced Office Plan Page
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['contactsopromo'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $plan = enc($_POST["subject"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] Signup Promo Juni Serviced Office, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Plan: </td><td>" . $_POST['subject'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[Serviced Office Promo] Promo Juni Signup | From Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddCC('astrid@voffice.co.id');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//Booking Meeting Room Page
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['request_meetingroom'] != "") {
+
+    //get all POST values
+    $service = enc($_POST["service"]);
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $perusahaan = enc($_POST["namaPerusahaan"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $waktu = enc($_POST["waktu"]);
+    $date = enc($_POST["date"]);
+    $capacity = enc($_POST["capacity"]);
+    $location = enc($_POST["location"]);
+
+    if ($service == "hr") {
+        $service = "Hourly";
+    } elseif ($service == "plan10") {
+        $service = "Plan 10";
+    } elseif ($service == "plan30") {
+        $service = "Plan 30";
+    } elseif ($service == "plan50") {
+        $service = "Plan 50";
+    }
+
+    if ($capacity == "1sampai5") {
+        $capacity = "1 - 5 Orang";
+    } else if ($capacity == "5sampai10") {
+        $capacity = " 5 - 10 Orang";
+    } else if ($capacity == "lebihdari10") {
+        $capacity = " Lebih dari 10 Orang";
+    }
+
+    if ($location == "office8") {
+        $location = "Office 8, Jakarta Selatan";
+    } else if ($location == "MR") {
+        $location = " Menara Rajawali, Jakarta Selatan";
+    } else if ($location == "CT") {
+        $location = "Centennial Tower, Jakarta Selatan";
+    } else if ($location == "MK") {
+        $location = " Menara Kuningan, Jakarta Selatan";
+    } else if ($location == "MT") {
+        $location = " Metropolitan Tower, Jakarta Selatan";
+    } else if ($location == "TCB") {
+        $location = "The CEO Building, Jakarta Selatan";
+    } else if ($location == "GS") {
+        $location = "Graha Surveyor, Jakarta Selatan";
+    } else if ($location == "TCT") {
+        $location = "The City Tower, Jakarta Pusat";
+    } else if ($location == "KT") {
+        $location = "Kencana Tower, Jakarta Barat";
+    } else if ($location == "GS") {
+        $location = "Grand Slipi Tower, Jakarta Barat";
+    } else if ($location == "K2T") {
+        $location = "Kirana 2 Tower, Jakarta Utara";
+    } else if ($location == "PIK") {
+        $location = "PIK Avenue, Jakarta Utara";
+    } else if ($location == "BMT1") {
+        $location = "JAPFA Tower II, Surabaya";
+    } else if ($location == "BMT2") {
+        $location = "JAPFA Tower II, Surabaya";
+    } else if ($location == "IT") {
+        $location = "Intiland Tower, Surabaya";
+    } else if ($location == "SPAZIO") {
+        $location = "Spazio, Surabaya";
+    } else if ($location == "IBIS") {
+        $location = "Ibis Style, Surabaya";
+    } else if ($location == "JH") {
+        $location = "Jimbaran Hub, Bali";
+    } else if ($location == "KIH") {
+        $location = "Kembali Innovation Hub, Bali";
+    } else if ($location == "honey-lady") {
+        $location = "Honey Lady, Jakarta Utara";
+    } else if ($location == "plaza-bekasi") {
+        $location = "Plaza Summarecon, Bekasi";
+    } else if ($location == "mensana-tower") {
+        $location = "Mensana Tower, Cibubur";
+    }
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] Meeting Room, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Nama Perusahaan: </td><td>" . $perusahaan . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Plan: </td><td>" . $service . "</td></tr>
+                            <tr><td>Lokasi: </td><td>" . $location . "</td></tr>
+                            <tr><td>Kapasitas Orang: </td><td>" . $capacity . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = "[Meeting Room] Inquiry | From Website vOffice.co.id";
+    $mail->MsgHTML($message);
+    //        $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('hadiyusuf.voffice@gmail.com', 'Developer');
+    // $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    // $mail->AddCC('astrid@voffice.co.id');
+    // $mail->AddBCC('albert.g@voffice.com.my');
+    // $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//New Loc Rawamangun Jakarta Timur Page
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['jaktim'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $plan = enc($_POST["plan"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    if ($plan == "Virtual Office") {
+        $plan = "Virtual Office";
+    } elseif ($plan == "Serviced Office") {
+        $plan = "Serviced Office";
+    }
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] vOffice Jakarta Timur Rawamangun, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Plan : </td><td>" . $_POST['plan'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[New Inquiry] vOffice Jakarta Timur Rawamangun | From Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddCC('astrid@voffice.co.id');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//Serviced Office Rawamangun Jakarta Timur Page
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['so_jaktim'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] Virtual Office Jakarta Timur Rawamangun, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[Virtual Office Jakarta Timur] Inquiry From Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    //    $mail->AddCC('astrid@voffice.co.id');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+
+//New Loc BSD Page
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['bsd'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $plan = enc($_POST["plan"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    if ($plan == "Virtual Office") {
+        $plan = "Virtual Office";
+    } elseif ($plan == "Serviced Office") {
+        $plan = "Serviced Office";
+    }
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] vOffice BSD Tanggerang, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Plan : </td><td>" . $_POST['plan'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[New Inquiry] vOffice BSD, Tanggerang | From Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddCC('astrid@voffice.co.id');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+
+//Promo Serviced Office BSD
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['vo_bsd'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $usaha = enc($_POST["usaha"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] Virtual Office BSD Tanggerang, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Bidang Usaha: </td><td>" . $_POST['usaha'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    if (strpos($url, 'gclid') !== false || strpos($url, 'sem') !== false) {
+        $mail->Subject = ('[Virtual Office Tangerang] Inquiry | From (SEM Google Ads)');
+    } elseif (strpos($url, 'utm_source=Instagram') !== false) {
+        $mail->Subject = ('[Virtual Office Tangerang] Inquiry | From (IG Ads)');
+    } elseif (strpos($url, 'utm_source=Facebook') !== false) {
+        $mail->Subject = ('[Virtual Office Tangerang] Inquiry | From (FB Ads)');
+    } else {
+        $mail->Subject = ('[Virtual Office Tangerang] voffice.co.id (From Website)');
+    }
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    //    $mail->AddCC('astrid@voffice.co.id');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//New Loc BSD Page
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['ct'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $plan = enc($_POST["plan"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    if ($plan == "Virtual Office") {
+        $plan = "Virtual Office";
+    } elseif ($plan == "Serviced Office") {
+        $plan = "Serviced Office";
+    }
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] Serviced Centennial Tower, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Plan : </td><td>" . $_POST['plan'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[New Inquiry] vOffice Centennial Tower, Gatot Subroto | From Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddCC('astrid@voffice.co.id');
+    //    $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//Serviced Office Promo Centennial Tower
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['so_ct'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] Promo Serviced Centennial Tower, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[New Inquiry] Promo Serviced Office Centennial Tower, Gatot Subroto | From Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddCC('astrid@voffice.co.id');
+    //    $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//Serviced Office Promo The City Tower
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['so_tct'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] Promo Serviced The City Tower, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[New Inquiry] Promo Serviced Office The City Towerr, Thamrin | From Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddCC('astrid@voffice.co.id');
+    //    $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+
+//Virtual Office + Pembuatan PT
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['vopt'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] Virtual Office Gratis Pembuatan PT , please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[New Inquiry] Virtual Office Gratis Pembuatan PT | From Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    // $mail->AddCC('astrid@voffice.co.id');
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    //    $mail->AddBCC('albert.g@voffice.com.my');
+    //    $mail->AddBCC('kevin.voffice@gmail.com');
+    //    $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['call'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] Call Answering , please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[Call Answering] Inquiry | From Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//Promo egg citing deals
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['promo_egg'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] Promo egg citing deals 50% off on Flexi Desk and 20% off on Meeting room and Event Space , please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[New Inquiry] Promo egg citing deals | From Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddCC('astrid@voffice.co.id');
+    //    $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//New Loc Satrio Tower Page
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['satrio'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $plan = enc($_POST["plan"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    if ($plan == "Virtual Office") {
+        $plan = "Virtual Office";
+    } elseif ($plan == "Serviced Office") {
+        $plan = "Serviced Office";
+    } elseif ($plan == "Event Space") {
+        $plan = "Event Space";
+    }
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] vOffice Satrio Tower, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Plan : </td><td>" . $_POST['plan'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[New Inquiry] vOffice Satrio Tower | From Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddCC('astrid@voffice.co.id');
+    //    $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//New Loc Wisma Barito Page
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['barito'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $plan = enc($_POST["plan"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    if ($plan == "Virtual Office") {
+        $plan = "Virtual Office";
+    } elseif ($plan == "Serviced Office") {
+        $plan = "Serviced Office";
+    } elseif ($plan == "Event Space") {
+        $plan = "Event Space";
+    }
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] vOffice Wisma Barito Pacific, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>Plan : </td><td>" . $_POST['plan'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[New Inquiry] vOffice Wisma Barito | From Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddCC('astrid@voffice.co.id');
+    //    $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//Business Partner BD Agent Page
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['business_partner'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[Signup] Become Our Business Partners, pls contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[Business Partner] Signup | From Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddCC('aditio@voffice.co.id');
+    $mail->AddCC('astrid@voffice.co.id');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+
+//Smarter Business Page
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['sbs'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "Ask Us For More and Get 2 Hours Free of Meeting Room! , pls contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[Smarter Business Page] Contact Us | From Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//Tanya Virtual Office - What is Virtual Office Page
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['tanyavo'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "Question about virtual office :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('Question Virtual Office | From Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//Tanya Virtual Office Ads - What is Virtual Office Page Ads
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['tanyavo-ads'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[From SEM Google Ads] Question about virtual office :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('Question Virtual Office | From SEM Google Ads');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//Buat PT + Virtual Office
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['buatpt'] != "") {
+
+    //get all POST values
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "Signup Pembuatan PT + Virtual Office IDR 12 Juta, please contact them
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    $mail->SetFrom('contact@voffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[New Signup] Pembuatan PT + Virtual Office | from Website');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//crm form
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['crm'] != "") {
+
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "Pls contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                             <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('CRM | From Website');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('kevin.voffice@gmail.com', 'kevin');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//vambassador form
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['vambassador'] != "") {
+
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "Pls contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('VAmbassador | From Website');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//test form
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['mail'] != "") {
+
+    $name = enc($_POST["form_field_1"]);
+    $phone = enc($_POST["form_field_2"]);
+    $email = enc($_POST["form_field_3"]);
+    $message = enc($_POST["form_field_4"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "Pls contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['form_field_1'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['form_field_2'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['form_field_3'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['form_field_4'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('Mail | From Website');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    if ($mail->Send()) {
+        header("location: /virtual-office-pt.php");
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+
+//Merry riana
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['merry_riana'] != "") {
+
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "Pls contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('Daftar Public Speaking Classes | From Website');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//Stranger Page
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['strangerpage'] != "") {
+
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[From Stranger Page] Customer having inquiries, Pls contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[Inquiry From Stranger Page] | From Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    if ($mail->Send()) {
+        echo "2";
+        //        header("Location:http://voffice.co.id/jakarta-virtual-office/thank-you.php");
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+//Konsultasi Gratis
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['konsultasi'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] Konsultasi Pajak Gratis , please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[New Inquiry] Konsultasi Pajak Gratis | From Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    // $mail->AddCC('astrid@voffice.co.id');
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    //    $mail->AddBCC('albert.g@voffice.com.my');
+    //    $mail->AddBCC('kevin.voffice@gmail.com');
+    //    $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//Promo call answering
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['vo_ct'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "Free 3 Month Call Answering | Virtual Office , please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('Free 3 Month Call Answering - Virtual Office | From Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    //     $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+
+// New Virtual Office Page | virtual office di jakarta
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['virtualoffice'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $usaha = enc($_POST["usaha"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[Virtual Office] Inquiry, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Bidang Usaha: </td><td>" . $_POST['usaha'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    if (strpos($url, 'gclid') !== false || strpos($url, 'sem') !== false) {
+        $mail->Subject = ('[Virtual Office] Inquiry @ voffice.co.id (From SEM Google)');
+        $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    } elseif (strpos($url, 'fbigads') !== false) {
+        $mail->Subject = ('[Virtual Office] Inquiry @ voffice.co.id (From FB IG Ads)');
+        $mail->AddAddress('cs@voffice.co.id', 'Customer Service', 'Customer Service');
+    } elseif (strpos($url, 'tiktokads') !== false) {
+        $mail->Subject = ('[Virtual Office] Inquiry @ voffice.co.id (From tiktok ads)');
+        $mail->AddAddress('cs@voffice.co.id', 'Customer Service', 'Customer Service');
+    } else {
+        $mail->Subject = ('[Virtual Office] Inquiry @ voffice.co.id (From Website)');
+        $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    }
+    $mail->MsgHTML($message);
+
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('contact.panduzamora@gmail.com');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    $mail->AddBCC('rifda.voffice@gmail.com');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+
+// New Coworking Space Page | coworking space jakarta
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['coworkingspace'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[Coworking Space] New Inquiry, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[Coworking Space] Inquiry | From Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //        $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//Promo Maret
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['promo-maret'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] Promo HEMAT (Heboh Maret) , please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[New Inquiry] Promo HEMAT Heboh Maret | From Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    // $mail->AddCC('astrid@voffice.co.id');
+    // $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+
+//Promotion vOffice
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['promotion-voffice'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] Promo vOffice Independence Agustus 2019, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[Inquiry] Independence Day Promo | From Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    // $mail->AddCC('astrid@voffice.co.id');
+    // $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+
+//Virtual Office Bali
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['virtualofficebali'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $usaha = enc($_POST["usaha"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] Virtual Office Bali , please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Bidang Usaha: </td><td>" . $_POST['usaha'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    if (strpos($url, 'gclid') !== false || strpos($url, 'sem') !== false) {
+        $mail->Subject = ('[Virtual Office Bali] Inquiry | From (SEM Google Ads)');
+    } elseif (strpos($url, 'utm_source=Instagram') !== false) {
+        $mail->Subject = ('[Virtual Office Bali] Inquiry | From (IG Ads)');
+    } elseif (strpos($url, 'utm_source=Facebook') !== false) {
+        $mail->Subject = ('[Virtual Office Bali] Inquiry | From (FB Ads)');
+    } else {
+        $mail->Subject = ('[Virtual Office Bali] voffice.co.id (From Website)');
+    }
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    // $mail->AddCC('astrid@voffice.co.id');
+    // $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//Virtual Office Bali (Modal)
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['virtualoffice_bali'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $usaha = enc($_POST["usaha"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] Virtual Office Bali , please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Bidang Usaha: </td><td>" . $_POST['usaha'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[New Inquiry] Virtual Office Bali | From Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    // $mail->AddCC('astrid@voffice.co.id');
+    // $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//test
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['test_mail'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $plan = enc($_POST["plan"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] Virtual Office Bali , please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Bidang Usaha: </td><td>" . $_POST['plan'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[New Inquiry] Virtual Office Bali | From Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    if ($plan == 'virtual_office') {
+        $mail->AddAddress('rachmad.voffice@gmail.com', 'Customer Service');
+    } elseif ($plan == 'serviced_office') {
+        $mail->AddAddress('rachmadsyaefullah13@gmail.com', 'Customer Service');
+    }
+    // $mail->AddCC('kevin.voffice@gmail.com');
+    // $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+
+//Booking Meeting Room Page
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['test_mr'] != "") {
+
+    //get all POST values
+    $service = enc($_POST["service"]);
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $location = enc($_POST["location"]);
+
+
+    if ($location == "office8") {
+        $location = "Office 8, Jakarta Selatan";
+    } else if ($location == "MR") {
+        $location = " Menara Rajawali, Jakarta Selatan";
+    } else if ($location == "CT") {
+        $location = "Centennial Tower, Jakarta Selatan";
+    } else if ($location == "MK") {
+        $location = " Menara Kuningan, Jakarta Selatan";
+    } else if ($location == "MT") {
+        $location = " Metropolitan Tower, Jakarta Selatan";
+    } else if ($location == "TCB") {
+        $location = "The CEO Building, Jakarta Selatan";
+    } else if ($location == "GS") {
+        $location = "Graha Surveyor, Jakarta Selatan";
+    } else if ($location == "TCT") {
+        $location = "The City Tower, Jakarta Pusat";
+    } else if ($location == "KT") {
+        $location = "Kencana Tower, Jakarta Barat";
+    } else if ($location == "GS") {
+        $location = "Grand Slipi Tower, Jakarta Barat";
+    } else if ($location == "K2T") {
+        $location = "Kirana 2 Tower, Jakarta Utara";
+    } else if ($location == "PIK") {
+        $location = "PIK Avenue, Jakarta Utara";
+    } else if ($location == "BMT1") {
+        $location = "JAPFA Tower II, Surabaya";
+    } else if ($location == "BMT2") {
+        $location = "JAPFA Tower II, Surabaya";
+    } else if ($location == "IT") {
+        $location = "Intiland Tower, Surabaya";
+    } else if ($location == "SPAZIO") {
+        $location = "Spazio, Surabaya";
+    } else if ($location == "IBIS") {
+        $location = "Ibis Style, Surabaya";
+    } else if ($location == "JH") {
+        $location = "Jimbaran Hub, Bali";
+    } else if ($location == "KIH") {
+        $location = "Kembali Innovation Hub, Bali";
+    } else if ($location == "honey-lady") {
+        $location = "Honey Lady, Jakarta Utara";
+    } else if ($location == "plaza-bekasi") {
+        $location = "Plaza Summarecon, Bekasi";
+    } else if ($location == "mensana-tower") {
+        $location = "Mensana Tower, Cibubur";
+    }
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] Meeting Room, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Lokasi: </td><td>" . $location . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = "[Meeting Room] Inquiry | From Website vOffice.co.id";
+    $mail->MsgHTML($message);
+    $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    //    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    //    $mail->AddCC('astrid@voffice.co.id');
+    //    $mail->AddBCC('albert.g@voffice.com.my');
+    //    $mail->AddBCC('kevin.voffice@gmail.com');
+    //    $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+// New Virtual Office Page | virtual office di BEKASI
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['virtualofficebekasi'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $usaha = enc($_POST["usaha"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[Virtual Office Bekasi] Inquiry Virtual Office, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Bidang Usaha: </td><td>" . $_POST['usaha'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    if (strpos($url, 'gclid') !== false || strpos($url, 'sem') !== false) {
+        $mail->Subject = ('[Virtual Office Bekasi] Inquiry | From (SEM Google Ads)');
+    } elseif (strpos($url, 'utm_source=Instagram') !== false) {
+        $mail->Subject = ('[Virtual Office Bekasi] Inquiry | From (IG Ads)');
+    } elseif (strpos($url, 'utm_source=Facebook') !== false) {
+        $mail->Subject = ('[Virtual Office Bekasi] Inquiry | From (FB Ads)');
+    } else {
+        $mail->Subject = ('[Virtual Office Bekasi] voffice.co.id (From Website)');
+    }
+    $mail->MsgHTML($message);
+    //        $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//Booking Serviced Office Page
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['serviced_office_book'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $perusahaan = enc($_POST['namaPerusahaan']);
+    $waktu = enc($_POST["waktu"]);
+    $date = enc($_POST["date"]);
+    $location = enc($_POST["location"]);
+
+
+    if ($location == "office8") {
+        $location = "Office 8, Jakarta Selatan";
+    } else if ($location == "MR") {
+        $location = " Menara Rajawali, Jakarta Selatan";
+    } else if ($location == "CT") {
+        $location = "Centennial Tower, Jakarta Selatan";
+    } else if ($location == "MK") {
+        $location = " Menara Kuningan, Jakarta Selatan";
+    } else if ($location == "MT") {
+        $location = " Metropolitan Tower, Jakarta Selatan";
+    } else if ($location == "TCB") {
+        $location = "The CEO Building, Jakarta Selatan";
+    } else if ($location == "GS") {
+        $location = "Graha Surveyor, Jakarta Selatan";
+    } else if ($location == "TCT") {
+        $location = "The City Tower, Jakarta Pusat";
+    } else if ($location == "KT") {
+        $location = "Kencana Tower, Jakarta Barat";
+    } else if ($location == "GS") {
+        $location = "Grand Slipi Tower, Jakarta Barat";
+    } else if ($location == "K2T") {
+        $location = "Kirana 2 Tower, Jakarta Utara";
+    } else if ($location == "PIK") {
+        $location = "PIK Avenue, Jakarta Utara";
+    } else if ($location == "BMT1") {
+        $location = "JAPFA Tower II, Surabaya";
+    } else if ($location == "BMT2") {
+        $location = "JAPFA Tower II, Surabaya";
+    } else if ($location == "IT") {
+        $location = "Intiland Tower, Surabaya";
+    } else if ($location == "SPAZIO") {
+        $location = "Spazio, Surabaya";
+    } else if ($location == "IBIS") {
+        $location = "Ibis Style, Surabaya";
+    } else if ($location == "JH") {
+        $location = "Jimbaran Hub, Bali";
+    } else if ($location == "KIH") {
+        $location = "Kembali Innovation Hub, Bali";
+    } else if ($location == "honey-lady") {
+        $location = "Honey Lady, Jakarta Utara";
+    } else if ($location == "plaza-bekasi") {
+        $location = "Plaza Summarecon, Bekasi";
+    } else if ($location == "mensana-tower") {
+        $location = "Mensana Tower, Cibubur";
+    }
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] Serviced Office, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Nama Perusahaan: </td><td>" . $perusahaan . "</td></tr>
+                            <tr><td>Lokasi: </td><td>" . $location . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = "[Serviced Office] Inquiry | From Website vOffice.co.id";
+    $mail->MsgHTML($message);
+    // $mail->AddAddress('hadiyusuf.voffice@gmail.com', 'Hadi Yusuf Alghifari');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddCC('astrid@voffice.co.id');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//Booking Serviced Office Page
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['daily_serviced_office_book'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $waktu = enc($_POST["waktu"]);
+    $date = enc($_POST["date"]);
+    $location = enc($_POST["location"]);
+
+
+    if ($location == "office8") {
+        $location = "Office 8, Jakarta Selatan";
+    } else if ($location == "MR") {
+        $location = " Menara Rajawali, Jakarta Selatan";
+    } else if ($location == "CT") {
+        $location = "Centennial Tower, Jakarta Selatan";
+    } else if ($location == "MK") {
+        $location = " Menara Kuningan, Jakarta Selatan";
+    } else if ($location == "MT") {
+        $location = " Metropolitan Tower, Jakarta Selatan";
+    } else if ($location == "TCB") {
+        $location = "The CEO Building, Jakarta Selatan";
+    } else if ($location == "GS") {
+        $location = "Graha Surveyor, Jakarta Selatan";
+    } else if ($location == "TCT") {
+        $location = "The City Tower, Jakarta Pusat";
+    } else if ($location == "KT") {
+        $location = "Kencana Tower, Jakarta Barat";
+    } else if ($location == "GS") {
+        $location = "Grand Slipi Tower, Jakarta Barat";
+    } else if ($location == "K2T") {
+        $location = "Kirana 2 Tower, Jakarta Utara";
+    } else if ($location == "PIK") {
+        $location = "PIK Avenue, Jakarta Utara";
+    } else if ($location == "BMT1") {
+        $location = "JAPFA Tower II, Surabaya";
+    } else if ($location == "BMT2") {
+        $location = "JAPFA Tower II, Surabaya";
+    } else if ($location == "IT") {
+        $location = "Intiland Tower, Surabaya";
+    } else if ($location == "SPAZIO") {
+        $location = "Spazio, Surabaya";
+    } else if ($location == "IBIS") {
+        $location = "Ibis Style, Surabaya";
+    } else if ($location == "JH") {
+        $location = "Jimbaran Hub, Bali";
+    } else if ($location == "KIH") {
+        $location = "Kembali Innovation Hub, Bali";
+    } else if ($location == "honey-lady") {
+        $location = "Honey Lady, Jakarta Utara";
+    } else if ($location == "plaza-bekasi") {
+        $location = "Plaza Summarecon, Bekasi";
+    } else if ($location == "mensana-tower") {
+        $location = "Mensana Tower, Cibubur";
+    }
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] Serviced Office, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Lokasi: </td><td>" . $location2 . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = "[Daily Serviced Office] Inquiry | From Website vOffice.co.id";
+    $mail->MsgHTML($message);
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddCC('astrid@voffice.co.id');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+
+
+// New Serviced Office Page
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['servicedoffice'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $perusahaan = enc($_POST["namaPerusahaan"]);
+    $usaha = enc($_POST["usaha"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[Serviced Office] Inquiry, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Nama Perusahaan: </td><td>" . $_POST['namaPerusahaan'] . "</td></tr>
+                            <tr><td>Bidang Usaha: </td><td>" . $_POST['usaha'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[Serviced Office] Inquiry | From Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //        $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    // $mail->AddAddress('hadiyusuf.voffice@gmail.com', 'Hadi Yusuf Alghifari');
+    $mail->AddCC('astrid@voffice.co.id');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+// New Serviced Office Page
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['daily_servicedoffice'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $usaha = enc($_POST["usaha"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[Serviced Office] Inquiry, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Bidang Usaha: </td><td>" . $_POST['usaha'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[Daily Serviced Office] Inquiry | From Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //        $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddCC('astrid@voffice.co.id');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//Booking Meeting Room Page
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['meeting_room_book'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $perusahaan = enc($_POST['namaPerusahaan']);
+    $pesan = enc($_POST["message"]);
+    $waktu = enc($_POST["waktu"]);
+    $date = enc($_POST["date"]);
+    $location = enc($_POST["location"]);
+
+
+    if ($location == "office8") {
+        $location = "Office 8, Jakarta Selatan";
+    } else if ($location == "MR") {
+        $location = " Menara Rajawali, Jakarta Selatan";
+    } else if ($location == "CT") {
+        $location = "Centennial Tower, Jakarta Selatan";
+    } else if ($location == "MK") {
+        $location = " Menara Kuningan, Jakarta Selatan";
+    } else if ($location == "MT") {
+        $location = " Metropolitan Tower, Jakarta Selatan";
+    } else if ($location == "TCB") {
+        $location = "The CEO Building, Jakarta Selatan";
+    } else if ($location == "GS") {
+        $location = "Graha Surveyor, Jakarta Selatan";
+    } else if ($location == "TCT") {
+        $location = "The City Tower, Jakarta Pusat";
+    } else if ($location == "KT") {
+        $location = "Kencana Tower, Jakarta Barat";
+    } else if ($location == "GS") {
+        $location = "Grand Slipi Tower, Jakarta Barat";
+    } else if ($location == "K2T") {
+        $location = "Kirana 2 Tower, Jakarta Utara";
+    } else if ($location == "PIK") {
+        $location = "PIK Avenue, Jakarta Utara";
+    } else if ($location == "BMT1") {
+        $location = "JAPFA Tower II, Surabaya";
+    } else if ($location == "BMT2") {
+        $location = "JAPFA Tower II, Surabaya";
+    } else if ($location == "IT") {
+        $location = "Intiland Tower, Surabaya";
+    } else if ($location == "SPAZIO") {
+        $location = "Spazio, Surabaya";
+    } else if ($location == "IBIS") {
+        $location = "Ibis Style, Surabaya";
+    } else if ($location == "JH") {
+        $location = "Jimbaran Hub, Bali";
+    } else if ($location == "KIH") {
+        $location = "Kembali Innovation Hub, Bali";
+    } else if ($location == "honey-lady") {
+        $location = "Honey Lady, Jakarta Utara";
+    } else if ($location == "plaza-bekasi") {
+        $location = "Plaza Summarecon, Bekasi";
+    } else if ($location == "mensana-tower") {
+        $location = "Mensana Tower, Cibubur";
+    }
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] Meeting Room, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Nama Perusahaan: </td><td>" . $perusahaan . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Lokasi: </td><td>" . $location . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = "[Meeting Room] Inquiry | From Website vOffice.co.id";
+    $mail->MsgHTML($message);
+    // $mail->AddAddress('hadiyusuf.voffice@gmail.com', 'Developer');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddCC('astrid@voffice.co.id');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+
+//pembuatan pt
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['request_proposal_pt'] != "") {
+
+    //get all POST values
+    $service = enc($_POST["service"]);
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $domisili = enc($_POST["domisili"]);
+
+    if ($service == "PT-LITE") {
+        $service = "Buat PT Lite";
+    } elseif ($service == "PT-FULL") {
+        $service = "Buat PT Full";
+    } elseif ($service == "PT-FULL-VO") {
+        $service = "Buat PT Full + Virtual Office Lite";
+    } elseif ($service == "PT-FULL-VO-PRE") {
+        $service = "Buat PT Full + Virtual Office Premium";
+    }
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] Pembuatan PT/CV + Virtual Office, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Service: </td><td>" . $service . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>Anda memiliki domisili perusahaan?: </td><td>" . $_POST['domisili'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+
+    if (strpos($url, 'gclid') !== false || strpos($url, 'sem') !== false) {
+        $mail->Subject = ('[Virtual Office] Inquiry @ voffice.co.id (From SEM Google)');
+        $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    } elseif (strpos($url, 'fbigads') !== false) {
+        $mail->Subject = ('[Virtual Office] Inquiry @ voffice.co.id (From FB IG Ads)');
+        $mail->AddAddress('cs@voffice.co.id', 'Customer Service', 'Customer Service');
+    } elseif (strpos($url, 'tiktokads') !== false) {
+        $mail->Subject = ('[Virtual Office] Inquiry @ voffice.co.id (From tiktok ads)');
+        $mail->AddAddress('cs@voffice.co.id', 'Customer Service', 'Customer Service');
+    } else {
+        $mail->Subject = ('[Virtual Office] Inquiry @ voffice.co.id (From Website)');
+        $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    }
+
+    $mail->Subject = "[Buat PT/CV + Virtual Office] Inquiry | From Website vOffice.co.id";
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+
+
+//pembuatan cv
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['request_proposal_cv'] != "") {
+
+    //get all POST values
+    $service = enc($_POST["service"]);
+    $addons = enc($_POST["addons"]);
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $domisili = enc($_POST["domisili"]);
+
+    if ($service == "CV-LITE") {
+        $service = "Buat CV Lite";
+    } elseif ($service == "CV-FULL") {
+        $service = "Buat CV Full";
+    } elseif ($service == "CV-FULL-VO") {
+        $service = "Buat CV Full + Virtual Office Lite";
+    } elseif ($service == "CV-FULL-VO-PRE") {
+        $service = "Buat CV Full + Virtual Office Premium";
+    }
+
+    if ($addons == "Add-Ons-Kontrak-Karyawan") {
+        $addons = "Pembuatan kontrak kerja karyawan (karyawan kontrak/tetap)";
+    } elseif ($addons == "Add-Ons-Bagi-Hasil") {
+        $addons = "Pembuatan Perjanjian Bagi Hasil Keuntungan";
+    } elseif ($addons == "Add-Ons-Efaktur-Perusahaan") {
+        $addons = "PKP & E-Faktur Perusahaan";
+    } elseif ($addons == "Add-Ons-Helloka") {
+        $addons = "Dedicated local phone number by Helloka";
+    }
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] Pembuatan PT/CV + Virtual Office, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Service: </td><td>" . $service . "</td></tr>
+                            <tr><td>Add Ons: </td><td>" . $addons . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>Anda memiliki domisili perusahaan?: </td><td>" . $_POST['domisili'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    // $mail->SetFrom('contact.panduzamora@gmail.com', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = "[Buat PT/CV + Virtual Office] Inquiry | From Website vOffice.co.id";
+    $mail->MsgHTML($message);
+    $mail->AddAddress('panduzamora.voffice@gmail.com', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('contact.panduzamora@gmail.com');
+    $mail->AddBCC('agnes@voffice.co.id');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//Pembuatan CV vOffice Page
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['request_proposal_cv'] != "") {
+
+    //get all POST values
+    $service = enc($_POST["service"]);
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $domisili = enc($_POST["domisili"]);
+
+    if ($service == "CV") {
+        $service = "Buat CV Full";
+    } elseif ($service == "CV-VO") {
+        $service = "Buat CV + Virtual Office Lite";
+    } elseif ($service == "CV-VO-PRE") {
+        $service = "Buat CV + Virtual Office Premium";
+    } elseif ($service == "FIRMA") {
+        $service = "Firma / Persekutuan Perdata + Virtual Office Lite";
+    }
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] Pembuatan PT/CV + Virtual Office, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Service: </td><td>" . $service . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>Anda memiliki domisili perusahaan?: </td><td>" . $_POST['domisili'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = "[Buat PT/CV + Virtual Office] Inquiry | From Website vOffice.co.id";
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+
+//New Product Service vOffice Page
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['request_proposal_other'] != "") {
+
+    //get all POST values
+    $service = enc($_POST["service"]);
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $domisili = enc($_POST["domisili"]);
+
+    if ($service == "SUBP") {
+        $service = "Start Up Busniness Package";
+    } elseif ($service == "PMA") {
+        $service = "PMA";
+    } elseif ($service == "P_PT_CV") {
+        $service = "Penutupan PT / CV";
+    } elseif ($service == "OSS") {
+        $service = "OSS";
+    }
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] Pembuatan PT/CV + Virtual Office, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Service: </td><td>" . $service . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>Anda memiliki domisili perusahaan?: </td><td>" . $_POST['domisili'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = "[Buat PT/CV + Virtual Office] Inquiry | From Website vOffice.co.id";
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+// New Serviced Office Page | Serviced office di jakarta
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['so_inquiry'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $usaha = enc($_POST["location"]);
+    $perusahaan = enc($_POST["namaPerusahaan"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[Serviced Office] Inquiry, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Nama Perusahaan: </td><td>" . $_POST['namaPerusahaan'] . "</td></tr>
+                            <tr><td>Bidang Usaha: </td><td>" . $_POST['usaha'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[Serviced Office] Inquiry | From Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //  $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    //  $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    // $mail->AddAddress('hadiyusuf.voffice@gmail.com', 'Hadi Yusuf Alghifari');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    $mail->AddCC('astrid@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+// New Serviced Office Page | Serviced office di jakarta
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['daily_so_inquiry'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $usaha = enc($_POST["usaha"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[Serviced Office] Inquiry, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Bidang Usaha: </td><td>" . $_POST['usaha'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[Daily Serviced Office] Inquiry | From Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //        $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    $mail->AddCC('astrid@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+
+//Promotion event Space
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['promotion-event-space'] != "") {
+
+    //get all POST values
+    $name    = enc($_POST["name"]);
+    $phone   = enc($_POST["phone"]);
+    $email   = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $ip      = enc($_POST['ip']);
+    $url     = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] Promo Event Space, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[New Inquiry] Promo Event Space | From Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddCC('astrid@voffice.co.id');
+    // $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//Promotion Meeting Room
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['promotion-meeting-room'] != "") {
+
+    //get all POST values
+    $name    = enc($_POST["name"]);
+    $phone   = enc($_POST["phone"]);
+    $email   = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $ip      = enc($_POST['ip']);
+    $url     = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] Promo Meeting Room, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[New Inquiry] Promo Meeting Room | From Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddCC('astrid@voffice.co.id');
+    // $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//Promotion Serviced Office Centennial Tower
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['promotion-so-ct'] != "") {
+
+    //get all POST values
+    $name    = enc($_POST["name"]);
+    $phone   = enc($_POST["phone"]);
+    $email   = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $ip      = enc($_POST['ip']);
+    $url     = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] Promo Serviced Office Centennial Tower, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[New Inquiry] Promo Serviced Office Centennial Tower | From Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddCC('astrid@voffice.co.id');
+    // $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+// promo be your own boss
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['be_your_own_boss'] != "") {
+
+    //get all POST values
+    $name    = enc($_POST["name"]);
+    $phone   = enc($_POST["phone"]);
+    $email   = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $usaha = enc($_POST["bidang_usaha"]);
+    $ip      = enc($_POST['ip']);
+    $url     = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] Promo Serviced Office Centennial Tower, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Bidang Usaha: </td><td>" . $_POST['bidang_usaha'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[New Inquiry] Promo Be Your Own Boss | From Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddCC('astrid@voffice.co.id');
+    // $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//Promotion Serviced Office Menara Kuningan
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['promotion-so-mk'] != "") {
+
+    //get all POST values
+    $name    = enc($_POST["name"]);
+    $phone   = enc($_POST["phone"]);
+    $email   = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $ip      = enc($_POST['ip']);
+    $url     = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] Promo Serviced Office Menara Kuningan, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[New Inquiry] Promo Serviced Office Menara Kuningan | From Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddCC('astrid@voffice.co.id');
+    // $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//Promotion Serviced Office Rawamangun
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['promotion-so-rm'] != "") {
+
+    //get all POST values
+    $name    = enc($_POST["name"]);
+    $phone   = enc($_POST["phone"]);
+    $email   = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $ip      = enc($_POST['ip']);
+    $url     = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] Promo Serviced Office Sudirman 7.8, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[New Inquiry] Promo Serviced Office Sudirman 7.8 | From Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddCC('astrid@voffice.co.id');
+    // $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+
+//Booking virtual Office on location Page
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['virtual_office_location'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $waktu = enc($_POST["waktu"]);
+    $date = enc($_POST["date"]);
+    $location = enc($_POST["location"]);
+
+
+    if ($location == "office8") {
+        $location = "Office 8, Jakarta Selatan";
+    } else if ($location == "MR") {
+        $location = " Menara Rajawali, Jakarta Selatan";
+    } else if ($location == "CT") {
+        $location = "Centennial Tower, Jakarta Selatan";
+    } else if ($location == "MK") {
+        $location = " Menara Kuningan, Jakarta Selatan";
+    } else if ($location == "MT") {
+        $location = " Metropolitan Tower, Jakarta Selatan";
+    } else if ($location == "TCB") {
+        $location = "The CEO Building, Jakarta Selatan";
+    } else if ($location == "GS") {
+        $location = "Graha Surveyor, Jakarta Selatan";
+    } else if ($location == "TCT") {
+        $location = "The City Tower, Jakarta Pusat";
+    } else if ($location == "KT") {
+        $location = "Kencana Tower, Jakarta Barat";
+    } else if ($location == "GS") {
+        $location = "Grand Slipi Tower, Jakarta Barat";
+    } else if ($location == "K2T") {
+        $location = "Kirana 2 Tower, Jakarta Utara";
+    } else if ($location == "PIK") {
+        $location = "PIK Avenue, Jakarta Utara";
+    } else if ($location == "BMT1") {
+        $location = "JAPFA Tower II, Surabaya";
+    } else if ($location == "BMT2") {
+        $location = "JAPFA Tower II, Surabaya";
+    } else if ($location == "IT") {
+        $location = "Intiland Tower, Surabaya";
+    } else if ($location == "SPAZIO") {
+        $location = "Spazio, Surabaya";
+    } else if ($location == "IBIS") {
+        $location = "Ibis Style, Surabaya";
+    } else if ($location == "JH") {
+        $location = "Jimbaran Hub, Bali";
+    } else if ($location == "KIH") {
+        $location = "Kembali Innovation Hub, Bali";
+    } else if ($location == "honey-lady") {
+        $location = "Honey Lady, Jakarta Utara";
+    } else if ($location == "plaza-bekasi") {
+        $location = "Plaza Summarecon, Bekasi";
+    } else if ($location == "mensana-tower") {
+        $location = "Mensana Tower, Cibubur";
+    }
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] Virtual Office, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Lokasi: </td><td>" . $location2 . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+
+    if (strpos($url, 'gclid') !== false || strpos($url, 'sem') !== false) {
+        $mail->Subject = ('[Virtual Office] Inquiry @ voffice.co.id (From SEM Google)');
+        $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    } elseif (strpos($url, 'fbigads') !== false) {
+        $mail->Subject = ('[Virtual Office] Inquiry @ voffice.co.id (From FB IG Ads)');
+        $mail->AddAddress('cs@voffice.co.id', 'Customer Service', 'Customer Service');
+    } elseif (strpos($url, 'tiktokads') !== false) {
+        $mail->Subject = ('[Virtual Office] Inquiry @ voffice.co.id (From tiktok ads)');
+        $mail->AddAddress('cs@voffice.co.id', 'Customer Service', 'Customer Service');
+    } else {
+        $mail->Subject = ('[Virtual Office] Inquiry @ voffice.co.id (From Website)');
+        $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    }
+
+    if (strpos($url, 'gclid') !== false || strpos($url, 'sem') !== false) {
+        $mail->Subject = ('[Virtual Office] Inquiry | From (SEM Google Ads)');
+    } elseif (strpos($url, 'utm_source=Instagram') !== false) {
+        $mail->Subject = ('[Virtual Office] Inquiry | From (IG Ads)');
+    } elseif (strpos($url, 'utm_source=Facebook') !== false) {
+        $mail->Subject = ('[Virtual Office] Inquiry | From (FB Ads)');
+    } else {
+        $mail->Subject = ('[Virtual Office] voffice.co.id (From Website)');
+    }
+    $mail->MsgHTML($message);
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//Virtual office Detail Form
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['detail_vo_inquiry'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $bidang_usaha = enc($_POST["bidang_usaha"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] Virtual Office, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr><tr><td>Email: </td><td>" . $_POST['bidang_usaha'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[Virtual Office] Inquiry | From Website vOffice.co.id - Loc Detail');
+    $mail->MsgHTML($message);
+    //        $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//Virtual office Detail Form
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['bandung_page'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $bidang_usaha = enc($_POST["bidang_usaha"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] Virtual Office, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr><tr><td>Email: </td><td>" . $_POST['bidang_usaha'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[Virtual Office] Inquiry | From Website vOffice.co.id - Loc Detail');
+    $mail->MsgHTML($message);
+    // $mail->AddAddress('panduzamora.voffice@gmail.com', 'Customer Service');
+    //        $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+
+// New Virtual Office Page | virtual office di Cibubur
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['virtualofficecibubur'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $usaha = enc($_POST["usaha"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[Virtual Office Cibubur] Inquiry Virtual Office, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Bidang Usaha: </td><td>" . $_POST['usaha'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    if (strpos($url, 'gclid') !== false || strpos($url, 'sem') !== false) {
+        $mail->Subject = ('[Virtual Office Cibubur] Inquiry | From (SEM Google Ads)');
+    } elseif (strpos($url, 'utm_source=Instagram') !== false) {
+        $mail->Subject = ('[Virtual Office Cibubur] Inquiry | From (IG Ads)');
+    } elseif (strpos($url, 'utm_source=Facebook') !== false) {
+        $mail->Subject = ('[Virtual Office Cibubur] Inquiry | From (FB Ads)');
+    } else {
+        $mail->Subject = ('[Virtual Office Cibubur] voffice.co.id (From Website)');
+    }
+    $mail->MsgHTML($message);
+    //        $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+
+// New Virtual Office Page | virtual office di Pluit
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['virtualofficepluit'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $usaha = enc($_POST["usaha"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[Virtual Office Pluit] Inquiry Virtual Office, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Bidang Usaha: </td><td>" . $_POST['usaha'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[Virtual Office Pluit] Inquiry From Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //        $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+
+//Promotion New location
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['promotion-new-location'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    //    $location = enc($_POST["location"]);
+    //    $coupon = enc($_POST["coupon"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] Promo Serviced Office, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[Serviced Office Promo] 50% Discount | From Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //     $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddCC('astrid@voffice.co.id');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+
+//Promotion SO Save Now Use Later
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['promotion-new-so'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    //    $location = enc($_POST["location"]);
+    //    $coupon = enc($_POST["coupon"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] Promo Serviced Office, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[Serviced Office Promo] Save Now Use Later | From Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //     $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddCC('astrid@voffice.co.id');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+
+// Ads SEM Virtual Office
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['virtualofficeads'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $usaha = enc($_POST["usaha"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[From SEM Google Ads] Virtual Office Inquiry, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Bidang Usaha: </td><td>" . $_POST['usaha'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[Virtual Office] Inquiry | From (SEM Google Ads)');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    //        $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+// Ads SEM Virtual Office
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['virtualoffice_fbigads'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $usaha = enc($_POST["usaha"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "Virtual Office Inquiry, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Bidang Usaha: </td><td>" . $_POST['usaha'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[Virtual Office] Inquiry | From (FB / IG Ads)');
+    $mail->MsgHTML($message);
+    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    $mail->AddBCC('rifda.voffice@gmail.com');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['contactusads'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $usaha = enc($_POST["usaha"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[From SEM Google Ads] Virtual Office Inquiry, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Bidang Usaha: </td><td>" . $_POST['usaha'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[Virtual Office] Inquiry | From (SEM Google Ads)');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    //        $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+
+//Booking virtual Office on location Page
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['vo_location_ads'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $waktu = enc($_POST["waktu"]);
+    $date = enc($_POST["date"]);
+    $location = enc($_POST["location"]);
+
+
+    if ($location == "office8") {
+        $location = "Office 8, Jakarta Selatan";
+    } else if ($location == "MR") {
+        $location = " Menara Rajawali, Jakarta Selatan";
+    } else if ($location == "CT") {
+        $location = "Centennial Tower, Jakarta Selatan";
+    } else if ($location == "MK") {
+        $location = " Menara Kuningan, Jakarta Selatan";
+    } else if ($location == "MT") {
+        $location = " Metropolitan Tower, Jakarta Selatan";
+    } else if ($location == "TCB") {
+        $location = "The CEO Building, Jakarta Selatan";
+    } else if ($location == "GS") {
+        $location = "Graha Surveyor, Jakarta Selatan";
+    } else if ($location == "TCT") {
+        $location = "The City Tower, Jakarta Pusat";
+    } else if ($location == "KT") {
+        $location = "Kencana Tower, Jakarta Barat";
+    } else if ($location == "GS") {
+        $location = "Grand Slipi Tower, Jakarta Barat";
+    } else if ($location == "K2T") {
+        $location = "Kirana 2 Tower, Jakarta Utara";
+    } else if ($location == "PIK") {
+        $location = "PIK Avenue, Jakarta Utara";
+    } else if ($location == "BMT1") {
+        $location = "JAPFA Tower II, Surabaya";
+    } else if ($location == "BMT2") {
+        $location = "JAPFA Tower II, Surabaya";
+    } else if ($location == "IT") {
+        $location = "Intiland Tower, Surabaya";
+    } else if ($location == "SPAZIO") {
+        $location = "Spazio, Surabaya";
+    } else if ($location == "IBIS") {
+        $location = "Ibis Style, Surabaya";
+    } else if ($location == "JH") {
+        $location = "Jimbaran Hub, Bali";
+    } else if ($location == "KIH") {
+        $location = "Kembali Innovation Hub, Bali";
+    } else if ($location == "honey-lady") {
+        $location = "Honey Lady, Jakarta Utara";
+    } else if ($location == "plaza-bekasi") {
+        $location = "Plaza Summarecon, Bekasi";
+    } else if ($location == "mensana-tower") {
+        $location = "Mensana Tower, Cibubur";
+    } else if ($location == "POT") {
+        $location = "The Prominence Office Tower, Alam Sutera";
+    } else if ($location == "S78") {
+        $location = "Sudiman 7.8 Tower, Jakarta Pusat";
+    }
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[From SEM Google Ads] Virtual Office Inquiry, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Lokasi: </td><td>" . $location2 . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = "[Virtual Office] Inquiry - Loc Detail | From (SEM Google Ads)";
+    $mail->MsgHTML($message);
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+
+// Promo Ads
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['promo-ads'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[Inquiry Promo] Virtual Office, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[Virtual Office] Christmas Promo | From (SEM Google Ads)');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    //        $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+
+// New Virtual Office Page | virtual office di Medan
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['virtualofficemedan'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $usaha = enc($_POST["usaha"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[Virtual Office Medan] Inquiry Virtual Office, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Bidang Usaha: </td><td>" . $_POST['usaha'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    if (strpos($url, 'gclid') !== false || strpos($url, 'sem') !== false) {
+        $mail->Subject = ('[Virtual Office Medan] Inquiry | From (SEM Google Ads)');
+    } elseif (strpos($url, 'utm_source=Instagram') !== false) {
+        $mail->Subject = ('[Virtual Office Medan] Inquiry | From (IG Ads)');
+    } elseif (strpos($url, 'utm_source=Facebook') !== false) {
+        $mail->Subject = ('[Virtual Office Medan] Inquiry | From (FB Ads)');
+    } else {
+        $mail->Subject = ('[Virtual Office Medan] voffice.co.id (From Website)');
+    }
+    $mail->MsgHTML($message);
+    //        $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+// New Virtual Office Page | virtual office di Medan
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['virtualofficesemarang'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $usaha = enc($_POST["usaha"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[Virtual Office Semarang] Inquiry Virtual Office, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Bidang Usaha: </td><td>" . $_POST['usaha'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    if (strpos($url, 'gclid') !== false || strpos($url, 'sem') !== false) {
+        $mail->Subject = ('[Virtual Office Semarang] Inquiry | From (SEM Google Ads)');
+    } elseif (strpos($url, 'utm_source=Instagram') !== false) {
+        $mail->Subject = ('[Virtual Office Semarang] Inquiry | From (IG Ads)');
+    } elseif (strpos($url, 'utm_source=Facebook') !== false) {
+        $mail->Subject = ('[Virtual Office Semarang] Inquiry | From (FB Ads)');
+    } else {
+        $mail->Subject = ('[Virtual Office Semarang] voffice.co.id (From Website)');
+    }
+    $mail->MsgHTML($message);
+    //        $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+// New Virtual Office Page | virtual office di Medan
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['virtualofficejpgja'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $usaha = enc($_POST["usaha"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[Virtual Office Yogyakarta] Inquiry Virtual Office, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Bidang Usaha: </td><td>" . $_POST['usaha'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    if (strpos($url, 'gclid') !== false || strpos($url, 'sem') !== false) {
+        $mail->Subject = ('[Virtual Office Yogyakarta] Inquiry | From (SEM Google Ads)');
+    } elseif (strpos($url, 'utm_source=Instagram') !== false) {
+        $mail->Subject = ('[Virtual Office Yogyakarta] Inquiry | From (IG Ads)');
+    } elseif (strpos($url, 'utm_source=Facebook') !== false) {
+        $mail->Subject = ('[Virtual Office Yogyakarta] Inquiry | From (FB Ads)');
+    } else {
+        $mail->Subject = ('[Virtual Office Yogyakarta] voffice.co.id (From Website)');
+    }
+    $mail->MsgHTML($message);
+    //        $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+
+// Promo Mensana
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['promo-mensana'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    //    $coupon = enc($_POST["coupon"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[Promo SO] SO Mensana Tower Inquiry, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[Serviced Office Promo] 50% Mensana Tower | From website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    //        $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddCC('astrid@voffice.co.id');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+
+// VO 4.0
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['vo40'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $bidang_usaha = enc($_POST["bidang_usaha"]);
+    $message = enc($_POST["message"]);
+
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Year Promo] Virtual Office 4.0 Inquiry, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Bidang Usaha: </td><td>" . $_POST['bidang_usaha'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+
+    if (strpos($url, 'gclid') !== false) {
+        $mail->Subject = ('[Virtual Office 4.0] New Inquiry (SEM Google Ads)');
+    } elseif (strpos($url, 'utm_source=Instagram') !== false) {
+        $mail->Subject = ('[Virtual Office 4.0] New Inquiry (From IG ads)');
+    } elseif (strpos($url, 'utm_source=Facebook') !== false) {
+        $mail->Subject = ('[Virtual Office 4.0] New Inquiry (From FB Ads)');
+    } else {
+        $mail->Subject = ('[Virtual Office 4.0] New Inquiry | From website vOffice.co.id');
+    }
+
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    //        $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+
+
+// VO 4.0
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['vo40ads'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[From SEM Google Ads] Virtual Office Inquiry, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[Virtual Office 4.0] Inquiry | From (SEM Google Ads)');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    //        $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+
+// Business Partner
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['referral'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $company = enc($_POST["company"]);
+    $email = enc($_POST["email"]);
+    $ref = enc($_POST["ref"]);
+
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[Signup] Become Our Business Partners, pls contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Company: </td><td>" . $_POST['company'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Tau vOffice dari:</td><td>" . $_POST['ref'] . "</td></tr>
+
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[Business Partner] Signup | From Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    //        $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddCC('aditio@voffice.co.id');
+    $mail->AddCC('astrid@voffice.co.id');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+// Business Partner
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['referral2'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $location = enc($_POST["location"]);
+
+    if ($location == "office8") {
+        $location = "Office 8, Jakarta Selatan";
+    } else if ($location == "MR") {
+        $location = " Menara Rajawali, Jakarta Selatan";
+    } else if ($location == "CT") {
+        $location = "Centennial Tower, Jakarta Selatan";
+    } else if ($location == "MK") {
+        $location = " Menara Kuningan, Jakarta Selatan";
+    } else if ($location == "MT") {
+        $location = " Metropolitan Tower, Jakarta Selatan";
+    } else if ($location == "TCB") {
+        $location = "The CEO Building, Jakarta Selatan";
+    } else if ($location == "GS") {
+        $location = "Graha Surveyor, Jakarta Selatan";
+    } else if ($location == "TCT") {
+        $location = "The City Tower, Jakarta Pusat";
+    } else if ($location == "KT") {
+        $location = "Kencana Tower, Jakarta Barat";
+    } else if ($location == "GS") {
+        $location = "Grand Slipi Tower, Jakarta Barat";
+    } else if ($location == "K2T") {
+        $location = "Kirana 2 Tower, Jakarta Utara";
+    } else if ($location == "PIK") {
+        $location = "PIK Avenue, Jakarta Utara";
+    } else if ($location == "BMT1") {
+        $location = "JAPFA Tower II, Surabaya";
+    } else if ($location == "BMT2") {
+        $location = "JAPFA Tower II, Surabaya";
+    } else if ($location == "IT") {
+        $location = "Intiland Tower, Surabaya";
+    } else if ($location == "SPAZIO") {
+        $location = "Spazio, Surabaya";
+    } else if ($location == "IBIS") {
+        $location = "Ibis Style, Surabaya";
+    } else if ($location == "JH") {
+        $location = "Jimbaran Hub, Bali";
+    } else if ($location == "KIH") {
+        $location = "Kembali Innovation Hub, Bali";
+    } else if ($location == "honey-lady") {
+        $location = "Honey Lady, Jakarta Utara";
+    } else if ($location == "plaza-bekasi") {
+        $location = "Plaza Summarecon, Bekasi";
+    } else if ($location == "mensana-tower") {
+        $location = "Mensana Tower, Cibubur";
+    }
+
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[Signup] Become Our Business Partners, pls contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Location: </td><td>" . $location . "</td></tr>
+
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[Business Partner] Signup | From Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    //        $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddCC('aditio@voffice.co.id');
+    $mail->AddCC('astrid@voffice.co.id');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+
+
+// Promo vo september
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['promo-wfh'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[Virtual Office Promo] Virtual Office Inquiry, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[Virtual Office] Promo Virtual Office Work From Home | From website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    //        $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+
+// Promo 8 Anniversary
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['promo_lebaran'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $usaha = enc($_POST["usaha"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[Promo Lebaran] Virtual Office Inquiry, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Bidang Usaha: </td><td>" . $_POST['usaha'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[Virtual Office] Inquiry Promo Lebaran');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    //        $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+
+// Detail Location Virtual Office Organic And Ads
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['detail_vo_location'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $usaha = enc($_POST["usaha"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Inquiry] Virtual Office Inquiry, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Bidang Usaha: </td><td>" . $_POST['usaha'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    if (strpos($url, 'gclid') !== false || strpos($url, 'sem') !== false) {
+        $mail->Subject = ('[Virtual Office] Inquiry | From (SEM Google Ads)');
+    } elseif (strpos($url, 'utm_source=Instagram') !== false) {
+        $mail->Subject = ('[Virtual Office] Inquiry | From (IG Ads)');
+    } elseif (strpos($url, 'utm_source=Facebook') !== false) {
+        $mail->Subject = ('[Virtual Office] Inquiry | From (FB Ads)');
+    } else {
+        $mail->Subject = ('[Virtual Office] voffice.co.id (From Website)');
+    }
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    //        $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    $mail->AddBCC('rachmad.voffice@gmail.com');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+
+// Promo Risin Up
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['promo-vo-juni'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[October Promo] Virtual Office Inquiry, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[Virtual Office] New Year Promo | From website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    //        $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+// Promo Risin Up
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['promo-vo-september'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[New Year Promo] Virtual Office Inquiry, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[Virtual Office] Risin Up Promo | From website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    //        $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    $mail->AddBCC('rachmad.voffice@gmail.com');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+
+
+
+// New Virtual Office Page | virtual office di Medan
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['servicedofficemedan'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $usaha = enc($_POST["usaha"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[Virtual Office Medan] Inquiry Virtual Office, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Bidang Usaha: </td><td>" . $_POST['usaha'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    if (strpos($url, 'gclid') !== false || strpos($url, 'sem') !== false) {
+        $mail->Subject = ('[Virtual Office Medan] Inquiry | From (SEM Google Ads)');
+    } elseif (strpos($url, 'utm_source=Instagram') !== false) {
+        $mail->Subject = ('[Virtual Office Medan] Inquiry | From (IG Ads)');
+    } elseif (strpos($url, 'utm_source=Facebook') !== false) {
+        $mail->Subject = ('[Virtual Office Medan] Inquiry | From (FB Ads)');
+    } else {
+        $mail->Subject = ('[Virtual Office Medan] voffice.co.id (From Website)');
+    }
+    $mail->MsgHTML($message);
+    //        $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddCC('astrid@voffice.co.id');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+// New Serviced Office Page | Serviced office di jakarta
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['voffice-promo'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $usaha = enc($_POST["usaha"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "[Serviced Office] Inquiry, please contact them :
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Bidang Usaha: </td><td>" . $_POST['usaha'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+
+    if (strpos($url, 'gclid') !== false || strpos($url, 'sem') !== false) {
+        $mail->Subject = ('[Virtual Office] Inquiry @ voffice.co.id (From SEM Google)');
+        $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    } elseif (strpos($url, 'fbigads') !== false) {
+        $mail->Subject = ('[Virtual Office] Inquiry @ voffice.co.id (From FB IG Ads)');
+        $mail->AddAddress('cs@voffice.co.id', 'Customer Service', 'Customer Service');
+    } elseif (strpos($url, 'tiktokads') !== false) {
+        $mail->Subject = ('[Virtual Office] Inquiry @ voffice.co.id (From tiktok ads)');
+        $mail->AddAddress('cs@voffice.co.id', 'Customer Service', 'Customer Service');
+    } else {
+        $mail->Subject = ('[Virtual Office] Inquiry @ voffice.co.id (From Website)');
+        $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    }
+
+    $mail->Subject = ('[Promo Serviced Office] Inquiry | From Website vOffice.co.id');
+    $mail->MsgHTML($message);
+    //        $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    $mail->AddCC('astrid@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//Event Space Page
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['hellolive_inquiry'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "Customer would like to book our Eventspace, please contact them
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[Hellolive] Inquiry | From Website voffice.co.id');
+    $mail->MsgHTML($message);
+    //        $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddCC('astrid@voffice.co.id');
+    $mail->AddBCC('asti@voffice.co.id');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//Home Business
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['homebusiness'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "Customer would like to book our Virtual Office, please contact them
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>Bidang Usaha: </td><td>" . $_POST['usaha'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[vOffice Home Business] Inquiry | From Website voffice.co.id');
+    $mail->MsgHTML($message);
+    //        $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    // $mail->AddAddress('hadiyusuf.voffice@gmail.com', 'Hadi Yusuf');
+    // $mail->AddCC('astrid@voffice.co.id');
+    // $mail->AddBCC('asti@voffice.co.id');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//Virtual Office 4.0
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['virtualoffice40'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "Customer would like to book our Virtual Office, please contact them
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>Bidang Usaha: </td><td>" . $_POST['usaha'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[virtual Office Pro] Inquiry | From Website voffice.co.id');
+    $mail->MsgHTML($message);
+    //        $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    // $mail->AddAddress('hadiyusuf.voffice@gmail.com', 'Hadi Yusuf');
+    // $mail->AddCC('astrid@voffice.co.id');
+    // $mail->AddBCC('asti@voffice.co.id');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//mitra-voffice
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['mitra-voffice'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "Customer would like to book our Virtual Office, please contact them
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Bidang Usaha: </td><td>" . $_POST['usaha'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[Mitra vOffice] Inquiry | From Website voffice.co.id');
+    $mail->MsgHTML($message);
+    //        $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddAddress('hadiyusuf.voffice@gmail.com', 'Hadi Yusuf');
+    // $mail->AddCC('astrid@voffice.co.id');
+    // $mail->AddBCC('asti@voffice.co.id');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+
+//VO Kemayoran
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['virtualofficekemayoran'] != "") {
+
+    //get all POST values
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "Customer would like to book our Virtual Office, please contact them
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Bidang Usaha: </td><td>" . $_POST['usaha'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[Virtual Office Kemayoran] Inquiry | From Website voffice.co.id');
+    $mail->MsgHTML($message);
+    //        $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    //    $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddAddress('hadiyusuf.voffice@gmail.com', 'Hadi Yusuf');
+    // $mail->AddCC('astrid@voffice.co.id');
+    // $mail->AddBCC('asti@voffice.co.id');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+
+//PT Perorangan
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['ptPerorangan'] != "") {
+
+    //get all POST values
+    $packageName = enc($_POST["packageName"]);
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "Customer would like to book our Virtual Office, please contact them
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td><strong>Pakcage:</strong> </td><td><strong>" . $packageName . "</strong></td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Bidang Usaha: </td><td>" . $_POST['usaha'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+    $mail->Subject = ('[PT Perorangan] Inquiry | From Website voffice.co.id');
+    $mail->MsgHTML($message);
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddAddress('hadiyusuf.voffice@gmail.com', 'Hadi Yusuf');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    // $mail->AddAddress('kevin.voffice@gmail.com', 'kevin');
+    // $mail->AddAddress('cs@voffice.co.id', 'Customer Service');
+    // $mail->AddCC('astrid@voffice.co.id');
+    // $mail->AddBCC('asti@voffice.co.id');
+    // $mail->AddBCC('adam.goh@voffice.co.id');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}
+
+//PT Perorangan
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['freeptPerorangan'] != "") {
+
+    //get all POST values
+    $packageName = enc($_POST["packageName"]);
+    $name = enc($_POST["name"]);
+    $phone = enc($_POST["phone"]);
+    $email = enc($_POST["email"]);
+    $message = enc($_POST["message"]);
+    $ip = enc($_POST['ip']);
+    $url = enc($_POST['url']);
+
+    include_once "../sendmail/sendmail.php";
+
+    $message = "<table name='contact_seller' style='border-collapse:collapse';> <tbody>";
+
+    $message .= "Customer would like to book our Virtual Office, please contact them
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td><strong>Pakcage:</strong> </td><td><strong>" . $packageName . "</strong></td></tr>
+                            <tr><td>Name: </td><td>" . $_POST['name'] . "</td></tr>
+                            <tr><td>Phone: </td><td>" . $_POST['phone'] . "</td></tr>
+                            <tr><td>Email: </td><td>" . $_POST['email'] . "</td></tr>
+                            <tr><td>Bidang Usaha: </td><td>" . $_POST['usaha'] . "</td></tr>
+                            <tr><td>Message: </td><td>" . $_POST['message'] . "</td></tr>
+                            <tr><td>&nbsp; </td><td>&nbsp;</td></tr>
+                            <tr><td>Source: </td><td> Website </td></tr>
+                            <tr><td>From Page: </td><td><a href=" . $_POST['url'] . ">" . $_POST['url'] . "</a></td></tr>
+                        ";
+
+    $message .= "</tbody>
+            </table>";
+
+    //    $mail->SetFrom('cs@voffice.co.id', 'voffice.co.id');
+    $mail->SetFrom('contact@vOffice.co.id', 'vOffice.co.id');
+    $mail->AddReplyTo($_POST['email'], $_POST['name']);
+
+    if (strpos($url, 'gclid') !== false || strpos($url, 'sem') !== false) {
+        $mail->Subject = ('[Virtual Office] Inquiry @ voffice.co.id (From SEM Google)');
+        $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    } elseif (strpos($url, 'fbigads') !== false) {
+        $mail->Subject = ('[Virtual Office] Inquiry @ voffice.co.id (From FB IG Ads)');
+        $mail->AddAddress('cs@voffice.co.id', 'Customer Service', 'Customer Service');
+    } elseif (strpos($url, 'tiktokads') !== false) {
+        $mail->Subject = ('[Virtual Office] Inquiry @ voffice.co.id (From tiktok ads)');
+        $mail->AddAddress('cs@voffice.co.id', 'Customer Service', 'Customer Service');
+    } else {
+        $mail->Subject = ('[Virtual Office] Inquiry @ voffice.co.id (From Website)');
+        $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    }
+
+    $mail->Subject = ('[PT Perorangan] Inquiry | From Website voffice.co.id');
+    $mail->MsgHTML($message);
+    $mail->AddAddress('vofficecoidcs@voindo.freshdesk.com', 'Customer Service');
+    $mail->AddBCC('albert.g@voffice.com.my');
+    $mail->AddBCC('kevin.voffice@gmail.com');
+    if ($mail->Send()) {
+        echo "2";
+    } else {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+}

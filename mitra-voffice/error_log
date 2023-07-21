@@ -1,0 +1,6 @@
+[13-Jul-2021 08:22:09 America/Chicago] PHP Warning:  include(partner.php): failed to open stream: No such file or directory in /home/voffid/public_html/jakarta-virtual-office/mitra-voffice/index.php on line 214
+[13-Jul-2021 08:22:09 America/Chicago] PHP Warning:  include(partner.php): failed to open stream: No such file or directory in /home/voffid/public_html/jakarta-virtual-office/mitra-voffice/index.php on line 214
+[13-Jul-2021 08:22:09 America/Chicago] PHP Warning:  include(): Failed opening 'partner.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/voffid/public_html/jakarta-virtual-office/mitra-voffice/index.php on line 214
+[13-Jul-2021 08:22:09 America/Chicago] PHP Warning:  include(footer.html): failed to open stream: No such file or directory in /home/voffid/public_html/jakarta-virtual-office/mitra-voffice/index.php on line 215
+[13-Jul-2021 08:22:09 America/Chicago] PHP Warning:  include(footer.html): failed to open stream: No such file or directory in /home/voffid/public_html/jakarta-virtual-office/mitra-voffice/index.php on line 215
+[13-Jul-2021 08:22:09 America/Chicago] PHP Warning:  include(): Failed opening 'footer.html' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/voffid/public_html/jakarta-virtual-office/mitra-voffice/index.php on line 215

@@ -1,0 +1,262 @@
+#locations .well{
+	height:200px;
+	background-size: cover;
+	padding:0px;
+	transition: 0.3s;
+}
+#locations .well:hover, #locations .well:focus{
+	transform: scale(1.02);
+}
+#detail{
+	padding-top: 30px;
+}
+#location-title{
+	margin-bottom:10px !important;
+}
+.mt-85{
+	margin-top:85px;
+}
+.mx-auto{
+	display:block;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+.title-breaker{
+	margin-bottom: 35px;
+}
+#locations .well h3{
+	color:white !important;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 28px;
+}
+.location-wrapper{
+	padding-top: 73px;
+	background-color: rgba(0, 0, 0, 0.6);
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height:100%;
+	border-radius:4px;
+}
+.city-wrapper{
+	top:-10px;
+	height: 250px;
+	background-color: #f1f1f1;
+	padding:20px;
+}
+#index-header label{
+	color:#ffffff;
+}
+.city-wrapper a{
+	position: absolute;
+	bottom: 15px;
+
+}
+.city-wrapper .h4{
+	margin-top: 0px;
+	font-weight: 600;
+	font-size: 22px;
+}
+@media only screen and (max-width:768px) {
+	.location-wrapper{
+		width:100%;
+		top:0;
+		left: 0;
+		position: relative;
+	}
+	#locations .well{
+		padding:0px;
+	}
+}
+
+.mt-m50{
+	margin-top: -150px;
+	z-index: 3;
+}
+
+.arr {
+  background: transparent !important;
+  bottom: 5px;
+  position: absolute;
+  right: 20px;
+  top: 27px;
+  height:30px;
+  width: 50px;
+  pointer-events: none;
+  z-index: 5;
+}
+.arr:before, .arr2:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  margin-top: -5px;
+  pointer-events: none;
+  border-top: 10px solid #555 !important;
+  border-left: 10px solid transparent !important;
+  border-right: 10px solid transparent !important;
+}
+
+ .arr:after, .arr2:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 28px;
+  margin-top: -5px;
+  pointer-events: none;
+  border-top: 6px solid #fff !important;
+  border-left: 6px solid transparent !important;
+  border-right: 6px solid transparent !important;
+}
+
+.arr2 {
+  background: transparent !important;
+  bottom: 5px;
+  position: absolute;
+  right: 20px;
+  top: 3px;
+  height:30px;
+  width: 50px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+@media only screen and (max-width: 768px){
+	.mt-m50{
+		margin-top:30px;
+	}
+	.mt-m50 h2{
+		font-size: 27px;
+	}
+	.arr{
+		top:27px;
+		right:20px;
+	}
+	.sm-hidden{
+		display: none;
+	}
+}
+@media only screen and (min-width: 768px){
+	.padding-left-50{
+		padding-left: 70px !important;
+	}
+}
+#location-title{
+	text-transform: uppercase;
+}
+
+/* STYLE FOR MAP */
+.fixed{
+	position: fixed !important;
+	z-index: -1;
+	top: 0;
+}
+.mb30{
+	margin-bottom:30px;
+}
+.sticky{
+	top: 0 !important;
+	width:33%;
+	right: 0;
+	margin:0;
+	float: right;
+	position: relative;
+}
+footer{
+	z-index:99 !important;
+	background-color: white !important;
+	position: relative;
+}
+#map {
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	height: 700px;
+}
+.marker {
+	background-image: url('../images/location-pin.png');
+	background-size: cover;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+	max-width: 200px;
+}
+.marker:hover{
+	width: 40px;
+	height: 40px;
+}
+
+.mapboxgl-popup-content {
+	padding:0px !important;
+	text-align: center;
+	width:200px;
+	font-family: 'Open Sans', sans-serif;
+}
+.mapboxgl-popup-content h5{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-weight :bold;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.mapboxgl-popup-content p{
+	font-size:12px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.mr-wrapper{
+	border:2px solid #464646;
+	padding:15px;
+}
+.mr-wrapper .h4{
+	font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+	margin-bottom: 20px;
+	color: #464646;
+}
+.mr-image{
+	height: 250px;
+	width: 100%;
+	overflow: hidden;
+}
+.mr-image img{
+	min-height: 100%;
+	min-width: 100%;
+}
+.mr-wrapper hr{
+	margin-bottom:8px;
+}
+hr{
+	border-color: #d9d5d5;
+}
+.mr-wrapper p{
+	font-family: 'Montserrat', sans-serif;
+	margin-bottom: 8px;
+	color: #464646;
+}
+.mr-wrapper .bold{
+	margin-top: 20px;
+	font-size: 17px;
+}
+.mr-wrapper .p{
+	font-size: 15px;
+	font-weight: 400;
+	color: black;
+}
+.mr-wrapper a{
+	margin-top:40px;
+	display: block;
+	margin-left: auto !important;
+	margin-right: auto !important;
+	width: 100px;
+}
+.italic{
+	font-style: italic;
+	margin-top: 20px;
+	font-size: 13px;
+}

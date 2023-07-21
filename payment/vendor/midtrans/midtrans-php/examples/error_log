@@ -1,0 +1,64 @@
+[05-Jul-2021 04:14:48 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Midtrans Error (): ' in /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/ApiRequestor.php:111
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/ApiRequestor.php(22): Midtrans\ApiRequestor::remoteCall('https://api.san...', '<your serverkey...', false, false)
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/Transaction.php(24): Midtrans\ApiRequestor::get('https://api.san...', '<your serverkey...', false)
+#2 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/Notification.php(26): Midtrans\Transaction::status(NULL)
+#3 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/examples/notification-handler.php(8): Midtrans\Notification->__construct()
+#4 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/ApiRequestor.php on line 111
+[05-Jul-2021 04:18:35 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Midtrans Error (): ' in /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/ApiRequestor.php:111
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/ApiRequestor.php(22): Midtrans\ApiRequestor::remoteCall('https://api.san...', '<your serverkey...', false, false)
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/Transaction.php(24): Midtrans\ApiRequestor::get('https://api.san...', '<your serverkey...', false)
+#2 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/Notification.php(26): Midtrans\Transaction::status(NULL)
+#3 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/examples/notification-handler.php(8): Midtrans\Notification->__construct()
+#4 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/ApiRequestor.php on line 111
+[05-Jul-2021 04:18:36 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Midtrans Error (): ' in /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/ApiRequestor.php:111
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/ApiRequestor.php(22): Midtrans\ApiRequestor::remoteCall('https://api.san...', '<your serverkey...', false, false)
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/Transaction.php(24): Midtrans\ApiRequestor::get('https://api.san...', '<your serverkey...', false)
+#2 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/Notification.php(26): Midtrans\Transaction::status(NULL)
+#3 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/examples/notification-handler.php(8): Midtrans\Notification->__construct()
+#4 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/ApiRequestor.php on line 111
+[05-Jul-2021 04:18:37 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Midtrans Error (): ' in /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/ApiRequestor.php:111
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/ApiRequestor.php(22): Midtrans\ApiRequestor::remoteCall('https://api.san...', '<your serverkey...', false, false)
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/Transaction.php(24): Midtrans\ApiRequestor::get('https://api.san...', '<your serverkey...', false)
+#2 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/Notification.php(26): Midtrans\Transaction::status(NULL)
+#3 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/examples/notification-handler.php(8): Midtrans\Notification->__construct()
+#4 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/ApiRequestor.php on line 111
+[05-Jul-2021 04:18:38 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Midtrans Error (): ' in /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/ApiRequestor.php:111
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/ApiRequestor.php(22): Midtrans\ApiRequestor::remoteCall('https://api.san...', '<your serverkey...', false, false)
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/Transaction.php(24): Midtrans\ApiRequestor::get('https://api.san...', '<your serverkey...', false)
+#2 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/Notification.php(26): Midtrans\Transaction::status(NULL)
+#3 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/examples/notification-handler.php(8): Midtrans\Notification->__construct()
+#4 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/ApiRequestor.php on line 111
+[05-Jul-2021 04:19:58 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Midtrans Error (): ' in /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/ApiRequestor.php:111
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/ApiRequestor.php(22): Midtrans\ApiRequestor::remoteCall('https://api.san...', 'SB-Mid-server-V...', false, false)
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/Transaction.php(24): Midtrans\ApiRequestor::get('https://api.san...', 'SB-Mid-server-V...', false)
+#2 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/Notification.php(26): Midtrans\Transaction::status(NULL)
+#3 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/examples/notification-handler.php(8): Midtrans\Notification->__construct()
+#4 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/ApiRequestor.php on line 111
+[05-Jul-2021 04:20:22 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Midtrans Error (): ' in /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/ApiRequestor.php:111
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/ApiRequestor.php(22): Midtrans\ApiRequestor::remoteCall('https://api.san...', 'SB-Mid-server-V...', false, false)
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/Transaction.php(24): Midtrans\ApiRequestor::get('https://api.san...', 'SB-Mid-server-V...', false)
+#2 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/Notification.php(26): Midtrans\Transaction::status(NULL)
+#3 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/examples/notification-handler.php(8): Midtrans\Notification->__construct()
+#4 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/ApiRequestor.php on line 111
+[05-Jul-2021 04:20:59 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Midtrans Error (): ' in /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/ApiRequestor.php:111
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/ApiRequestor.php(22): Midtrans\ApiRequestor::remoteCall('https://api.san...', 'SB-Mid-server-V...', false, false)
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/Transaction.php(24): Midtrans\ApiRequestor::get('https://api.san...', 'SB-Mid-server-V...', false)
+#2 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/Notification.php(26): Midtrans\Transaction::status(NULL)
+#3 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/examples/notification-handler.php(8): Midtrans\Notification->__construct()
+#4 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/ApiRequestor.php on line 111

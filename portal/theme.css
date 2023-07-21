@@ -1,0 +1,301 @@
+::selection {
+        background: #a0b7e8; /* Safari */
+        color: #FFF;
+        }
+::-moz-selection {
+        background: #a0b7e8; /* Firefox */
+        color: #FFF;
+}
+
+body {
+ 	background: transparent url(images/bg-site.jpg) left top repeat;
+    color: #5e5e5e;
+}
+
+a, a:link, a:visited {
+	color: #a71d4e;
+    text-decoration: underline;
+}
+.box, .outline_table{
+  /*border: 1px solid #dbdbdb;
+
+  background: white;
+  */
+  border: 1px solid #CCC;
+  background: #FEFEFE;
+  box-shadow: inset 0px 0px 10px #dedede;
+}
+.xl22_theme,
+.lrg18_theme,
+.med16_theme,
+.med14_theme,
+.med12_theme,
+.small11_theme {
+    color: #a71d4e;
+}
+.med14_theme {text-transform: uppercase; font-weight: 100; text-shadow: 1px 1px 1px rgba(255,255,255,0.5);}
+
+.hr_theme {
+    color: #a71d4e;
+}
+#header {
+    /*a71d4e
+    border-top-color: #a71d4e;
+    border-bottom-color: #a71d4e;*/
+    /* SWAP LOGO WITH LINKS
+    height: 26px;*/
+    position: relative;
+	background: transparent url(images/vOffice-header.jpg) top right no-repeat;
+	height: 148px;
+}
+#userinfo .box, #contact .box {
+	padding-top: 0;
+	margin-bottom: 0;
+	min-height: 102px;
+}
+#userinfo dl, #contact dl {
+	line-height: 14px;
+	font-size: 11px;
+	margin:0;
+}
+#userinfo dt {
+	font-weight: bold;
+	display: inline;
+	clear: both;
+	float: left;
+	margin-left: -7px;
+}
+#userinfo dt:after {
+	content: ":";
+	margin-right: 5px;
+}
+#userinfo dd {
+	float: left;
+}
+#userinfo p {
+	clear: left;
+	margin: 4px 0 0 0;
+}
+#userinfo p {
+	display: inline-block;
+	margin: 0 8px 0 0;
+}
+#userinfo .accountLinks {
+    margin: 5px 0px 2px 0px;
+    padding: 0px 6px 0px 2px;
+    overflow: hidden;
+}
+#userinfo .accountLinks .editLink {
+    float: left;
+}
+#userinfo .accountLinks .logoutLink {
+    float: right;
+}
+#localInfo {position: relative; cursor: help; }
+#localInfo span {border-bottom: 1px dotted #555;}
+#localInfoContainer {position: absolute; left: 35px; top: 3px; width: 100px; padding: 4px 4px 4px 20px; display: none; background: #eee url(images/icons/info.png) no-repeat left 4px; border: 1px solid #aaa; box-shadow: 0px 1px 4px #777; z-index: 1000;}
+#localInfo:hover div#localInfoContainer {display: block;}
+#header_sl_ad {
+	margin: 0;
+	white-space: nowrap;
+	overflow: hidden;
+	width: 480px;
+}
+#header_sl_ad a:first-child img {
+	width: 355px;
+}
+#contact dt {
+	font-weight: bold;
+	margin-top: 4px;
+}
+#contact dd {
+	margin-left: 10px;
+}
+#contact dd.chatLink, #contact dd.chatMail {
+    float: left;
+}
+#footer {
+    /*border-top-color: #a71d4e;*/
+	background: transparent url(images/footer-line.jpg) top left no-repeat;
+}
+#toplinks {
+    margin-top: 6px;
+    text-align: left;
+}
+a.logo {
+    height: 26px;
+    width: 214px;
+    background-image: url('images/logo.jpg');
+    position: absolute;
+    right: 10px;
+    top: 0px;
+}
+#userinfo dt:before, #contact dt:before {
+    content: "\25A0";
+    color: #a71d4e;
+    margin-right: 2px;
+}
+/* FORMS */
+.submit_base{
+  /*background: #d3d3d3;
+  BORDER: outset 1px #a71d4e;
+  color: #000000;*/
+  border:0;
+  background: #a71d4e;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0px 1px 2px #555;
+  border-radius: 3px;
+}
+
+/* STATUS AND BAR FILLS */
+span.statusup{color:#007F00;}
+span.statuswarn{color:#D75A0D;}
+span.statusdown{color:#B4101E;}
+span.statuspending{color:#707070;}
+
+.graph .bar {
+    background: #AAA;
+    color: #333;
+}
+.graph .bargreen {
+    background: #007F00;
+    color: #333;
+}
+.graph .baryellow {
+    background: #D79E35;
+    color: #333;
+}
+.graph .barorange {
+    background: #D75A0D;
+    color: #333;
+}
+.graph .barred {
+    background: #B4101E;
+    color: #333;
+}
+.graph .barnone {
+    color: #333;
+}
+
+a.orderItemName:link, a.orderItemName:visited {
+  color: #000000;
+}
+
+a.orderItemName:hover {
+  color: #a71d4e;
+}
+
+a.foot_link:link, a.foot_link:visited, a.foot_link:hover {
+    color: #7d7d7d;
+}
+
+#vendor_big:link, #vendor_big:visited, #vendor_big:hover {
+    color: #a71d4e;
+}
+
+/* These are used in the login layout. Do not remove them. */
+#subnav:link, #subnav:visited {
+    color: #000000;
+}
+#subnav:hover {
+    color: #a71d4e;
+}
+
+/* Overrides for the pagination helper. */
+.inputtext_tools, .inputtext_acct, .inputtext_40, .inputtext_100, .inputtextwide, .inputtextarea, .newselecttext, .tickettitletext,
+.selecttextwide, .selecttexthuge, .selecttextshort, .selecttext_acct, .selecttext_100, .selecttext_125, .selecttext_175, .inputtext, .newinputtext,
+.selecttext_tic, .selecttext_sec, .selecttext_350, .selecttext_500, .selecttext_cancel, .selecttext_multiple, .selecttext_splash, .selecttext,
+.loginsec, .loginpassword, .logintext, .tickettextarea {
+  color: #000000;
+  background-color: #FFFFFF;
+  border-color: #888888;
+}
+
+table.helperTable > thead > tr > th {
+    border-bottom-color: black;
+    background-color: #d3d3d3;
+}
+
+table.helperTable > tbody > tr > td {
+    border-bottom-color: #d3d3d3;
+}
+
+table.helperTable > tbody > tr.oddRow {
+    background-color: #f1f1f1;
+}
+
+table.helperTable > tbody > tr:hover {
+    background-color: #ffff00;
+}
+
+table.helperTableNoHover > thead > tr > th {
+    border-bottom-color: black;
+    background-color: #d3d3d3;
+}
+
+table.helperTableNoHover > tbody > tr > td {
+    border-bottom: 1px solid #d3d3d3;
+}
+
+table.helperTableNoHover > tbody > tr.oddRow {
+    background-color: #f1f1f1;
+}
+
+fieldset {
+    padding: 4px;
+    border: 1px solid #888888;
+}
+
+.error_message {
+    color: #a71d4e;
+}
+
+.status_message {
+    color: #000000;
+}
+
+.paginationFooterText {
+    color: #5e5e5e;
+}
+.popupTopRuler {
+    background-color: #a71d4e;
+}
+.even {
+  background-color:#d1d1d1;
+}
+.odd {
+ background-color:#ffffff; 
+}
+
+.link_text {
+    color: #a71d4e;
+}
+.arrowList li {
+    color: #5e5e5e;
+    background-image: url('images/red_arrow.jpg');
+    font-size: 11px;
+}
+.linkList li {
+    background-image: url('images/link.jpg');
+}
+div.shipment_note, div#address_summary_div {
+    border: 2px solid #a71d4e;
+}
+a.label:active, a.label:hover, a.label:link, a.label:visited {
+    color: #a71d4e;
+}
+
+.success_message {
+  color: #4A9F1A;  
+}
+h1, h2, h3, h4, h5, h6 {
+    color: #5e5e5e;
+}
+
+.fake_link {
+    color: #a71d4e;
+    cursor: pointer;
+    font-size: 11px;
+    text-decoration: underline;
+}

@@ -1,0 +1,301 @@
+body {
+  background: #fff;
+  height: 100vh;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+body a {
+  color: #fff !important;
+  text-decoration: none;
+}
+
+body a.a-black {
+  color: #2b2e34 !important;
+  text-decoration: none;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.btn-primary {
+  background: #325eaf !important;
+  border-color: #325eaf !important;
+}
+
+.btn-primary:hover {
+  background-color: #4ebe66 !important;
+  border-color: #4ebe66 !important;
+}
+
+.hero {
+  background-image: url("../img/mrt/bg-hero.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero .hero-img {
+  width: 512px;
+}
+
+.hero h4 {
+  font-weight: 400;
+  line-height: 2.3rem;
+  color: #2b2e34;
+}
+
+.hero .btn-primary {
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+.hero .btn-primary .show2 {
+  display: none;
+}
+
+.hero .btn-primary:hover {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
+
+.hero .btn-primary:hover .show1 {
+  display: none;
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+}
+
+.hero .btn-primary:hover .show2 {
+  display: block;
+}
+
+.hero .scroll-next {
+  color: #67686f;
+  font-size: .8rem;
+  font-weight: lighter;
+  margin-bottom: 50px;
+}
+
+.hero .scroll-next a {
+  color: #67686f;
+  text-decoration: none;
+}
+
+@media (min-width: 992px) {
+  .hero .hero-img {
+    margin-top: 220px;
+  }
+  .hero .mx-auto {
+    margin-bottom: 50px;
+  }
+}
+
+.portal .portal-content {
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.portal .portal-content h1 .v {
+  color: #99285d;
+  font-style: none;
+}
+
+.portal .portal-content .btn .login {
+  color: #325eaf !important;
+  font-style: normal;
+  text-decoration: underline;
+}
+
+.portal .portal-content .btn a.link-text {
+  color: #67686f !important;
+}
+
+.portal .portal-content .btn-primary:hover {
+  background: #99285d !important;
+}
+
+.website header h1 {
+  color: #2b2e34 !important;
+}
+
+.website .web-voffice {
+  background: #9b2a5d;
+  background-image: linear-gradient(139deg, #9b2a5d 0%, #68075e 60%, #440a76 100%);
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: initial;
+  background-repeat-x: initial;
+  background-repeat-y: initial;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: initial;
+  background: linear-gradient(139deg, #9b2a5d 0%, #68075e 60%, #440a76 100%);
+  background-image: linear-gradient(139deg, #9b2a5d 0%, #68075e 60%, #440a76 100%);
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: initial;
+  background-repeat-x: initial;
+  background-repeat-y: initial;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: initial;
+  border-radius: 10px;
+}
+
+.website .web-voffice .web-img img {
+  border-radius: 8px;
+}
+
+.website .web-voffice .web-txt {
+  color: #fff;
+}
+
+.website .web-voffice .web-txt .btn-primary {
+  background: #a52b64 !important;
+  border-color: #99285d !important;
+}
+
+.website .web-voffice .web-txt .btn-inline {
+  color: #fff;
+}
+
+.website .bg-izin {
+  background: url("../img/mrt/bg-izin.jpg");
+  background-image: url("../img/mrt/bg-izin.jpg");
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: cover;
+  background-repeat-x: no-repeat;
+  background-repeat-y: no-repeat;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: initial;
+}
+
+.website .web-izin {
+  background: #3470be;
+  background-image: linear-gradient(139deg, rgba(52, 112, 190, 0.8) -60%, rgba(5, 115, 81, 0.8) 99%);
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: cover;
+  background-repeat-x: initial;
+  background-repeat-y: initial;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: initial;
+  background: linear-gradient(139deg, rgba(52, 112, 190, 0.8) -60%, rgba(5, 115, 81, 0.8) 99%);
+  background-image: linear-gradient(139deg, rgba(52, 112, 190, 0.8) -60%, rgba(5, 115, 81, 0.8) 99%);
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: cover;
+  background-repeat-x: initial;
+  background-repeat-y: initial;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: initial;
+  border-radius: 10px;
+}
+
+.website .web-izin .web-img img {
+  border-radius: 8px;
+}
+
+.website .web-izin .web-txt {
+  color: #fff;
+}
+
+.website .web-izin .web-txt .btn-primary {
+  background: #119486 !important;
+  border-color: #0e7d71 !important;
+}
+
+.website .web-izin .web-txt .btn-inline {
+  color: #fff;
+}
+
+.website .bg-hello .web-hello {
+  background-image: url("../img/mrt/bg-hellolive.svg");
+  border-radius: 10px;
+}
+
+.website .bg-hello .web-img img {
+  border-radius: 8px;
+}
+
+.website .bg-hello .web-txt {
+  color: #2b2e34;
+}
+
+.website .bg-hello .web-txt .btn-primary {
+  background: #cb57e8 !important;
+  border-color: #d67bed !important;
+}
+
+.website .bg-hello .web-txt .btn-inline a {
+  color: #2b2e34 !important;
+}
+
+.modal .modal-footer {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (max-width: 992px) {
+  .hero {
+    background-position-x: -193px;
+  }
+  .hero .hero-img {
+    max-width: 70%;
+  }
+  .hero h4 {
+    font-size: 1.3rem !important;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  .portal .lead {
+    margin-bottom: 80px !important;
+  }
+  .website .web-img {
+    margin-bottom: 20px;
+  }
+  .website h2 {
+    display: none;
+  }
+  .website .lead {
+    margin-bottom: 20px;
+    display: none;
+  }
+  .website .btn {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=mrt-custom.css.map */

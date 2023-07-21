@@ -1,0 +1,165 @@
+/* Gallery Note */
+
+/* RESET RULES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.author-archive {
+    padding: 1.5rem;
+}
+
+.author-archive img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.author-archive ol {
+    list-style: none;
+    color: var(--dark-color);
+    font: 1rem/1.3 sans-serif;
+}
+
+.author-archive a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  h1 a {
+    transition: all 0.1s;
+  }
+  
+  h1 a:hover {
+    background: var(--primary-color);
+    color: var(--white-color);
+  }
+  
+  h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  h3 a {
+    transition: all 0.1s;
+  }
+  
+  h3 a:hover {
+    background: var(--primary-color);
+    color: var(--white-color);
+  }
+  
+  input[type="radio"] {
+    position: absolute;
+    left: -9999px;
+  } */
+
+/* FILTERS
+      –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.filters {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.filters * {
+    display: inline-block;
+}
+
+.filters label {
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.25rem;
+    border-radius: 0.5rem;
+    min-width: 60px;
+    line-height: normal;
+    cursor: pointer;
+    transition: all 0.1s;
+}
+
+.filters label:hover {
+    background: var(--primary-color);
+    color: var(--white-color);
+}
+
+/* FILTERED ELEMENTS (POSTS)
+      –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.posts {
+    display: grid;
+    grid-gap: 1.5rem;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.posts .post {
+    background: #fafafa;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    height: 250px;
+}
+
+.posts .post-title {
+    font-size: 1.3rem;
+}
+
+.posts .post-title:hover {
+    text-decoration: underline;
+}
+
+.posts figcaption {
+    padding: 1rem;
+}
+
+.posts .post-categories {
+    margin-bottom: 0.75rem;
+    font-size: 0.75rem;
+}
+
+.posts .post-categories * {
+    display: inline-block;
+}
+
+.posts .post-categories li {
+    margin-bottom: 0.2rem;
+}
+
+.posts .post-categories a {
+    padding: 0.2rem 0.5rem;
+    border-radius: 1rem;
+    border: 1px solid;
+    line-height: normal;
+    transition: all 0.1s;
+}
+
+.posts .post-categories a:hover {
+    background: var(--primary-color);
+    color: var(--white-color);
+}
+
+/* FILTERING RULES
+      –––––––––––––––––––––––––––––––––––––––––––––––––– */
+[value="All"]:checked~.filters [for="All"],
+[value="SO"]:checked~.filters [for="SO"],
+[value="MR"]:checked~.filters [for="MR"],
+[value="lounge"]:checked~.filters [for="lounge"],
+[value="lobby"]:checked~.filters [for="lobby"],
+[value="pantry"]:checked~.filters [for="pantry"] {
+    background: var(--primary-color);
+    color: var(--white-color);
+}
+
+[value="All"]:checked~.posts [data-category] {
+    display: block;
+}
+
+[value="SO"]:checked~.posts .post:not([data-category~="SO"]),
+[value="MR"]:checked~.posts .post:not([data-category~="MR"]),
+[value="lounge"]:checked~.posts .post:not([data-category~="lounge"]),
+[value="lobby"]:checked~.posts .post:not([data-category~="lobby"]),
+[value="pantry"]:checked~.posts .post:not([data-category~="pantry"]) {
+    display: none;
+}

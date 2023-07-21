@@ -1,0 +1,25 @@
+.d-flex {
+    display: flex !important;
+}
+.btn-secondary {
+border: none !important;
+color: #757474;
+}
+.btn-secondary:hover {
+background: transparent;
+color: #1f1f1f;
+}
+
+#main .row.popupgallery .col-xs-4:first-child {
+    padding-right: 1px;
+}
+#main .row.popupgallery .col-xs-4:nth-child(2) {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+#main .row.popupgallery .col-xs-4:last-child {
+    padding-left: 1px;
+}
+#main .popupgallery .w-100 {
+    margin: 10px;
+}

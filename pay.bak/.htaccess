@@ -1,0 +1,3 @@
+RewriteEngine on
+RewriteRule ^paypalreturn.html$ ppreturn.php
+RewriteRule ^paypalcancel.html$ ppcancel.php

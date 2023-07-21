@@ -1,0 +1,23 @@
+#message{
+  position: relative;
+  top: 5px;
+  color:green;
+}
+  #err{
+  position: relative;
+  top: 5px;
+  color:red;
+}
+.field-success{
+  outline:1px solid green !important;
+}
+.field-error{
+  outline:1px solid red !important;
+}
+.input-coupon-cont{
+  padding-bottom:10px;
+  margin-bottom: 10px;
+}
+.coupon{
+  margin-bottom: 0px !important;
+}

@@ -1,0 +1,611 @@
+<? session_start();?>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<?
+include "../config.php";
+
+
+if ($_POST["gopay_x"]){
+	
+
+				
+
+
+  if (!empty($_POST["g-recaptcha-response"])) {
+
+
+				// personal info
+				$firstname = $_POST["firstname"];			
+
+				$lastname = $_POST["lastname"];
+	
+				$name = $firstname." ".$lastname;
+
+				$address = $_POST["address"];
+				
+				$coname = $_POST["coname"];
+
+				$city = $_POST["city"];
+
+				$state = $_POST["state"];
+
+				$zip = $_POST["zip"];
+
+				$country = $_POST["country"];
+
+				$phone = $_POST["phone"];
+
+				$email = $_POST["email"];
+
+				$paymtype = $_POST["payment"];
+
+				$coupon = $_POST["coupon"];
+
+				$price = $_POST["price"];
+				
+				$raw_total = $price;
+				
+				
+				// cc info
+
+				$vip = $_SERVER['REMOTE_ADDR'];
+
+
+
+				// set reference id
+
+				//$ref_id = "vOffice-Pay"."-".time();
+				$ref_id = "VOIDPAY"."-".time();
+				
+
+
+			// Format invoices
+
+			$invoices1 = $_POST["invno"];
+			//$invoices2 = $_POST["invno2"];
+			$invoices = $invoices1;
+
+			// Format currency			
+			$curencytype = $_POST["currency"];
+
+			//$raw_total = $_POST["payamount"];
+			$raw_total = number_format((float)$raw_total, 2, '.', '');
+			
+				$payfor = $invoices;
+				$payfordesc = "Invoice Number ". $invoices;
+				
+				if($invoices=="")
+				$payfor = $ref_id;
+				
+				
+				$_SESSION["scurrency"] = "IDR";
+				$_SESSION["stotal"] = $raw_total;
+				$_SESSION["ref_id"] = $ref_id;
+				$_SESSION["in_plan"] = $payfor;
+
+		
+	  		$subject = 'Manual Payment 2018 @ voffice.co.id/pay - '.$ref_id;
+
+			$msg_in = "";
+
+			$msg_in = "Personnal Details"."\r\n<br>";
+
+			$msg_in .= "-----------------------------"."\r\n<br>";
+
+			$msg_in .= "Name : ".$firstname." ".$lastname."\r\n<br>";
+
+			$msg_in .= "Company : ".$coname."\r\n<br>";
+
+			$msg_in .= "Address : ".$address."\r\n<br>";
+
+			$msg_in .= "City : ".$city."\r\n<br>";
+
+			$msg_in .= "State : ".$state."\r\n<br>";
+
+			$msg_in .= "Zip : ".$zip."\r\n<br>";
+
+			$msg_in .= "Phone : ".$phone."\r\n<br>";
+
+			$msg_in .= "Email : ".$email."\r\n<br>\r\n<br>";
+
+
+
+			$msg_in .= "Payment Info"."\r\n<br>";
+
+			$msg_in .= "-----------------------------"."\r\n<br>";
+
+			$msg_in .= "Payment Type : ".$_POST["payment"]."\r\n<br>";
+
+			$msg_in .= "Invoice(s) : ".$invoices."\r\n<br>";
+
+			$msg_in .= "Currency Type : ".$curencytype."\r\n<br>";
+
+			$msg_in .= "Native Currency Amount : ".number_format($raw_total,2,",",".")."\r\n<br>";
+
+
+
+			$msg_in .= "Comments : ".$_POST["comments"]."\r\n<br>";
+	  
+	  
+	  		$msg_in .= "\r\n<br>Sent From https://voffice.co.id/pay \r\n<br>"; 
+
+			
+
+		if ($_POST["payment"] == "CreditCard")
+
+		{
+			include 'sendit.php';
+			include 'pay_via_midtrans_indo.php';
+			die();	
+		}
+		
+		elseif ($_POST["payment"] == "paypal")
+		{
+
+			$ppcurency = $currencytype;
+			include 'sendit.php';
+			
+			$ppamt = $raw_total;
+
+			$ppreturnurl = PPRETURNURLPAY;
+
+			$ppreturncancel = PPCANCELURLPAY;
+
+			$ppacct = PPACCNT;
+
+
+
+			$paypalcmd = "https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&currency_code=$curencytype&amount=$ppamt&item_number=$ref_id&return=$ppreturnurl&cancel_return=$ppreturncancel&item_name=PT vOffice Invoice $invoices&business=$ppacct";
+
+			echo "<script>window.location= \"".$paypalcmd."\";</script>";
+
+		}
+
+		else
+
+		{
+
+			 echo "<script>alert('Error in Payment Type... Please select a proper payment method.')</script>";
+		
+
+		}
+  } else {
+
+	  echo "<script>alert('You did not check the verification')</script>";
+  }
+}
+
+?>
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>vOffice &mdash; Secure Online Payment Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all">
+        <link href="css/themify-icons.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/flexslider.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/lightbox.min.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/ytplayer.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/theme.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/custom.css" rel="stylesheet" type="text/css" media="all" />
+        <link href='https://fonts.googleapis.com/css?family=Lato:300,400%7CRaleway:100,400,300,500,600,700%7COpen+Sans:400,500,600' rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,600,700" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+				
+		<?php include("header.html")?>
+		
+		<div class="main-container">
+		<section class="bg-secondary">
+		        <div class="container">
+		            <div class="row">
+		                <div class="col-md-7 col-md-offset-1 col-sm-6 mb40 mb-xs-24">
+		                    <div class="feature feature-1 boxed text-center">
+		                        <h3 class="bold mb8">VOPay</h3>
+                                <p>Pay your invoice online securely here</p>
+                                <hr>
+		                        <form class="form-email" name="billpay" method="post" action="<?=htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                                	<h6 class="bold-h6 text-left mb8">Contact information</h6>
+		                            <div class="col-md-6 p0">
+                                <input type="text" name="firstname" id="firstname" placeholder="First Name" required>
+                                </div>
+                                <div class="col-md-6 p0">
+                                <input type="text" name="lastname" id="lastname" placeholder="Last Name" required>
+                                </div>
+                                <input type="text" name="coname" id="coname" placeholder="Company Name" required>
+                                <p class="sub text-left">If you don't have a company name yet, please enter your name here.</p>
+                                <textarea name="address" rows="2"  placeholder="Address" class="validate-required"></textarea>
+                                <div class="col-md-6 p0">
+                                <input type="text" name="city" placeholder="City">
+                                </div>
+                                <div class=" col-md-6 p0">
+                                <input type="text" name="state" placeholder="State">
+                                </div>
+                                <div class="col-md-6 p0">
+                                <input type="text" name="zip" placeholder="Postcode / Zipcode">
+                                </div>
+                                <div class="select-option col-md-6 p0">
+                                <i class="ti-angle-down"></i>
+                                <select name="country" id="country" required>
+		                                      <option value="Afghanistan">Afghanistan</option>
+                                              <option value="Albania">Albania</option>
+                                              <option value="Algeria">Algeria</option>
+                                              <option value="American Samoa">American Samoa</option>
+                                              <option value="Andorra">Andorra</option>
+                                              <option value="Angola">Angola</option>
+                                              <option value="Anguilla">Anguilla</option>
+                                              <option value="Antarctica">Antarctica</option>
+                                              <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+                                              <option value="Argentina">Argentina</option>
+                                              <option value="Armenia">Armenia</option>
+                                              <option value="Aruba">Aruba</option>
+                                              <option value="Australia">Australia</option>
+                                              <option value="Austria">Austria</option>
+                                              <option value="Azerbaidjan">Azerbaidjan</option>
+                                              <option value="Bahamas">Bahamas</option>
+                                              <option value="Bahrain">Bahrain</option>
+                                              <option value="Banglades">Banglades</option>
+                                              <option value="Barbados">Barbados</option>
+                                              <option value="Belarus">Belarus</option>
+                                              <option value="Belgium">Belgium</option>
+                                              <option value="Belize">Belize</option>
+                                              <option value="Benin">Benin</option>
+                                              <option value="Bermuda">Bermuda</option>
+                                              <option value="Bolivia">Bolivia</option>
+                                              <option value="Bosnia-Herzegovina">Bosnia-Herzegovina</option>
+                                              <option value="Botswana">Botswana</option>
+                                              <option value="Bouvet Island">Bouvet Island</option>
+                                              <option value="Brazil">Brazil</option>
+                                              <option value="British Indian O. Terr.">British Indian O. Terr.</option>
+                                              <option value="Brunei Darussalam">Brunei Darussalam</option>
+                                              <option value="Bulgaria">Bulgaria</option>
+                                              <option value="Burkina Faso">Burkina Faso</option>
+                                              <option value="Burundi">Burundi</option>
+                                              <option value="Buthan">Buthan</option>
+                                              <option value="Cambodia">Cambodia</option>
+                                              <option value="Cameroon">Cameroon</option>
+                                              <option value="Canada">Canada</option>
+                                              <option value="Cape Verde">Cape Verde</option>
+                                              <option value="Cayman Islands">Cayman Islands</option>
+                                              <option value="Central African Rep.">Central African Rep.</option>
+                                              <option value="Chad">Chad</option>
+                                              <option value="Chile">Chile</option>
+                                              <option value="China">China</option>
+                                              <option value="Christmas Island">Christmas Island</option>
+                                              <option value="Cocos (Keeling) Isl.">Cocos (Keeling) Isl.</option>
+                                              <option value="Colombia">Colombia</option>
+                                              <option value="Comoros">Comoros</option>
+                                              <option value="Congo">Congo</option>
+                                              <option value="Cook Islands">Cook Islands</option>
+                                              <option value="Costa Rica">Costa Rica</option>
+                                              <option value="Croatia">Croatia</option>
+                                              <option value="Cuba">Cuba</option>
+                                              <option value="Cyprus">Cyprus</option>
+                                              <option value="Czech Republic">Czech Republic</option>
+                                              <option value="Czechoslovakia">Czechoslovakia</option>
+                                              <option value="Denmark">Denmark</option>
+                                              <option value="Djibouti">Djibouti</option>
+                                              <option value="Dominica">Dominica</option>
+                                              <option value="Dominican Republic">Dominican Republic</option>
+                                              <option value="East Timor">East Timor</option>
+                                              <option value="Ecuador">Ecuador</option>
+                                              <option value="Egypt">Egypt</option>
+                                              <option value="El Salvador">El Salvador</option>
+                                              <option value="Equatorial Guinea">Equatorial Guinea</option>
+                                              <option value="Estonia">Estonia</option>
+                                              <option value="Ethiopia">Ethiopia</option>
+                                              <option value="Falkland Isl.(Malvinas)">Falkland Isl.(Malvinas)</option>
+                                              <option value="Faroe Islands">Faroe Islands</option>
+                                              <option value="Fiji">Fiji</option>
+                                              <option value="Finland">Finland</option>
+                                              <option value="France">France</option>
+                                              <option value="France (European Ter.)">France (European Ter.)</option>
+                                              <option value="French Southern Terr.">French Southern Terr.</option>
+                                              <option value="Gabon">Gabon</option>
+                                              <option value="Gambia">Gambia</option>
+                                              <option value="Georgia">Georgia</option>
+                                              <option value="Germany">Germany</option>
+                                              <option value="Ghana">Ghana</option>
+                                              <option value="Gibraltar">Gibraltar</option>
+                                              <option value="Great Britain (UK)">Great Britain (UK)</option>
+                                              <option value="Greece">Greece</option>
+                                              <option value="Greenland">Greenland</option>
+                                              <option value="Grenada">Grenada</option>
+                                              <option value="Guadeloupe (Fr.)">Guadeloupe (Fr.)</option>
+                                              <option value="Guam (US)">Guam (US)</option>
+                                              <option value="Guatemala">Guatemala</option>
+                                              <option value="Guinea">Guinea</option>
+                                              <option value="Guinea Bissau">Guinea Bissau</option>
+                                              <option value="Guyana">Guyana</option>
+                                              <option value="Guyana (Fr.)">Guyana (Fr.)</option>
+                                              <option value="Haiti">Haiti</option>
+                                              <option value="Heard &amp; McDonald Isl.">Heard &amp; McDonald 
+                                              Isl.</option>
+                                              <option value="Honduras">Honduras</option>
+                                              <option value="Hong Kong">Hong Kong</option>
+                                              <option value="Hungary">Hungary</option>
+                                              <option value="Iceland">Iceland</option>
+                                              <option value="India">India</option>
+                                              <option value="Indonesia" selected="selected">Indonesia</option>
+                                              <option value="Iran">Iran</option>
+                                              <option value="Iraq">Iraq</option>
+                                              <option value="Ireland">Ireland</option>
+                                              <option value="Israel">Israel</option>
+                                              <option value="Italy">Italy</option>
+                                              <option value="Ivory Coast">Ivory Coast</option>
+                                              <option value="Jamaica">Jamaica</option>
+                                              <option value="Japan">Japan</option>
+                                              <option value="Jordan">Jordan</option>
+                                              <option value="Kazachstan">Kazachstan</option>
+                                              <option value="Kenya">Kenya</option>
+                                              <option value="Kirgistan">Kirgistan</option>
+                                              <option value="Kiribati">Kiribati</option>
+                                              <option value="Korea (North)">Korea (North)</option>
+                                              <option value="Korea (South)">Korea (South)</option>
+                                              <option value="Kuwait">Kuwait</option>
+                                              <option value="Laos">Laos</option>
+                                              <option value="Latvia">Latvia</option>
+                                              <option value="Lebanon">Lebanon</option>
+                                              <option value="Lesotho">Lesotho</option>
+                                              <option value="Liberia">Liberia</option>
+                                              <option value="Libya">Libya</option>
+                                              <option value="Liechtenstein">Liechtenstein</option>
+                                              <option value="Lithuania">Lithuania</option>
+                                              <option value="Luxembourg">Luxembourg</option>
+                                              <option value="Macau">Macau</option>
+                                              <option value="Madagascar">Madagascar</option>
+                                              <option value="Malawi">Malawi</option>
+                                              <option value="Malaysia">Malaysia</option>
+                                              <option value="Maldives">Maldives</option>
+                                              <option value="Mali">Mali</option>
+                                              <option value="Malta">Malta</option>
+                                              <option value="Marshall Islands">Marshall Islands</option>
+                                              <option value="Martinique (Fr.)">Martinique (Fr.)</option>
+                                              <option value="Mauritania">Mauritania</option>
+                                              <option value="Mauritius">Mauritius</option>
+                                              <option value="Mexico">Mexico</option>
+                                              <option value="Micronesia">Micronesia</option>
+                                              <option value="Moldavia">Moldavia</option>
+                                              <option value="Monaco">Monaco</option>
+                                              <option value="Mongolia">Mongolia</option>
+                                              <option value="Montserrat">Montserrat</option>
+                                              <option value="Morocco">Morocco</option>
+                                              <option value="Mozambique">Mozambique</option>
+                                              <option value="Myanmar">Myanmar</option>
+                                              <option value="Namibia">Namibia</option>
+                                              <option value="Nauru">Nauru</option>
+                                              <option value="Nepal">Nepal</option>
+                                              <option value="Netherland Antilles">Netherland Antilles</option>
+                                              <option value="Netherlands">Netherlands</option>
+                                              <option value="Neutral Zone">Neutral Zone</option>
+                                              <option value="New Caledonia (Fr.)">New Caledonia (Fr.)</option>
+                                              <option value="New Zealand">New Zealand</option>
+                                              <option value="Nicaragua">Nicaragua</option>
+                                              <option value="Niger">Niger</option>
+                                              <option value="Nigeria">Nigeria</option>
+                                              <option value="Niue">Niue</option>
+                                              <option value="Norfolk Island">Norfolk Island</option>
+                                              <option value="Northern Mariana Isl.">Northern Mariana Isl.</option>
+                                              <option value="Norway">Norway</option>
+                                              <option value="Oman">Oman</option>
+                                              <option value="Pakistan">Pakistan</option>
+                                              <option value="Palau">Palau</option>
+                                              <option value="Panama">Panama</option>
+                                              <option value="Papua New">Papua New</option>
+                                              <option value="Paraguay">Paraguay</option>
+                                              <option value="Peru">Peru</option>
+                                              <option value="Philippines">Philippines</option>
+                                              <option value="Pitcairn">Pitcairn</option>
+                                              <option value="Poland">Poland</option>
+                                              <option value="Polynesia (Fr.)">Polynesia (Fr.)</option>
+                                              <option value="Portugal">Portugal</option>
+                                              <option value="Puerto Rico (US)">Puerto Rico (US)</option>
+                                              <option value="Qatar">Qatar</option>
+                                              <option value="Reunion (Fr.)">Reunion (Fr.)</option>
+                                              <option value="Romania">Romania</option>
+                                              <option value="Russian Federation">Russian Federation</option>
+                                              <option value="Rwanda">Rwanda</option>
+                                              <option value="Saint Lucia">Saint Lucia</option>
+                                              <option value="Samoa">Samoa</option>
+                                              <option value="San Marino">San Marino</option>
+                                              <option value="Saudi Arabia">Saudi Arabia</option>
+                                              <option value="Senegal">Senegal</option>
+                                              <option value="Seychelles">Seychelles</option>
+                                              <option value="Sierra Leone">Sierra Leone</option>
+                                              <option value="Singapore">Singapore</option>
+                                              <option value="Slovak Republic">Slovak Republic</option>
+                                              <option value="Slovenia">Slovenia</option>
+                                              <option value="Solomon Islands">Solomon Islands</option>
+                                              <option value="Somalia">Somalia</option>
+                                              <option value="South Africa">South Africa</option>
+                                              <option value="Soviet Union">Soviet Union</option>
+                                              <option value="Spain">Spain</option>
+                                              <option value="Sri Lanka">Sri Lanka</option>
+                                              <option value="St. Helena">St. Helena</option>
+                                              <option value="St. Pierre &amp; Miquelon">St. Pierre &amp; Miquelon</option>
+                                              <option value="St. Tome and Principe">St. Tome and Principe</option>
+                                              <option value="St.Kitts Nevis Anguilla">St.Kitts Nevis Anguilla</option>
+                                              <option value="St.Vincent &amp; Grenadines">St.Vincent &amp; 
+                                              Grenadines</option>
+                                              <option value="Sudan">Sudan</option>
+                                              <option value="Suriname">Suriname</option>
+                                              <option value="Svalbard &amp; Jan Mayen Is">Svalbard &amp; Jan 
+                                              Mayen Is</option>
+                                              <option value="Swaziland">Swaziland</option>
+                                              <option value="Sweden">Sweden</option>
+                                              <option value="Switzerland">Switzerland</option>
+                                              <option value="Syria">Syria</option>
+                                              <option value="Tadjikistan">Tadjikistan</option>
+                                              <option value="Taiwan">Taiwan</option>
+                                              <option value="Tanzania">Tanzania</option>
+                                              <option value="Thailand">Thailand</option>
+                                              <option value="Togo">Togo</option>
+                                              <option value="Tokelau">Tokelau</option>
+                                              <option value="Tonga">Tonga</option>
+                                              <option value="Trinidad &amp; Tobago">Trinidad &amp; Tobago</option>
+                                              <option value="Tunisia">Tunisia</option>
+                                              <option value="Turkey">Turkey</option>
+                                              <option value="Turkmenistan">Turkmenistan</option>
+                                              <option value="Turks &amp; Caicos Islands">Turks &amp; Caicos 
+                                              Islands</option>
+                                              <option value="Tuvalu">Tuvalu</option>
+                                              <option value="Uganda">Uganda</option>
+                                              <option value="Ukraine">Ukraine</option>
+                                              <option value="United Arab Emirates">United Arab Emirates</option>
+                                              <option value="United Kingdom">United Kingdom</option>
+                                              <option value="United States">United States</option>
+                                              <option value="Uruguay">Uruguay</option>
+                                              <option value="US Minor outlying Isl.">US Minor outlying Isl.</option>
+                                              <option value="Uzbekistan">Uzbekistan</option>
+                                              <option value="Vanuatu">Vanuatu</option>
+                                              <option value="Vatican City State">Vatican City State</option>
+                                              <option value="Venezuela">Venezuela</option>
+                                              <option value="Vietnam">Vietnam</option>
+                                              <option value="Virgin Islands (British)">Virgin Islands (British)</option>
+                                              <option value="Virgin Islands (US)">Virgin Islands (US)</option>
+                                              <option value="Wallis &amp; Futuna Islands">Wallis &amp; Futuna 
+                                              Islands</option>
+                                              <option value="Western Sahara">Western Sahara</option>
+                                              <option value="Yemen">Yemen</option>
+                                              <option value="Yugoslavia">Yugoslavia</option>
+                                              <option value="Zaire">Zaire</option>
+                                              <option value="Zambia">Zambia</option>
+                                              <option value="Zimbabwe">Zimbabwe</option>
+		                        </select>
+                                </div>
+
+		                            <input type="text" name="phone" placeholder="Contact No (Eg +60362154358)" required>
+                               <p class="sub text-left">It is important that you can be reached at this number during your day time as we may call to verify your order.</p>
+
+                                <input type="text" name="email" placeholder="Email Address" required>
+                                <p class="sub text-left">Please use an e-mail address which you check regularly.</p>
+ 
+                                
+                                
+                                <h6 class="bold-h6 text-left mb8">Invoice Details</h6>
+		                        <input type="text" class="validate-required mb0" name="invno" placeholder="Invoice/Quotation Number">
+                                <p class="sub text-left">Kindly enter the Invoice Number you're making payment for here if you have one</p>
+                                    <div class="select-option col-md-6 p0">
+		                                
+										<input type="text" class="validate-required mb0" name="currency" id="currency" value="IDR" readonly>
+		                            </div>
+		                            
+		                            <div class="select-option col-md-6 p0">
+		                                <input type="text" name="price" placeholder="Payment Amount" required>
+                                        <p class="sub text-left">Please do not include any currency symbols</p>
+		                            </div>
+		                            
+		                            <textarea name="message" rows="2" placeholder="Additional notes"></textarea>
+                                    <h6 class="bold-h6 text-left mb8">Payment Method</h6>
+                                    <div class="select-option p0">
+		                                <i class="ti-angle-down"></i>
+                                    <select name="payment" id="payment" required>
+                                		<option value="" selected disabled>Payment Method</option>
+		                           		<option value="CreditCard">Credit Card</option>
+                   						<option value="Offline">Offline/Bank Transfer</option>
+                                </select>
+                                </div>
+                                <div id='ccinfo' style="display: none">
+                              <h6 class="bold-h6 text-left mb8">Credit Card Details</h6>
+                                 <input type="text" id="ccname" maxlength="40" name="ccname" placeholder="Name on Card">
+                                 <input type="text" id="ccno" maxlength="18" name="ccno" placeholder="Card Number">
+                                  <h6 class="bold-h6 text-left mb8">Expiration Date on Card</h6>
+                                 <div class="col-sm-12 no-padding">
+                                    <div class="col-sm-6 no-padding">
+                                       <div class="select-option p0">
+                                          <i class="ti-angle-down"></i>
+                                          <select name="mm" id="mm">
+                                             <option selected disabled selected>MM</option>
+                                             <option value='01'>01</option>
+                                             <option value='02'>02</option>
+                                             <option value='03'>03</option>
+                                             <option value='04'>04</option>
+                                             <option value='05'>05</option>
+                                             <option value='06'>06</option>
+                                             <option value='07'>07</option>
+                                             <option value='08'>08</option>
+                                             <option value='09'>09</option>
+                                             <option value='10'>10</option>
+                                             <option value='11'>11</option>
+                                             <option value='12'>12</option>
+                                          </select>
+                                       </div>
+                                    </div>
+                                    <div class="col-sm-6 no-padding">
+                                       <div class="select-option p0">
+                                          <i class="ti-angle-down"></i>
+                                          <select  name="yy" id="yy">
+                                             <option selected disabled selected>YY</option>
+                                             <option value='2018'>2018</option>
+                                             <option value='2019'>2019</option>
+                                             <option value='2020'>2020</option>
+                                             <option value='2021'>2021</option>
+                                             <option value='2022'>2022</option>
+                                             <option value='2023'>2023</option>
+                                             <option value='2024'>2024</option>
+                                          </select>
+                                       </div>
+                                    </div>
+                                 </div>
+                                  <input type="text" name="bankname" placeholder="Name of Issuing Bank">
+                                  <input type="text" id="cvc" name="cvc" placeholder="Card ID/CVV2">
+                                  <div class="col-xs-12">
+									  
+                                    <div class="fa-border mb40 mb-xs-24">
+                                       <p>
+                                          Transaction will appear as
+                                          <b>Flexi e-Solutions Pty Ltd</b>
+                                          on your Credit Card Statement
+                                       </p>
+                                    </div>
+                                 </div>
+						   </div>
+									 <p><div class="g-recaptcha" data-sitekey="6LdzkUwUAAAAAJIbUiwZ18QBRELQNt9Cd5QnlEND"></div></p><br>
+		                            <button type="submit" class="mb8" name="gopay_x" id="gopay_x" value="gopay_x">Proceed with order</button>
+                                   
+		                        </form>
+		                    </div>
+		                </div>
+		                <div class="col-md-4 col-sm-6 mb40 mb-xs-24">
+		                    <div class="feature feature-1 boxed">
+		                  		<h6 class="bold-h6">About Us</h6>      
+                                <p>vOffice.com.my is a business of PT vOffice. We are a privately owned debt free company originated from Victoria, Australia with networks that span across Australia, New Zealand, USA, Belgium, South Africa, Middle East, Malaysia, Singapore and Indonesia.</p>
+
+                                <p>We are constantly on the look out for the best technology commercially feasible out there, therefore we can offer you the best possible solution at the best possible price.</p>
+
+                                <p>We know different companies have different needs. So when we designed vOffice.com.my, we made it versatile enough to match the unique needs of most business professionals. No matter who you are, we just make life easier.</p>
+		                    </div>
+		                </div>
+		                
+		            </div>
+		            
+		        </div>
+		        
+		    </section>
+                        
+            <!--?php include("footer.html")?-->
+		</div>
+	<script>
+document.getElementById('payment').addEventListener('change', function () {
+		var style = this.value == 'CreditCard' ? 'block' : 'none';
+		document.getElementById('ccinfo').style.display = style;
+	});
+</script>	
+		<script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/flexslider.min.js"></script>
+        <script src="js/lightbox.min.js"></script>
+        <script src="js/masonry.min.js"></script>
+        <script src="js/twitterfetcher.min.js"></script>
+        <script src="js/spectragram.min.js"></script>
+        <script src="js/ytplayer.min.js"></script>
+        <script src="js/countdown.min.js"></script>
+        <script src="js/smooth-scroll.min.js"></script>
+        <script src="js/parallax.js"></script>
+        <script src="js/scripts.js"></script>
+
+    </body>
+</html>
+	

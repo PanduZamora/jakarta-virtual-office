@@ -1,0 +1,191 @@
+<style>
+    /*img.image-xs {*/
+    /*max-height: 40px*/
+    /*}*/
+
+    .footer_mobile_cta ul {
+        background: #961A43 !important;
+    }
+
+    ul#vOffice-Countries li {
+        font-weight: 600;
+        color: #282828
+    }
+
+    p#about-voffice,
+    ul#vOffice-Countries li a {
+        font-weight: 300;
+        color: #282828;
+        font-size: .9em
+    }
+
+    ul#vOffice-Countries li a:hover {
+        color: #961A43;
+    }
+</style>
+
+<section class="bg-secondary pt24 pb24">
+    <div class="container">
+        <div class="col-md-12 text-center">
+            <div class="row">
+                <div class="col-sm-12">
+                    <p class="bold mb8">
+                        Virtual Office gladly accepts:
+                    </p>
+                    <img class="image image-xs" src="img/footer-pay/visa.png" />
+                    <img class="image image-xs" src="img/footer-pay/mastercard.png" />
+                    <img class="image image-xs" src="img/footer-pay/paypal.png" />
+                    <img class="image image-xs" src="img/footer-pay/vo-bcacard.jpg" />
+                    <img class="image image-xs" src="img/footer-pay/vo-jcb.jpg" />
+                    <img class="image image-xs" src="img/footer-pay/id-bca.gif" />
+                    <img class="image image-xs" src="img/footer-pay/vo-prima.jpg" />
+                    <img class="image image-xs" src="img/footer-pay/vo-debitbca.jpg" />
+
+                </div>
+            </div>
+            <p class="text-center" id="about-voffice">
+                <span class="sub lang" key="footerone4">
+                    Sejak 2003, Virtual Office Indonesia (vOffice) telah melayani lebih dari 50.000 bisnis
+                    dan tersedia di lebih dari 42 lokasi. Virtual Office Indonesia memudahkan bisnis untuk berkembang
+                    pesat
+                    dan beroperasi dengan mudah. Untuk informasi lebih lanjut mengenai Virtual Office Indonesia,
+                    silakan hubungi kami di
+                    <a href="tel:+622130490000">
+                        02130490000
+                    </a>
+                    or email us at
+                    <a href="mailto:cs@voffice.co.id">
+                        cs@voffice.co.id
+                    </a>
+                </span>
+            </p>
+        </div>
+    </div>
+
+</section>
+<div class="footer_bottom visible-xs visible-sm" style="margin-bottom:-50px;">
+    <div class="footer_mobile_cta">
+        <ul>
+            <li style="background: #25d366"><a href="http://bit.ly/sem-voffice" class="link-changer">
+                    <h6 style="color: #fff" class="uppercase text-changer">
+                        <i class="fab fa fa-whatsapp fa-lg mr-10"></i> Whatsapp
+                    </h6>
+                </a>
+            </li>
+            <li style="background: #951942">
+                <a href="#" data-toggle="modal" data-target="#emailUs">
+                    <h6 style="color: #fff" class="uppercase">
+                        <i class="fa fa-phone fa-lg mr-10"></i> Contact Us
+                    </h6>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--Modal Pop Up-->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" data-dismiss="modal" type="button">
+                    ×
+                </button>
+                <h4 class="modal-title">
+                    Promo
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <!--<div class="col-sm-6">-->
+                    <!--<img src="img/brochure/Cre8_Event%20Brochure_r1-01.png">-->
+                    <!--</div>-->
+                    <!--<div class="col-sm-12">-->
+                    <!--<p class="text-center"><img src="img/brochure/Cre8_Event Brochure_r1-02.png"></p>-->
+                    <!--</div>-->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <p class="text-center">
+                    <button class="btn btn-default" data-dismiss="modal" type="button">
+                        Close
+                    </button>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--=======================================Modal Form========================================-->
+<div aria-hidden="true" aria-labelledby="myModalLabel" class="modal fade" id="emailUs" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-xs mb-xs-64">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header clearfix">
+                <button class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">
+                        ×
+                    </span>
+                    <span class="sr-only">
+                        Close
+                    </span>
+                </button>
+                <h4 class="mb8 bold text-center color-black">Dapatkan Promo & Penawaran Menarik</h4>
+                <center>Isi formulir di bawah ini untuk mendapatkan proposal penawaran
+                    dan tim kami akan segera menghubungi Anda. Terima kasih
+                </center>
+            </div>
+            <div class="modal-body form-body clearfix">
+                <form class="form-email"
+                    data-success="Thanks for your inquiries, we will be in touch to confirm shortly."
+                    data-error="Please fill all fields correctly.">
+
+                    <input type="text" name="contactusads" hidden="hidden" value="contactusads" id="contactusads"
+                        class="field-changer">
+
+                    <input type="text" class="validate-required" name="name" placeholder="Nama Lengkap*">
+                    <input type="text" class="validate-required" name="phone" placeholder="Nomor Telepon / Whatsapp*">
+                    <input type="text" class="validate-required validate-email" name="email"
+                        placeholder="Alamat Email*">
+                    <input type="text" class="" name="usaha" placeholder="Bidang Usaha">
+
+                    <textarea style="color: #0a0a0a" name="message" rows="4" placeholder="Message"></textarea>
+                    <button id="submit-form" type="submit" name="submit">Contact Us Now!</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--=======================================End Of Modal Form========================================-->
+<!-- Google Tag Manager -->
+<script>
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start': new Date().getTime(),
+            event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-T2RWXW9');
+</script>
+<!-- End Google Tag Manager -->
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API = Tawk_API || {},
+        Tawk_LoadStart = new Date();
+    (function () {
+        var s1 = document.createElement("script"),
+            s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/5901c65b64f23d19a89af853/default';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+    })();
+</script>
+<!--End of Tawk.to Script-->

@@ -1,0 +1,230 @@
+<style>
+    .panel {
+        border: none;
+        box-shadow: none;
+    }
+
+    .panel-heading {
+        border: none;
+        background-color: #fff !important;
+        border-radius: 0;
+    }
+
+    .panel-collapse>.panel-body {
+        border: 0;
+        border-top: 0 !important;
+        margin-left: 50px;
+        border-left: solid 2px #9a2b59;
+        border-color: #9a2b59 !important;
+        font-size: 14px;
+        background-color: rgb(251, 251, 251);
+    }
+
+    .panel-title a {
+        text-decoration: none;
+    }
+
+    .panel-heading a::before {
+        font-family: 'themify';
+        font-weight: bold;
+        color: #9a2b59;
+        content: '\e649';
+        float: right;
+        margin-right: 7px;
+        transition: all 0.5s;
+    }
+
+    .panel-heading.active a::before {
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+
+    /* #9a2b59; */
+</style>
+
+<div class="container">
+
+    <h2 class="text-center mt-2 bold">FAQ</h2>
+
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+                <h4 class="panel-title">
+                    <a href="#faqOne" role="button" data-toggle="collapse" data-parent="#accordion"
+                        aria-expanded="false" aria-controls="faqOne">
+                        1. Apakah yang dimaksud dengan <i>Buy Now</i>?
+                    </a>
+                </h4>
+            </div>
+            <div class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne" id="faqOne">
+                <div class="panel-body">
+                    Buy Now adalah pembayaran secara online melalui website resmi yang disediakan oleh <b>vOffice</b>.
+                    Buy Now diperuntukan bagi Klien untuk mempermudah dan mempersingkat waktu proses aktivasi penggunaan
+                    <i>virtual office</i>.
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingTwo">
+                <h4 class="panel-title">
+                    <a href="#faqTwo" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                        aria-expanded="false" aria-controls="faqTwo">
+                        2. Apakah harga paket <i>virtual office</i> di <i>Buy Now</i> sudah termasuk PPN (Pajak
+                        Pertambahan Nilai)?
+                    </a>
+                </h4>
+            </div>
+            <div class="panel-collapse collapse" id="faqTwo" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="panel-body">
+                    Ya, harga paket di <i>Buy Now</i> sudah termasuk PPN.
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingThree">
+                <h4 class="panel-title">
+                    <a href="#faqThree" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                        aria-expanded="false" aria-controls="faqThree">
+                        3. Bagaimana cara transaksi melalui <i>Buy Now</i>?
+                    </a>
+                </h4>
+            </div>
+            <div class="panel-collapse collapse" id="faqThree" role="tabpanel" aria-labelledby="headingThree">
+                <div class="panel-body">
+                    <p class="lead bold">1. Pada form di atas, isi data diri serta pilih package yang Anda inginkan.
+                        Lalu klik tombol "SUBMIT".</p>
+                    <img src="images/buy-now-tutorial-1.png" alt="tutorial 1" class="img-fluid mb-2">
+
+                    <p class="lead bold">2. Pastikan data diri serta package yang Anda pilih sesuai. Klik "Proceed to
+                        Payment".</p>
+                    <div class="row mb-2">
+                        <img src="images/new-buy-now-tutorial.png" alt="tutorial 2" class="img-fluid col-sm">
+                    </div>
+
+                    <p class="lead bold">3. Pilih metode pembayaran.</p>
+                    <div class="row mb-2">
+                        <img src="images/buy-now-tutorial-3.png" alt="tutorial 2" class="img-fluid col-sm-4">
+                        <img src="images/buy-now-tutorial-3-2.png" alt="tutorial 2b" class="img-fluid col-sm-4">
+                    </div>
+
+                    <p class="lead bold">4. Lanjutkan proses pembayaran sesuai dengan metode yang Anda pilih.</p>
+                    <img src="images/buy-now-tutorial-3-3.png" alt="tutorial 4" class="img-fluid mb-2 text-center">
+
+                    <p class="lead bold">5. Transaksi selesai, silahkan menunggu untuk dihubungi oleh team aktivasi dari
+                        kami.</p>
+                    <img src="images/buy-now-tutorial-4.png" alt="tuorial 5" class="img-fluid mb-2 col-sm-">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingFour">
+                <h4 class="panel-title">
+                    <a href="#faqFour" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                        aria-expanded="false" aria-controls="faqFour">
+                        4. Apakah pembelian melalui <i>Buy Now</i> dapat di refund?
+                    </a>
+                </h4>
+            </div>
+            <div class="panel-collapse collapse" id="faqFour" role="tabpanel" aria-labelledby="headingFour">
+                <div class="panel-body">
+                    Pembayaran yang sudah dibayarkan tidak dapat dikembalikan dengan alasan apapun. Untuk panduan lebih
+                    lengkap, silahkan terlebih dahulu membaca <a href="#tac-modal" data-toggle="modal">syarat dan
+                        ketentuan</a> sebelum melanjutkan proses pembayaran.
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingFive">
+                <h4 class="panel-title">
+                    <a href="#faqFive" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                        aria-expanded="false" aria-controls="faqFive">
+                        5. Berapa lama klien akan dihubungi setelah pembayaran berhasil?
+                    </a>
+                </h4>
+            </div>
+            <div class="panel-collapse collapse" id="faqFive" role="tabpanel" aria-labelledby="headingFive">
+                <div class="panel-body">
+                    Staff vOffice akan menghubungi klien maksimal 1 (satu) hari dari pembayaran diterima selama jam
+                    operasional kantor.
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingSix">
+                <h4 class="panel-title">
+                    <a href="#faqSix" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                        aria-expanded="false" aria-controls="faqSix">
+                        6. Apakah saya bisa mendapatkan faktur pajak/bukti potong pajak atas pembayaran saya?
+                    </a>
+                </h4>
+            </div>
+            <div class="panel-collapse collapse" id="faqSix" role="tabpanel" aria-labelledby="headingSix">
+                <div class="panel-body">
+                    Faktur pajak/bukti potong pajak akan diperoleh setelah pelunasan/pembayaran <i>virtual office</i>
+                    dengan melampirkan NPWP (Nomor Pokok Wajib Pajak) Perusahaan yang masih berlaku maksimal 7 (tujuh)
+                    hari setelah melakukan pembayaran. Untuk pertanyaan lebih lanjut bisa menghubungi Team Finance atau
+                    Billing vOffice di email <a href="mailto:tax@voffice.co.id">tax@voffice.co.id</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingEight">
+                <h4 class="panel-title">
+                    <a href="#faqEight" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                        aria-expanded="false" aria-controls="faqEight">
+                        7. Dokumen apa saja yang harus dilengkapi?
+                    </a>
+                </h4>
+            </div>
+            <div class="panel-collapse collapse" id="faqEight" role="tabpanel" aria-labelledby="headingEight">
+                <div class="panel-body">
+                    KTP Direktur, NPWP Direktur, NPWP Perusahaan, Bukti Pesan Nama Perusahaan (jika perusahaan masih
+                    belum memiliki Akta), SK Kemenkumham, Akta Pendirian Perusahaan, Kartu PERADI (untuk bidang usaha
+                    law firm) dan mengisi General Information Form yang akan dikirimkan oleh staff vOffice.
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingSeven">
+                <h4 class="panel-title">
+                    <a href="#faqSeven" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                        aria-expanded="false" aria-controls="faqSeven">
+                        8. Bagaimana cara mengaktifkan akun Saya?
+                    </a>
+                </h4>
+            </div>
+            <div class="panel-collapse collapse" id="faqSeven" role="tabpanel" aria-labelledby="headingSeven">
+                <div class="panel-body">
+                    Tim aktivasi kami akan menghubungi Anda untuk memberikan kelengkapan data dan dokumen Perusahaan
+                    yang dibutuhkan untuk mengaktivasi <i>virtual office</i> Anda.
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingTen">
+                <h4 class="panel-title">
+                    <a href="#faqTen" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                        aria-expanded="false" aria-controls="faqTen">
+                        9. Apabila Saya belum memiliki badan usaha, bisakah Saya dapat membeli melalui aplikasi <i>Buy
+                            Now</i>?
+                    </a>
+                </h4>
+            </div>
+            <div class="panel-collapse collapse" id="faqTen" role="tabpanel" aria-labelledby="headingTen">
+                <div class="panel-body">
+                    Tentu saja bisa, dengan melengkapi KTP dan NPWP pribadi.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

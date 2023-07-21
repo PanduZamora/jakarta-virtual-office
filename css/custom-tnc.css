@@ -1,0 +1,32 @@
+.background-image-holder {
+    background-position: 50% -330px !important;
+}
+
+.content .navbar {
+    border: none;
+}
+.content .navbar .list-group-item {
+    border: none;
+}
+.content .navbar .list-group-item.navgroup {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.content .navbar .list-group-item.navgroup.membership {
+    margin-top: 30px;
+}
+.content .navbar .list-group-item-action {
+    font-weight: normal;
+    padding-left: 30px;
+}
+.content .navbar .list-group-item-action {
+    text-transform: capitalize;
+}
+
+.content .tnc-content h3.membership {
+    margin-top: 80px;
+}
+.content .tnc-content p.small {
+    color: rgb(172, 172, 172);
+    margin-bottom: 50px;
+}

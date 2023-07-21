@@ -1,0 +1,8 @@
+<?php
+// FILENAME: EXAMPLE_LOGOUT.PHP
+// ---------------------------------------
+
+include_once( './loginfunc.php' );
+process_logout();
+?>
+

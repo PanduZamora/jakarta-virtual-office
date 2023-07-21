@@ -1,0 +1,10 @@
+<? 
+define('CUSTOMER_ID','F9802ALIqf4YoxbfkJ86FPCqBq48PxSUSo4FRdhk5dXtxUYJJM5yyRD9gqgqN5dfDP7o1U ');
+define('TEST_CUSTOMER_ID','60CF3C8H1ipJIZMLOGB2+9FQeExdw2wqmCUTdDCFtwDV4AffKYe17yedSr8br/UfUXfjj1');
+
+define('CUSTOMER_PWD','p5MDizXy144QE0g');
+define('TEST_CUSTOMER_PWD','Polororo09');
+
+
+ 
+?>

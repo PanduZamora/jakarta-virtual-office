@@ -1,0 +1,23 @@
+/* == Configure Style == */
+@import url("style.css");
+
+/* == Configure Style == */
+@import url("homepage.css");
+
+/* == About Us == */
+@import url("about-us.css");
+
+/* == contact us == */
+@import url("contact-us.css");
+
+/* == Footer Primary == */
+@import url("FooterPrimary.css");
+
+/* == Header == */
+@import url("header.css");
+
+/* == Gallery Rules == */
+@import url("gallery-rules.css");
+
+/* == Gallery Rules == */
+@import url("slider-location.css");

@@ -1,0 +1,1310 @@
+<? session_start();?>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Signup Indonesia Virtual Office | Sewa Kantor | Jakarta | Surabaya | Denpasar</title>
+
+    <meta name="description" content="Signup Jakarta Virtual Office, Jakarta Serviced
+Office, Indonesia Office - Instant Office di Jakarta, Indonesia -
+Shared Office and Virtual Office Service in Jakarta Indonesia by
+JakartartutualOffice.com"/>
+
+    <meta name="keywords" content="virtual office jakarta, indonesia,
+serviced office, temporary office, shared office, office virtual,
+indonesia virtual office, start business, cheap office, short term office, kantor virtual jakarta, sewa kantor, ruang
+kantor, jakarta, indonesia, kantor murah, virtual office, virtual
+address jakarta, address, business office, receptionist, courier,
+personal assistant"/>
+
+    <meta name="robots" content="index,follow"/>
+    <META name="Author" content="vOffice.co.id">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/themify-icons.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="css/flexslider.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="css/lightbox.min.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="css/ytplayer.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="css/theme-v2.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="css/custom.css" rel="stylesheet" type="text/css" media="all"/>
+    <link
+        href='https://fonts.googleapis.com/css?family=Lato:300,400%7CRaleway:100,400,300,500,600,700%7COpen+Sans:400,500,600'
+        rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,600,700" rel="stylesheet"
+          type="text/css">
+
+</head>
+<body>
+
+<?php include("header.html") ?>
+
+<div class="main-container">
+
+    <section class="bg-dark pt120 pb64">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h2 class="mb8">Formulir Registrasi Online</h2>
+                    <p class="lead mb40 mb-xs-24">
+                        Anda selangkah lebih dekat untuk memiliki bisnis yang sempurna
+                    </p>
+                    <p class="sub">* Anda harus mengisi kotak dengan tanda ini</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section>
+        <div class="container">
+            <form method="post" action="<?= htmlspecialchars($_SERVER["PHP_SELF"]); ?>"
+                  onsubmit="return checkPass()">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="feature bordered clearfix">
+                            <h5 class="bold-h6">RINCIAN PAKET</h5>
+
+                            <!--<input type="text" class="validate-required" name="name" placeholder="Name for booking">
+                            <input type="text" class="validate-required" name="phone" placeholder="Phone Number">-->
+                            <div class="select-option p0">
+                                <i class="ti-angle-down"></i>
+                                <select name="location" id="location" required>
+                                    <option selected="selected" value="" disabled>Lokasi yang Anda inginkan</option>
+
+                                    <option value="" disabled>-- Jakarta Selatan --</option>
+                                    <option value="office8">Office 8, Jakarta Selatan</option>
+                                    <option value="Menara Rajawali, Jakarta Selatan">Menara Rajawali, Jakarta Selatan</option>
+                                    <option value="Centennial Tower, Jakarta Selatan">Centennial Tower, Jakarta Selatan</option>
+                                    <option value="Menara Kuningan, Jakarta Selatan">Menara Kuningan, Jakarta Selatan</option>
+                                    <option value="Metropolitan Tower, Jakarta Selatan">Metropolitan Tower, Jakarta Selatan</option>
+                                    <option value="The CEO Building, Jakarta Selatan">The CEO Building, Jakarta Selatan</option>
+                                    <option value="Graha Surveyor, Jakarta Selatan">Graha Surveyor, Jakarta Selatan</option>
+
+                                    <option value="" disabled>-- Jakarta Pusat --</option>
+                                    <option value="The City Tower, Jakarta Pusat">The City Tower, Jakarta Pusat</option>
+<!--                                    <option value="FX Plaza Tower, Jakarta Pusat">FX Plaza Tower, Jakarta Pusat</option>-->
+
+                                    <option value="" disabled>-- Jakarta Barat --</option>
+                                    <option value="Kencana Tower, Jakarta Barat">Kencana Tower, Jakarta Barat</option>
+                                    <option value="Grand Slipi Tower, Jakarta Barat">Grand Slipi Tower, Jakarta Barat</option>
+
+                                    <option value="" disabled>-- Jakarta Utara --</option>
+                                    <option value="Kirana 2 Tower, Jakarta Utara">Kirana 2 Tower, Jakarta Utara</option>
+                                    <option value="PIK Avenue, Jakarta Utara">PIK Avenue, Jakarta Utara</option>
+
+                                    <option value="" disabled>-- Surabaya --</option>
+                                    <option value="JAPFA Tower II, Surabaya">JAPFA Tower II, Surabaya</option>
+                                    <option value="Intiland Tower, Surabaya">Intiland Tower, Surabaya</option>
+                                    <option value="Spazio, Surabaya">Spazio, Surabaya</option>
+
+                                    <option value="" disabled>-- Bali --</option>
+                                    <option value="Ibis Styles, Bali">Ibis Styles, Bali</option>
+                                    
+                                </select>
+                            </div>
+
+                            <div class="select-option col-md-6 p0">
+                                <i class="ti-angle-down"></i>
+                                <select name="plan" id="plan" required>
+                                    <option selected="selected" disabled value="">Pilih Paket</option>
+                                    <option value="Silver">Virtual Office SILVER</option>
+                                    <option value="Gold">Virtual Office GOLD</option>
+                                    <option value="Platinum">Virtual Office PLATINUM</option>
+                                    <option value="PlatinumPlus">Virtual Office PLATINUM +</option>
+                                </select>
+                            </div>
+
+                            <div class="select-option col-md-6 p0">
+                                <i class="ti-angle-down"></i>
+                                <select name="term" id="term" required>
+                                    <option selected="selected" disabled value="">Periode</option>
+                                    <option value="12">12 bulan</option>
+                                    <option value="24">24 bulan</option>
+                                </select>
+                            </div>
+                            <div>
+                                <input type="text" name="coupon" placeholder="Kode kupon (Jika ada)">
+                            </div>
+                            <!--<div class="select-option col-md-6 p0">
+                            <input type="text" class="validate-required" name="referal" placeholder="Referral Code (If any)">
+                            </div>-->
+
+
+                        </div>
+
+                        <div id="fshowplan"></div>
+
+
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="feature bordered clearfix">
+                            <h5 class="bold-h6">RINCIAN AKUN</h5>
+                            <div class="col-md-6 p0">
+                                <input type="text" name="firstname" id="firstname" placeholder="Nama Depan" required>
+                            </div>
+                            <div class="col-md-6 p0">
+                                <input type="text" name="lastname" id="lastname" placeholder="Nama Belakang" required>
+                            </div>
+                            <br> <br> <br>
+                            <input type="text" name="coname" id="coname" placeholder="Nama Perusahaan" required>
+                            <p class="sub">Jika Anda belum memiliki nama perusahaan, silakan masukkan nama Anda.</p>
+                            <textarea name="address" rows="4" placeholder="Alamat" required></textarea>
+                            <div class="col-md-6 p0">
+                                <input type="text" name="city" placeholder="Kota" required>
+                            </div>
+                            <div class=" col-md-6 p0">
+                                <input type="text" name="state" placeholder="Provinsi" required>
+                            </div>
+                            <br> <br> <br>
+                            <div class="col-md-6 p0">
+                                <input type="text" name="postcode" placeholder="Kode Pos" required>
+                            </div>
+                            <div class="select-option col-md-6 p0">
+                                <i class="ti-angle-down"></i>
+                                <select name="country" id="country" required>
+                                    <option value="Afghanistan">Afghanistan</option>
+                                    <option value="Albania">Albania</option>
+                                    <option value="Algeria">Algeria</option>
+                                    <option value="American Samoa">American Samoa</option>
+                                    <option value="Andorra">Andorra</option>
+                                    <option value="Angola">Angola</option>
+                                    <option value="Anguilla">Anguilla</option>
+                                    <option value="Antarctica">Antarctica</option>
+                                    <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+                                    <option value="Argentina">Argentina</option>
+                                    <option value="Armenia">Armenia</option>
+                                    <option value="Aruba">Aruba</option>
+                                    <option value="Australia">Australia</option>
+                                    <option value="Austria">Austria</option>
+                                    <option value="Azerbaidjan">Azerbaidjan</option>
+                                    <option value="Bahamas">Bahamas</option>
+                                    <option value="Bahrain">Bahrain</option>
+                                    <option value="Banglades">Banglades</option>
+                                    <option value="Barbados">Barbados</option>
+                                    <option value="Belarus">Belarus</option>
+                                    <option value="Belgium">Belgium</option>
+                                    <option value="Belize">Belize</option>
+                                    <option value="Benin">Benin</option>
+                                    <option value="Bermuda">Bermuda</option>
+                                    <option value="Bolivia">Bolivia</option>
+                                    <option value="Bosnia-Herzegovina">Bosnia-Herzegovina</option>
+                                    <option value="Botswana">Botswana</option>
+                                    <option value="Bouvet Island">Bouvet Island</option>
+                                    <option value="Brazil">Brazil</option>
+                                    <option value="British Indian O. Terr.">British Indian O. Terr.</option>
+                                    <option value="Brunei Darussalam">Brunei Darussalam</option>
+                                    <option value="Bulgaria">Bulgaria</option>
+                                    <option value="Burkina Faso">Burkina Faso</option>
+                                    <option value="Burundi">Burundi</option>
+                                    <option value="Buthan">Buthan</option>
+                                    <option value="Cambodia">Cambodia</option>
+                                    <option value="Cameroon">Cameroon</option>
+                                    <option value="Canada">Canada</option>
+                                    <option value="Cape Verde">Cape Verde</option>
+                                    <option value="Cayman Islands">Cayman Islands</option>
+                                    <option value="Central African Rep.">Central African Rep.</option>
+                                    <option value="Chad">Chad</option>
+                                    <option value="Chile">Chile</option>
+                                    <option value="China">China</option>
+                                    <option value="Christmas Island">Christmas Island</option>
+                                    <option value="Cocos (Keeling) Isl.">Cocos (Keeling) Isl.</option>
+                                    <option value="Colombia">Colombia</option>
+                                    <option value="Comoros">Comoros</option>
+                                    <option value="Congo">Congo</option>
+                                    <option value="Cook Islands">Cook Islands</option>
+                                    <option value="Costa Rica">Costa Rica</option>
+                                    <option value="Croatia">Croatia</option>
+                                    <option value="Cuba">Cuba</option>
+                                    <option value="Cyprus">Cyprus</option>
+                                    <option value="Czech Republic">Czech Republic</option>
+                                    <option value="Czechoslovakia">Czechoslovakia</option>
+                                    <option value="Denmark">Denmark</option>
+                                    <option value="Djibouti">Djibouti</option>
+                                    <option value="Dominica">Dominica</option>
+                                    <option value="Dominican Republic">Dominican Republic</option>
+                                    <option value="East Timor">East Timor</option>
+                                    <option value="Ecuador">Ecuador</option>
+                                    <option value="Egypt">Egypt</option>
+                                    <option value="El Salvador">El Salvador</option>
+                                    <option value="Equatorial Guinea">Equatorial Guinea</option>
+                                    <option value="Estonia">Estonia</option>
+                                    <option value="Ethiopia">Ethiopia</option>
+                                    <option value="Falkland Isl.(Malvinas)">Falkland Isl.(Malvinas)</option>
+                                    <option value="Faroe Islands">Faroe Islands</option>
+                                    <option value="Fiji">Fiji</option>
+                                    <option value="Finland">Finland</option>
+                                    <option value="France">France</option>
+                                    <option value="France (European Ter.)">France (European Ter.)</option>
+                                    <option value="French Southern Terr.">French Southern Terr.</option>
+                                    <option value="Gabon">Gabon</option>
+                                    <option value="Gambia">Gambia</option>
+                                    <option value="Georgia">Georgia</option>
+                                    <option value="Germany">Germany</option>
+                                    <option value="Ghana">Ghana</option>
+                                    <option value="Gibraltar">Gibraltar</option>
+                                    <option value="Great Britain (UK)">Great Britain (UK)</option>
+                                    <option value="Greece">Greece</option>
+                                    <option value="Greenland">Greenland</option>
+                                    <option value="Grenada">Grenada</option>
+                                    <option value="Guadeloupe (Fr.)">Guadeloupe (Fr.)</option>
+                                    <option value="Guam (US)">Guam (US)</option>
+                                    <option value="Guatemala">Guatemala</option>
+                                    <option value="Guinea">Guinea</option>
+                                    <option value="Guinea Bissau">Guinea Bissau</option>
+                                    <option value="Guyana">Guyana</option>
+                                    <option value="Guyana (Fr.)">Guyana (Fr.)</option>
+                                    <option value="Haiti">Haiti</option>
+                                    <option value="Heard &amp; McDonald Isl.">Heard &amp; McDonald
+                                        Isl.
+                                    </option>
+                                    <option value="Honduras">Honduras</option>
+                                    <option value="Hong Kong">Hong Kong</option>
+                                    <option value="Hungary">Hungary</option>
+                                    <option value="Iceland">Iceland</option>
+                                    <option value="India">India</option>
+                                    <option value="Indonesia" selected="selected">Indonesia</option>
+                                    <option value="Iran">Iran</option>
+                                    <option value="Iraq">Iraq</option>
+                                    <option value="Ireland">Ireland</option>
+                                    <option value="Israel">Israel</option>
+                                    <option value="Italy">Italy</option>
+                                    <option value="Ivory Coast">Ivory Coast</option>
+                                    <option value="Jamaica">Jamaica</option>
+                                    <option value="Japan">Japan</option>
+                                    <option value="Jordan">Jordan</option>
+                                    <option value="Kazachstan">Kazachstan</option>
+                                    <option value="Kenya">Kenya</option>
+                                    <option value="Kirgistan">Kirgistan</option>
+                                    <option value="Kiribati">Kiribati</option>
+                                    <option value="Korea (North)">Korea (North)</option>
+                                    <option value="Korea (South)">Korea (South)</option>
+                                    <option value="Kuwait">Kuwait</option>
+                                    <option value="Laos">Laos</option>
+                                    <option value="Latvia">Latvia</option>
+                                    <option value="Lebanon">Lebanon</option>
+                                    <option value="Lesotho">Lesotho</option>
+                                    <option value="Liberia">Liberia</option>
+                                    <option value="Libya">Libya</option>
+                                    <option value="Liechtenstein">Liechtenstein</option>
+                                    <option value="Lithuania">Lithuania</option>
+                                    <option value="Luxembourg">Luxembourg</option>
+                                    <option value="Macau">Macau</option>
+                                    <option value="Madagascar">Madagascar</option>
+                                    <option value="Malawi">Malawi</option>
+                                    <option value="Malaysia">Malaysia</option>
+                                    <option value="Maldives">Maldives</option>
+                                    <option value="Mali">Mali</option>
+                                    <option value="Malta">Malta</option>
+                                    <option value="Marshall Islands">Marshall Islands</option>
+                                    <option value="Martinique (Fr.)">Martinique (Fr.)</option>
+                                    <option value="Mauritania">Mauritania</option>
+                                    <option value="Mauritius">Mauritius</option>
+                                    <option value="Mexico">Mexico</option>
+                                    <option value="Micronesia">Micronesia</option>
+                                    <option value="Moldavia">Moldavia</option>
+                                    <option value="Monaco">Monaco</option>
+                                    <option value="Mongolia">Mongolia</option>
+                                    <option value="Montserrat">Montserrat</option>
+                                    <option value="Morocco">Morocco</option>
+                                    <option value="Mozambique">Mozambique</option>
+                                    <option value="Myanmar">Myanmar</option>
+                                    <option value="Namibia">Namibia</option>
+                                    <option value="Nauru">Nauru</option>
+                                    <option value="Nepal">Nepal</option>
+                                    <option value="Netherland Antilles">Netherland Antilles</option>
+                                    <option value="Netherlands">Netherlands</option>
+                                    <option value="Neutral Zone">Neutral Zone</option>
+                                    <option value="New Caledonia (Fr.)">New Caledonia (Fr.)</option>
+                                    <option value="New Zealand">New Zealand</option>
+                                    <option value="Nicaragua">Nicaragua</option>
+                                    <option value="Niger">Niger</option>
+                                    <option value="Nigeria">Nigeria</option>
+                                    <option value="Niue">Niue</option>
+                                    <option value="Norfolk Island">Norfolk Island</option>
+                                    <option value="Northern Mariana Isl.">Northern Mariana Isl.</option>
+                                    <option value="Norway">Norway</option>
+                                    <option value="Oman">Oman</option>
+                                    <option value="Pakistan">Pakistan</option>
+                                    <option value="Palau">Palau</option>
+                                    <option value="Panama">Panama</option>
+                                    <option value="Papua New">Papua New</option>
+                                    <option value="Paraguay">Paraguay</option>
+                                    <option value="Peru">Peru</option>
+                                    <option value="Philippines">Philippines</option>
+                                    <option value="Pitcairn">Pitcairn</option>
+                                    <option value="Poland">Poland</option>
+                                    <option value="Polynesia (Fr.)">Polynesia (Fr.)</option>
+                                    <option value="Portugal">Portugal</option>
+                                    <option value="Puerto Rico (US)">Puerto Rico (US)</option>
+                                    <option value="Qatar">Qatar</option>
+                                    <option value="Reunion (Fr.)">Reunion (Fr.)</option>
+                                    <option value="Romania">Romania</option>
+                                    <option value="Russian Federation">Russian Federation</option>
+                                    <option value="Rwanda">Rwanda</option>
+                                    <option value="Saint Lucia">Saint Lucia</option>
+                                    <option value="Samoa">Samoa</option>
+                                    <option value="San Marino">San Marino</option>
+                                    <option value="Saudi Arabia">Saudi Arabia</option>
+                                    <option value="Senegal">Senegal</option>
+                                    <option value="Seychelles">Seychelles</option>
+                                    <option value="Sierra Leone">Sierra Leone</option>
+                                    <option value="Singapore">Singapore</option>
+                                    <option value="Slovak Republic">Slovak Republic</option>
+                                    <option value="Slovenia">Slovenia</option>
+                                    <option value="Solomon Islands">Solomon Islands</option>
+                                    <option value="Somalia">Somalia</option>
+                                    <option value="South Africa">South Africa</option>
+                                    <option value="Soviet Union">Soviet Union</option>
+                                    <option value="Spain">Spain</option>
+                                    <option value="Sri Lanka">Sri Lanka</option>
+                                    <option value="St. Helena">St. Helena</option>
+                                    <option value="St. Pierre &amp; Miquelon">St. Pierre &amp; Miquelon</option>
+                                    <option value="St. Tome and Principe">St. Tome and Principe</option>
+                                    <option value="St.Kitts Nevis Anguilla">St.Kitts Nevis Anguilla</option>
+                                    <option value="St.Vincent &amp; Grenadines">St.Vincent &amp;
+                                        Grenadines
+                                    </option>
+                                    <option value="Sudan">Sudan</option>
+                                    <option value="Suriname">Suriname</option>
+                                    <option value="Svalbard &amp; Jan Mayen Is">Svalbard &amp; Jan
+                                        Mayen Is
+                                    </option>
+                                    <option value="Swaziland">Swaziland</option>
+                                    <option value="Sweden">Sweden</option>
+                                    <option value="Switzerland">Switzerland</option>
+                                    <option value="Syria">Syria</option>
+                                    <option value="Tadjikistan">Tadjikistan</option>
+                                    <option value="Taiwan">Taiwan</option>
+                                    <option value="Tanzania">Tanzania</option>
+                                    <option value="Thailand">Thailand</option>
+                                    <option value="Togo">Togo</option>
+                                    <option value="Tokelau">Tokelau</option>
+                                    <option value="Tonga">Tonga</option>
+                                    <option value="Trinidad &amp; Tobago">Trinidad &amp; Tobago</option>
+                                    <option value="Tunisia">Tunisia</option>
+                                    <option value="Turkey">Turkey</option>
+                                    <option value="Turkmenistan">Turkmenistan</option>
+                                    <option value="Turks &amp; Caicos Islands">Turks &amp; Caicos
+                                        Islands
+                                    </option>
+                                    <option value="Tuvalu">Tuvalu</option>
+                                    <option value="Uganda">Uganda</option>
+                                    <option value="Ukraine">Ukraine</option>
+                                    <option value="United Arab Emirates">United Arab Emirates</option>
+                                    <option value="United Kingdom">United Kingdom</option>
+                                    <option value="United States">United States</option>
+                                    <option value="Uruguay">Uruguay</option>
+                                    <option value="US Minor outlying Isl.">US Minor outlying Isl.</option>
+                                    <option value="Uzbekistan">Uzbekistan</option>
+                                    <option value="Vanuatu">Vanuatu</option>
+                                    <option value="Vatican City State">Vatican City State</option>
+                                    <option value="Venezuela">Venezuela</option>
+                                    <option value="Vietnam">Vietnam</option>
+                                    <option value="Virgin Islands (British)">Virgin Islands (British)</option>
+                                    <option value="Virgin Islands (US)">Virgin Islands (US)</option>
+                                    <option value="Wallis &amp; Futuna Islands">Wallis &amp; Futuna
+                                        Islands
+                                    </option>
+                                    <option value="Western Sahara">Western Sahara</option>
+                                    <option value="Yemen">Yemen</option>
+                                    <option value="Yugoslavia">Yugoslavia</option>
+                                    <option value="Zaire">Zaire</option>
+                                    <option value="Zambia">Zambia</option>
+                                    <option value="Zimbabwe">Zimbabwe</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 p0">
+                                <input type="text" name="phone" placeholder="Nomot Telepon. (Eg +60362154358)" required>
+                                <p class="sub"></p>
+                            </div>
+                            <div class="col-md-6 p0">
+                                <input type="text" name="mobile" placeholder="Nomor Handphone." required>
+                            </div>
+                            <div class="clearfix"><br>
+                                <br>
+                                <br>
+                                <br>
+                            </div>
+                            <br>
+
+                            <input type="email" name="email" placeholder="Alamat Email" required>
+                            <p class="sub">Harap gunakan alamat email yang rutin Anda gunakan.</p>
+                            <input type="text" name="spread" placeholder="Dari mana Anda mendengar tentang kami ?">
+                            <? if ($_SESSION["referral"] != "") { ?>
+                                <input type="text" name="ref_id" value="<?= $_SESSION["referral"] ?>" readonly>
+                            <? } else { ?>
+                                <input type="text" name="ref_id" placeholder="Rekomendasi">
+                            <? } ?>
+
+
+                        </div>
+                        <div class="feature bordered clearfix">
+                            <h5 class="bold-h6">PILIHAN PEMBAYARAN</h5>
+                            <div class="select-option p0">
+                                <i class="ti-angle-down"></i>
+                                <select name="payment" id="payment" required>
+                                    <option value="" selected disabled>Metode Pembayaran</option>
+                                    <option value="CreditCard">Credit Card</option>
+                                    <!-- <option value="paypal">PayPal</option> -->
+                                    <!-- <option value="OnlineBanking">Online Banking (CimbClicks/Maybank2u/etc...)</option> -->
+                                    <option value="offline">Cheque/Direct Deposit/Offline</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div style="display: none;" id="showpaytype">
+                              <h5 class="bold-h6">Credit Card Details</h5>
+                                 <input type="text" id="cc_name" maxlength="40" name="cc_name" placeholder="Name on Card">
+                                 <input type="text" id="cc_num" maxlength="18" name="cc_num" placeholder="Card Number">
+                                 <h6 class="bold-h6">Expiration Date on Card</h6>
+                                 <div class="col-sm-12 no-padding">
+                                    <div class="col-sm-6 no-padding">
+                                       <div class="select-option p0">
+                                          <i class="ti-angle-down"></i>
+                                          <select name="cc_exp_mm" id="cc_exp_mm">
+                                             <option selected disabled>MM</option>
+                                             <option value='01'>01</option>
+                                             <option value='02'>02</option>
+                                             <option value='03'>03</option>
+                                             <option value='04'>04</option>
+                                             <option value='05'>05</option>
+                                             <option value='06'>06</option>
+                                             <option value='07'>07</option>
+                                             <option value='08'>08</option>
+                                             <option value='09'>09</option>
+                                             <option value='10'>10</option>
+                                             <option value='11'>11</option>
+                                             <option value='12'>12</option>
+                                          </select>
+                                       </div>
+                                    </div>
+                                    <div class="col-sm-6 no-padding">
+                                       <div class="select-option p0">
+                                          <i class="ti-angle-down"></i>
+                                          <select  name="cc_exp_yy" id="cc_exp_yy">
+                                             <option selected disabled>YY</option>
+                                             <option value='17'>17</option>
+                                             <option value='18'>18</option>
+                                             <option value='19'>19</option>
+                                             <option value='20'>20</option>
+                                             <option value='21'>21</option>
+                                             <option value='22'>22</option>
+                                             <option value='23'>23</option>
+                                             <option value='24'>24</option>
+                                             <option value='25'>25</option>
+                                             <option value='26'>26</option>
+                                             <option value='27'>27</option>
+                                             <option value='28'>28</option>
+                                             <option value='29'>29</option>
+                                             <option value='30'>30</option>
+                                             <option value='31'>31</option>
+                                          </select>
+                                       </div>
+                                    </div>
+                                 </div>
+                                  <input type="text" name="bankname" placeholder="Name of Issuing Bank">
+                                  <input type="text" id="cc_cvv2" name="cc_cvv2" placeholder="Card ID/CVV2">
+                                  <div class="col-xs-12">
+                                    <div class="fa-border mb40 mb-xs-24">
+                                       <ul class="text-center mt16">
+                                          <li>Transaction will appear as</li>
+                                          <li><h4><b>Flexi e-Solutions Pty Ltd</b></h4></li>
+                                          <li>on your Credit Card Statement</li>
+                                       </ul>
+                                    </div>
+                                 </div>
+                              </div>
+                        <div class="feature bordered clearfix">
+                            <h5 class="bold-h6">VERIFIKASI</h5>
+                            <input type="text" name="pass1" id="pass1"
+                                   value="<?= substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyz", 5)), 0, 5); ?>"
+                                   readonly>
+                            <input type="text" name="pass2" id="pass2" onkeyup="checkPass(); return false;" required>
+                            <span id="confirmMessage" class="confirmMessage"></span>
+                            <div class="clearfix"></div>
+
+
+                            <!-- Squared FOUR -->
+                            <div class="squaredFour">
+                                <input type="checkbox" value="None" id="check" name="check" required/>
+                                <label for="agree">Dengan ini saya setuju dengan <a target="_blank" href="terms-and-conditions.php">Syarat & Ketentuan</a></label>
+                            </div>
+                        </div>
+                        <button type="submit" name="go_pay" id="go_pay" value="do_pay">LANJUTKAN PEMESANAN</button>
+
+                    </div>
+                </div>
+            </form>
+
+        </div>
+
+    </section>
+
+    <?php include("footer.html") ?>
+</div>
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/validator.js"></script>
+<script src="js/flexslider.min.js"></script>
+<script src="js/lightbox.min.js"></script>
+<script src="js/masonry.min.js"></script>
+<script src="js/twitterfetcher.min.js"></script>
+<script src="js/spectragram.min.js"></script>
+<script src="js/ytplayer.min.js"></script>
+<script src="js/countdown.min.js"></script>
+<script src="js/smooth-scroll.min.js"></script>
+<script src="js/parallax.js"></script>
+<script src="js/scripts.js"></script>
+
+<!--Google Analytics-->
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-32797576-1']);
+    _gaq.push(['_trackPageview']);
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+<!-- Facebook Pixel Code -->
+<script>
+    !function (f, b, e, v, n, t, s) {
+        if (f.fbq)return;
+        n = f.fbq = function () {
+            n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+        };
+        if (!f._fbq)f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s)
+    }(window,
+        document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1878564919039669', {
+        em: 'insert_email_variable,'
+    });
+    fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+               src="https://www.facebook.com/tr?id=1878564919039669&ev=PageView&noscript=1"
+    /></noscript>
+<!-- DO NOT MODIFY -->
+<!-- End Facebook Pixel Code -->
+
+<script>
+    $('#pass1').bind("cut copy paste", function (e) {
+        e.preventDefault();
+    });
+    function showhidecc(paytype, id) { 
+      if (paytype == "cc") {
+         if (document.getElementById) { 
+            obj = document.getElementById(id); 
+            if (obj.style.display == "none") { obj.style.display = ""; }
+            else { obj.style.display = "none"; } 
+         } 
+      }
+      else {
+         obj = document.getElementById(id); 
+         obj.style.display = "none"; 
+      }
+   }
+    function checkPass() {
+        //Store the password field objects into variables ...
+        var pass1 = document.getElementById('pass1');
+        var pass2 = document.getElementById('pass2');
+        //Store the Confimation Message Object ...
+        var message = document.getElementById('confirmMessage');
+        //Set the colors we will be using ...
+        var goodColor = "#f5f5f5";
+        var badColor = "#ff6666";
+        //Compare the values in the password field
+        //and the confirmation field
+        if (pass1.value == pass2.value) {
+            //The passwords match.
+            //Set the color to the good color and inform
+            //the user that they have entered the correct password
+            pass2.style.backgroundColor = goodColor;
+            message.style.color = goodColor;
+            message.innerHTML = ""
+            return true;
+        } else {
+            //The passwords do not match.
+            //Set the color to the bad color and
+            //notify the user.
+            pass2.style.backgroundColor = badColor;
+            message.style.color = badColor;
+            message.innerHTML = "Verification Does Not Match!"
+            return false;
+        }
+    }
+    $(function () {
+        $("#location").change(function () {
+            var inloc = $("#location").val();
+            var inplan = $("#plan").val();
+            var interm = $("#term").val();
+            var incoupon = $("#coupon").val();
+
+            if (inloc !== "undefined" && inplan !== "undefined" && interm !== "undefined" &&
+                inloc !== null && inplan !== null && interm !== null) {
+                rplan = 'plan=' + inplan + '&term=' + interm;
+                $('#fshowplan').html('<p><div align="center"><img src="img/hourglass.gif" /></div></p>');
+                $("#fshowplan").load("plansdetails.php?version=new&" + rplan);
+            }
+
+
+        });
+
+
+        $("#plan").change(function () {
+            var inloc = $("#location").val();
+            var inplan = $("#plan").val();
+            var interm = $("#term").val();
+            var incoupon = $("#coupon").val();
+            if (inloc !== "undefined" && inplan !== "undefined" && interm !== "undefined" &&
+                inloc !== null && inplan !== null && interm !== null) {
+
+                if (inplan == "VirtualOfficeGold" || inplan == "VirtualOfficePlatinum") {
+                    $("#term option[value='1']").remove();
+                    $("#term").prepend('<option value="1">Monthly</option>');
+                } else {
+                    $("#term option[value='1']").remove();
+                }
+
+                rplan = 'plan=' + inplan + '&term=' + interm
+                $('#fshowplan').html('<p><div align="center"><img src="img/hourglass.gif" /></div></p>');
+                $("#fshowplan").load("plansdetails.php?version=new&" + rplan);
+            }
+
+
+        });
+
+        $("#term").change(function () {
+            var inloc = $("#location").val();
+            var inplan = $("#plan").val();
+            var interm = $("#term").val();
+            var incoupon = $("#coupon").val();
+
+            if (inloc !== "undefined" && inplan !== "undefined" && interm !== "undefined" &&
+                inloc !== null && inplan !== null && interm !== null) {
+                if (interm == 1) {
+                    $("#singtermmesg").show();
+                } else {
+                    $("#singtermmesg").hide();
+                }
+
+                rplan = 'plan=' + inplan + '&term=' + interm
+                $('#fshowplan').html('<p><div align="center"><img src="img/hourglass.gif" /></div></p>');
+                $("#fshowplan").load("plansdetails.php?version=new&" + rplan);
+
+            }
+
+        });
+
+
+        $("#coupon").change(function () {
+            var inloc = $("#location").val();
+            var inplan = $("#plan").val();
+            var interm = $("#term").val();
+            var incoupon = $("#coupon").val();
+
+            if (inloc !== "undefined" && inplan !== "undefined" && interm !== "undefined" &&
+                inloc !== null && inplan !== null && interm !== null) {
+                if (interm == 1) {
+                    $("#singtermmesg").show();
+                } else {
+                    $("#singtermmesg").hide();
+                }
+
+                rplan = 'plan=' + inplan + '&term=' + interm
+                $('#fshowplan').html('<p><div align="center"><img src="img/hourglass.gif" /></div></p>');
+                $("#fshowplan").load("plansdetails.php?version=new&" + rplan);
+            }
+
+        });
+
+
+    });
+
+</script>
+
+</body>
+</html>
+				
+<?php
+   
+function enc($d)
+{
+   $d = htmlspecialchars(stripslashes(trim($d)));
+   return $d;
+}
+   
+if (isset($_POST["go_pay"])) {
+   foreach ($_POST as $key => $val){
+      $_POST[$key] = enc($val);
+   }
+
+   include "productinfo.php";
+   include "config.php";
+    // personal info
+    $firstname = $_POST["firstname"];
+    $lastname = $_POST["lastname"];
+    $address = $_POST["address"];
+    $companyname = $_POST["coname"];
+    $city = $_POST["city"];
+    $state = $_POST["state"];
+    $zip = $_POST["postcode"];
+    $country = $_POST["country"];
+    $phone = $_POST["phone"];
+    $email = $_POST["email"];
+    $paymtype = $_POST["payment"];
+    $coupon = trim($_POST["coupon"]);
+    $referral = $_POST["ref_id"];
+
+
+    $location = $_POST["location"];
+    $in_plan = $_POST["plan"];
+    $in_term = $_POST["term"];
+    $_SESSION["splan"] = $in_plan;
+    $_SESSION["sterm"] = $in_term;
+    $_SESSION["saddon"] = $in_addon;
+    
+    
+    $discount_amt = 0;
+
+    $mt_date = date("Y-m-d", time());
+    $mt_time = date("G:i:s", time());
+    
+    if($in_plan == "Silver"){
+       $fplan = array("6500000","13000000");
+    }elseif($in_plan == "Gold"){
+       $fplan = array("8910000","16830000");
+    }elseif($in_plan == "Platinum"){
+       $fplan = array("11616000","20064000");
+    }elseif($in_plan == "PlatinumPlus"){
+       $fplan = array("12750000","21900000");
+    }
+    
+    if($in_term == "12"){
+       $fterms = 0;
+    }elseif($in_term == "24"){
+       $fterms = 1;
+    }
+    
+    $raw_tot = $fplan[$fterms];
+    
+    $ff_tot = $raw_tot;
+
+
+    $card_name = $_POST["cc_name"];
+    $card_no = $_POST["cc_num"];
+    $card_exp_mm = $_POST["cc_exp_mm"];
+    $card_exp_yy = $_POST["cc_exp_yy"];
+    $card_cvv = $_POST["cc_cvv2"];
+    $card_bank = $_POST["bankname"];
+    $vip = $_SERVER['REMOTE_ADDR'];
+
+    $ref_id = "VOIDNO" . "-" . time();
+
+    $_SESSION["refid"] = $ref_id;
+
+    // Format currency
+    $curencytype = "IDR";
+    
+    // add vat 12%
+    $ff_tot2 = $ff_tot;
+    $vat_amt = $ff_tot2 * .1;
+    $vat_amt = ceil($vat_amt);   //1683000
+    $ff_tot = $ff_tot + $vat_amt;
+    $raw_total = $ff_tot;
+
+    $f_affid = $_SESSION["affid"];
+
+    $_SESSION["scurrency"] = "IDR";
+
+    $_SESSION["stotal"] = round($raw_total, 2);
+    $_SESSION["setup_fee"] = $setup_fee;
+    
+    $msg_in = "";
+
+    $msg_in = "Personnal Details" . "\r\n<br>";
+    $msg_in .= "---------------------------------------" . "\r\n<br>";
+    $msg_in .= "Name : " . $firstname . " " . $lastname . "\r\n<br>";
+    $msg_in .= "Company : " . $companyname . "\r\n<br>";
+    $msg_in .= "Address : " . $address . "\r\n<br>";
+    $msg_in .= "City : " . $city . "\r\n<br>";
+    $msg_in .= "State : " . $state . "\r\n<br>";
+    $msg_in .= "Country : " . $country . "\r\n<br>";
+    $msg_in .= "Zip : " . $zip . "\r\n<br>";
+    $msg_in .= "Phone : " . $phone . "\r\n<br>";
+    $msg_in .= "Email : " . $email . "\r\n<br>";
+    $msg_in .= "Comments : " . $_POST["comments"] . "\r\n<br>";
+    $msg_in .= "Affiliate ID : " . $f_affid . "\r\n<br>";
+    $msg_in .= "Client IP : " . $_SERVER['REMOTE_ADDR'] . "\r\n<br>";
+    if ($referral != "")
+        $msg_in .= "Referral ID : " . $referral . "\r\n<br>";
+
+
+    $msg_in .= "\r\n<br>" . "Payment Info" . "\r\n<br>";
+    $msg_in .= "---------------------------------------" . "\r\n<br>";
+    $msg_in .= "Payment Type : " . $_POST["payment"] . "\r\n<br>";
+    $msg_in .= "Location : " . $location . "\r\n<br>";
+    $msg_in .= "Plan : " . $in_plan . "\r\n<br>";
+    $msg_in .= "Term : " . $in_term . " month(s) \r\n<br>";
+    $msg_in .= "Addon (if any) : " . $addon_desc . "\r\n<br>";
+    $msg_in .= "Coupon Code : " . $coupon . "\r\n<br>";
+    $msg_in .= " Type : " . $curencytype . "\r\n<br>";
+   $msg_in .= "Native Currency Amount : " . $raw_total . "\r\n<br>";
+   
+   if ($_POST["payment"] == "paypal")
+   {
+      $curencytype = "USD";
+
+   }
+   else
+   {
+      $curencytype = "IDR";
+   }
+    
+    if ($_POST["payment"] == "paypal") {
+        /* $ear_percent = $row['percent'];
+        $ref_percent = $raw_total * $ear_percent;
+        $ref_percent = $ref_percent / 100;
+        $product = $in_plan . "," . $in_term;
+        $emailTo = TOEMAIL;
+        $ppcurency = $currencytype; */
+        
+        $raw_total = getProductRawTotalUSD($in_plan, $in_term, 0, $location);
+        $curencytype = "USD";
+        
+        echo $raw_total;
+        $subject_in = "voffice.co.id Paypal Payment Ref : " . $ref_id;
+
+
+        // no need to edit below
+
+        $emailMessage = $msg_in;
+
+        $fheaders = 'From: noreply@voffice.co.id' . "\r\n<br>" . "\r\n<br>" . 'Reply-To: noreply@voffice.co.id' . "\r\n<br>" . "X-Mailer: PHP/FFAX";
+
+        //mail($emailTo,$subject_in,$emailMessage,$fheaders);
+
+        $subject = $subject_in;
+        $mainbody = $msg_in;
+        //$mainbody = str_replace("\r\n", "\r\n<br>", $msg_in);
+        include('sendit.php');
+        if ($mail->Send()) {
+            //echo "Message sent!";
+            $toemail = '';
+            $subject = '';
+            $mainbody = '';
+        } else {
+            echo "Mailer Error: " . $mail->ErrorInfo;
+        }
+
+/* 
+        // email to client
+
+        $client_msg_in = "Hello " . $firstname . "," . "\r\n<br>";
+
+        $client_msg_in .= CLIENTPPMSG;
+
+        $client_msg_in .= EMAILFOOTER;
+
+        $client_emailToE = $email;
+
+        $client_subject_in = "voffice.co.id Ref : " . $ref_id . " - Payment via Paypal";
+
+
+        //$emailFromE = $email;
+
+        $client_fheaders = 'From: noreply@voffice.co.id' . "\r\n<br>" . "\r\n<br>" . 'Reply-To: noreply@voffice.co.id' . "\r\n<br>" . "X-Mailer: PHP/FFAX";
+
+        //mail($client_emailToE,$client_subject_in,$client_msg_in,$client_fheaders);
+
+        $toemail = $email;
+        $subject = $client_subject_in;
+        $mainbody = $client_msg_in;
+        //$mainbody = str_replace("\r\n", "\r\n<br>", $client_msg_in);
+        include('sendit.php');
+        if ($mail->Send()) {
+            //echo "Message sent!";
+            $toemail = '';
+            $subject = '';
+            $mainbody = '';
+        } else {
+            echo "Mailer Error: " . $mail->ErrorInfo;
+        }
+         */
+        // Insert into aff
+
+        /*if ($f_affid != "")
+
+        {
+
+              $insert_ref_sqlstmt = "INSERT INTO aff_refer_buy_log (client_id, order_id, visitor_ip, order_date, order_time, buyer_email, currency, raw_amount)
+
+                 VALUES
+
+              ('$f_affid', '$ref_id', '$vip', '$mt_date', '$mt_time', '$email', '$curencytype', '$raw_total')";
+
+              $in_ref_trxn_result = mysql_query($insert_ref_sqlstmt) or die (mysql_error("Error Inserting B Records."));
+
+        }*/
+
+
+        $ppamt = $raw_total;
+
+        $ppreturnurl = "http://voffice.co.id/vAmbassador/transaction.php?status=ppsuccess";
+
+        $ppreturncancel = "http://voffice.co.id/vAmbassador/transaction.php?status=ppfail";
+
+        $ppacct = "paypal@voffice.co.id";
+
+        $paypalcmd = "https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&currency_code=$curencytype&amount=$ppamt&item_number=$ref_id&return=$ppreturnurl&cancel_return=$ppreturncancel&item_name=vOffice Philippines Inc $invoices&business=$ppacct";
+
+        //echo "<script>window.location= \"" . $paypalcmd . "\";</script>";
+
+    }
+    elseif ($_POST["payment"] == "CreditCard")
+	{
+      /* if ($curencytype == "AUD") {
+         $pprice = $raw_total * 100;
+      }
+      else {
+         $dbmrates = mysql_connect (DBHOST, DBUSER, DBPASS) or die ('I cannot connect to the database because: ' . mysql_error());
+         mysql_select_db (DBNAME);
+
+         if ($curencytype == "USD") {
+            $exratesnow = USDEXRATESQLSTMT;
+         }
+         elseif ($curencytype == "GBP") {
+            $exratesnow = GBPEXRATESQLSTMT;		  
+         }
+         elseif ($curencytype == "EUR") {
+            $exratesnow = EUROEXRATESQLSTMT;
+         }
+         elseif ($curencytype == "NZD") {
+            $exratesnow = NZDEXRATESQLSTMT;
+         }
+         elseif ($curencytype == "SGD") {
+            $exratesnow = SGDEXRATESQLSTMT;
+         }
+         elseif ($curencytype == "ZAR") {
+            $exratesnow = ZAREXRATESQLSTMT;
+         }	  
+         elseif ($curencytype == "MYR") {
+            $exratesnow = MYREXRATESQLSTMT;
+         }
+         elseif ($curencytype == "IDR") {
+            $exratesnow = IDREXRATESQLSTMT;
+         }
+         $result = mysql_query($exratesnow) or die(mysql_error());
+         $row = mysql_fetch_row($result);
+         $frates = $row[2];
+
+         //echo $usrates;
+         mysql_close($dbmrates);
+				  
+				  
+         $ptotalpayable = $raw_total * $frates;
+		  
+         $adjustrate = EWAYADJUST;
+         $f_adjustrates = $ptotalpayable * $adjustrate;
+         $totalpayable = $ptotalpayable - $f_adjustrates;
+         //$totalpayable = $raw_total * $frates;
+         $totalpayable = ceil($totalpayable);
+
+         $pprice = $totalpayable * 100;
+      }
+      if ((strstr($pprice,"."))) {
+         $tprice=explode (".", $pprice);
+         $price = $tprice[0];
+      }
+      else {
+         $price=$pprice;
+      } */
+
+      $elink = EWAYFAIL;
+      $link = EWAYOK;
+      
+      //$isi = 10000;
+      //$amount = $isi.".00";
+      
+      $dokuprice = $raw_total.".00";
+      $TRANSIDMERCHANT = str_replace("-", "", $ref_id);
+      //echo "TRANSIDMERCHANT= ".$TRANSIDMERCHANT;
+      //echo "<br>";
+      //$dokuprice = "10.00";
+      $word = $dokuprice."804"."cZNF1c6yQy54".$TRANSIDMERCHANT;
+      /*echo "word combination : Price - MALLID - Sharedkey - TRANSIDMERCHANT";
+      echo "<br>";
+      echo "price : ".$dokuprice;
+      echo "<br>";
+      echo "MALLID : 804";
+      echo "<br>";
+      echo "Sharedkey : cZNF1c6yQy54";
+      echo "<br>";
+      echo "TRANSIDMERCHANT : ".$TRANSIDMERCHANT;
+      echo "<br>";
+      echo "word :".$word;
+      echo "<br>";*/
+      
+      //echo "word is ".$word;
+      //echo "<br>";
+      //die(); 
+      $shword = sha1($word);
+      //echo "word (SHA1):".$shword;
+      //echo "<br>";
+      //die();
+      $datetime = date('YmdHis');
+
+      //echo "sha1 for word is ".$shword;
+      //echo "<br>";
+      //die();
+      ?>
+      
+      <form action="https://pay.doku.com/Suite/Receive" id="MerchatPaymentPage" name="MerchatPaymentPage" method="post" hidden="hidden" >
+         <input name="BASKET" type="text" id="BASKET" value="<?=$in_plan.",".$dokuprice.",".$in_term.",".$dokuprice?>"/>
+         <input name="MALLID" type="text" id="MALLID" value="804" size="12" />
+         <input name="CHAINMERCHANT" type="text" id="CHAINMERCHANT" value="NA" size="12" />
+         <input name="CURRENCY" type="text" id="CURRENCY" value="360" size="3" maxlength="3" />
+         <input name="PURCHASECURRENCY" type="text" id="PURCHASECURRENCY" value="360" size="3" maxlength="3" />
+         <input name="AMOUNT" type="text" id="AMOUNT" value="<?php echo $dokuprice; ?>" size="12" />
+         <input name="PURCHASEAMOUNT" type="text" id="PURCHASEAMOUNT" value="<?php echo $dokuprice; ?>" size="12" />
+         <input name="TRANSIDMERCHANT" type="text" id="TRANSIDMERCHANT" value="<?=$TRANSIDMERCHANT?>" size="16" />
+         <input type="text" id="WORDS" name="WORDS" value="<?=$shword?>" size="60" />
+         <input name="REQUESTDATETIME" type="text" id="REQUESTDATETIME" size="14" value="<?=$datetime?>" maxlength="14" />
+         <input type="text" id="PAYMENTCHANNEL" name="PAYMENTCHANNEL" value="15"/>
+         <input name="NAME" type="text" id="NAME" value="<?=$firsname." ".$lastname?>" size="30" maxlength="50" />
+         <input name="EMAIL" type="text" id="EMAIL" value="<?=$email?>" size="12" /> 
+         <input type="text" id="SESSIONID" name="SESSIONID" value="<?=$_SESSION["refid"]?>"/>
+      </form> 
+         <?php 
+      //die();
+      ?>
+      <script type="text/javascript">
+         document.getElementById('MerchatPaymentPage').submit(); // SUBMIT FORM
+      </script>
+      <?php
+         $msg_in .= "Doku Payment Details"."<br>";
+         $msg_in .= "-----------------------------"."<br>";
+         //$msg_in .= "Card Name : ". $card_name ."<br>";
+         //$hproc_cc = substr($card_no, 0, 13);
+         //$tproc_cc = substr($card_no, -4);
+         //$msg_in .= "CC Number : ". $hproc_cc."xxx"."<br>";
+
+         //$msg_in .= "CC Number : ". $card_no."<br>";
+         //$msg_in .= "Exp MM : ". $card_exp_mm."<br>";
+         //$msg_in .= "Exp YY : ". $card_exp_yy."<br>";
+         //$msg_in .= "CVV : ".$card_cvv ."<br>";
+         $msg_in .= "Status :  Pending Confirmation<br>";
+         $msg_in .= "Transaction Ref Code : ". $ref_id."<br>";
+         $msg_in .= "Visitor IP : ". $vip ."<br>";
+
+         include('sendit.php');
+         $email_from = "noreply@voffice.co.id";
+         $email_from_name = "Customer Care";
+         $subject_in = "vOffice.co.id : CC Order Payment : Ref : ". $ref_id ;
+                     
+         $body             = $msg_in;
+         $body             = eregi_replace("[\]",'',$body);
+         $mail->Subject    = $subject_in;
+         $mail->SetFrom($email_from, $email_from_name);
+            
+         $mail->AddReplyTo($email_from, $email_from_name);
+         //$mail->MsgHTML($body);
+         
+         $mail->Body = $body;				
+         $AltBody = str_replace('<br>', "\n", $body);				
+         $mail->AltBody = $AltBody;
+         
+         $emailToE = TOEMAIL;
+         
+         $address = $emailToE;				
+         $mail->AddAddress($address);
+         $mail->AddAddress("javad@flexiesolutions.com");
+         $mail->AddAddress("sean@flexiesolutions.com");
+         $mail->AddBCC('albert.g@voffice.com.my');
+         $mail->AddBCC('kevin@cre8.id');
+         //$mail->AddAddress("reymarth.voffice@gmail.com");
+
+         for ($i=0; $i<count($ccemail); $i++)
+         {
+            $mail->AddCC($ccemail[$i]);
+
+         }
+
+         $mail->Send();
+         $mail->ClearAddresses();
+         $mail->ClearCCs();
+
+         // Email to Client - eway Success
+         $client_msg_in = "Hello ".$firstname.","."<br>";
+         $client_msg_in .= "<br>Thank you for puchasing from voffice.co.id please wait while we confirm your payment status. Your Order have have been submitted and is enqueue to be process by our Customer Care Member.<br><br>";
+         $client_msg_in .= EMAILFOOTER;
+         $client_emailToE = $email;
+         $client_subject_in = "vOffice.co.id : New Order using Credit Card Payment - Ref : ". $ref_id;
+
+         //$emailFromE = $email;
+         //$client_fheaders = 'From: noreply@voffice.co.id'. "<br>". 'BCC: albert.g@flexihostings.net,seantham@voffice.co.id'."<br>".'Reply-To: noreply@voffice.co.id'. "<br>" . "X-Mailer: PHP/FFAX";
+         //mail($client_emailToE,$client_subject_in,$client_msg_in,$client_fheaders);
+         $body             = $client_msg_in;
+         $body             = eregi_replace("[\]",'',$body);
+         $mail->Subject    = $client_subject_in;
+         $mail->SetFrom($email_from, $email_from_name);
+            
+         $mail->AddReplyTo($email_from, $email_from_name);
+         //$mail->MsgHTML($body);
+         
+         $mail->Body = $body;				
+         $AltBody = str_replace('<br>', "\n", $body);				
+         $mail->AltBody = $AltBody;
+         
+         $address = $client_emailToE;				
+         $mail->AddAddress($address);
+
+         $mail->Send();
+
+
+
+         // Insert into aff
+         if ($f_affid != "")
+         {
+            $insert_ref_sqlstmt = "INSERT INTO aff_refer_buy_log (client_id, order_id, visitor_ip, order_date, order_time, buyer_email, currency, raw_amount) 
+               VALUES
+            ('$f_affid', '$ref_id', '$vip', '$mt_date', '$mt_time', '$email', '$curencytype', '$raw_total')";
+            $in_ref_trxn_result = mysql_query($insert_ref_sqlstmt) or die (mysql_error("Error Inserting B Records."));
+         }
+
+         //Success page	
+            
+   }
+   else
+   {      
+         $offlink = "offline-payment.php";
+         //$emailToE = TOEMAIL;
+         $subject_in = "vOffice.co.id : Offline Payment Order : Ref : ". $ref_id;
+
+         //$emailFromE = $email;
+         //$fheaders = 'From: noreply@voffice.co.id'. "<br>". 'Cc: albert.g@flexihostings.net'."<br>".'Reply-To: noreply@voffice.co.id'. "<br>" . "X-Mailer: PHP/FFAX";
+         //mail($emailToE,$subject_in,$msg_in,$fheaders);
+         //mail("sean@flexiesolutions.com",$subject_in,$msg_in,$fheaders);
+         include('sendit.php');
+         $email_from = "noreply@voffice.co.id";
+         $email_from_name = "Customer Care";
+         //$subject_in = "voffice.co.id Paypal Payment Ref : ". $ref_id;
+         
+         $body             = $msg_in;
+         //$body             = preg_replace("[\]",'',$body);
+         $mail->Subject    = $subject_in;
+         $mail->SetFrom($email_from, $email_from_name);
+            
+         $mail->AddReplyTo($email_from, $email_from_name);
+         // $mail->MsgHTML($body);
+         
+         $mail->Body = $body;				
+         $AltBody = str_replace('<br>', "\n", $body);				
+         $mail->AltBody = $AltBody;
+         
+         //$emailToE = "javad@flexiesolutions.com";
+         $emailToE = TOEMAIL;
+         
+         $address = $emailToE;				
+         $mail->AddAddress($address);
+         //$mail->AddAddress("reymarth.voffice@gmail.com");
+
+         /* for ($i=0; $i<count($ccemail); $i++)
+         {
+            $mail->AddCC($ccemail[$i]);
+
+         } */
+
+         $mail->Send();
+         $mail->ClearAddresses();
+         $mail->ClearCCs();
+
+         
+         
+         $client_msg_in = "Hello ".$firstname.","."<br><br>";
+         $client_msg_in .= CLIENTOFFLINEMSG1."<br>";
+
+         $client_msg_in .= "Order Summary"."<br>";
+         $client_msg_in .= "--------------------------------------"."<br>";
+         $client_msg_in .= "Plan : ".$in_plan."<br>";
+         $client_msg_in .= "Term : ".$in_term." month(s) <br>";
+         $client_msg_in .= "Location : ".$location." <br>";
+         $client_msg_in .= "Total Payable Amount : ".$curencytype.$raw_total."<br><br>";
+
+         //$client_msg_in .= "Coupon Code : ". $_SESSION["couponcode"]."<br>";
+         //$client_msg_in .= "Coupon Description : ". $_SESSION["coupondisplay"]."<br>";
+         if ($location =="office8"){
+         $client_msg_in .= CLIENTOFFLINEMSG2."<br>";}
+         elseif ($location =="Menara Rajawali, Jakarta Selatan"){
+         $client_msg_in .= CLIENTOFFLINEMSG3."<br>";} 
+         elseif ($location =="The City Tower, Jakarta Pusat"){
+         $client_msg_in .= CLIENTOFFLINEMSG4."<br>";}
+         elseif ($location =="Kencana Tower, Jakarta Barat"){
+         $client_msg_in .= CLIENTOFFLINEMSG5."<br>";}
+         else{
+         $client_msg_in .= CLIENTOFFLINEMSG2."<br>";}
+         $client_msg_in .= EMAILFOOTER;
+         $client_emailToE = $email;
+         $client_subject_in = "vOffice.co.id : Offline Payment Order : Ref : ". $ref_id;
+
+         //$emailFromE = $email;
+         //$client_fheaders = 'From: noreply@voffice.co.id'. "<br>". 'BCC: albert.g@flexihostings.net,seantham@voffice.co.id'."<br>".'Reply-To: noreply@voffice.co.id'. "<br>" . "X-Mailer: PHP/RIAMY";
+         //mail($client_emailToE,$client_subject_in,$client_msg_in,$client_fheaders);
+         
+         $body             = $client_msg_in;
+         //$body             = preg_replace("[\]",'',$body);
+         $mail->Subject    = $client_subject_in;
+         $mail->SetFrom($email_from, $email_from_name);
+            
+         $mail->AddReplyTo($email_from, $email_from_name);
+         // $mail->MsgHTML($body);
+         
+         $mail->Body = $body;				
+         $AltBody = str_replace('<br>', "\n", $body);				
+         $mail->AltBody = $AltBody;
+         
+         $address = $client_emailToE;				
+         $mail->AddAddress($address);
+
+         $mail->Send();
+
+
+         // Insert into aff
+         if ($f_affid != "")
+         {
+            $insert_ref_sqlstmt = "INSERT INTO aff_refer_buy_log (client_id, order_id, visitor_ip, order_date, order_time, buyer_email, currency, raw_amount) 
+               VALUES
+            ('$f_affid', '$ref_id', '$vip', '$mt_date', '$mt_time', '$email', '$curencytype', '$raw_total')";
+            $in_ref_trxn_result = mysql_query($insert_ref_sqlstmt) or die (mysql_error("Error Inserting B Records."));
+         }
+         if ($discount_amt != 0)
+         {
+            updateCouponUsage($in_plan, $coupon);
+         }
+
+            echo "
+            <script>
+            window.location=\"".$offlink."\"
+            </script>
+            ";
+   }
+}
+?>

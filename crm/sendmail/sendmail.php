@@ -1,0 +1,24 @@
+<?
+require_once('class.phpmailer.php');
+$mail = new PHPMailer();				
+$mail->IsSMTP();					
+$mail->SMTPAuth = true; 
+$mail->Username = "qwerty"; 
+$mail->Password = "qGVp3NyHKx62g"; 
+//$mail->SMTPDebug = 2;
+$mail->Host     = "mailgun120.securesvr.net";
+$mail->Port       = "587";
+
+
+/*
+$mail->SetFrom('infi@evoicemail.net', 'New Order');
+$mail->Subject = ('New Message from eVoiceMail');
+$mail->MsgHTML('test');
+$mail->AddAddress('Javad@flexiesolutions.com', 'Javad');
+if($mail->Send()) {
+ 				 echo "Message sent!";
+				} else {
+  					echo "Mailer Error: " . $mail->ErrorInfo;
+					}
+*/
+?>

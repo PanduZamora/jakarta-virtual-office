@@ -1,0 +1,284 @@
+.wrapper-homepage h3 {
+    color: var(--primary-color);
+}
+
+.hero-section {
+    background-image: url("../img/slide2-home1.jpg"),
+        linear-gradient(#951942, #ffffff);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    padding-top: 60px;
+    height: auto;
+}
+
+.verified-image {
+    display: inline-block;
+    width: 20px;
+    height: auto;
+}
+
+.badge {
+    background-color: var(--custom-btn-bg-color);
+    font-family: var(--title-font-family);
+    border-radius: var(--border-radius-large);
+    color: var(--white-color);
+    padding-bottom: 5px;
+}
+
+.hero-section .review-google .custom-btn {
+    background: var(--custom-btn-bg-color);
+    border: 2px solid transparent;
+    border-radius: var(--border-radius-small);
+    color: var(--white-color);
+    font-family: var(--title-font-family);
+    font-size: var(--p-font-size);
+    font-weight: var(--font-weight-semibold);
+    line-height: normal;
+    transition: all 0.3s;
+    padding: 10px 20px;
+}
+
+.hero-section .review-google .custom-btn:hover {
+    background: var(--white-color);
+    color: var(--primary-color);
+}
+
+.hero-section .review-google {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.hero-section .review-google img {
+    width: 15% !important;
+}
+
+/* Responsive */
+@media (max-width: 320px) {
+    .hero-section h1 {
+        font-size: var(--p-font-size);
+    }
+
+    .hero-section {
+        background-image: url("../img/slide2-home1.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top;
+        padding-top: 60px;
+    }
+
+    .hero-section .review-google img {
+        width: 30% !important;
+    }
+}
+
+@media (min-width: 321px) and (max-width: 600px) {
+    .hero-section h1 {
+        font-size: var(--h4-font-size);
+    }
+
+    .hero-section {
+        background-image: url("../img/slide2-home1.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top;
+        padding-top: 60px;
+    }
+
+    .hero-section .review-google img {
+        width: 30% !important;
+    }
+}
+
+@media (min-width:601px) and (max-width:991px) {
+    .hero-section {
+        background-image: url("../img/slide2-home1.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top;
+        padding-top: 60px;
+    }
+
+
+    .hero-section .review-google img {
+        width: 20% !important;
+    }
+}
+
+.product-card {
+    position: relative;
+    display: block;
+    margin: auto;
+    max-width: 355px;
+    width: 100%;
+    border-radius: 25px;
+    padding: 20px 30px 30px 30px;
+    background: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    z-index: 3;
+    overflow: hidden;
+}
+
+.product-card .logo-cart {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.product-card .logo-cart img {
+    height: 40px;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.product-card .logo-cart .whatsapp {
+    height: 30px;
+    width: 30px;
+    object-fit: cover;
+}
+
+.product-card .logo-cart i {
+    font-size: 27px;
+    color: #707070;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.product-card .logo-cart i:hover {
+    color: var(--p-color);
+}
+
+.product-card .main-images {
+    position: relative;
+    height: 210px;
+}
+
+.product-card .main-images img {
+    -o-object-fit: cover;
+    object-fit: cover;
+    left: 12px;
+    top: -40px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    height: 185px;
+    width: -webkit-fill-available;
+    border-radius: 20px;
+}
+
+.product-card .main-images img.active {
+    opacity: 1;
+}
+
+.product-card .shoe-details .shoe_name {
+    font-size: 24px;
+    font-weight: 700;
+    color: #161616;
+}
+
+.product-card .shoe-details p {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--p-color);
+}
+
+.product-card .color-price .color-option {
+    display: flex;
+    align-items: center;
+}
+
+.color-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.color-price .color-option .color {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--p-color);
+    margin-right: 8px;
+}
+
+.color-price .price {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.color-price .price .price_num {
+    font-size: 25px;
+    font-weight: 600;
+    color: #707070;
+}
+
+.color-price .price .price_letter {
+    font-size: 10px;
+    font-weight: 600;
+    margin-top: -4px;
+    color: #707070;
+}
+
+.product-card .button {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    border-radius: 25px;
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+.product-card .button .button-layer {
+    position: absolute;
+    height: 100%;
+    width: 300%;
+    left: -100%;
+    background-image: linear-gradient(135deg, #782846, #951942, #782846, #951942);
+    transition: all 0.4s ease;
+    border-radius: 25px;
+}
+
+.product-card .button:hover .button-layer {
+    left: 0;
+}
+
+.product-card .button button {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: none;
+    outline: none;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.shoe-details h6 {
+    color: var(--dark-color);
+    font-weight: bold;
+}
+
+.shoe-details h6 span {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* About Us Section */
+.section-about {
+    padding: 50px 1rem 50px 1rem;
+}
+
+
+/* WHy Choice Us */
+.why-choice-us {
+    padding: 50px 1rem 50px 1rem;
+}

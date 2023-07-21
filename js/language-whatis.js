@@ -1,0 +1,81 @@
+var arrLang                    = new Array();
+arrLang['en']                  = new Array();
+arrLang['in']                  = new Array();
+
+arrLang['en']['headerone']   = 'WHAT IS VIRTUAL OFFICE?';
+arrLang['in']['headerone']   = 'APA ITU VIRTUAL OFFICE?';
+arrLang['en']['headertwo']   = 'A service that offer smart business owner or aspiring entrepreneurs flexible and expandable business facilities at the fraction of a conventional office.';
+arrLang['in']['headertwo']   = 'Layanan yang menawarkan fasilitas bisnis yang fleksibel dan fasilitas yang dapat ditambah sewaktu-waktu kepada entrepreneur yang dinamis dengan harga kantor konvensional.';
+arrLang['en']['headerthree']   = 'See More';
+arrLang['in']['headerthree']   = 'Lihat Selengkapnya';
+arrLang['en']['sectionone']   = 'Virtual Office gives you on-demand work space, meeting space, dedicated business telephone & fax number and various business assistance services such as secretarial services, book keeping / accounting service, tele-marketing service and even personal concierge service such as paying bills, depositing cheques, making reservation and more.';
+arrLang['in']['sectionone']   = 'Virtual Office memberi Anda ruang kerja on-demand, ruang meeting, nomor telepon bisnis & faks khusus dan berbagai layanan tambahan lainnya seperti layanan sekretaris, layanan pembukuan / akuntansi, layanan tele-marketing dan bahkan pelayan pribadi untuk membantu Anda membayar tagihan, deposit cek, melakukan reservasi restoran, dll.';
+arrLang['en']['sectiontwo1']   = 'How can virtual office helps you?';
+arrLang['in']['sectiontwo1']   = 'Bagaimana virtual office dapat membantu Anda?';
+arrLang['en']['sectiontwo2']   = 'IMPROVES BUSINESS IMAGE';
+arrLang['in']['sectiontwo2']   = 'MENINGKATKAN CITRA <BISNIS></BISNIS>';
+arrLang['en']['sectiontwo3']   = 'Instantly improves your business image. Project a remarkable impression everytime.';
+arrLang['in']['sectiontwo3']   = 'Secara cepat meningkatkan citra bisnis Anda. Selalu menunjukan kesan yang baik.';
+arrLang['en']['sectiontwo4']   = 'FLEXIBILITY';
+arrLang['in']['sectiontwo4']   = 'FLEKSIBILITAS';
+arrLang['en']['sectiontwo5']   = 'Gives you the flexibility to work from anywhere — work from home, abroad or another location.';
+arrLang['in']['sectiontwo5']   = 'Memberikan Anda fleksibilitas untuk bekerja dari mana saja - dari rumah, luar negeri atau lokasi lainnya.';
+arrLang['en']['sectiontwo6']   = 'SAVE MONEY';
+arrLang['in']['sectiontwo6']   = 'HEMAT BIAYA';
+arrLang['en']['sectiontwo7']   = 'Save you alot money. See how do conventional office and virtual office compare.';
+arrLang['in']['sectiontwo7']   = 'Menghemat uang Anda. Anda dapat melihat perbandingan antara kantor konvensional dan virtual office.';
+arrLang['en']['sectiontwo8']   = 'REDUCE STRESSE';
+arrLang['in']['sectiontwo8']   = 'MENGURANGI STRES';
+arrLang['en']['sectiontwo9']   = 'Reduce your Stress and frustration due to traffic jam and parking problems.';
+arrLang['in']['sectiontwo9']   = 'Mengurangi stres dan tekanan karena masalah lalu lintas dan parkir.';
+arrLang['en']['sectiontwo10']   = 'MORE TIME';
+arrLang['in']['sectiontwo10']   = 'LEBIH BANYAK WAKTU';
+arrLang['en']['sectiontwo11']   = 'Enable you to spend more time with your loved ones and lead a more balanced life.';
+arrLang['in']['sectiontwo11']   = 'Memungkinkan Anda untuk meluangkan banyak waktu untuk orang tercinta dan menyeimbangkan hdup Anda.';
+arrLang['en']['sectiontwo12']   = 'MOST PRODUCTIVE TIME';
+arrLang['in']['sectiontwo12']   = 'WAKTU YANG PALING PRODUKTIF';
+arrLang['en']['sectiontwo13']   = 'Allow you to work when you are most productive; be it 7am or 2am.';
+arrLang['in']['sectiontwo13']   = 'Memungkinkan Anda untuk bekerja saat Anda merasa paling produktif; di awal pagi hari atau pun di tengah malam.';
+arrLang['en']['sectiontwo14']   = 'MORE COMFORTABLE';
+arrLang['in']['sectiontwo14']   = 'LEBIH NYAMAN';
+arrLang['en']['sectiontwo15']   = 'Work in a more comfortable style & environment.';
+arrLang['in']['sectiontwo15']   = 'Anda dapat bekerja dengan gaya & lingkungan yang lebih nyaman.';
+arrLang['en']['sectionthree1']   = 'Work in a more comfortable style & environment.';
+arrLang['in']['sectionthree1']   = 'Portal aman agar klien kami dapat mengatur telepon, surat, layanan, tagihan dan juga pemesanan layanan secara Real Time.';
+arrLang['en']['sectionthree2']   = 'CALL CONTROL';
+arrLang['in']['sectionthree2']   = 'MENGATUR TELEPON MASUK';
+arrLang['en']['sectionthree3']   = 'Monitor all your caller details and messages, manage your phone handling instruction and contacts.';
+arrLang['in']['sectionthree3']   = 'Awasi semua rincian panggilan dan pesan Anda, atur instruksi penanganan telepon masuk dan kontak.';
+arrLang['en']['sectionthree4']   = 'MAIL MANAGEMENT.';
+arrLang['in']['sectionthree4']   = 'PENGATURAN SURAT';
+arrLang['en']['sectionthree5']   = 'Monitor and control collection of all your incoming mails and parcels.';
+arrLang['in']['sectionthree5']   = 'Atur dan awasi surat dan paket yang datang untuk Anda.';
+arrLang['en']['sectionthree6']   = 'MEETING ROOM/FACILITIES BOOKING';
+arrLang['in']['sectionthree6']   = 'RUANG MEETING/ MEMESAN LAYANAN';
+arrLang['en']['sectionthree7']   = 'Manage usage of facilities at all vOffice outlets World Wide.';
+arrLang['in']['sectionthree7']   = 'Mengatur penggunaan layanan atau fasilitas di center vOffice di seluruh dunia.';
+arrLang['en']['sectionthree8']   = 'BILLING MANAGEMENT.';
+arrLang['in']['sectionthree8']   = 'PENGATURAN TAGIHAN.';
+arrLang['en']['sectionthree9']   = 'Easy and clear billing management for all services.';
+arrLang['in']['sectionthree9']   = 'Pengaturan tagihan yang mudah dan jelas untuk semua layanan.';
+arrLang['en']['sectionthree10']   = '.. and many other features to support your day to day business operation.';
+arrLang['in']['sectionthree10']   = '...dan masih banyak fitur untuk mendukung operasional bisnis Anda setiap hari.';
+arrLang['en']['footerone1']   = 'View All vOffice Locations';
+arrLang['in']['footerone1']   = 'Lihat Seluruh Lokasi vOffice';
+arrLang['en']['footerone2']   = 'Company Incorporation';
+arrLang['in']['footerone2']   = 'Pembuatan PT, CV, & PMA';
+arrLang['en']['footerone3']   = 'Sign up for more Virtual Office Indonesia offers';
+arrLang['in']['footerone3']   = 'Daftar untuk Melihat lebih banyak Penawaran Virtual Office Indonesia';
+arrLang['en']['footerone4']   = 'Since 2003. Virtual Office Indonesia (vOffice) has served over 22,000 businesses and available in over 42 locations. Virtual Office Indonesia enable businesses to scale fast and operate leanly. For more information about virtual office Indonesia, please call us at +603 2788 3555 or email us at cs@voffice.com.my';
+arrLang['in']['footerone4']   = 'Sejak 2003, Virtual Office Indonesia (vOffice) telah melayani lebih dari 22.000 bisnis dan tersedia di lebih dari 42 lokasi. Virtual Office Indonesia memudahkan bisnis untuk berkembang pesat dan beroperasi dengan mudah. Untuk informasi lebih lanjut mengenai Virtual Office Indonesia, silakan hubungi kami di +6221 2922 2999 atau kirimkan email ke cs@voffice.co.id';
+
+
+$(document).ready(function(e) {
+        $('.translate').click(function(){
+            var lang = $(this).attr('id');
+
+            $('.lang').each(function(endex, element){
+                $(this).text(arrLang[lang][$(this).attr('key')]);
+            });
+    });
+});

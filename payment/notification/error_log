@@ -1,0 +1,370 @@
+[09-Jul-2021 01:45:43 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-vos.php(59): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[09-Jul-2021 01:49:59 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-vos.php(59): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[09-Jul-2021 01:54:28 America/Chicago] PHP Warning:  mysqli::query(): Empty query in /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-vos.php on line 131
+[09-Jul-2021 01:57:52 America/Chicago] PHP Warning:  mysqli::query(): Empty query in /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php on line 131
+[09-Jul-2021 01:59:01 America/Chicago] PHP Warning:  mysqli::query(): Empty query in /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-vos.php on line 131
+[09-Jul-2021 01:59:58 America/Chicago] PHP Warning:  mysqli::query(): Empty query in /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-vos.php on line 131
+[09-Jul-2021 02:01:33 America/Chicago] PHP Warning:  mysqli::query(): Empty query in /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-vos.php on line 131
+[09-Jul-2021 02:01:50 America/Chicago] PHP Warning:  mysqli::query(): Empty query in /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-vos.php on line 131
+[09-Jul-2021 04:30:49 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(113): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[09-Jul-2021 04:30:49 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(113): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[09-Jul-2021 04:30:49 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(113): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[09-Jul-2021 04:30:49 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(113): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[09-Jul-2021 04:30:49 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(113): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[09-Jul-2021 04:30:49 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(113): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[09-Jul-2021 04:30:49 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(113): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[09-Jul-2021 04:30:49 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(113): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[09-Jul-2021 04:30:49 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(113): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[09-Jul-2021 04:30:49 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(113): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[09-Jul-2021 04:30:49 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(113): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[09-Jul-2021 04:30:49 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(113): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[09-Jul-2021 04:30:49 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(113): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[09-Jul-2021 04:30:50 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(113): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[09-Jul-2021 04:30:50 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(113): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[09-Jul-2021 04:30:50 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(113): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[09-Jul-2021 04:30:50 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(113): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[09-Jul-2021 04:30:50 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(113): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[09-Jul-2021 04:30:50 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(113): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[09-Jul-2021 04:30:50 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(113): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[09-Jul-2021 04:30:50 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(113): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[09-Jul-2021 04:30:50 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(113): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[09-Jul-2021 04:30:50 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(113): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[09-Jul-2021 04:30:50 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(113): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[09-Jul-2021 04:30:50 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(113): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[09-Jul-2021 04:30:51 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(113): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[09-Jul-2021 04:30:51 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(113): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[09-Jul-2021 04:30:51 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(113): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[09-Jul-2021 04:30:51 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(113): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[09-Jul-2021 04:30:51 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(113): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[09-Jul-2021 04:30:51 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(113): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[09-Jul-2021 04:30:51 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(113): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[10-Jul-2021 04:28:56 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(113): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[10-Jul-2021 04:28:56 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(113): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[10-Jul-2021 04:28:56 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(113): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[10-Jul-2021 04:28:56 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(113): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[10-Jul-2021 04:28:56 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(113): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[10-Jul-2021 04:28:56 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(113): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[10-Jul-2021 04:28:56 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(113): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[10-Jul-2021 04:28:56 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(113): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[10-Jul-2021 04:28:56 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(113): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[10-Jul-2021 04:29:47 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-vos.php(113): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[10-Jul-2021 04:29:48 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-vos.php(113): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[10-Jul-2021 04:29:54 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-vos.php(113): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[12-Jul-2021 05:50:06 America/Chicago] PHP Warning:  mysqli::query(): Empty query in /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php on line 131
+[12-Jul-2021 05:52:14 America/Chicago] PHP Warning:  mysqli::query(): Empty query in /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php on line 131
+[13-Jul-2021 03:20:52 America/Chicago] PHP Warning:  mysqli::query(): Empty query in /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php on line 131
+[13-Jul-2021 04:40:42 America/Chicago] PHP Warning:  mysqli::query(): Empty query in /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php on line 131
+[13-Jul-2021 04:40:42 America/Chicago] PHP Warning:  mysqli::query(): Empty query in /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php on line 131
+[14-Jul-2021 04:38:26 America/Chicago] PHP Warning:  mysqli::query(): Empty query in /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php on line 131
+[15-Jul-2021 22:52:45 America/Chicago] PHP Warning:  mysqli::query(): Empty query in /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php on line 131
+[16-Jul-2021 01:32:46 America/Chicago] PHP Warning:  mysqli::query(): Empty query in /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php on line 131
+[17-Jul-2021 04:30:38 America/Chicago] PHP Warning:  mysqli::query(): Empty query in /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php on line 131
+[17-Jul-2021 04:30:38 America/Chicago] PHP Warning:  mysqli::query(): Empty query in /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php on line 131
+[22-Jul-2021 18:03:39 America/Chicago] PHP Warning:  mysqli::query(): Empty query in /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php on line 131
+[22-Jul-2021 18:44:21 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(59): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[22-Jul-2021 18:49:09 America/Chicago] PHP Warning:  mysqli::query(): Empty query in /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-vos.php on line 131
+[22-Jul-2021 19:39:49 America/Chicago] PHP Warning:  mysqli::query(): Empty query in /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php on line 131
+[24-Jul-2021 04:12:58 America/Chicago] PHP Fatal error:  Uncaught exception 'PHPMailer\PHPMailer\Exception' with message 'Invalid address:  (Reply-To): ' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php:1092
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php(1059): PHPMailer\PHPMailer\PHPMailer->addOrEnqueueAnAddress('Reply-To', NULL, ' ')
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(112): PHPMailer\PHPMailer\PHPMailer->addReplyTo(NULL, ' ')
+#2 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/notification/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1092
+[24-Jul-2021 04:12:58 America/Chicago] PHP Warning:  mysqli::query(): Empty query in /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php on line 131
+[24-Jul-2021 04:12:58 America/Chicago] PHP Warning:  mysqli::query(): Empty query in /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php on line 131
+[24-Jul-2021 04:13:04 America/Chicago] PHP Warning:  mysqli::query(): Empty query in /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-vos.php on line 131
+[25-Jul-2021 21:39:33 America/Chicago] PHP Warning:  mysqli::query(): Empty query in /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-vos.php on line 131
+[25-Jul-2021 23:00:19 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Midtrans Error (404): Transaction doesn't exist.' in /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/ApiRequestor.php:111
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/ApiRequestor.php(22): Midtrans\ApiRequestor::remoteCall('https://api.san...', 'SB-Mid-server-N...', false, false)
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/Transaction.php(24): Midtrans\ApiRequestor::get('https://api.san...', 'SB-Mid-server-N...', false)
+#2 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/Notification.php(26): Midtrans\Transaction::status('d88603a9-9c8d-4...')
+#3 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-vos.php(6): Midtrans\Notification->__construct()
+#4 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/ApiRequestor.php on line 111
+[25-Jul-2021 23:01:11 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Midtrans Error (404): Transaction doesn't exist.' in /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/ApiRequestor.php:111
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/ApiRequestor.php(22): Midtrans\ApiRequestor::remoteCall('https://api.san...', 'SB-Mid-server-N...', false, false)
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/Transaction.php(24): Midtrans\ApiRequestor::get('https://api.san...', 'SB-Mid-server-N...', false)
+#2 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/Notification.php(26): Midtrans\Transaction::status('d88603a9-9c8d-4...')
+#3 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-vos.php(6): Midtrans\Notification->__construct()
+#4 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/ApiRequestor.php on line 111
+[25-Jul-2021 23:16:28 America/Chicago] PHP Warning:  mysqli::query(): Empty query in /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php on line 133
+[25-Jul-2021 23:28:23 America/Chicago] PHP Warning:  mysqli::query(): Empty query in /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php on line 134
+[25-Jul-2021 23:55:05 America/Chicago] PHP Warning:  mysqli::query(): Empty query in /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php on line 134
+[25-Jul-2021 23:56:02 America/Chicago] PHP Warning:  mysqli::query(): Empty query in /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php on line 134
+[26-Jul-2021 00:37:00 America/Chicago] PHP Warning:  mysqli::query(): Empty query in /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php on line 134
+[26-Jul-2021 00:38:30 America/Chicago] PHP Warning:  mysqli::query(): Empty query in /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php on line 134
+[27-Jul-2021 04:11:45 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Midtrans Error (404): Transaction doesn't exist.' in /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/ApiRequestor.php:111
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/ApiRequestor.php(22): Midtrans\ApiRequestor::remoteCall('https://api.mid...', 'Mid-server-qq_o...', false, false)
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/Transaction.php(24): Midtrans\ApiRequestor::get('https://api.mid...', 'Mid-server-qq_o...', false)
+#2 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/Notification.php(26): Midtrans\Transaction::status('6f33e5f4-f9b4-4...')
+#3 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-vos.php(6): Midtrans\Notification->__construct()
+#4 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/ApiRequestor.php on line 111
+[27-Jul-2021 04:14:37 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Midtrans Error (404): Transaction doesn't exist.' in /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/ApiRequestor.php:111
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/ApiRequestor.php(22): Midtrans\ApiRequestor::remoteCall('https://api.mid...', 'Mid-server-6af_...', false, false)
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/Transaction.php(24): Midtrans\ApiRequestor::get('https://api.mid...', 'Mid-server-6af_...', false)
+#2 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/Notification.php(26): Midtrans\Transaction::status('29ef1a34-033e-4...')
+#3 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(6): Midtrans\Notification->__construct()
+#4 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/ApiRequestor.php on line 111
+[27-Jul-2021 04:14:38 America/Chicago] PHP Fatal error:  Uncaught exception 'Exception' with message 'Midtrans Error (404): Transaction doesn't exist.' in /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/ApiRequestor.php:111
+Stack trace:
+#0 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/ApiRequestor.php(22): Midtrans\ApiRequestor::remoteCall('https://api.mid...', 'Mid-server-6af_...', false, false)
+#1 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/Transaction.php(24): Midtrans\ApiRequestor::get('https://api.mid...', 'Mid-server-6af_...', false)
+#2 /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/Notification.php(26): Midtrans\Transaction::status('a46c4f17-e978-4...')
+#3 /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php(6): Midtrans\Notification->__construct()
+#4 {main}
+  thrown in /home/voffid/public_html/jakarta-virtual-office/payment/vendor/midtrans/midtrans-php/Midtrans/ApiRequestor.php on line 111
+[02-Oct-2021 15:01:50 America/Chicago] PHP Fatal error:  Class 'PHPMailer\PHPMailer\PHPMailer' not found in /home/voffid/public_html/jakarta-virtual-office/payment/notification/config-phpmailer.php on line 9
+[03-Oct-2021 08:09:25 America/Chicago] PHP Fatal error:  Class 'PHPMailer\PHPMailer\PHPMailer' not found in /home/voffid/public_html/jakarta-virtual-office/payment/notification/config-phpmailer.php on line 9
+[04-Oct-2021 21:40:11 America/Chicago] PHP Fatal error:  Class 'PHPMailer\PHPMailer\PHPMailer' not found in /home/voffid/public_html/jakarta-virtual-office/payment/notification/config-phpmailer.php on line 9
+[04-Oct-2021 21:41:35 America/Chicago] PHP Fatal error:  Call to a member function query() on null in /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-injection.php on line 127
+[04-Oct-2021 21:41:59 America/Chicago] PHP Fatal error:  Call to a member function query() on null in /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-injection.php on line 127
+[07-Oct-2021 23:20:23 America/Chicago] PHP Fatal error:  Class 'PHPMailer\PHPMailer\PHPMailer' not found in /home/voffid/public_html/jakarta-virtual-office/payment/notification/config-phpmailer.php on line 9
+[07-Oct-2021 23:22:03 America/Chicago] PHP Fatal error:  Class 'PHPMailer\PHPMailer\SMTP' not found in /home/voffid/public_html/jakarta-virtual-office/payment/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1923
+[07-Oct-2021 23:22:04 America/Chicago] PHP Fatal error:  Class 'PHPMailer\PHPMailer\SMTP' not found in /home/voffid/public_html/jakarta-virtual-office/payment/vendor/phpmailer/phpmailer/src/PHPMailer.php on line 1923
+[07-Oct-2021 23:22:32 America/Chicago] PHP Parse error:  syntax error, unexpected '"' in /home/voffid/public_html/jakarta-virtual-office/payment/notification/config-phpmailer.php on line 7
+[19-Dec-2021 21:06:52 America/Chicago] PHP Warning:  mysqli::query(): Empty query in /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php on line 134
+[20-Dec-2021 21:06:53 America/Chicago] PHP Warning:  mysqli::query(): Empty query in /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php on line 134
+[07-Jan-2022 21:18:31 America/Chicago] PHP Warning:  mysqli::query(): Empty query in /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php on line 134
+[08-Jan-2022 21:18:32 America/Chicago] PHP Warning:  mysqli::query(): Empty query in /home/voffid/public_html/jakarta-virtual-office/payment/notification/notification-voffice.php on line 134

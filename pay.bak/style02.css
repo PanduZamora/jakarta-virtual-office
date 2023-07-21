@@ -1,0 +1,157 @@
+body {padding:0; margin:0; color:#5e5e5e; background-color:#00adef;  background-image: url(images/topbg.gif); background-repeat:repeat-x;}
+body, td {font-family: Arial, Tahoma,Georgia, Helvetica, sans-serif; font-size:13px; line-height:20px;}
+br{ padding: 5px;}
+	
+.infolist li {
+list-style-type: disk;
+list-style-image:  url(images/dot.gif);
+padding-bottom: 3px;
+margin-left:-10px;}
+
+.list li {
+list-style-type: disk;
+list-style-image:  url(images/none.gif);
+padding-bottom: 3px;
+margin-left:-25px;}
+
+strong {font-weight: bold;}
+
+.info {padding: 20px; font: 11px Arial;}
+.L01 {border-top: 1px dotted #c0c0c0; padding-top: 5px;}
+.L02 {border-bottom: 1px dotted #c0c0c0; padding: 5px; font-weight: bold;}
+.fnote {color: #2fcde5;}
+.fn {font-size: 11px; line-height:14px;}
+.t1 {
+	font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
+	font-size: 25px;
+	Line-height: 20px;
+	color: #fff;
+}
+.t01 {
+	font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #fff;
+}
+.t02 {
+	font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #2fcde5;
+}
+.t03 {
+	font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #db3366;
+}
+.tstep01 {border-bottom: 3px solid #0dcfeb; font-size: 10px;color: #0dcfeb; padding: 2px;}
+.tstep02 {border-bottom: 3px solid #cccccc; font-size: 10px;color: #cccccc; padding: 2px;}
+
+.fr {color: #db3366; font-size: 12px; font-weight: bold;}
+.fw {color: #ffffff; font-size: 12px; font-weight: bold;}
+.fb {color: #0dcfeb; font-size: 12px; font-weight: bold;}
+.fg {color: #749405; font-size: 12px; font-weight: bold;}
+.fy {color: #ff8106; font-size: 12px; font-weight: bold;}
+.bf {color: #000000;}
+
+.f12r {color: #cf2257; font-size: 14px; font-weight: bold; }
+.f12b {color: #0dcfeb; font-size: 14px; font-weight: bold; font-family: Tahoma, Arial, Helvetica, sans-serif;}
+.f12g {color: #749405; font-size: 14px; font-weight: bold; }
+.f12y {color: #ff8106; font-size: 14px; font-weight: bold; }
+.f12k {color: #5e5e5e; font-size: 12px; font-weight: bold; }
+.black {color: #000000; padding-top: 10px; border-top: 1px dashed #cccccc;}
+
+.b12 {border: 1px solid #fffff; background-color: #ffffff; padding: 50px 50px 20px 50px;}
+.b01 {border: 1px solid #00adef;  padding: 20px;}
+.b01 a{color:#00adef; text-decoration: none;}
+.b01 a:hover{color:#00adef; border-bottom: 2px solid #00adef;}
+.divider {border-top: 1px dotted #c0c0c0; border-bottom: 1px dotted #c0c0c0; padding: 10px 5px;}
+
+.form
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	border: #0dcfeb solid 1px; 
+	padding: 1px;
+}
+.fbut {
+	border: 1px solid #b2d235;
+	font-size: 11px;
+	font-family:Tahoma, Arial;
+	background-color: transparent;
+	color: #b2d235;
+	font-weight: bold;
+	text-decoration: none;  
+	padding: 3px;
+}
+.fbut a {
+	border: 1px solid #F2F2F2;
+	background-color: #00adef;
+	color: #fff;
+	font-weight: bold;
+	text-decoration: none;  
+	padding: 3px;
+}
+.fbut a:hover {
+	border: 1px solid #cbe32d;
+	background-color: #00adef;
+	color: #cbe32d;
+	font-weight: bold;
+	text-decoration: none;  
+	padding: 3px;
+}
+.clearthis {
+	clear: both;
+	float: none;
+	font-size: 1px;
+	color: #282c2f;
+}
+
+.diffpointer{
+list-style-image:    url(arrow.png);
+}
+
+/* ---------------------------------------- LINKS -----------------------------------------*/
+
+p a, .navigation a, li a, .terco a, #enfase a, .camera a, .produto a, .even a, .odd a, .evenmee a, .oddme a, commentsblock a, cite a, cite a:visited
+{
+	color: #2fcde5;
+	text-decoration: none;
+	border-bottom: 1px #2fcde5 dotted;
+	background-color:transparent;
+	padding: 1px 2px;
+}
+
+#latest img a, #latest img a:link, #latest img a:visited {border-bottom:0px;}
+
+p a:hover, small a:hover, #tools a:hover, cite a:hover, .navigation a:hover, li a:hover, .terco a:hover, .camera a:hover, .produto a:hover, .even a:hover, .odd a:hover, .evenmee a:hover, .oddme a:hover
+{
+	background-color:#2fcde5;
+	color:#fff;
+}
+
+/* -------------------------------------- FOOTER ---------------------------------------*/
+
+.footer {padding:10px;font-size: 10px; color:#ffffff; line-height: 16px; background-color:#00adef;font-family: Tahoma, Arial}
+.footer a {color: #cbe32d; text-decoration: none;}
+.footer a:hover, #estrela p:hover, #estrela2 p:hover {color:#cbe32d; border-bottom: 1px #cbe32d dotted;}
+
+/* --------------------------------------- leftbar ---------------------------------------*/
+#leftbar {background-color: transparent; padding:8px;}
+
+#leftbar .h1{padding: 3px; width: 200px; font-weight: bold; font-size:13px; color: #2fcde5; border-bottom: solid 1px #4d4d4d; font-family: Tahoma, Arial;}
+
+#leftbar .menulink a{
+display: block;
+padding: 3px;
+width: 200px;
+text-align: left;
+text-decoration: none;
+color: #ffffff;
+border-bottom: solid 1px #00adef;
+font-size:12px;
+}
+
+#leftbar .menulink a:hover {
+background-color:#00adef;
+color: #fff;
+}
