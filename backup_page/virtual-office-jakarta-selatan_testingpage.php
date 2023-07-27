@@ -574,135 +574,22 @@ Zonasi Perkantoran ✓ Alamat Bisnis Bergengsi ✓ Bisa PKP ✓ Dapat Dedicated 
         </div>
       </div>
 
+      <!-- SERTIFIKAT ISO -->
       <div class="row mb20">
-        <div class="col-sm-3 col-xs-6 text-center hidden-xs">
+        <div class="col-sm-4 col-xs-12 text-center">
           <img src="img/vector/webp/voffice_stamps-18.webp" width="50%" class="mb10">
           <h5 class="bold"> Sertifikat ISO 9001 </h5>
         </div>
 
-        <div class="col-sm-3 col-xs-6 text-center hidden-xs">
+        <div class="col-sm-4 col-xs-12 text-center">
           <img src="img/vector/webp/voffice_stamps-15.webp" width="50%" class="mb10">
           <h5 class="bold"> Jaminan Kepuasan Pelanggan </h5>
         </div>
-        <div class="col-sm-3 col-xs-6 text-center hidden-xs">
+        <div class="col-sm-4 col-xs-12 text-center">
           <img src="img/vector/webp/voffice_stamps-16.webp" width="50%" class="mb10">
           <h5 class="bold"> #1 Virtual Office di Indonesia </h5>
         </div>
-        <div class="col-sm-3 col-xs-6 text-center hidden-xs">
-          <img src="img/vector/webp/voffice_stamps-17.webp" width="50%" class="mb10">
-          <h5 class="bold"> Bagian dari Perjakbi </h5>
-        </div>
-
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="col-sm-3 col-xs-6 text-center visible-xs">
-              <img src="img/vector/webp/voffice_stamps-18.webp" width="50%" class="mb10">
-              <h5 class="bold"> Sertifikat ISO 9001 </h5>
-            </div>
-            <div class="col-sm-3 col-xs-6 text-center visible-xs">
-              <img src="img/vector/webp/voffice_stamps-15.webp" width="50%" class="mb10">
-              <h5 class="bold"> Jaminan Kepuasan Pelanggan </h5>
-            </div>
-            <div class="col-xs-6 text-center visible-xs">
-              <img src="img/vector/webp/voffice_stamps-16.webp" width="50%" class="mb10">
-              <h5 class="bold"> #1 Virtual Office di Indonesia </h5>
-            </div>
-            <div class="col-xs-6 text-center visible-xs">
-              <img src="img/vector/webp/voffice_stamps-17.webp" width="50%" class="mb10">
-              <h5 class="bold"> Bagian dari Perjakbi </h5>
-            </div>
-          </div>
-        </div>
       </div>
-
-      <hr class="center-custom mb40">
-
-      <div class="row mb0">
-        <div class="col-sm-12 text-center mb32">
-          <h3 class="mb0 bold"> vOffice merupakan Provider Virtual Office No.1 di Indonesia </h3>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-sm-6 col-12 text-center">
-          <div class="embed-responsive embed-responsive-16by9 mb16">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/qvSlAhjHr-Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-        </div>
-        <div class="col-sm-6 col-12 text-center">
-          <img src="img/vector/webp/voffice_competence-02.webp">
-        </div>
-      </div>
-
-      <hr class="center-custom mb40">
-
-      <div class="row mb32">
-        <div class="col-sm-12 text-center mb32">
-          <h3 class="mb0 bold">
-            Rekor MURI Kantor Virtual dengan Lokasi Terbanyak
-          </h3>
-        </div>
-        <div class="col-sm-6 mb-xs-32">
-          <img class="img-fluid float-right mt-3" src="img/vector/webp/voffice_pkp.webp" alt="virtual office voffice bisa PKP">
-        </div>
-        <div class="col-sm-6 mb-xs-32">
-          <img class="img-fluid img_muri mt-3" src="img/vector/webp/rekor_muri.webp" alt="Rekor Muri">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-12 mb40">
-          <h3 class="cardflexible-title mb10 text-center">Suatu kebanggaan untuk kami melihat bisnis anda tumbuh &
-            berkembang</h3>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="image-slider slider-arrow-controls controls-inside">
-            <ul class="slides">
-              <li>
-                <img class="mb8" src="img/vector/webp/voffice-sandiaga-uno-jakarta_2.webp">
-              </li>
-              <li>
-                <img class="mb8" src="img/vector/webp/event9.webp">
-              </li>
-              <li>
-                <img class="mb8" src="img/vector/webp/event2.webp">
-              </li>
-              <li>
-                <img class="mb8" src="img/vector/webp/event6.webp">
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-sm-6">
-          <div class="row">
-            <div class="col-md-3 col-xs-3 mb0">
-              <p class="mt-xs-24"><img src="img/vector/webp/pemprov-dki.webp"></p>
-            </div>
-            <div class="col-md-9 col-xs-9 mt20">
-              <h5 class="number mb10">
-                <span class="bold">
-                  Sejak 2016, Penggunaan Virtual Office telah disahkan oleh Gubernur DKI Jakarta
-                </span>
-              </h5>
-              <p class="uppercase number"> <strong>( Surat Edaran PTSP NO. 06/SE/2016 )</strong> </p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-3 col-xs-3 mb0">
-              <p class="mt-xs-24"><img src="img/iso-voffice.png"></p>
-            </div>
-            <div class="col-md-9 col-xs-9 mt20">
-              <p class="bold mb0"> Certificate of Registration</p>
-              <p class="bold mb0"> ISO 9001:2008 | Certificate Number : QM 0647</p>
-              <p class="bold mb0"> This is to certify that the Quality Management System of : vOffice</p>
-              <p class="bold"> Provision of Serviced Offices and Virtual Office</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
   </section>
 

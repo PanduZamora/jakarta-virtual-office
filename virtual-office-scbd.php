@@ -164,6 +164,20 @@
         font-weight: 600;
       }
     }
+
+    .place-self-center {
+      display: flex;
+      align-content: center;
+      align-items: center;
+    }
+
+    @media (max-width:600px) {
+      .place-self-center {
+        display: block !important;
+        align-content: center;
+        align-items: center;
+      }
+    }
   </style>
 </head>
 
@@ -171,9 +185,9 @@
 
   <?php include "header-new.html" ?>
 
-  <section class="section1" id="section1">
+  <section class="section1 service-section " id="section1" style="background-image: url('img/new/bg-jakarta.jpg'); background-position: fixed;">
     <div class="container">
-      <div class="row">
+      <div class="row place-self-center">
         <div class="col-md-5">
           <div class="desc">
             <h1 class="title em">
@@ -182,19 +196,19 @@
             </h1>
             <div class="gallery-scbd hide-pc">
               <div>
-                <img src="assets/img/scbd/jpg/1.jpg" alt="" class="img-fluid">
+                <img src="assets/img/scbd/new/scbd-1.jpg" class="img-fluid">
               </div>
               <div>
-                <img src="assets/img/scbd/jpg/2.jpg" alt="" class="img-fluid">
+                <img src="assets/img/scbd/new/scbd-3.jpg" class="img-fluid">
               </div>
               <div>
-                <img src="assets/img/scbd/jpg/3.jpg" alt="" class="img-fluid">
+                <img src="assets/img/scbd/new/scbd-4.jpg" class="img-fluid">
               </div>
               <div>
-                <img src="assets/img/scbd/jpg/4.jpg" alt="" class="img-fluid">
+                <img src="assets/img/scbd/new/office8.jpg" class="img-fluid">
               </div>
               <div>
-                <img src="assets/img/scbd/jpg/5.jpg" alt="" class="img-fluid">
+                <img src="assets/img/scbd/new/treasury.jpg" class="img-fluid">
               </div>
             </div>
             <p>
@@ -224,19 +238,19 @@
         <div class="col-md-7">
           <div class="gallery-scbd hide-mobile">
             <div>
-              <img src="assets/img/scbd/jpg/1.jpg" alt="" class="img-fluid">
+              <img src="assets/img/scbd/new/scbd-1.jpg" alt="" class="img-fluid">
             </div>
             <div>
-              <img src="assets/img/scbd/jpg/2.jpg" alt="" class="img-fluid">
+              <img src="assets/img/scbd/new/scbd-3.jpg" alt="" class="img-fluid">
             </div>
             <div>
-              <img src="assets/img/scbd/jpg/3.jpg" alt="" class="img-fluid">
+              <img src="assets/img/scbd/new/scbd-4.jpg" alt="" class="img-fluid">
             </div>
             <div>
-              <img src="assets/img/scbd/jpg/4.jpg" alt="" class="img-fluid">
+              <img src="assets/img/scbd/new/office8.jpg" class="img-fluid">
             </div>
             <div>
-              <img src="assets/img/scbd/jpg/5.jpg" alt="" class="img-fluid">
+              <img src="assets/img/scbd/new/treasury.jpg" class="img-fluid">
             </div>
           </div>
         </div>
@@ -245,9 +259,9 @@
   </section>
 
   <!-- Location -->
-  <section class="service-section " id="section2" style="background-image: url('img/new/bg-jakarta.jpg'); background-position: fixed;">
+  <section class="service-section pt0" id="section2" style="background-image: url('img/new/bg-jakarta.jpg'); background-position: fixed;">
     <div class="container">
-      <div class="row">
+      <div class="row ">
         <div class="col-sm-12 text-center mb-0">
           <h2 class="mb16"> Lokasi <b> Kami </b></h2>
           <h4 class="mt-1">Semua center vOffice dimiliki & dikelola sendiri</h4>
@@ -350,7 +364,7 @@
               </div>
             </div>
             <div class="grid__item">
-              <div class="card"><img class="card__img" src="assets/img/scbd/slider/mail-handle.jpg" alt="Snowy Mountains">
+              <div class="card"><img class="card__img" src="assets/img/scbd/slider/mail-handling.jpg" alt="Snowy Mountains">
                 <div class="card__content">
                   <h3 class="card__header">Layanan Mail Handling</h3>
                 </div>
@@ -515,7 +529,7 @@
         <span class="p_relative d_block fs_16 lh_20 fw_medium mb_6">vOffice merupakan Provider Virtual Office No.1 di Indonesia</span>
       </div>
       <div class="row clearfix">
-        <div class="col-md-3">
+        <div class="col-md-4">
           <div class="inner-box" style="padding: 10px;">
             <div class="icon-box p_relative d_iblock fs_65 lh_65 orange-color mb_15 z_1 tran_5">
               <img src="assets/img/why-voffice/voffice_stamps-18.webp" alt="" class="img-fluid w-80">
@@ -525,7 +539,7 @@
             </p>
           </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
           <div class="inner-box" style="padding: 10px;">
             <div class="icon-box p_relative d_iblock fs_65 lh_65 orange-color mb_15 z_1 tran_5">
               <img src="assets/img/why-voffice/voffice_stamps-15.webp" alt="" class="img-fluid w-80">
@@ -535,7 +549,7 @@
             </p>
           </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
           <div class="inner-box" style="padding: 10px;">
             <div class="icon-box p_relative d_iblock fs_65 lh_65 orange-color mb_15 z_1 tran_5">
               <img src="assets/img/why-voffice/voffice_stamps-16.webp" alt="" class="img-fluid w-80">
@@ -545,7 +559,7 @@
             </p>
           </div>
         </div>
-        <div class="col-md-3">
+        <!-- <div class="col-md-3">
           <div class="inner-box" style="padding: 10px;">
             <div class="icon-box p_relative d_iblock fs_65 lh_65 orange-color mb_15 z_1 tran_5">
               <img src="assets/img/why-voffice/voffice_stamps-17.webp" alt="" class="img-fluid w-80">
@@ -554,7 +568,7 @@
               Bagian dari Perjakbi
             </p>
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="row mt-5">
         <div class="col-md-12">
@@ -578,13 +592,15 @@
         </div>
       </div>
       <div class="row mt-5">
-        <div class="col-md-6">
-          <h3 class="d_block mb_6 bold text-left lead-why">
+        <div class="col-md-12">
+          <h3 class="d_block mb_6 bold text-center lead-why">
             Rekor MURI Kantor Virtual dengan Lokasi Terbanyak
           </h3>
-          <p class="text-left">
+          <p class="text-center">
             Suatu kebanggaan untuk kami melihat bisnis anda tumbuh & berkembang
           </p>
+        </div>
+        <div class="col-md-6">
           <div class="amenity">
             <div class="big-icon center">
               <img src="assets/img/why-voffice/pemprov-dki.webp" alt="" class="img-fluid">
@@ -610,11 +626,8 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="image-block">
-            <img src="assets/img/why-voffice/vOffice_Covering_Jakarta.jpg" alt="" class="img-fluid mt-5">
-            <img src="assets/img/why-voffice/rekor_muri.webp" alt="" class="img-fluid mt-5">
-          </div>
+        <div class="col-md-6 place-self-center">
+          <img src="assets/img/image-blog-muri.png" alt="" class="img-fluid">
         </div>
       </div>
     </div>

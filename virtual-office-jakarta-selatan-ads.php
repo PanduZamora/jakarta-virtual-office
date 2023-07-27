@@ -208,7 +208,7 @@
                 Office 8
               </h3>
               <p class="mb5">Office 8 Level 18A,</p>
-              <p class="mb5">Level 18A,  Jl. Senopati No. 8B, Kel. Senayan, Kec. Kebayoran Baru, </p>
+              <p class="mb5">Level 18A, Jl. Senopati No. 8B, Kel. Senayan, Kec. Kebayoran Baru, </p>
               <p class="mb20">Jakarta Selatan, 12190</p>
               <ul class="social-list">
                 <li>
@@ -1289,44 +1289,20 @@
         </div>
       </div>
 
+      <!-- SERTIFIKAT ISO -->
       <div class="row mb20">
-        <div class="col-sm-3 col-xs-6 text-center hidden-xs">
+        <div class="col-sm-4 col-xs-12 text-center">
           <img src="img/vector/webp/voffice_stamps-18.webp" width="50%" class="mb10">
           <h5 class="bold"> Sertifikat ISO 9001 </h5>
         </div>
 
-        <div class="col-sm-3 col-xs-6 text-center hidden-xs">
+        <div class="col-sm-4 col-xs-12 text-center">
           <img src="img/vector/webp/voffice_stamps-15.webp" width="50%" class="mb10">
           <h5 class="bold"> Jaminan Kepuasan Pelanggan </h5>
         </div>
-        <div class="col-sm-3 col-xs-6 text-center hidden-xs">
+        <div class="col-sm-4 col-xs-12 text-center">
           <img src="img/vector/webp/voffice_stamps-16.webp" width="50%" class="mb10">
           <h5 class="bold"> #1 Virtual Office di Indonesia </h5>
-        </div>
-        <div class="col-sm-3 col-xs-6 text-center hidden-xs">
-          <img src="img/vector/webp/voffice_stamps-17.webp" width="50%" class="mb10">
-          <h5 class="bold"> Bagian dari Perjakbi </h5>
-        </div>
-
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="col-sm-3 col-xs-6 text-center visible-xs">
-              <img src="img/vector/webp/voffice_stamps-18.webp" width="50%" class="mb10">
-              <h5 class="bold"> Sertifikat ISO 9001 </h5>
-            </div>
-            <div class="col-sm-3 col-xs-6 text-center visible-xs">
-              <img src="img/vector/webp/voffice_stamps-15.webp" width="50%" class="mb10">
-              <h5 class="bold"> Jaminan Kepuasan Pelanggan </h5>
-            </div>
-            <div class="col-xs-6 text-center visible-xs">
-              <img src="img/vector/webp/voffice_stamps-16.webp" width="50%" class="mb10">
-              <h5 class="bold"> #1 Virtual Office di Indonesia </h5>
-            </div>
-            <div class="col-xs-6 text-center visible-xs">
-              <img src="img/vector/webp/voffice_stamps-17.webp" width="50%" class="mb10">
-              <h5 class="bold"> Bagian dari Perjakbi </h5>
-            </div>
-          </div>
         </div>
       </div>
 

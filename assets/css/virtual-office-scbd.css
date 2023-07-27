@@ -56,7 +56,7 @@
 }
 
 img.img-fluid.slick-image {
-    width: 95% !important;
+    /* width: 95% !important; */
     display: block;
     margin: auto;
 }
@@ -376,7 +376,7 @@ img.img-fluid.slick-image {
     background: #fff;
     padding: 20px;
     border-radius: 10px;
-    width: 95% !important;
+    /* width: 95% !important; */
 }
 
 .w-80 {

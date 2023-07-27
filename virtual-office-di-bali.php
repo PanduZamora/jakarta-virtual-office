@@ -325,42 +325,20 @@
                         <h2 class="bg-abuabu mb10 cardflexible-title"> Siapa itu <span class="color-black bold"> vOffice? </span></h2>
                     </div>
                 </div>
+                <!-- SERTIFIKAT ISO -->
                 <div class="row mb20">
-                    <div class="col-sm-3 col-xs-6 text-center hidden-xs">
-                        <img src="img/new/voffice_stamps-18.png" width="50%" class="mb10">
-                        <h5 class="bold">Our Services Excellent</h5>
+                    <div class="col-sm-4 col-xs-12 text-center">
+                        <img src="img/vector/webp/voffice_stamps-18.webp" width="50%" class="mb10">
+                        <h5 class="bold"> Sertifikat ISO 9001 </h5>
                     </div>
-                    <div class="col-sm-3 col-xs-6 text-center hidden-xs">
-                        <img src="img/new/voffice_stamps-15.png" width="50%" class="mb10">
-                        <h5 class="bold"> The Best Price for your Business </h5>
+
+                    <div class="col-sm-4 col-xs-12 text-center">
+                        <img src="img/vector/webp/voffice_stamps-15.webp" width="50%" class="mb10">
+                        <h5 class="bold"> Jaminan Kepuasan Pelanggan </h5>
                     </div>
-                    <div class="col-sm-3 col-xs-6 text-center hidden-xs">
-                        <img src="img/new/voffice_stamps-16.png" width="50%" class="mb10">
-                        <h5 class="bold"> We Are the Best Virtual Office</h5>
-                    </div>
-                    <div class="col-sm-3 col-xs-6 text-center hidden-xs">
-                        <img src="img/new/voffice_stamps-17.png" width="50%" class="mb10">
-                        <h5 class="bold"> Part of Perjakbi</h5>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="col-sm-3 col-xs-6 text-center visible-xs">
-                                <img src="img/new/voffice_stamps-18.png" width="50%" class="mb10">
-                                <h5 class="bold">Our Services Excellent</h5>
-                            </div>
-                            <div class="col-sm-3 col-xs-6 text-center visible-xs">
-                                <img src="img/new/voffice_stamps-15.png" width="50%" class="mb10">
-                                <h5 class="bold"> The Best Price for your Business </h5>
-                            </div>
-                            <div class="col-xs-6 text-center visible-xs">
-                                <img src="img/new/voffice_stamps-16.png" width="50%" class="mb10">
-                                <h5 class="bold"> We Are the Best Virtual Office</h5>
-                            </div>
-                            <div class="col-xs-6 text-center visible-xs">
-                                <img src="img/new/voffice_stamps-17.png" width="50%" class="mb10">
-                                <h5 class="bold"> Part of Perjakbi</h5>
-                            </div>
-                        </div>
+                    <div class="col-sm-4 col-xs-12 text-center">
+                        <img src="img/vector/webp/voffice_stamps-16.webp" width="50%" class="mb10">
+                        <h5 class="bold"> #1 Virtual Office di Indonesia </h5>
                     </div>
                 </div>
                 <hr class="center-custom mb40">

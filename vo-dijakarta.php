@@ -769,22 +769,20 @@
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12 col-sm-12 text-column place-self-center">
-                        <div class="row">
-                            <div class="col-md-6 col-6 pb-1 pt-1">
-                                <img src="virtual-office-di-jakarta/assets/images/icon/iso-9001.png" alt="" class="img-fluid image-middle image-iso">
-                                <h6 class="text-center">Sertifikat ISO 9001</h6>
+                        <!-- SERTIFIKAT ISO -->
+                        <div class="row mb20">
+                            <div class="col-sm-4 col-xs-12 text-center">
+                                <img src="img/vector/webp/voffice_stamps-18.webp" width="50%" class="mb10">
+                                <h5 class="bold"> Sertifikat ISO 9001 </h5>
                             </div>
-                            <div class="col-md-6 col-6 pb-1 pt-1">
-                                <img src="virtual-office-di-jakarta/assets/images/icon/virtual-office.png" alt="" class="img-fluid image-middle image-iso">
-                                <h6 class="text-center">Jaminan Kepuasan Pelanggan</h6>
+
+                            <div class="col-sm-4 col-xs-12 text-center">
+                                <img src="img/vector/webp/voffice_stamps-15.webp" width="50%" class="mb10">
+                                <h5 class="bold"> Jaminan Kepuasan Pelanggan </h5>
                             </div>
-                            <div class="col-md-6 col-6 pb-1 pt-1">
-                                <img src="virtual-office-di-jakarta/assets/images/icon/client-satisfaction.png" alt="" class="img-fluid image-middle image-iso">
-                                <h6 class="text-center">#1 Virtual Office di Indonesia</h6>
-                            </div>
-                            <div class="col-md-6 col-6 pb-1 pt-1">
-                                <img src="virtual-office-di-jakarta/assets/images/icon/perjakbi.png" alt="" class="img-fluid image-middle image-iso">
-                                <h6 class="text-center">Bagian dari Perjakbi</h6>
+                            <div class="col-sm-4 col-xs-12 text-center">
+                                <img src="img/vector/webp/voffice_stamps-16.webp" width="50%" class="mb10">
+                                <h5 class="bold"> #1 Virtual Office di Indonesia </h5>
                             </div>
                         </div>
                     </div>

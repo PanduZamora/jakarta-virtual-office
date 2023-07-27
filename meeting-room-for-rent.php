@@ -34,6 +34,10 @@
             background-color: #c9c9c9 !important;
             cursor: not-allowed;
         }
+
+        .w-30 {
+            width: 30%;
+        }
     </style>
 </head>
 
@@ -54,7 +58,7 @@
                             <div class="col-md-12 mt88-lg mt-xs-30 pt-xs-64 ">
                                 <h1 class="bold"> Meeting Room </h1>
                             </div>
-                            <!-- <a class="btn btn-filled" target="_blank" href="https://booking.voffice.co.id/"> Booking Now <i class="fa fa-arrow-right" aria-hidden="true"></i> </a> -->
+                            <a class="btn btn-filled w-30" target="_blank" href="https://booking.voffice.co.id/"> Booking Now <i class="fa fa-arrow-right" aria-hidden="true"></i> </a>
                             <p>&nbsp;</p>
                         </div>
                     </div>
@@ -108,7 +112,7 @@
                             necessary presentation stuff, free internet connection, and complimentary refreshment. It will
                             give you the convenience you need to make your meeting run smoothly and with success.
                         </h5>
-                        <!-- <a class="btn btn-filled" target="_blank" href="https://booking.voffice.co.id/"> Booking Now<i class="fa fa-arrow-right" aria-hidden="true"></i> </a> -->
+                        <a class="btn btn-filled w-30" target="_blank" href="https://booking.voffice.co.id/"> Booking Now <i class="fa fa-arrow-right" aria-hidden="true"></i> </a>
                         <p>&nbsp;</p>
                     </div>
                     <div class="col-sm-3 mb20 mt30">

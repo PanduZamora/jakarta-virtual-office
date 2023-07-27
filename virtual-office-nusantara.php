@@ -245,7 +245,7 @@
               </div>
             </div>
             <div class="grid__item">
-              <div class="card"><img class="card__img" src="assets/img/scbd/slider/mail-handle.jpg" alt="Snowy Mountains">
+              <div class="card"><img class="card__img" src="assets/img/scbd/slider/mail-handling.jpg" alt="Snowy Mountains">
                 <div class="card__content">
                   <h3 class="card__header">Layanan Mail Handling</h3>
                 </div>
@@ -514,7 +514,7 @@
         <span class="p_relative d_block fs_16 lh_20 fw_medium mb_6">vOffice merupakan Provider Virtual Office No.1 di Indonesia</span>
       </div>
       <div class="row clearfix">
-        <div class="col-md-3">
+        <div class="col-md-4">
           <div class="inner-box" style="padding: 10px;">
             <div class="icon-box p_relative d_iblock fs_65 lh_65 orange-color mb_15 z_1 tran_5">
               <img src="assets/img/why-voffice/voffice_stamps-18.webp" alt="" class="img-fluid w-80">
@@ -524,7 +524,7 @@
             </p>
           </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
           <div class="inner-box" style="padding: 10px;">
             <div class="icon-box p_relative d_iblock fs_65 lh_65 orange-color mb_15 z_1 tran_5">
               <img src="assets/img/why-voffice/voffice_stamps-15.webp" alt="" class="img-fluid w-80">
@@ -534,7 +534,7 @@
             </p>
           </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
           <div class="inner-box" style="padding: 10px;">
             <div class="icon-box p_relative d_iblock fs_65 lh_65 orange-color mb_15 z_1 tran_5">
               <img src="assets/img/why-voffice/voffice_stamps-16.webp" alt="" class="img-fluid w-80">
@@ -544,25 +544,17 @@
             </p>
           </div>
         </div>
-        <div class="col-md-3">
-          <div class="inner-box" style="padding: 10px;">
-            <div class="icon-box p_relative d_iblock fs_65 lh_65 orange-color mb_15 z_1 tran_5">
-              <img src="assets/img/why-voffice/voffice_stamps-17.webp" alt="" class="img-fluid w-80">
-            </div>
-            <p class="d_block fs_20 lh_26 fw_bold tran_5 pt_20">
-              Bagian dari Perjakbi
-            </p>
-          </div>
-        </div>
       </div>
       <div class="row mt-5">
-        <div class="col-md-6">
-          <h3 class="d_block mb_6 bold text-left lead-why">
+        <div class="col-md-12">
+          <h3 class="d_block mb_6 bold text-center lead-why">
             Rekor MURI Kantor Virtual dengan Lokasi Terbanyak
           </h3>
-          <p class="text-left">
+          <p class="text-center">
             Suatu kebanggaan untuk kami melihat bisnis anda tumbuh & berkembang
           </p>
+        </div>
+        <div class="col-md-6">
           <div class="amenity">
             <div class="big-icon center">
               <img src="assets/img/why-voffice/pemprov-dki.webp" alt="" class="img-fluid">
@@ -589,10 +581,7 @@
           </div>
         </div>
         <div class="col-md-6">
-          <div class="image-block">
-            <img src="assets/img/why-voffice/vOffice_Covering_Jakarta.jpg" alt="" class="img-fluid mt-5">
-            <img src="assets/img/why-voffice/rekor_muri.webp" alt="" class="img-fluid mt-5">
-          </div>
+          <img src="assets/img/image-blog-muri.png" alt="" class="img-fluid">
         </div>
       </div>
       <div class="row mt-5">

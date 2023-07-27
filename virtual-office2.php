@@ -516,9 +516,7 @@
                                 This is to certify that the Quality Management System of : vOffice
                                 Provision of Serviced Offices and Virtual Office</p>
                         </li>
-                        <li><p class="article mb0">vOffice merupakan bagian dari Perjakbi (Persatuan Jasa Kantor Bersama
-                                Indonesia)</p>
-                        </li>
+                       
                         <li><p class="article mb0">vOffice dapat membantu mengurus persiapan akta, SKDP, NPWP, SIUP,
                                 TDP, BNRI
                                 & dokumen penting lainnya</p>
