@@ -377,11 +377,20 @@
                             </div>
                         </div>
                         <div class="col-md-4 text-left mb30 bali city-content">
-                            <img class="lazy" src="img/img-placeholder.png" data-src="images/lokasi-gedung-voffice/bali/kembali/6-min-square.jpg" data-srcset="images/lokasi-gedung-voffice/bali/kembali/6-min-square.jpg, images/lokasi-gedung-voffice/bali/kembali/6-min-square.jpg" />
+                            <img class="lazy" src="img/img-placeholder.png" data-src="images/lokasi-gedung-voffice/bali/kembali/thumb.jpg" data-srcset="images/lokasi-gedung-voffice/bali/kembali/thumb.jpg, images/lokasi-gedung-voffice/bali/kembali/thumb.jpg" />
                             <div class="city-wrapper">
                                 <p class="h4"> KE{M}BALI Innovation Hub</p>
                                 <p class="fw-500"> Jl. Sunset Road No.28, Seminyak, Kuta, Kabupaten Badung, Bali</p>
                                 <a href="kembali-innovation-hub.php" class="link">See More</a>
+                                <a href="" class="btn btn-filled" data-toggle="modal" data-target="#enquire" onclick="changeLocation(this);" id="KIH">Enquire Now</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 text-left mb30 bali city-content">
+                            <img class="lazy" src="img/img-placeholder.png" data-src="images/lokasi-gedung-voffice/bali/canggu.jpg" data-srcset="images/lokasi-gedung-voffice/bali/canggu.jpg, images/lokasi-gedung-voffice/bali/canggu.jpg" />
+                            <div class="city-wrapper">
+                                <p class="h4">vOffice Canggu</p>
+                                <p class="fw-500"> Promenade Shop S12, Jalan Kayu Tulang No 82, Canggu, Kuta Utara Badung, Canggu, Bali 80363</p>
+                                <a href="office-jimbaran.php" class="link">See More</a>
                                 <a href="" class="btn btn-filled" data-toggle="modal" data-target="#enquire" onclick="changeLocation(this);" id="KIH">Enquire Now</a>
                             </div>
                         </div>
@@ -985,11 +994,24 @@
                                     <h4 class="bold mb16">&nbsp;</h4>
                                     <div class="feature feature-3 mb-xs-24">
                                         <div class="left">
-                                            <img class="lazy" src="img/img-placeholder-square.png" data-src="images/lokasi-gedung-voffice/bali/kembali/kembali-square.jpg" data-srcset="images/lokasi-gedung-voffice/bali/kembali/kembali-square.jpg, images/lokasi-gedung-voffice/bali/kembali/kembali-square.jpg " />
+                                            <img class="lazy" src="img/img-placeholder-square.png" data-src="images/lokasi-gedung-voffice/bali/kembali/kembali-square.jpg" data-srcset="images/lokasi-gedung-voffice/bali/kembali/kembali-square.jpg, images/lokasi-gedung-voffice/bali/kembali/kembali-square.jpg" />
                                         </div>
                                         <div class="right">
                                             <h6 class="bold-h6 mb0">KE{M}BALI Innovation Hub</h6>
                                             <p class="mb0">Jl. Sunset Road No.28, Seminyak, Kuta, Kabupaten Badung </p>
+                                            <p class="mb0">Bali</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 p-0 pr-sm-2 pl-sm-2">
+                                    <h4 class="bold mb16">&nbsp;</h4>
+                                    <div class="feature feature-3 mb-xs-24">
+                                        <div class="left">
+                                            <img class="lazy" src="img/img-placeholder-square.png" data-src="images/lokasi-gedung-voffice/bali/canggu-thumb.jpg" data-srcset="images/lokasi-gedung-voffice/bali/canggu-thumb.jpg, images/lokasi-gedung-voffice/bali/canggu-thumb.jpg" />
+                                        </div>
+                                        <div class="right">
+                                            <h6 class="bold-h6 mb0">vOffice Canggu</h6>
+                                            <p class="mb0">Promenade Shop S12, Jalan Kayu Tulang No 82, Canggu, Kuta Utara Badung, Canggu, Bali 80363</p>
                                             <p class="mb0">Bali</p>
                                         </div>
                                     </div>

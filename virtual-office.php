@@ -511,7 +511,7 @@
                     <div class="col-md-6">
                         <div class="image-tile hover-tile text-center mb20">
                             <a data-toggle="modal" data-target="#enquire" href="#">
-                                <img class="background-image" src="images/promo/juli/july_fair.png">
+                                <img class="background-image" src="images/promo/agustus/promo-agustus.png">
                             </a>
                             <div class="row">
                                 <div class="col-sm-12" style="padding-right: 2px;">
@@ -523,14 +523,13 @@
 
                     <div class="col-md-6">
                         <h3 class="text-left mb-0 bold">
-                            JULY FAIR
+                            PROMO MERDEKA!
                         </h3>
                         <h4>
-                            Get a special prive for <strong> Virtual Office </strong> and enjoy
-                            the freedom of <strong>working from anywhere</strong>
+                           Dapatkan penawaran Virtual Office Special di Hari Kemerdekaan
                         </h4>
                         <h5 class="text-left bold">
-                            <i class="fa fa-calendar" aria-hidden="true"></i> Berlaku Hingga 31 Juli 2023
+                            <i class="fa fa-calendar" aria-hidden="true"></i> Berlaku Hingga 31 Agustus 2023
                         </h5>
                         <div class="card-shadow mt-2 pt-1 pb-1 text-center">
                             <h3 class="bold mb-1">
@@ -539,7 +538,7 @@
                             <h4 class="bold">
                                 <s>IDR 6.900.000 </s>
                                 <span>
-                                    /IDR 6.400.000
+                                    /IDR 5.900.000
                                 </span>
                             </h4>
                         </div>
@@ -550,7 +549,7 @@
                             <h4 class="bold">
                                 <s>IDR 9.500.000</s>
                                 <span>
-                                    /IDR 8.750.000
+                                    /IDR 7.500.000
                                 </span>
                             </h4>
                         </div>
@@ -561,7 +560,7 @@
                             <h4 class="bold">
                                 <s>IDR 12.400.000 </s>
                                 <span>
-                                    /IDR 11.400.000
+                                    /IDR 9.400.000
                                 </span>
                             </h4>
                         </div>

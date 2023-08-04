@@ -134,7 +134,7 @@
                     <div class="col-md-3">
                         <div class="image-tile hover-tile text-center mb20">
                             <a data-toggle="#" data-target="#" href="promo-voffice/virtual-office-promo.php">
-                                <img class="background-image" src="images/promo/juli/july_fair.png">
+                                <img class="background-image" src="images/promo/agustus/promo-agustus.png">
                             </a>
                             <div class="row">
                                 <div class="col-sm-12" style="padding-right: 2px;">

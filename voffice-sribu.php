@@ -3,17 +3,9 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Bebas Meeting di 35+ Lokasi di Cabang vOffice Seluruh Indonesia</title>
+  <title>vOffice x Sribu</title>
 
-  <meta name="description" content="Miliki Kantor di Kawasan Bisnis Paling Strategis & Bergengsi di SCBD Jakarta
-✅ Berada di Kawasan Pusat Bisnis
-✅ Lokasi Strategis & Akses Mudah
-✅ Harga Terjangkau
-✅ Alamat Domisili Bisnis
-✅ Dedicated Phone Number
-✅ Mail Handling & Layanan Penjawab Telepon
-✅ Meeting Room
-" />
+  <meta name="description" content="vOffice x Sribu" />
 
   <meta name="robots" content="index,follow" />
   <meta name="Author" content="vOffice.co.id">
@@ -25,19 +17,66 @@
   <link href="css/lightbox.min.css" rel="stylesheet" type="text/css" media="all" />
   <link href="css/theme-v2.css" rel="stylesheet" type="text/css" media="all" />
   <link href="css/custom-new.min.css" rel="stylesheet" type="text/css" media="all" />
-  <link rel="stylesheet" href="css/ads.css">
+  <link rel="stylesheet" href="css/ads.css" type="text/css">
+  <link href="assets/css/voffice-sribu.css" rel="stylesheet" type="text/css">
   <link href="css/index-slider.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="assets/css/virtual-office-scbd.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="plugins/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css" media="all" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
   <style>
+    .card-body-content .card-text {
+      font-size: 14px !important;
+      color: #000 !important;
+    }
+
+    .customer-logos img {
+      width: 60%;
+    }
+
+    .lists li {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .place-self-center {
+      display: flex;
+      align-content: center;
+      align-items: center;
+    }
+
+    @media (max-width:600px) {
+      .place-self-center {
+        display: block !important;
+        align-content: center;
+        align-items: center;
+      }
+    }
+
     .nav-utility {
       height: 40px;
       line-height: 40px;
       border-bottom: 0px solid #000;
       overflow: hidden;
       background: rgb(23 21 21 / 80%);
+    }
+
+    .button-purple {
+      background-color: #951942;
+      padding: 10px 30px 10px 30px;
+      border-radius: 5px;
+    }
+
+    .overlay-black {
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.4);
     }
 
     .card-footer i {
@@ -64,6 +103,7 @@
 
     #text {
       display: none;
+      width: -webkit-fill-available;
     }
 
     .card.card-slide-location {
@@ -111,9 +151,15 @@
         font-size: 16px !important;
         color: grey;
       }
+
+      .button-slider {
+        margin-top: 0rem !important;
+      }
     }
 
     @media screen and (min-width:321px) and (max-width:390px) {
+
+
       .card-body-content h5 {
         font-size: 24px;
         line-height: normal !important;
@@ -164,113 +210,107 @@
         font-weight: 600;
       }
     }
-
-    .place-self-center {
-      display: flex;
-      align-content: center;
-      align-items: center;
-    }
-
-    @media (max-width:600px) {
-      .place-self-center {
-        display: block !important;
-        align-content: center;
-        align-items: center;
-      }
-    }
   </style>
+
 </head>
 
 <body class="location-detail">
 
-  <?php include "header-new.html" ?>
+  <div class="nav-container">
+    <nav class="absolute transparent">
+      <div class="nav-bar">
+        <div class="module left">
+          <a href="https://voffice.co.id/jakarta-virtual-office/virtual-office.php">
+            <img class="logo logo-light" alt="vOffice Indonesia" src="img/logo-voffice2-dark.png">
+            <img class="logo logo-dark" alt="vOffice Indonesia" src="img/logo-voffice2-dark.png">
+          </a>
+        </div>
+        <div class="module widget-handle mobile-toggle right visible-sm visible-xs">
+          <i class="ti-menu"></i>
+        </div>
+        <div class="module-group right">
+          <div class="module left">
+            <ul class="menu">
+              <li>
+                <a href="#section1" class="js-scroll-trigger uppercase">Home</a>
+              </li>
+              <li>
+                <a href="#section2" class="js-scroll-trigger uppercase">
+                  Lokasi vOffice
+                </a>
+              </li>
+              <li>
+                <a href="#section3" class="js-scroll-trigger uppercase">
+                  Fasilitas & Layanan
+                </a>
+              </li>
+
+              <li>
+                <a href="#section4" class="js-scroll-trigger uppercase">
+                  Mengapa vOffice?
+                </a>
+              </li>
+
+              <li>
+                <a href="#section6" class="js-scroll-trigger uppercase">
+                  Package
+                </a>
+              </li>
+
+              <li>
+                <a href="#section5" class="js-scroll-trigger uppercase">
+                  Kontak
+                </a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
 
   <section class="section1" style="background-color: #f1f1f1;">
     <div class="container">
-      <div class="row place-self-center">
-        <div class="col-md-5">
+      <div class="row ">
+        <div class="col-md-12">
           <div class="desc">
-            <h1 class="title em">
-              <span class="tt-n">vOffice</span>
-              <span class="em-purple">Center</span>
+            <h1 class="title em text-center">
+              <span class="tt-n">Special Offer For</span>
+              <br>
+              <span class="em-purple">Sribu Members!</span>
             </h1>
-
-            <div class="slider-video hide-pc">
-
-              <video controls class="mt-5" id="scbd" poster="assets/img/center/thumb.png">
-                <source src="assets/img/center/pindah.mp4" type="video/mp4">
-                <source src="assets/img/center/pindah.ogg" type="video/ogg">
-                Your browser does not support the video tag.
-              </video>
-
-              <video controls class="mt-5" id="scbd" poster="assets/img/center/thumb2.png">
-                <source src="assets/img/center/vid.mp4" type="video/mp4">
-                <source src="assets/img/center/vid.ogg" type="video/ogg">
-                Your browser does not support the video tag.
-              </video>
-
-              <video controls class="mt-5" id="scbd" poster="assets/img/center/thumb3.png">
-                <source src="assets/img/center/vid3.mp4" type="video/mp4">
-                <source src="assets/img/center/vid3.ogg" type="video/ogg">
-                Your browser does not support the video tag.
-              </video>
-
-            </div>
-
-            <p>
-              Bebas Meeting di 35+ Lokasi di Cabang <strong>vOffice</strong> Seluruh Indonesia
-              Virtual Office <strong>vOffice</strong>
+            <p class="text-center bold">
+              free 10 jam private office dan meeting room
             </p>
-            <div class="icon-list">
-              <p>✅ Semua center dimiliki & dikelola sendiri</p>
-              <p>✅ Penghargaan Rekor Muri Virtual Office Terbanyak</p>
-              <p>✅ Lokasi Strategis & Mudah diakses</p>
-              <p>✅ Gedung & Desain Interior Premium</p>
-              <p>✅ Dedicated Phone Number</p>
-              <p>✅ Layanan Resepsionis</p>
-              <p>✅ Layanan Penerima Surat</p>
-              <p>✅ Layanan Penjawab Telepon</p>
-              <p>✅ Meeting Room</p>
-              <p>✅ Alamat Domisili Bisnis</p>
+            <div class="hide-pc">
+              <div class="web-banner web-banner-sribu">
+                <img src="assets/img/sribu/web-banner.jpg" alt="" class="img-fluid">
+                <img src="assets/img/sribu/web-banner-2.jpg" alt="" class="img-fluid">
+              </div>
             </div>
-            <div class="grid-button">
-              <a href="#more-info" class="btn btn-filled mt-5">
-                Info Selengkapnya <i class="fa fa-arrow-right" aria-hidden="true"></i>
-              </a>
-            </div>
+
+            <center>
+              <div class="grid-button">
+                <a href="#more-info" class="btn btn-filled">
+                  Info Selengkapnya <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </center>
           </div>
 
         </div>
-        <div class="col-md-7">
-
-          <div class="slider-video hide-mobile">
-
-            <video controls class="mt-5" id="scbd" poster="assets/img/center/thumb.png">
-              <source src="assets/img/center/pindah.mp4" type="video/mp4">
-              <source src="assets/img/center/pindah.ogg" type="video/ogg">
-              Your browser does not support the video tag.
-            </video>
-
-            <video controls class="mt-5" id="scbd" poster="assets/img/center/thumb2.png">
-              <source src="assets/img/center/vid.mp4" type="video/mp4">
-              <source src="assets/img/center/vid.ogg" type="video/ogg">
-              Your browser does not support the video tag.
-            </video>
-
-            <video controls class="mt-5" id="scbd" poster="assets/img/center/thumb3.png">
-              <source src="assets/img/center/vid3.mp4" type="video/mp4">
-              <source src="assets/img/center/vid3.ogg" type="video/ogg">
-              Your browser does not support the video tag.
-            </video>
-
+        <div class="col-md-12 hide-mobile">
+          <div class="web-banner web-banner-sribu">
+            <img src="assets/img/sribu/web-banner.jpg" alt="" class="img-fluid ">
+            <img src="assets/img/sribu/web-banner-2.jpg" alt="" class="img-fluid">
           </div>
-
         </div>
       </div>
     </div>
   </section>
 
-  <section class="service-section p_relative sec-pad centred" style="background-image: url('img/new/bg-jakarta.jpg'); background-position: fixed;">
+  <section class="service-section p_relative sec-pad centred" id="lihat-selengkapnya" style="background-image: url('img/new/bg-jakarta.jpg'); background-position: fixed;">
     <div class="auto-container" id="section3">
       <div class="sec-title p_relative d_block mb_50 centred" id="more-info">
         <span class="p_relative d_block fs_16 lh_20 fw_medium pt_20 mb_6">what we’re offering</span>
@@ -346,65 +386,6 @@
             </div>
           </div>
         </div>
-        <!-- <div class="service-block">
-
-          <div class="card card-fasilitas">
-            <img class="card-img-top" src="assets/img/scbd/slider/alamat-bisnis.jpg" alt="Alamat Bisnis Prestisius">
-            <div class="card-body">
-              <p class="card-text bold p10 m0 black">Alamat Bisnis Prestisius</p>
-            </div>
-          </div>
-
-          <div class="card card-fasilitas">
-            <img class="card-img-top" src="assets/img/scbd/slider/call-answering.jpg" alt="Alamat Bisnis Prestisius">
-            <div class="card-body">
-              <p class="card-text bold p10 m0 black">Call Answering Service</p>
-            </div>
-          </div>
-
-          <div class="card card-fasilitas">
-            <img class="card-img-top" src="assets/img/scbd/slider/mail-handle.jpg" alt="Alamat Bisnis Prestisius">
-            <div class="card-body">
-              <p class="card-text bold p10 m0 black">Mail Handling Services</p>
-            </div>
-          </div>
-
-          <div class="card card-fasilitas">
-            <img class="card-img-top" src="assets/img/scbd/slider/Meeting Room.jpg" alt="Alamat Bisnis Prestisius">
-            <div class="card-body">
-              <p class="card-text bold p10 m0 black">Meeting Room</p>
-            </div>
-          </div>
-
-          <div class="card card-fasilitas">
-            <img class="card-img-top" src="assets/img/scbd/slider/pkp.jpg" alt="Alamat Bisnis Prestisius">
-            <div class="card-body">
-              <p class="card-text bold p10 m0 black">Pengurusan PKP</p>
-            </div>
-          </div>
-
-          <div class="card card-fasilitas">
-            <img class="card-img-top" src="assets/img/scbd/slider/PT_CV.jpg" alt="Alamat Bisnis Prestisius">
-            <div class="card-body">
-              <p class="card-text bold p10 m0 black">Pembuatan PT & CV</p>
-            </div>
-          </div>
-
-          <div class="card card-fasilitas">
-            <img class="card-img-top" src="assets/img/scbd/slider/resepsionis.jpg" alt="Alamat Bisnis Prestisius">
-            <div class="card-body">
-              <p class="card-text bold p10 m0 black">Layanan Resepsionis</p>
-            </div>
-          </div>
-
-          <div class="card card-fasilitas">
-            <img class="card-img-top" src="assets/img/scbd/slider/so.jpg" alt="Alamat Bisnis Prestisius">
-            <div class="card-body">
-              <p class="card-text bold p10 m0 black">Serviced Office</p>
-            </div>
-          </div>
-
-        </div> -->
       </div>
       <div class="row mt-5">
         <div class="col-md-12">
@@ -479,18 +460,12 @@
                 <div class="card-body-content">
                   <h5 class="card-title">Centennial Tower</h5>
                   <p class="card-text">
-                    Jakarta Selatan, DKI Jakarta
+                    Level 29 Centennial Tower, Jl. Gatot Subroto No.27,
+                    Karet Semanggi, Kec Setiabudi, Kota Jakarta Selatan, Kota Jakarta 12950
                   </p>
                 </div>
 
               </div>
-
-              <div class="card-footer">
-                <a href="centennial-tower.php">
-                  Lihat Lokasi <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                </a>
-              </div>
-
             </div>
 
             <!-- Menara Rajawali -->
@@ -502,18 +477,11 @@
                 <div class="card-body-content">
                   <h5 class="card-title">Menara Rajawali</h5>
                   <p class="card-text">
-                    Jakarta Selatan, DKI Jakarta
+                    Menara Rajawali, 7th FLoor, JL. Mega kuningan Setiabudi, Lot No.5.1, Jakarta Selatan, DKI Jakarta 12950
                   </p>
                 </div>
 
               </div>
-
-              <div class="card-footer">
-                <a href="office-menara-rajawali.php">
-                  Lihat Lokasi <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                </a>
-              </div>
-
             </div>
 
             <!-- Menara Kuningan -->
@@ -525,18 +493,12 @@
                 <div class="card-body-content">
                   <h5 class="card-title">Menara Kuningan</h5>
                   <p class="card-text">
-                    Jakarta Selatan, DKI Jakarta
+                    Menara Kuningan Lantai 30 Unit B-C , Jl. H. Rasuna Said Kel, Karet Kuningan,
+                    Kec. Setiabudi, Jakarta Selatan 12940
                   </p>
                 </div>
 
               </div>
-
-              <div class="card-footer">
-                <a href="so-menara-kuningan.php">
-                  Lihat Lokasi <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                </a>
-              </div>
-
             </div>
 
             <!-- The City Tower -->
@@ -548,18 +510,12 @@
                 <div class="card-body-content">
                   <h5 class="card-title">The City Tower</h5>
                   <p class="card-text">
-                    Jakarta Pusat, DKI Jakarta
+                    The City Tower, Jl. MH Thamrin No.81, Dukuh Atas, Menteng, Kec. Menteng,
+                    Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10310
                   </p>
                 </div>
 
               </div>
-
-              <div class="card-footer">
-                <a href="office-thecity-tower.php">
-                  Lihat Lokasi <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                </a>
-              </div>
-
             </div>
 
             <!-- PIK -->
@@ -571,18 +527,12 @@
                 <div class="card-body-content">
                   <h5 class="card-title">vOffice PIK</h5>
                   <p class="card-text">
-                    Jakarta Utara, DKI Jakarta
+                    Gold Coast Office Eiffel Tower, Jl. Pantai Indah Kapuk, Kec. Penjaringan, Jkt Utara,
+                    Daerah Khusus Ibukota Jakarta
                   </p>
                 </div>
 
               </div>
-
-              <div class="card-footer">
-                <a href="virtual-office-pik.php">
-                  Lihat Lokasi <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                </a>
-              </div>
-
             </div>
 
             <!-- Atria Sudirman -->
@@ -594,18 +544,12 @@
                 <div class="card-body-content">
                   <h5 class="card-title">Atria Sudirman</h5>
                   <p class="card-text">
-                    Jakarta Pusat, DKI Jakarta
+                    Atria Sudirman Lt 23, Jl. Jenderal Sudirman, Karet Tengsin, Kecamatan Tanah Abang,
+                    Daerah Khusus Ibukota Jakarta 10220
                   </p>
                 </div>
 
               </div>
-
-              <div class="card-footer">
-                <a href="virtual-office-tanah-abang.php">
-                  Lihat Lokasi <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                </a>
-              </div>
-
             </div>
 
             <!-- MOI  -->
@@ -617,17 +561,11 @@
                 <div class="card-body-content">
                   <h5 class="card-title">Mall Of Indonesia</h5>
                   <p class="card-text">
-                    Jakarta Utara, DKI Jakarta
+                    Mall Of Indonesia, Jl. Boulevard Bar. Raya No.12, Klp. Gading Bar., Kec. Klp.
+                    Gading, Jkt Utara, Daerah Khusus Ibukota Jakarta 14240
                   </p>
                 </div>
               </div>
-
-              <div class="card-footer">
-                <a href="virtual-office-moi.php">
-                  Lihat Lokasi <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                </a>
-              </div>
-
             </div>
 
             <!-- Grand Slipi Tower -->
@@ -639,18 +577,11 @@
                 <div class="card-body-content">
                   <h5 class="card-title">Grand Slipi Tower</h5>
                   <p class="card-text">
-                    Jakarta Barat, DKI Jakarta
+                    Grand Slipi Tower 42G-H Jl. S Parman Kav 22-24, Kec. Palmerah, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11480
                   </p>
                 </div>
 
               </div>
-
-              <div class="card-footer">
-                <a href="virtual-office-jakarta-barat.php">
-                  Lihat Lokasi <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                </a>
-              </div>
-
             </div>
 
             <!-- Kirana Two Tower -->
@@ -662,18 +593,12 @@
                 <div class="card-body-content">
                   <h5 class="card-title">Kirana Two Tower</h5>
                   <p class="card-text">
-                    Jakarta Utara, DKI Jakarta
+                    Kirana Two Tower, Level 10-A, Jl. Boulevard Timur No.88 Kec.
+                    Kelapa Gading, Kel, Pegangsaan Dua, Daerah Khusus Ibukota Jakarta 14250
                   </p>
                 </div>
 
               </div>
-
-              <div class="card-footer">
-                <a href="office-kirana2-tower.php">
-                  Lihat Lokasi <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                </a>
-              </div>
-
             </div>
 
             <!-- Treasury Tower -->
@@ -685,18 +610,11 @@
                 <div class="card-body-content">
                   <h5 class="card-title">Treasury Tower</h5>
                   <p class="card-text">
-                    Jakarta Selatan, DKI Jakarta
+                    Treasury Tower 6th floor Unit F Jl Jend Sudirman Kav 52-53, SCBD, Daerah Khusus Ibukota Jakarta
                   </p>
                 </div>
 
               </div>
-
-              <div class="card-footer">
-                <a href="treasury-tower.php">
-                  Lihat Lokasi <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                </a>
-              </div>
-
             </div>
 
             <!-- the ceo building -->
@@ -708,18 +626,11 @@
                 <div class="card-body-content">
                   <h5 class="card-title">The CEO Building</h5>
                   <p class="card-text">
-                    Jakarta Selatan, DKI Jakarta
+                    Jl. TB Simatupang No.18C, Cilandak Bar., Kec. Cilandak, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12430
                   </p>
                 </div>
 
               </div>
-
-              <div class="card-footer">
-                <a href="office-ceo-building.php">
-                  Lihat Lokasi <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                </a>
-              </div>
-
             </div>
 
             <!-- sudirman 78 -->
@@ -731,18 +642,11 @@
                 <div class="card-body-content">
                   <h5 class="card-title">Sudirman 7.8</h5>
                   <p class="card-text">
-                    Jakarta Pusat, DKI Jakarta
+                    Level 16 Unit 1 & 2, Jl. Jenderal Sudirman Karet Tengsin, Kecamatan Tanah Abang, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10220
                   </p>
                 </div>
 
               </div>
-
-              <div class="card-footer">
-                <a href="office-sudirman-78.php">
-                  Lihat Lokasi <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                </a>
-              </div>
-
             </div>
 
             <!-- office 8 -->
@@ -754,18 +658,11 @@
                 <div class="card-body-content">
                   <h5 class="card-title">Office 8</h5>
                   <p class="card-text">
-                    Jakarta Selatan, DKI Jakarta
+                    Office 8, Jl. Senopati No.8B, Senayan, Kebayoran Baru, South Jakarta City, Jakarta 12190
                   </p>
                 </div>
 
               </div>
-
-              <div class="card-footer">
-                <a href="office8.php">
-                  Lihat Lokasi <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                </a>
-              </div>
-
             </div>
 
             <!-- voffice east -->
@@ -777,18 +674,11 @@
                 <div class="card-body-content">
                   <h5 class="card-title">vOffice East</h5>
                   <p class="card-text">
-                    Jakarta Timur, DKI Jakarta
+                    vOffice East Rawamangun, Jl. Pemuda No.33B, Jati, Kec. Pulo Gadung, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13220
                   </p>
                 </div>
 
               </div>
-
-              <div class="card-footer">
-                <a href="virtual-office-jakarta-timur.php">
-                  Lihat Lokasi <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                </a>
-              </div>
-
             </div>
 
             <!-- metropolitan tower -->
@@ -800,18 +690,11 @@
                 <div class="card-body-content">
                   <h5 class="card-title">Metropolitan Tower</h5>
                   <p class="card-text">
-                    Jakarta Selatan, DKI Jakarta
+                    Jl. R.A. Kartini Jl. TB Simatupang No.Kav. 14, Cilandak Bar., Kec. Cilandak, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12430
                   </p>
                 </div>
 
               </div>
-
-              <div class="card-footer">
-                <a href="office-metropolitan-tower.php">
-                  Lihat Lokasi <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                </a>
-              </div>
-
             </div>
 
             <!-- GKM tower -->
@@ -823,18 +706,11 @@
                 <div class="card-body-content">
                   <h5 class="card-title">GKM Tower</h5>
                   <p class="card-text">
-                    Jakarta Selatan, DKI Jakarta
+                    Level 20. GKM Green Tower, Jl. TB Simatupang. Kav. 89G, Kebagusan, Ps. Minggu, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12520
                   </p>
                 </div>
 
               </div>
-
-              <div class="card-footer">
-                <a href="virtual-office-pasar-minggu.php">
-                  Lihat Lokasi <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                </a>
-              </div>
-
             </div>
 
             <!-- graha surveyor indonesia -->
@@ -846,18 +722,11 @@
                 <div class="card-body-content">
                   <h5 class="card-title">Graha Surveyor Indonesia</h5>
                   <p class="card-text">
-                    Jakarta Selatan, DKI Jakarta
+                    Graha Surveyor Lt 15, Jl. Gatot Subroto No.Kav 56, Kuningan Tim., Kecamatan Setiabudi, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12950
                   </p>
                 </div>
 
               </div>
-
-              <div class="card-footer">
-                <a href="office-graha-surveyor.php">
-                  Lihat Lokasi <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                </a>
-              </div>
-
             </div>
 
             <!-- the honey lady -->
@@ -869,16 +738,10 @@
                 <div class="card-body-content">
                   <h5 class="card-title">The Honey Lady</h5>
                   <p class="card-text">
-                    Jakarta Utara, DKI Jakarta
+                    CBD Pluit, Jl. Pluit Selatan Raya No.1, Penjaringan, Kec. Penjaringan, Jkt Utara, Daerah Khusus Ibukota Jakarta 14440
                   </p>
                 </div>
 
-              </div>
-
-              <div class="card-footer">
-                <a href="virtual-office-pluit.php">
-                  Lihat Lokasi <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                </a>
               </div>
 
             </div>
@@ -892,18 +755,11 @@
                 <div class="card-body-content">
                   <h5 class="card-title">Kencana Tower</h5>
                   <p class="card-text">
-                    Jakarta Barat, DKI Jakarta
+                    Kencana Tower, Business Park Kb. Jeruk, Jl. Meruya Ilir Raya No.88, Meruya Utara, Kec. Kembangan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11620
                   </p>
                 </div>
 
               </div>
-
-              <div class="card-footer">
-                <a href="office-kencana-tower.php">
-                  Lihat Lokasi <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                </a>
-              </div>
-
             </div>
 
             <!-- BSD Green Office Park -->
@@ -915,16 +771,10 @@
                 <div class="card-body-content">
                   <h5 class="card-title">BSD Green Office Park</h5>
                   <p class="card-text">
-                    Tangerang, Banten
+                    My Republic Plaza (d/h Green Office Park 6), Wing A Lantai Dasar Zona 6 Jalan Grand Boulevard, Jl. BSD Green Office Park, Sampora, Kec. Cisauk, Kabupaten Tangerang, Banten 15345
                   </p>
                 </div>
 
-              </div>
-
-              <div class="card-footer">
-                <a href="virtual-office-bsd.php">
-                  Lihat Lokasi <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                </a>
               </div>
 
             </div>
@@ -938,18 +788,11 @@
                 <div class="card-body-content">
                   <h5 class="card-title">The Prominence Tower</h5>
                   <p class="card-text">
-                    Tangerang, Banten
+                    Perumahan Alam Sutera, Level 28, Jl. Jalur Sutera Bar. No.15, Panunggangan Tim., Kec. Pinang, Kota Tangerang, Banten 15143
                   </p>
                 </div>
 
               </div>
-
-              <div class="card-footer">
-                <a href="office-prominence-tower.php">
-                  Lihat Lokasi <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                </a>
-              </div>
-
             </div>
 
             <!-- Plaza Summarecon Bekasi -->
@@ -961,16 +804,10 @@
                 <div class="card-body-content">
                   <h5 class="card-title">Plaza Summarecon Bekasi</h5>
                   <p class="card-text">
-                    Bekasi, Jawa Barat
+                    Plaza Summarecon Bekasi, Jl. Bulevar Ahmad Yani No.Kav K.01, Harapan Mulya, Kecamatan Medan Satria, Kota Bks, Jawa Barat 17142
                   </p>
                 </div>
 
-              </div>
-
-              <div class="card-footer">
-                <a href="office-summarecon-bekasi.php">
-                  Lihat Lokasi <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                </a>
               </div>
 
             </div>
@@ -984,18 +821,11 @@
                 <div class="card-body-content">
                   <h5 class="card-title">Mensana Tower</h5>
                   <p class="card-text">
-                    Bekasi, jawa Barat
+                    Level 5 (Hotel Avenzel), Jl. Raya Kranggan, Pondok Gede Jatisampurna Bekasi
                   </p>
                 </div>
 
               </div>
-
-              <div class="card-footer">
-                <a href="virtual-office-bekasi.php">
-                  Lihat Lokasi <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                </a>
-              </div>
-
             </div>
 
             <div class="card card-slide-location">
@@ -1006,16 +836,10 @@
                 <div class="card-body-content">
                   <h5 class="card-title">Braga Bandung</h5>
                   <p class="card-text">
-                    Bandung, Jawa Barat
+                    Jl. Braga No.109, Braga, Kec. Sumur Bandung, Kota Bandung, Jawa Barat 40111
                   </p>
                 </div>
 
-              </div>
-
-              <div class="card-footer">
-                <a href="braga-bandung.php">
-                  Lihat Lokasi <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                </a>
               </div>
 
             </div>
@@ -1028,16 +852,11 @@
                 <div class="card-body-content">
                   <h5 class="card-title">JAPFA Tower II</h5>
                   <p class="card-text">
-                    Surabaya, Jawa Timur
+                    LEVEL 12, JL PANGLIMA SUDIRMAN KAV 66-68, SURABAYA PUSAT
+                    SURABAYA, JAWA TIMUR 60271
                   </p>
                 </div>
 
-              </div>
-
-              <div class="card-footer">
-                <a href="office-bumi-putra.php">
-                  Lihat Lokasi <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                </a>
               </div>
 
             </div>
@@ -1056,12 +875,6 @@
 
               </div>
 
-              <div class="card-footer">
-                <a href="office-intiland.php">
-                  Lihat Lokasi <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                </a>
-              </div>
-
             </div>
 
             <div class="card card-slide-location">
@@ -1072,16 +885,10 @@
                 <div class="card-body-content">
                   <h5 class="card-title">SPAZIO</h5>
                   <p class="card-text">
-                    Surabaya, Jawa Timur
+                    Level 5, Jl. Mayjen Yono Suwoyo No.Kav 3, Dukuh Pakis, Surabaya
                   </p>
                 </div>
 
-              </div>
-
-              <div class="card-footer">
-                <a href="virtual-office-dukuh-pakis.php">
-                  Lihat Lokasi <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                </a>
               </div>
 
             </div>
@@ -1094,16 +901,10 @@
                 <div class="card-body-content">
                   <h5 class="card-title">GRAND JATI JUNCTION</h5>
                   <p class="card-text">
-                    Kota Medan, Sumatera Utara
+                    Grand Jati Junction Mall, Level P1, Jl. Perintis Kemerdekaan No.3A, Perintis, Kec. Medan Tim., Kota Medan, Sumatera Utara 20231
                   </p>
                 </div>
 
-              </div>
-
-              <div class="card-footer">
-                <a href="virtual-office-medan.php">
-                  Lihat Lokasi <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                </a>
               </div>
 
             </div>
@@ -1114,18 +915,12 @@
               <div class="card-body p-16to9">
 
                 <div class="card-body-content">
-                  <h5 class="card-title">Kembali Innovation HUB</h5>
+                  <h5 class="card-title">Jl. Sunset Road No.28, Seminyak, Kuta, Kabupaten Badung, Bali</h5>
                   <p class="card-text">
                     Bali
                   </p>
                 </div>
 
-              </div>
-
-              <div class="card-footer">
-                <a href="kembali-innovation-hub.php">
-                  Lihat Lokasi <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                </a>
               </div>
 
             </div>
@@ -1138,18 +933,11 @@
                 <div class="card-body-content">
                   <h5 class="card-title">Jimbaran HUB</h5>
                   <p class="card-text">
-                    Jimbaran, Bali
+                    Jl. Karang Mas, Jimbaran, Kec. Kuta Sel., Kabupaten Badung, Bali 80361
                   </p>
                 </div>
 
               </div>
-
-              <div class="card-footer">
-                <a href="office-jimbaran.php">
-                  Lihat Lokasi <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                </a>
-              </div>
-
             </div>
 
             <div class="card card-slide-location">
@@ -1182,6 +970,242 @@
 
   </section>
 
+  <section class="pricing-section" id="pricing-card" style="background-image: url('https://investinasia.id/img/pricing-bg.jpg');">
+    <div class="container">
+      <div class="row mb48">
+        <div class="col-md-12">
+          <h2 class="text-center bold">
+            Virtual Office Package
+          </h2>
+          <p class="text-center lead bold">
+            Pilih paket virtual office Anda dan jadi selangkah lebih cepat dari kempetitor Anda.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="tabs-box">
+        <div class="tabs-content">
+          <div class="tab active-tab" id="tab-1">
+            <div class="row clearfix">
+
+              <div class="col-lg-4 col-md-4 col-sm-12 pricing-block">
+                <div class="pricing-block-one">
+                  <div class="pricing-table">
+                    <div class="table-header">
+                      <div class="price-box">
+                        <img src="assets/img/sribu/silver.webp" alt="" class="img-fluid">
+                        <p class="bold pricing lead"> IDR 6.900.000</p>
+                        <p>(SPECIAL PRICE)</p>
+                        <br>
+                        <p class="mt16">For Sribu Member</p>
+                      </div>
+                      <div class="table-footer pb-0">
+                        <a data-toggle="modal" data-target="#mintaproposal" rel="nofollow noopener" target="blank">ask for proposals <i class="fa fa-info-circle" aria-hidden="true"></i></a>
+                      </div>
+                    </div>
+                    <div class="table-content">
+                      <ul class="clearfix">
+                        <h4 class="text-center bold button">
+                          VIRTUAL OFFICE
+                        </h4>
+                        <hr>
+                        <h4 class="text-center bold">
+                          BUSINESS ADDRESS
+                        </h4>
+                        <li>Prestigious Business Address <span>✅</span></li>
+                        <li>Mail Handling & Parcel Reception <span>✅</span></li>
+                        <li>SMS / Mail notification for incoming parcel or mail <span>✅</span></li>
+                        <li>Building domicile letter <span>✅</span></li>
+                        <li>Perjakbi Certificate <span>✅</span></li>
+                        <h4 class="text-center bold button">
+                          PLAN DETAILS
+                        </h4>
+                        <h4 class="text-center bold">
+                          FACILITY
+                        </h4>
+                        <span class="dots"></span><span class="more">
+                          <li>Meeting Room Usage /month <strong class="jumbotron-table">(1hour) </strong></li>
+                          <li><del class="text-bold">1 hour Workspace Usage /month </del> ❌</li>
+                          <li><del class="text-bold">Private Office Usage /month </del> ❌</li>
+                          <hr>
+                          <h4 class="text-center bold pb0 button">
+                            MEMBERSHIP
+                          </h4>
+                          <h4 class="text-center bold">
+                            NETWORKING
+                          </h4>
+                          <li>Unlimited access to all voffice centres <span>✅</span></li>
+                          <li>Free access to seminars <span>✅</span></li>
+                          <li>Tea & Coffee <span>✅</span></li>
+                          <li>Elegant reception service <span>✅</span></li>
+                          <h4 class="text-center bold">
+                            CALL HANDLING
+                          </h4>
+                          <li><del>Dedicated Local Telephone Number</del> ❌</li>
+                          <li><del>Professional Call Answering Service</del> ❌</li>
+                          <li><del>SMS or Email Notification</del> ❌</li>
+                          <li><del>Free Call Transfer Worldwide</del> ❌</li>
+                          <li><del> Personalized Voicemail</del> ❌</li>
+                          <h4 class="text-center bold">
+                            EQUIPMENT
+                          </h4>
+                          <li><del>1 year Signage</del> ❌</li>
+                          <li><del>Professional Call Answering Service</del> ❌</li>
+                        </span>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-4 col-sm-12 pricing-block">
+                <div class="pricing-block-one">
+                  <div class="pricing-table">
+                    <div class="table-header">
+                      <div class="price-box">
+                        <img src="assets/img/sribu/gold.webp" alt="" class="img-fluid">
+                        <p class="bold pricing lead">IDR 9.500.000</p>
+                        <p>SPECIAL PRICE</p>
+                        <br>
+                        <p class="mt16">For Sribu Member</p>
+                      </div>
+                      <div class="table-footer pb-0">
+                        <a data-toggle="modal" data-target="#mintaproposal" rel="nofollow noopener" target="blank">ask for proposals <i class="fa fa-info-circle" aria-hidden="true"></i></a>
+                      </div>
+                    </div>
+                    <div class="table-content">
+                      <ul class="clearfix">
+                        <h4 class="text-center bold button">
+                          VIRTUAL OFFICE
+                        </h4>
+                        <hr>
+                        <h4 class="text-center bold">
+                          BUSINESS ADDRESS
+                        </h4>
+                        <li>Prestigious Business Address <span>✅</span></li>
+                        <li>Mail Handling & Parcel Reception <span>✅</span></li>
+                        <li>SMS / Mail notification for incoming parcel or mail <span>✅</span></li>
+                        <li>Building domicile letter <span>✅</span></li>
+                        <li>Perjakbi Certificate <span>✅</span></li>
+                        <h4 class="bold text-center button">
+                          PLAN DETAILS
+                        </h4>
+                        <span class="dots"></span><span class="more">
+                          <h4 class="bold text-center">
+                            FACILITY
+                          </h4>
+                          <li>Meeting Room Usage /month <strong class="jumbotron-table">5 hour</strong></li>
+                          <li>1 hour Workspace Usage /month <strong class="jumbotron-table">14 hours</strong></li>
+                          <li><del>Private Office Usage /month</del> ❌</li>
+                          <hr>
+                          <h4 class="bold text-center button">
+                            MEMBERSHIP
+                          </h4>
+                          <h4 class="bold text-center">
+                            NETWORKING
+                          </h4>
+                          <li>Unlimited access to all voffice centres <span> ✅</span></li>
+                          <li>Free access to seminars <span> ✅</span></li>
+                          <li>Tea & Coffee <span> ✅</span></li>
+                          <li>Elegant reception service <span> ✅</span></li>
+                          <h4 class="bold text-center">
+                            CALL HANDLING
+                          </h4>
+                          <li>Dedicated Local Telephone Number <span>✅</span></li>
+                          <li>Professional Call Answering Service <span>✅</span></li>
+                          <li>SMS or Email Notification <span>✅</span></li>
+                          <li><del>Free Call Transfer Worldwide</del> ❌</li>
+                          <li><del> Personalized Voicemail</del> ❌</li>
+                          <h4 class="bold text-center">
+                            EQUIPMENT
+                          </h4>
+                          <li><del>1 year Signage</del> ❌</li>
+                          <li><del>Professional Call Answering Service</del> ❌</li>
+                        </span>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-4 col-sm-12 pricing-block">
+                <div class="pricing-block-one">
+                  <div class="pricing-table">
+                    <div class="table-header">
+                      <div class="price-box">
+                        <img src="assets/img/sribu/platinum-best-seller.webp" class="img-fluid" alt="" style="margin-bottom: 3rem;width: -webkit-fill-available;">
+                        <p class="bold pricing lead">IDR 12.400.000</p>
+                        <p>SPECIAL PRICE</p>
+                        <br>
+                        <p class="mt16">For Sribu Member</p>
+                      </div>
+                      <div class="table-footer pb-0">
+                        <a data-toggle="modal" data-target="#mintaproposal" rel="nofollow noopener" target="blank">ask for proposals <i class="fa fa-info-circle" aria-hidden="true"></i></a>
+                      </div>
+                    </div>
+                    <div class="table-content">
+                      <ul class="clearfix">
+                        <h4 class="text-center bold button">
+                          VIRTUAL OFFICE
+                        </h4>
+                        <hr>
+                        <h4 class="text-center bold">
+                          BUSINESS ADDRESS
+                        </h4>
+                        <li>Prestigious Business Address <span>✅</span></li>
+                        <li>Mail Handling & Parcel Reception <span>✅</span></li>
+                        <li>SMS / Mail notification for incoming parcel or mail <span>✅</span></li>
+                        <li>Building domicile letter <span>✅</span></li>
+                        <li>Perjakbi Certificate <span>✅</span></li>
+                        <h4 class="bold text-center button">
+                          PLAN DETAILS
+                        </h4>
+                        <span class="dots"></span><span class="more">
+                          <h4 class="bold text-center">
+                            FACILITY
+                          </h4>
+                          <li>Meeting Room Usage /month <strong class="jumbotron-table">8 hour</strong></li>
+                          <li>1 hour Workspace Usage /month <strong class="jumbotron-table">8 hours</strong></li>
+                          <li>Private Office Usage /month <strong class="jumbotron-table">3 hours</strong></li>
+                          <h4 class="bold text-center button">
+                            MEMBERSHIP
+                          </h4>
+                          <h4 class="bold text-center">
+                            NETWORKING
+                          </h4>
+                          <li>Unlimited access to all voffice centres <span>✅</span></li>
+                          <li>Free access to seminars <span>✅</span></li>
+                          <li>Tea & Coffee <span>✅</span></li>
+                          <li>Elegant reception service <span>✅</span></li>
+                          <h4 class="bold text-center">
+                            CALL HANDLING
+                          </h4>
+                          <li>Dedicated Local Telephone Number <span>✅</span></li>
+                          <li>Professional Call Answering Service <span>✅</span></li>
+                          <li>SMS or Email Notification <span>✅</span></li>
+                          <li>Free Call Transfer Worldwide <span>✅</span></li>
+                          <li> Personalized Voicemail <span>✅</span></li>
+                          <h4 class="bold text-center">
+                            EQUIPMENT
+                          </h4>
+                          <li><del>1 year Signage</del> ❌</li>
+                          <li><del>Professional Call Answering Service</del> ❌</li>
+                        </span>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- pricing-section end -->
+
   <section class="service-section p_relative sec-pad centred" id="section4" style="background-image: url('img/new/bg-jakarta.jpg'); background-position: fixed;">
     <div class="auto-container">
       <div class="sec-title p_relative d_block mb_50 centred " id="more-info">
@@ -1189,7 +1213,7 @@
         <span class="p_relative d_block fs_16 lh_20 fw_medium mb_6">vOffice merupakan Provider Virtual Office No.1 di Indonesia</span>
       </div>
       <div class="row clearfix">
-        <div class="col-md-4 mt-3">
+        <div class="col-md-4">
           <div class="inner-box" style="padding: 10px;">
             <div class="icon-box p_relative d_iblock fs_65 lh_65 orange-color mb_15 z_1 tran_5">
               <img src="assets/img/why-voffice/voffice_stamps-18.webp" alt="" class="img-fluid w-80">
@@ -1199,7 +1223,7 @@
             </p>
           </div>
         </div>
-        <div class="col-md-4 mt-3">
+        <div class="col-md-4">
           <div class="inner-box" style="padding: 10px;">
             <div class="icon-box p_relative d_iblock fs_65 lh_65 orange-color mb_15 z_1 tran_5">
               <img src="assets/img/why-voffice/voffice_stamps-15.webp" alt="" class="img-fluid w-80">
@@ -1209,7 +1233,7 @@
             </p>
           </div>
         </div>
-        <div class="col-md-4 mt-3">
+        <div class="col-md-4">
           <div class="inner-box" style="padding: 10px;">
             <div class="icon-box p_relative d_iblock fs_65 lh_65 orange-color mb_15 z_1 tran_5">
               <img src="assets/img/why-voffice/voffice_stamps-16.webp" alt="" class="img-fluid w-80">
@@ -1222,22 +1246,10 @@
       </div>
       <div class="row mt-5">
         <div class="col-md-12">
-          <div class="sec-title p_relative d_block centred">
-            <h3 class="p_relative d_block bold lead-why">
-              vOffice merupakan Provider Virtual Office No.1 di Indonesia
-            </h3>
-          </div>
-        </div>
-        <div class="col-md-12">
-          <img src="assets/img/why-voffice/voffice_competence-02.webp" alt="" class="img-fluid mt-5">
-        </div>
-      </div>
-      <div class="row mt-5">
-        <div class="col-md-12">
-          <h3 class="d_block mb_6 bold text-left lead-why">
+          <h3 class="d_block mb_6 bold text-center lead-why">
             Rekor MURI Kantor Virtual dengan Lokasi Terbanyak
           </h3>
-          <p class="text-left">
+          <p class="text-center">
             Suatu kebanggaan untuk kami melihat bisnis anda tumbuh & berkembang
           </p>
         </div>
@@ -1279,7 +1291,7 @@
       <div class="row">
         <div class="col-md-6">
           <div class="mapping">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2721704727564!2d106.80385101476915!3d-6.2278025954918315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1078675500b%3A0x11d65aa2d3a9de8a!2svOffice%20-%20Treasury%20Tower%20(Virtual%20Office%20%7C%20Serviced%20Office%20%7C%20Meeting%20Room)!5e0!3m2!1sen!2sid!4v1689650330663!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.255162215993!2d106.81821597499038!3d-6.230053693758079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e799d285b7%3A0x1a1359055467a9ec!2svOffice%20Indonesia%20-%20Headquarter%20(Virtual%20Office%20%7C%20Serviced%20Office%20%7C%20Event%20Space%20%7C%20Meeting%20Room)!5e0!3m2!1sen!2sid!4v1690876684961!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
         <div class="col-md-6">
@@ -1307,6 +1319,45 @@
       </div>
     </div>
   </section>
+
+  <!--=======================================Modal Form========================================-->
+  <div aria-hidden="true" aria-labelledby="myModalLabel" class="modal fade" id="mintaproposal" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-xs mb-xs-64">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header clearfix">
+          <button class="close" data-dismiss="modal" type="button">
+            <span aria-hidden="true">
+              ×
+            </span>
+            <span class="sr-only">
+              Close
+            </span>
+          </button>
+          <h4 class="mb8 bold text-center color-black">Dapatkan Promo & Penawaran Menarik</h4>
+          <center>Isi formulir di bawah ini untuk mendapatkan proposal penawaran
+            dan tim kami akan segera menghubungi Anda. Terima kasih
+          </center>
+        </div>
+        <div class="modal-body form-body clearfix">
+          <form class="form-email" data-success="Thanks for your inquiries, we will be in touch to confirm shortly." data-error="Please fill all fields correctly.">
+
+            <input type="text" name="virtualoffice" hidden="hidden" value="virtualoffice" id="virtualoffice">
+
+            <input type="text" class="validate-required" name="name" placeholder="Nama Lengkap*">
+            <input type="text" class="validate-required" name="phone" placeholder="Nomor Telepon / Whatsapp*">
+            <input type="text" class="validate-required validate-email" name="email" placeholder="Alamat Email*">
+            <input type="text" class="" name="usaha" placeholder="Bidang Usaha">
+
+            <textarea style="color: #0a0a0a" name="message" rows="4" placeholder="Message"></textarea>
+            <button id="submit-form" type="submit" name="submit">Contact Us Now!</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--=======================================End Of Modal Form========================================-->
+
 
   <?php include "partner-landing-page.php" ?>
   <?php include "footer-new-landingpage.html" ?>
@@ -1339,16 +1390,6 @@
         'callback': enableSendButton // Panggil fungsi enableSendButton setelah captcha selesai
       });
     };
-
-    $('.gallery-scbd').slick({
-      infinite: true,
-      arrows: true,
-      autoplay: true,
-      autoplaySpeed: 8000,
-      dots: true,
-      slidesToShow: 1,
-      slidesToScroll: 1
-    });
 
     $('.service-block').slick({
       infinite: true,
@@ -1389,43 +1430,14 @@
       ]
     });
 
-    $('.slider-video').slick({
-      dots: true,
-      arrows: true,
+    $('.web-banner').slick({
       infinite: true,
+      arrows: true,
       autoplay: true,
-      speed: 300,
+      autoplaySpeed: 3000,
+      dots: true,
       slidesToShow: 1,
       slidesToScroll: 1,
-      responsive: [{
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            infinite: true,
-            dots: true
-          }
-        },
-        {
-          breakpoint: 600,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2
-          }
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            dots: false,
-            arrows: true,
-            infinite: true,
-            autoplay: false,
-            speed: 300,
-            slidesToShow: 1,
-            slidesToScroll: 1
-          }
-        }
-      ]
     });
 
     $('.lokasi-slider').slick({
@@ -1434,8 +1446,8 @@
       infinite: true,
       autoplay: true,
       speed: 300,
-      slidesToShow: 4,
-      slidesToScroll: 4,
+      slidesToShow: 3,
+      slidesToScroll: 3,
       responsive: [{
           breakpoint: 1024,
           settings: {
@@ -1467,28 +1479,13 @@
       ]
     });
 
-    window.addEventListener('DOMContentLoaded', function() {
-      var section = document.getElementById('videoscbd');
-      var video = document.getElementById('scbd');
-
-      section.addEventListener('mouseenter', function() {
-        video.play();
-      });
-
-      section.addEventListener('mouseleave', function() {
-        video.pause();
-      });
-    });
-
     $(document).ready(function() {
       $("#toggle").click(function() {
         var elem = $("#toggle").text();
         if (elem == "Lihat Selengkapnya") {
-          //Stuff to do when btn is in the read more state
           $("#toggle").text("Lihat Lebih Sedikit");
           $("#text").slideDown();
         } else {
-          //Stuff to do when btn is in the read less state
           $("#toggle").text("Lihat Selengkapnya");
           $("#text").slideUp();
         }
@@ -1556,6 +1553,18 @@
         });
       }
     });
+
+    function showList(e) {
+      $(e.getAttribute('data-target')).slideDown('slow');
+      $('.selengkapnya').fadeOut('fast');
+      $('.lebih-sedikit').fadeIn('slow');
+    }
+
+    function hideList(e) {
+      $(e.getAttribute('data-target')).slideUp();
+      $('.lebih-sedikit').fadeOut('fast');
+      $('.selengkapnya').fadeIn('slow');
+    }
   </script>
 
 </body>

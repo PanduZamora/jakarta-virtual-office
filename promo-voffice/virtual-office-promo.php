@@ -63,7 +63,7 @@
                     <div class="col-md-6">
                         <div class="image-tile hover-tile text-center mb20">
                             <a data-toggle="modal" data-target="#enquire" href="#">
-                                <img class="background-image" src="../images/promo/juli/july_fair.png">
+                                <img class="background-image" src="../images/promo/agustus/promo-agustus.png">
                             </a>
                             <div class="row">
                                 <div class="col-sm-12" style="padding-right: 2px;">
@@ -77,19 +77,18 @@
                         <div class="card">
                             <div class="card-body">
                                 <h2 class="bold mb-1">
-                                    JULY FAIR
+                                    PROMO MERDEKA!
                                 </h2>
 
                                 <div class="mb-5">
                                     <h4>
-                                        Get a special prive for <strong> Virtual Office </strong> and enjoy
-                                        the freedom of <strong>working from anywhere</strong>
+                                        Dapatkan penawaran Virtual Office Special di Hari Kemerdekaan
                                     </h4>
                                 </div>
 
                                 <p class="mb-3 text-secondary">
                                     <i class="fa-regular fa-calendar"></i>
-                                    Berlaku Hingga 31 Juli 2023
+                                    Berlaku Hingga 31 Agustus 2023
                                 </p>
 
                                 <div class="container">
@@ -98,7 +97,7 @@
                                             <div class="box-promo">
                                                 <div class="title-legal bold left">
                                                     <h3 class="title-promo">Silver</h3>
-                                                    <h4 class="price-promo"><s>IDR 6.900.000 </s>/IDR 6.400.000</h4>
+                                                    <h4 class="price-promo"><s>IDR 6.900.000 </s>/ <strong>IDR 5.900.000</strong> </h4>
                                                 </div>
                                             </div>
                                         </div>
@@ -106,7 +105,7 @@
                                             <div class="box-promo">
                                                 <div class="title-legal bold left">
                                                     <h3 class="title-promo">Gold</h3>
-                                                    <h4 class="price-promo"><s>IDR 9.500.000</s>/IDR 8.750.000</h4>
+                                                    <h4 class="price-promo"><s>IDR 9.500.000</s> <strong>/IDR 7.500.000</strong> </h4>
                                                 </div>
                                             </div>
                                         </div>
@@ -114,7 +113,7 @@
                                             <div class="box-promo">
                                                 <div class="title-legal bold left">
                                                     <h3 class="title-promo">Platinum</h3>
-                                                    <h4 class="price-promo"><s>IDR 12.400.000</s>/IDR 11.400.000</h4>
+                                                    <h4 class="price-promo"><s>IDR 12.400.000</s>/ <strong>IDR 9.400.000</strong> </h4>
                                                 </div>
                                             </div>
                                         </div>

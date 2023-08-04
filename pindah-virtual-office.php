@@ -1050,6 +1050,27 @@
 
                         </div>
 
+                        <div class="card card-slide-location">
+                            <img class="aspect-16to9 card-img-top img-9x16" src="images/thumbnail-gedung/canggu.jpg" alt="" />
+
+                            <div class="card-body p-16to9">
+
+                                <div class="card-body-content">
+                                    <h5 class="card-title">vOffice Canggu</h5>
+                                    <p class="card-text">
+                                        Canggu, Bali
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            <div class="card-footer">
+                                <a href="office-jimbaran.php">
+                                    Lihat Lokasi <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                </a>
+                            </div>
+
+                        </div>
 
                     </div>
                 </div>
