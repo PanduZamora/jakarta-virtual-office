@@ -27,13 +27,17 @@
           <label for="whatsapp">Whatsapp:</label>
           <input type="tel" id="whatsapp" name="whatsapp" required>
         </div>
+        <div class="form-group">
+          <label for="company_name">Company Name:</label>
+          <input type="text" id="company_name" name="company_name">
+        </div>
         <h3>Please Rate Us <br><span style="font-size: small"> (where 1 is poor and 5 is excellent)</span></h3>
         <h4>
 
         </h4>
 
         <div class="form-group">
-          <label for="courtesy">Staff Courtesy and Friendliness:</label>
+          <label for="courtesy">Staff Courtesy and Friendliness:</label><label for="courtesy" style="opacity: 0.5">Kesopanan dan Keramahan Staff:</label>
           <div class="ratings-container">
             <div class="rating">
               <input type="radio" name="courtesy" id="courtesy1" value="1">
@@ -59,7 +63,7 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="center">Centre Facilities and Cleanliness:</label>
+          <label for="center">Centre Facilities and Cleanliness:</label><label for="center" style="opacity: 0.5">Fasilitas dan Kebersihan Tempat:</label>
           <div class="ratings-container">
             <div class="rating">
               <input type="radio" name="center" id="center1" value="1">
@@ -85,7 +89,7 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="staff">Did the staff act in a professional and helpful manner:</label>
+          <label for="staff">Did the staff act in a professional and helpful manner:</label><label for="center" style="opacity: 0.5">Apakah staff bertindak secara profesional dan membantu:</label>
           <div class="ratings-container">
             <div class="rating">
               <input type="radio" name="staff" id="staff1" value="1">
@@ -111,7 +115,7 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="service">Is our service adding value and helpful to your business:</label>
+          <label for="service">Is our service adding value and helpful to your business:</label><label for="center" style="opacity: 0.5">Apakah layanan kami memberikan nilai tambah dan bermanfaat bagi bisnis Anda:</label>
           <div class="ratings-container">
             <div class="rating">
               <input type="radio" name="service" id="service1" value="1">
@@ -137,7 +141,7 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="money">Value for Money:</label>
+          <label for="money">Value for Money:</label><label for="center" style="opacity: 0.5">Nilai untuk uang:</label>
           <div class="ratings-container">
             <div class="rating">
               <input type="radio" name="money" id="money1" value="1">
@@ -167,7 +171,7 @@
 
         <h3 for="comments">If you have a few more minutes, please share with us more of your thoughts</h3>
         <div class="form-group">
-          <label for="additionalTime">Would you like to share more feedback?</label>
+          <label for="additionalTime">Would you like to share more feedback?</label><label for="center" style="opacity: 0.5">Apakah Anda ingin berbagi umpan balik lebih banyak?</label>
           <div class="ratings-container">
             <div class="rating">
               <input type="radio" name="additionalTime" id="yesOption" value="YES">
@@ -181,22 +185,25 @@
         </div>
         <div class="extra_question">
           <div class="form-group">
-            <label for="experience">Your experience at our venue?</label>
+            <label for="experience">Your experience at our venue?</label><label for="center" style="opacity: 0.5">Bagaimana pengalaman Anda di tempat kami?</label>
             <textarea id="experience" name="experience" rows="4" maxlength="200"></textarea>
           </div>
 
           <div class="form-group">
-            <label for="likes">What did you like or don’t like about us?</label>
+            <label for="likes">What did you like or don’t like about us?</label><label for="center" style="opacity: 0.5">Apa yang Anda sukai atau tidak sukai dari kami?</label>
             <textarea id="likes" name="likes" rows="4" maxlength="200"></textarea>
           </div>
 
           <div class="form-group">
-            <label for="suggestions">Do you have ideas or suggestions that may help us improve our services?</label>
+            <label for="suggestions">Do you have ideas or suggestions that may help us improve our
+              services?</label><label for="center" style="opacity: 0.5">Apakah Anda memiliki ide atau saran yang dapat
+              membantu kami untuk meningkatkan layanan kami?</label>
             <textarea id="suggestions" name="suggestions" rows="4" maxlength="200"></textarea>
           </div>
 
           <div class="form-group">
-            <label for="allow_posting">Is it ok if we post your comments on our website and Facebook?</label>
+            <label for="allow_posting">Is it ok if we post your comments on our website and Facebook?</label><label for="center" style="opacity: 0.5">Apakah tidak masalah jika kami memposting komentar Anda di situs web dan
+              Facebook kami?</label>
             <div class="ratings-container">
               <div class="rating">
                 <input type="radio" name="allow_posting" id="yes" value="y">
@@ -471,6 +478,7 @@
         },
         whatsapp: {
           required: true,
+          number: true
         },
         courtesy: {
           ratingRequired: true,
@@ -557,7 +565,8 @@
     let obj = {
       name: $('input[name="name"]').val(),
       email: $('input[name="email"]').val(),
-      whatsapp: +$('input[name="whatsapp"]').val(),
+      whatsapp: $('input[name="whatsapp"]').val(),
+      company_name: $('input[name="company_name"]').val(),
       courtesy: +$('input[name="courtesy"]:checked').val(),
       center: +$('input[name="center"]:checked').val(),
       staff: +$('input[name="staff"]:checked').val(),
@@ -602,7 +611,6 @@
       })
 
   }
-
 
   function showExtraQuestions() {
     const extraQuestionDiv = document.querySelector('.extra_question');
