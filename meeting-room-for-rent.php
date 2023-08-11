@@ -1602,6 +1602,7 @@
         </a> -->
     </section>
 
+    <a href="http://bit.ly/voffice-webnew" class="back-to-top link-changer hidden-xs" id="waFloatButton" target="_blank"><i class="fab fa fa-whatsapp fa-2x"></i></a>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

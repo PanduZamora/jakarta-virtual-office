@@ -141,7 +141,7 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="money">Value for Money:</label><label for="center" style="opacity: 0.5">Nilai untuk uang:</label>
+          <label for="money">Value for Money:</label>
           <div class="ratings-container">
             <div class="rating">
               <input type="radio" name="money" id="money1" value="1">
@@ -189,10 +189,11 @@
             <textarea id="experience" name="experience" rows="4" maxlength="200"></textarea>
           </div>
 
-          <div class="form-group">
-            <label for="likes">What did you like or don’t like about us?</label><label for="center" style="opacity: 0.5">Apa yang Anda sukai atau tidak sukai dari kami?</label>
+          <!-- <div class="form-group">
+            <label for="likes">What did you like or don’t like about us?</label><label for="center"
+              style="opacity: 0.5">Apa yang Anda sukai atau tidak sukai dari kami?</label>
             <textarea id="likes" name="likes" rows="4" maxlength="200"></textarea>
-          </div>
+          </div> -->
 
           <div class="form-group">
             <label for="suggestions">Do you have ideas or suggestions that may help us improve our
@@ -201,8 +202,9 @@
             <textarea id="suggestions" name="suggestions" rows="4" maxlength="200"></textarea>
           </div>
 
-          <div class="form-group">
-            <label for="allow_posting">Is it ok if we post your comments on our website and Facebook?</label><label for="center" style="opacity: 0.5">Apakah tidak masalah jika kami memposting komentar Anda di situs web dan
+          <!-- <div class="form-group">
+            <label for="allow_posting">Is it ok if we post your comments on our website and Facebook?</label><label
+              for="center" style="opacity: 0.5">Apakah tidak masalah jika kami memposting komentar Anda di situs web dan
               Facebook kami?</label>
             <div class="ratings-container">
               <div class="rating">
@@ -214,10 +216,10 @@
                 <label for="no">NO</label>
               </div>
             </div>
-          </div>
+          </div> -->
 
         </div>
-
+        <br>
         <button type="submit" class="btn" id="send">SUBMIT</button>
       </form>
     </div>
@@ -489,12 +491,12 @@
           },
           maxlength: 200
         },
-        likes: {
-          required: function(el) {
-            return $('input[name="additionalTime"]:checked').val() == 'YES';
-          },
-          maxlength: 200
-        },
+        // likes: {
+        //   required: function (el) {
+        //     return $('input[name="additionalTime"]:checked').val() == 'YES';
+        //   },
+        //   maxlength: 200
+        // },
         suggestions: {
           required: function(el) {
             return $('input[name="additionalTime"]:checked').val() == 'YES';
@@ -519,9 +521,9 @@
         experience: {
           required: "Please fill this field"
         },
-        likes: {
-          required: "Please fill this field"
-        },
+        // likes: {
+        //   required: "Please fill this field"
+        // },
         suggestions: {
           required: "Please fill this field"
         }
@@ -558,9 +560,9 @@
       return Swal.fire('Error', 'Please complete all the rating', 'error');
     }
 
-    if ($('input[name="additionalTime"]:checked').val() == 'YES' && !$('input[name="allow_posting"]:checked').val()) {
-      return Swal.fire('Error', 'Please select "Yes" or "No" in last question', 'error');
-    }
+    // if ($('input[name="additionalTime"]:checked').val() == 'YES' && !$('input[name="allow_posting"]:checked').val()) {
+    //   return Swal.fire('Error', 'Please select "Yes" or "No" in last question', 'error');
+    // }
 
     let obj = {
       name: $('input[name="name"]').val(),
@@ -577,9 +579,9 @@
 
     if (additionalTimeValue == 'YES') {
       obj.experience = document.getElementById('experience').value;
-      obj.likes = document.getElementById('likes').value;
+      // obj.likes = document.getElementById('likes').value;
       obj.suggestions = document.getElementById('suggestions').value;
-      obj.allow_posting = $('input[name="allow_posting"]:checked').val()
+      // obj.allow_posting = $('input[name="allow_posting"]:checked').val()
     }
 
     Swal.fire({
