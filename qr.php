@@ -69,42 +69,44 @@
       </div>
       <div class="col-6">
         <div class="item">
-          <a href="https://voffice.co.id/jakarta-virtual-office/QR/vo-brochure.pdf" target="_blank">
+          <a href="https://voffice.co.id/jakarta-virtual-office/pdf/qr-new/vo-brochure.pdf" target="_blank">
             <img src="images/qr/thumb qr code-01.png" style="width:100%;">
           </a>
         </div>
       </div>
       <div class="col-6">
         <div class="item">
-          <a href="https://voffice.co.id/jakarta-virtual-office/QR/Serviced%20Office/SO%20Brochure.pdf" target="_blank">
+          <a href="https://voffice.co.id/jakarta-virtual-office/pdf/qr-new/so-brochure.pdf" target="_blank">
             <img src="images/qr/thumb qr code-02.png" style="width:100%;">
           </a>
         </div>
       </div>
       <div class="col-6">
         <div class="item">
-          <a href="https://voffice.co.id/jakarta-virtual-office/QR/Meeting%20Room/Meeting%20Room.pdf" target="_blank">
+          <a href="https://voffice.co.id/jakarta-virtual-office/pdf/qr-new/meeting-room.pdf" target="_blank">
             <img src="images/qr/thumb qr code-03.png" style="width:100%;">
           </a>
         </div>
       </div>
       <div class="col-6">
         <div class="item">
-          <a href="https://voffice.co.id/jakarta-virtual-office/QR/Event%20Space/Event%20Space.pdf" target="_blank">
+          <a href="https://voffice.co.id/jakarta-virtual-office/pdf/qr-new/event-space.pdf" target="_blank">
             <img src="images/qr/thumb qr code-04.png" style="width:100%;">
           </a>
         </div>
       </div>
       <div class="col-6">
         <div class="item">
-          <a href="https://voffice.co.id/jakarta-virtual-office/pdf/live-@-voffice-brochure.pdf" target="_blank">
+          <a href="https://voffice.co.id/jakarta-virtual-office/pdf/qr-new/hellolive-brochure.pdf" target="_blank">
             <img src="images/qr/thumb qr code-05.png" style="width:100%;">
           </a>
         </div>
       </div>
       <div class="col-6">
         <div class="item">
-          <a href="https://voffice.co.id/jakarta-virtual-office/pdf/Design%20Brochure%20Live%20Box.pdf"> <img src="images/qr/thumb qr code-06.png" style="width:100%;"> </a>
+          <a href="https://voffice.co.id/jakarta-virtual-office/pdf/qr-new/livebox-brochure.pdf" target="_blank">
+            <img src="images/qr/thumb qr code-06.png" style="width:100%;">
+          </a>
         </div>
       </div>
       <div class="d-flex justify-content-center w-100 mt-5">
@@ -112,7 +114,8 @@
             <p>See Our Website</p>
           </a> <a href="https://voffice.co.id/jakarta-virtual-office/our-locations.php" class=" btn-lg btn btn-primary w-100 mb-5">
             <p>Our Locations</p>
-          </a> </div>
+          </a>
+        </div>
       </div>
     </div>
   </div>
