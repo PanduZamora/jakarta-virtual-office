@@ -56,13 +56,16 @@
             <ul class="slides">
                 <li class="image-bg pt-xs-120">
                     <div class="background-image-holder" style="box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5)!important;">
-                        <img alt="image" class="background-image" src="images/gallery/meeting-room/mr-grand-slipi-tower.jpg">
+                        <img alt="image" class="background-image" src="images/gallery/meeting-room/meeting-room-titi-kamal.jpg">
                     </div>
                     <div class="overlay-black"></div>
                     <div class="container v-align-transform">
                         <div class="row text-center">
                             <div class="col-md-12 mt88-lg mt-xs-30 pt-xs-64 ">
                                 <h1 class="bold"> Meeting Room </h1>
+                                <p class="text-center text-white h4">
+                                    Sekarang kamu bisa meeting, presentasi ataupun bertemu klien/partner di lebih 35+ Lokasi vOffice di Indonesia
+                                </p>
                             </div>
                             <a class="btn btn-filled w-30 button-booking" target="_blank" href="https://booking.voffice.co.id/"> Booking Now <i class="fa fa-arrow-right" aria-hidden="true"></i> </a>
                             <p>&nbsp;</p>
@@ -128,7 +131,7 @@
                             <hr class="mb10">
                             <h4 class="mb0"> Only </h4>
                             <h4 class="bold mb10">IDR 255.000</h4>
-                            <a class="btn btn-filled mb10" href="#" data-toggle="modal" data-target="#contactus"> Contact Us Now </a>
+                            <a class="btn btn-filled mb10" href="https://booking.voffice.co.id/" target="_blank"> Booking Now </a>
                             <p>&nbsp;</p>
                         </div>
                     </div>
@@ -139,8 +142,7 @@
                             <hr class="mb10">
                             <h4 class="mb0"> Only </h4>
                             <h4 class="bold mb10">IDR 2.120.000</h4>
-                            <a class="btn btn-filled mb10" href="#" data-toggle="modal" data-target="#contactus"> Contact Us
-                                Now </a>
+                            <a class="btn btn-filled mb10" href="https://booking.voffice.co.id/" target="_blank"> Booking Now </a>
                             <p>*Valid for 3 months</p>
                         </div>
                     </div>
@@ -151,8 +153,7 @@
                             <hr class="mb10">
                             <h4 class="mb0"> Only </h4>
                             <h4 class="bold mb10">IDR 5.450.000</h4>
-                            <a class="btn btn-filled mb10" href="#" data-toggle="modal" data-target="#contactus"> Contact Us
-                                Now </a>
+                            <a class="btn btn-filled mb10" href="https://booking.voffice.co.id/" target="_blank"> Booking Now </a>
                             <p>*Valid for 3 months</p>
                         </div>
                     </div>
@@ -163,8 +164,7 @@
                             <hr class="mb10">
                             <h4 class="mb0"> Only </h4>
                             <h4 class="bold mb10-xs mb10">IDR 7.570.000</h4>
-                            <a class="btn btn-filled mb10" href="#" data-toggle="modal" data-target="#contactus"> Contact Us
-                                Now </a>
+                            <a class="btn btn-filled mb10" href="https://booking.voffice.co.id/" target="_blank"> Booking Now </a>
                             <p>*Valid for 3 months</p>
                         </div>
                     </div>
@@ -173,7 +173,7 @@
 
         </section>
 
-        <section>
+        <section class="pt0">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12 text-center">
@@ -263,9 +263,9 @@
                     <div class="col-sm-12 padding-left-50">
                         <div class="col-md-6 text-left mb30 jakarta south-jakarta city-content">
                             <div class="mr-wrapper">
-                                <p class="h4">Meeting Room <br>@ Treasury Tower</p>
+                                <p class="h4">Meeting Room 1<br>@ Treasury Tower</p>
                                 <div class="mr-image">
-                                    <img src="img/tower/Treasury Tower/jpg/2.jpg" />
+                                    <img src="img/tower/Treasury Tower/meeting-room1-treasury.jpg" />
                                 </div>
                                 <p class="bold">Capacity</p>
                                 <p class="p">10pax</p><!-- 10pax -->
@@ -277,7 +277,26 @@
                                 <p class="p">IDR 255.000/Hour,,</p><!-- IDR 250.000/Hour,, -->
                                 <hr>
                                 <p class="italic">*also available in Half day & full day package </p>
-                                <a href="" class="btn btn-filled" data-toggle="modal" data-target="#myModal" onclick="changeLocation(this);" id="TRT">Enquire Now</a>
+                                <a href="https://booking.voffice.co.id/facility/1887" class="btn btn-filled">Booking Now</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 text-left mb30 jakarta south-jakarta city-content">
+                            <div class="mr-wrapper">
+                                <p class="h4">Meeting Room 2<br>@ Treasury Tower</p>
+                                <div class="mr-image">
+                                    <img src="img/tower/Treasury Tower/meeting-room2-treasury.jpg" />
+                                </div>
+                                <p class="bold">Capacity</p>
+                                <p class="p">10pax</p><!-- 10pax -->
+                                <hr>
+                                <p class="bold">Size</p>
+                                <p class="p">17 Sqm</p><!-- 24 Sqm -->
+                                <hr>
+                                <p class="bold">Price</p>
+                                <p class="p">IDR 255.000/Hour,,</p><!-- IDR 250.000/Hour,, -->
+                                <hr>
+                                <p class="italic">*also available in Half day & full day package </p>
+                                <a href="https://booking.voffice.co.id/facility/1888" class="btn btn-filled">Booking Now</a>
                             </div>
                         </div>
                         <div class="col-md-6 text-left mb30 jakarta south-jakarta city-content">
@@ -296,7 +315,7 @@
                                 <p class="p">IDR 250.000/Hour,,</p><!-- IDR 250.000/Hour,, -->
                                 <hr>
                                 <p class="italic">*also available in Half day & full day package </p>
-                                <a href="" class="btn btn-filled" data-toggle="modal" data-target="#myModal" onclick="changeLocation(this);" id="GKM">Enquire Now</a>
+                                <a href="https://booking.voffice.co.id/" class="btn btn-filled">Booking Now</a>
                             </div>
                         </div>
                         <div class="col-md-6 text-left mb30 jakarta south-jakarta city-content">
@@ -315,7 +334,7 @@
                                 <p class="p">IDR 250.000/Hour</p><!-- IDR 250.000/Hour,, -->
                                 <hr>
                                 <p class="italic">*also available in Half day & full day package </p>
-                                <a href="" class="btn btn-filled" data-toggle="modal" data-target="#myModal" onclick="changeLocation(this);" id="MPT">Enquire Now</a>
+                                <a href="https://booking.voffice.co.id/" class="btn btn-filled">Booking Now</a>
                             </div>
                         </div>
                         <div class="col-md-6 text-left mb30 jakarta south-jakarta city-content">
@@ -334,7 +353,7 @@
                                 <p class="p">IDR 255.000/Hour</p>
                                 <hr>
                                 <p class="italic">*also available in Half day & full day package </p>
-                                <a href="" class="btn btn-filled" data-toggle="modal" data-target="#myModal" onclick="changeLocation(this);" id="MR">Enquire Now</a>
+                                <a href="https://booking.voffice.co.id/facility/5" class="btn btn-filled">Booking Now</a>
                             </div>
                         </div>
                         <div class="col-md-6 text-left mb30 jakarta central-jakarta city-content">
@@ -353,14 +372,14 @@
                                 <p class="p">IDR 200.000/Hour</p>
                                 <hr>
                                 <p class="italic">*also available in Half day & full day package </p>
-                                <a href="" class="btn btn-filled" data-toggle="modal" data-target="#myModal" onclick="changeLocation(this);" id="MBS">Enquire Now</a>
+                                <a href="https://booking.voffice.co.id/" class="btn btn-filled">Booking Now</a>
                             </div>
                         </div>
                         <div class="col-md-6 text-left mb30 jakarta central-jakarta city-content">
                             <div class="mr-wrapper">
-                                <p class="h4">Meeting Room <br>@ The City Tower</p>
+                                <p class="h4">Meeting Room 1<br>@ The City Tower</p>
                                 <div class="mr-image">
-                                    <img src="images/SO/TCT/Meeting Room 1.jpg" />
+                                    <img src="img/tower/the-city-tower/tct-meeting-room1.jpg" />
                                 </div>
                                 <p class="bold">Capacity</p>
                                 <p class="p">8 / 12 Pax</p>
@@ -372,14 +391,35 @@
                                 <p class="p">IDR 250.000/Hour</p>
                                 <hr>
                                 <p class="italic">*also available in Half day & full day package </p>
-                                <a href="" class="btn btn-filled" data-toggle="modal" data-target="#myModal" onclick="changeLocation(this);" id="TCT">Enquire Now</a>
+                                <a href="https://booking.voffice.co.id/facility/1" class="btn btn-filled">Booking Now</a>
                             </div>
                         </div>
                         <div class="col-md-6 text-left mb30 jakarta central-jakarta city-content">
                             <div class="mr-wrapper">
-                                <p class="h4">Meeting Room <br>@ Sudirman 7.8</p>
+                                <p class="h4">Meeting Room 2<br>@ The City Tower</p>
                                 <div class="mr-image">
-                                    <img src="img/tower/sudirman-78/jpg/10.jpg" />
+                                    <img src="img/tower/the-city-tower/tct-meeting-room2.jpg" />
+                                </div>
+                                <p class="bold">Capacity</p>
+                                <p class="p">8 / 12 Pax</p>
+                                <hr>
+                                <p class="bold">Size</p>
+                                <p class="p">14 / 19 Sqm</p>
+                                <hr>
+                                <p class="bold">Price</p>
+                                <p class="p">IDR 250.000/Hour</p>
+                                <hr>
+                                <p class="italic">*also available in Half day & full day package </p>
+                                <a href="https://booking.voffice.co.id/facility/2" class="btn btn-filled">Booking Now</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 text-left mb30 jakarta central-jakarta city-content">
+                            <div class="mr-wrapper">
+                                <p class="h4">Meeting Room 1 (Non view)
+                                    <br>@ Sudirman 7.8
+                                </p>
+                                <div class="mr-image">
+                                    <img src="img/tower/sudirman-78/78-meeting-room1.jpg" />
                                 </div>
                                 <p class="bold">Capacity</p>
                                 <p class="p">8 / 12 Pax</p>
@@ -391,7 +431,28 @@
                                 <p class="p">IDR 250.000/Hour</p>
                                 <hr>
                                 <p class="italic">*also available in Half day & full day package </p>
-                                <a href="" class="btn btn-filled" data-toggle="modal" data-target="#myModal" onclick="changeLocation(this);" id="S78">Enquire Now</a>
+                                <a href="https://booking.voffice.co.id/facility/1858" class="btn btn-filled">Booking Now</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 text-left mb30 jakarta central-jakarta city-content">
+                            <div class="mr-wrapper">
+                                <p class="h4">Meeting Room 2 (View)
+                                    <br>@ Sudirman 7.8
+                                </p>
+                                <div class="mr-image">
+                                    <img src="img/tower/sudirman-78/78-meeting-room2.jpg" />
+                                </div>
+                                <p class="bold">Capacity</p>
+                                <p class="p">8 / 12 Pax</p>
+                                <hr>
+                                <p class="bold">Size</p>
+                                <p class="p">17 Sqm</p>
+                                <hr>
+                                <p class="bold">Price</p>
+                                <p class="p">IDR 250.000/Hour</p>
+                                <hr>
+                                <p class="italic">*also available in Half day & full day package </p>
+                                <a href="https://booking.voffice.co.id/facility/1859" class="btn btn-filled">Booking Now</a>
                             </div>
                         </div>
                         <div class="col-md-6 text-left mb30 jakarta central-jakarta city-content">
@@ -410,14 +471,14 @@
                                 <p class="p">IDR 250.000/Hour</p>
                                 <hr>
                                 <p class="italic">*also available in Half day & full day package </p>
-                                <a href="" class="btn btn-filled" data-toggle="modal" data-target="#myModal" onclick="changeLocation(this);" id="CTKM">Enquire Now</a>
+                                <a href="https://booking.voffice.co.id/" class="btn btn-filled">Booking Now</a>
                             </div>
                         </div>
                         <div class="col-md-6 text-left mb30 jakarta south-jakarta city-content">
                             <div class="mr-wrapper">
-                                <p class="h4">Meeting Room <br>@ Office 8</p>
+                                <p class="h4">Meeting Room 1<br>@ Office 8</p>
                                 <div class="mr-image">
-                                    <img src="images/SO/Office 8/Meeting Room 1.jpg" />
+                                    <img src="img/tower/office8/office8-meeting-room1.jpg" />
                                 </div>
                                 <p class="bold">Capacity</p>
                                 <p class="p">4 Pax / 8-10 Pax</p>
@@ -429,7 +490,26 @@
                                 <p class="p">IDR 250.000/Hour</p>
                                 <hr>
                                 <p class="italic">*also available in Half day & full day package </p>
-                                <a href="" class="btn btn-filled" data-toggle="modal" data-target="#myModal" onclick="changeLocation(this);" id="office8">Enquire Now</a>
+                                <a href="https://booking.voffice.co.id/facility/20" class="btn btn-filled">Booking Now</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 text-left mb30 jakarta south-jakarta city-content">
+                            <div class="mr-wrapper">
+                                <p class="h4">Meeting Room 2<br>@ Office 8</p>
+                                <div class="mr-image">
+                                    <img src="img/tower/office8/office8-meeting-room2.jpg" />
+                                </div>
+                                <p class="bold">Capacity</p>
+                                <p class="p">4 Pax / 8-10 Pax</p>
+                                <hr>
+                                <p class="bold">Size</p>
+                                <p class="p">10 Sqm / 16,5 Sqm</p>
+                                <hr>
+                                <p class="bold">Price</p>
+                                <p class="p">IDR 250.000/Hour</p>
+                                <hr>
+                                <p class="italic">*also available in Half day & full day package </p>
+                                <a href="https://booking.voffice.co.id/facility/21" class="btn btn-filled">Booking Now</a>
                             </div>
                         </div>
                         <div class="col-md-6 text-left mb30 jakarta south-jakarta city-content">
@@ -448,7 +528,7 @@
                                 <p class="p">IDR 500.000/Hour</p>
                                 <hr>
                                 <p class="italic">*also available in Half day & full day package </p>
-                                <a href="" class="btn btn-filled" data-toggle="modal" data-target="#myModal" onclick="changeLocation(this);" id="office8">Enquire Now</a>
+                                <a href="https://booking.voffice.co.id/" class="btn btn-filled">Booking Now</a>
                             </div>
                         </div>
                         <div class="col-md-6 text-left mb30 jakarta west-jakarta city-content">
@@ -467,7 +547,7 @@
                                 <p class="p">IDR 250.000/Hour</p>
                                 <hr>
                                 <p class="italic">*also available in Half day & full day package </p>
-                                <a href="" class="btn btn-filled" data-toggle="modal" data-target="#myModal" onclick="changeLocation(this);" id="KT">Enquire Now</a>
+                                <a href="https://booking.voffice.co.id/" class="btn btn-filled">Booking Now</a>
                             </div>
                         </div>
                         <div class="col-md-6 text-left mb30 jakarta south-jakarta city-content">
@@ -486,7 +566,7 @@
                                 <p class="p">IDR 255.000/Hour</p>
                                 <hr>
                                 <p class="italic">*also available in Half day & full day package </p>
-                                <a href="" class="btn btn-filled" data-toggle="modal" data-target="#myModal" onclick="changeLocation(this);" id="TCB">Enquire Now</a>
+                                <a href="https://booking.voffice.co.id/" class="btn btn-filled">Booking Now</a>
                             </div>
                         </div>
                         <div class="col-md-6 text-left mb30 jakarta south-jakarta city-content">
@@ -505,7 +585,7 @@
                                 <p class="p">IDR 500.000/Hour</p>
                                 <hr>
                                 <p class="italic">*also available in Half day & full day package </p>
-                                <a href="" class="btn btn-filled" data-toggle="modal" data-target="#myModal" onclick="changeLocation(this);" id="TCB">Enquire Now</a>
+                                <a href="https://booking.voffice.co.id/" class="btn btn-filled">Booking Now</a>
                             </div>
                         </div>
                         <div class="col-md-6 text-left mb30 jakarta west-jakarta city-content">
@@ -524,7 +604,7 @@
                                 <p class="p">IDR 255.000/Hour</p>
                                 <hr>
                                 <p class="italic">*also available in Half day & full day package </p>
-                                <a href="" class="btn btn-filled" data-toggle="modal" data-target="#myModal" onclick="changeLocation(this);" id="GST">Enquire Now</a>
+                                <a href="https://booking.voffice.co.id/" class="btn btn-filled">Booking Now</a>
                             </div>
                         </div>
                         <div class="col-md-6 text-left mb30 jakarta west-jakarta city-content">
@@ -543,7 +623,7 @@
                                 <p class="p">IDR 500.000/Hour</p>
                                 <hr>
                                 <p class="italic">*also available in Half day & full day package </p>
-                                <a href="" class="btn btn-filled" data-toggle="modal" data-target="#myModal" onclick="changeLocation(this);" id="GST">Enquire Now</a>
+                                <a href="https://booking.voffice.co.id/" class="btn btn-filled">Booking Now</a>
                             </div>
                         </div>
                         <div class="col-md-6 text-left mb30 jakarta south-jakarta city-content">
@@ -562,7 +642,7 @@
                                 <p class="p">IDR 250.000/Hour</p>
                                 <hr>
                                 <p class="italic">*also available in Half day & full day package </p>
-                                <a href="" class="btn btn-filled" data-toggle="modal" data-target="#myModal" onclick="changeLocation(this);" id="GS">Enquire Now</a>
+                                <a href="https://booking.voffice.co.id/" class="btn btn-filled">Booking Now</a>
                             </div>
                         </div>
                         <div class="col-md-6 text-left mb30 jakarta north-jakarta city-content">
@@ -581,7 +661,7 @@
                                 <p class="p">IDR 255.000/Hour</p>
                                 <hr>
                                 <p class="italic">*also available in Half day & full day package </p>
-                                <a href="" class="btn btn-filled" data-toggle="modal" data-target="#myModal" onclick="changeLocation(this);" id="K2T">Enquire Now</a>
+                                <a href="https://booking.voffice.co.id/" class="btn btn-filled">Booking Now</a>
                             </div>
                         </div>
                         <div class="col-md-6 text-left mb30 jakarta north-jakarta city-content">
@@ -600,7 +680,7 @@
                                 <p class="p">IDR 500.000/Hour</p>
                                 <hr>
                                 <p class="italic">*also available in Half day & full day package </p>
-                                <a href="" class="btn btn-filled" data-toggle="modal" data-target="#myModal" onclick="changeLocation(this);" id="K2T">Enquire Now</a>
+                                <a href="https://booking.voffice.co.id/" class="btn btn-filled">Booking Now</a>
                             </div>
                         </div>
                         <div class="col-md-6 text-left mb30 jakarta south-jakarta city-content">
@@ -619,7 +699,7 @@
                                 <p class="p">IDR 255.000/Hour</p>
                                 <hr>
                                 <p class="italic">*also available in Half day & full day package </p>
-                                <a href="" class="btn btn-filled" data-toggle="modal" data-target="#myModal" onclick="changeLocation(this);" id="MK">Enquire Now</a>
+                                <a href="https://booking.voffice.co.id/" class="btn btn-filled">Booking Now</a>
                             </div>
                         </div>
                         <div class="col-md-6 text-left mb30 jakarta south-jakarta city-content">
@@ -638,7 +718,7 @@
                                 <p class="p">IDR 250.000/Hour</p>
                                 <hr>
                                 <p class="italic">*also available in Half day & full day package </p>
-                                <a href="" class="btn btn-filled" data-toggle="modal" data-target="#myModal" onclick="changeLocation(this);" id="CT">Enquire Now</a>
+                                <a href="https://booking.voffice.co.id/" class="btn btn-filled">Booking Now</a>
                             </div>
                         </div>
                         <div class="col-md-6 text-left mb30 jakarta south-jakarta city-content">
@@ -657,7 +737,7 @@
                                 <p class="p">IDR 500.000/Hour</p>
                                 <hr>
                                 <p class="italic">*also available in Half day & full day package </p>
-                                <a href="" class="btn btn-filled" data-toggle="modal" data-target="#myModal" onclick="changeLocation(this);" id="CT">Enquire Now</a>
+                                <a href="https://booking.voffice.co.id/" class="btn btn-filled">Booking Now</a>
                             </div>
                         </div>
                         <div class="col-md-6 text-left mb30 tangerang city-content" style="display:none;">
@@ -676,7 +756,7 @@
                                 <p class="p">IDR 255.000/Hour</p>
                                 <hr>
                                 <p class="italic">*also available in Half day & full day package </p>
-                                <a href="" class="btn btn-filled" data-toggle="modal" data-target="#myModal" onclick="changeLocation(this);" id="BSD">Enquire Now</a>
+                                <a href="https://booking.voffice.co.id/" class="btn btn-filled">Booking Now</a>
                             </div>
                         </div>
                         <div class="col-md-6 text-left mb30 tangerang city-content" style="display:none;">
@@ -695,10 +775,10 @@
                                 <p class="p">IDR 255.000/Hour</p> <!-- IDR 250.000/Hour -->
                                 <hr>
                                 <p class="italic">*also available in Half day & full day package </p>
-                                <a href="" class="btn btn-filled" data-toggle="modal" data-target="#myModal" onclick="changeLocation(this);" id="TGR">Enquire Now</a>
+                                <a href="https://booking.voffice.co.id/" class="btn btn-filled">Booking Now</a>
                             </div>
                         </div>
-                        <div class="col-md-6 text-left mb30 jakarta east-jakarta city-content">
+                        <div class=" col-md-6 text-left mb30 jakarta east-jakarta city-content">
                             <div class="mr-wrapper">
                                 <p class="h4">Meeting Room <br>@ Rawamangun</p>
                                 <div class="mr-image">
@@ -714,7 +794,7 @@
                                 <p class="p">IDR 255.000/Hour</p>
                                 <hr>
                                 <p class="italic">*also available in Half day & full day package </p>
-                                <a href="" class="btn btn-filled" data-toggle="modal" data-target="#myModal" onclick="changeLocation(this);" id="RM">Enquire Now</a>
+                                <a href="https://booking.voffice.co.id/" class="btn btn-filled">Booking Now</a>
                             </div>
                         </div>
                         <div class="col-md-6 text-left mb30 bekasi city-content">
@@ -733,7 +813,7 @@
                                 <p class="p">IDR 255.000/Hour</p>
                                 <hr>
                                 <p class="italic">*also available in Half day & full day package </p>
-                                <a href="" class="btn btn-filled" data-toggle="modal" data-target="#myModal" onclick="changeLocation(this);" id="plaza-bekasi">Enquire Now</a>
+                                <a href="https://booking.voffice.co.id/" class="btn btn-filled">Booking Now</a>
                             </div>
                         </div>
                         <div class="col-md-6 text-left mb30 cibubur city-content">
@@ -752,7 +832,7 @@
                                 <p class="p">IDR 255.000/Hour</p>
                                 <hr>
                                 <p class="italic">*also available in Half day & full day package </p>
-                                <a href="" class="btn btn-filled" data-toggle="modal" data-target="#myModal" onclick="changeLocation(this);" id="mensana-tower">Enquire Now</a>
+                                <a href="https://booking.voffice.co.id/" class="btn btn-filled">Booking Now</a>
                             </div>
                         </div>
                         <div class="col-md-6 text-left mb30 jakarta north-jakarta city-content">
@@ -771,7 +851,7 @@
                                 <p class="p">IDR 255.000/Hour</p>
                                 <hr>
                                 <p class="italic">*also available in Half day & full day package </p>
-                                <a href="" class="btn btn-filled" data-toggle="modal" data-target="#myModal" onclick="changeLocation(this);" id="honey-lady">Enquire Now</a>
+                                <a href="https://booking.voffice.co.id/" class="btn btn-filled">Booking Now</a>
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -1121,20 +1201,6 @@
             </div>
         </div>
     </section>
-
-    <div class="footer_bottom visible-xs visible-sm" style="margin-bottom:-50px;">
-        <div class="footer_mobile_cta">
-            <ul>
-                <li style="background: #25d366"><a href="http://bit.ly/sovofficenew">
-                        <h6 style="color: #fff" class="uppercase"><i class="fa fa-whatsapp fa-lg mr-10"></i>WhatsApp </h6>
-                    </a>
-                </li>
-                <li style="background: #951942"><a href="#" data-toggle="modal" data-target="#emailUs">
-                        <h6 style="color: #fff" class="uppercase"><i class="fa fa-envelope fa-lg mr-10"></i>Contact Us</h6>
-                    </a></li>
-            </ul>
-        </div>
-    </div>
 
     <!--Modal Pop Up-->
     <!--=======================================Modal Form========================================-->
@@ -1588,21 +1654,50 @@
                     transform: translateX(50px);
                 }
             }
+
+            .back-to-top {
+                position: fixed;
+                background: transparent !important;
+                color: #fff;
+                width: 150px;
+                text-align: center;
+                line-height: 0;
+                border-radius: 50%;
+                left: 85px !important;
+                right: auto !important;
+                bottom: 55px;
+                font-weight: 400;
+                z-index: 99;
+                -webkit-box-shadow: none !important;
+                -moz-box-shadow: none !important;
+                box-shadow: none !important;
+            }
+
+            @media (max-width:600px) {
+                .back-to-top {
+                    position: fixed;
+                    background: transparent !important;
+                    color: #fff;
+                    width: 150px;
+                    text-align: center;
+                    line-height: 0;
+                    border-radius: 50%;
+                    left: 340px !important;
+                    right: auto !important;
+                    bottom: 55px;
+                    font-weight: 400;
+                    z-index: 99;
+                    -webkit-box-shadow: none !important;
+                    -moz-box-shadow: none !important;
+                    box-shadow: none !important;
+                }
+            }
         </style>
-        <!-- <a href="https://booking.voffice.co.id/">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-12">
-                        <p class="bold">
-                            Book Now For Meeting Room <i class="fa-solid fa-angles-right"></i>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </a> -->
     </section>
 
-    <a href="http://bit.ly/voffice-webnew" class="back-to-top link-changer hidden-xs" id="waFloatButton" target="_blank"><i class="fab fa fa-whatsapp fa-2x"></i></a>
+    <a href="https://booking.voffice.co.id/" class="back-to-top link-changer" id="waFloatButton" target="_blank">
+        <img src="images/book-now.png" alt="">
+    </a>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

@@ -501,16 +501,6 @@
                     </form>
                 </div>
             </div>
-            <!--<div class="col-md-12 visible-xs text-center">-->
-            <!--<p class="mb8 bold">-->
-            <!--Or u can chat via Whatsapp-->
-            <!--</p>-->
-            <!--<a class="btn btn-lg btn-filled" href="http://bit.ly/voffice-web">-->
-            <!--<img src="img/wa.png" width="10%">-->
-            <!--Chat Via Whatsapp-->
-            <!--</img>-->
-            <!--</a>-->
-            <!--</div>-->
         </div>
     </footer>
 
@@ -733,7 +723,7 @@
     <div class="footer_bottom visible-xs visible-sm" style="margin-bottom:-50px;">
         <div class="footer_mobile_cta">
             <ul>
-                <li style="background: #25d366"><a href="http://bit.ly/medan-voffice" id="waButton">
+                <li style="background: #25d366"><a href="https://bit.ly/voffice-medan" id="waButton">
                         <h6 style="color: #fff" class="uppercase"><i class="fa fa-whatsapp fa-lg mr-10"></i>WhatsApp
                         </h6>
                     </a>
@@ -746,8 +736,8 @@
     </div>
 
 
-    <a href="https://bit.ly/medan-voffice" class="back-to-top" id="waFloatButton" target="_blank"><i class="fab fa fa-whatsapp fa-2x"></i></a>
-    <a href="https://bit.ly/medan-voffice" class="back-to-top hidden-xs" id="waFloatButton" target="_blank"><i class="fab fa fa-whatsapp fa-2x"></i></a>
+    <a href="https://bit.ly/voffice-medan" class="back-to-top" id="waFloatButton" target="_blank"><i class="fab fa fa-whatsapp fa-2x"></i></a>
+    <a href="https://bit.ly/voffice-medan" class="back-to-top hidden-xs" id="waFloatButton" target="_blank"><i class="fab fa fa-whatsapp fa-2x"></i></a>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
