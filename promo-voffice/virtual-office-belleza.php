@@ -46,6 +46,7 @@
 
     </div>
     <div class="main-container">
+
         <section class="section-header-promo bg-header-promo">
 
             <div class="row">
@@ -63,7 +64,7 @@
                     <div class="col-md-6">
                         <div class="image-tile hover-tile text-center mb20">
                             <a data-toggle="modal" data-target="#enquire" href="#">
-                                <img class="background-image" src="../images/promo/september/september-Best-deal.png">
+                                <img class="background-image" src="../images/promo/september/voffice-belleza.png">
                             </a>
                             <div class="row">
                                 <div class="col-sm-12" style="padding-right: 2px;">
@@ -77,48 +78,41 @@
                         <div class="card">
                             <div class="card-body">
                                 <h2 class="bold mb-1">
-                                    SEPTEMBER BEST DEAL!
+                                    VOFFICE BELLEZA
                                 </h2>
-
-                                <div class="mb-5">
-                                    <h4>
-                                       Establish a presence in a prestigious business area with <a href="index.php" class="bold">vOffice Virtual Office</a>
-                                    </h4>
-                                </div>
-
-                                <p class="mb-3 text-secondary">
-                                    <i class="fa-regular fa-calendar"></i>
-                                    Berlaku Hingga 30 September 2023
+                                <p class="bold">
+                                    <i class="fa fa-location-arrow" aria-hidden="true"></i>
+                                    Permata Hijau, Jakarta Selatan
                                 </p>
+                                <div class="mb-5">
+                                    <h4>The Most Potential Business Locations in Jakarta</h4>
+                                </div>
 
                                 <div class="container">
                                     <div class="promo-box">
                                         <div class="col-md-6">
                                             <div class="box-promo">
                                                 <div class="title-legal bold left">
-                                                    <h3 class="title-promo">Silver</h3>
-                                                    <h4 class="price-promo"><s>IDR 6.900.000 </s>/ <strong>IDR 6.150.000</strong> </h4>
+                                                    <h3 class="title-promo">VIRTUAL OFFICE</h3>
+                                                    <h4 class="price-promo"><s>IDR 3.500.000 </s>/IDR 2.900.000</h4>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="box-promo">
                                                 <div class="title-legal bold left">
-                                                    <h3 class="title-promo">Gold</h3>
-                                                    <h4 class="price-promo"><s>IDR 9.500.000</s> <strong>/IDR 8.250.000</strong> </h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="box-promo">
-                                                <div class="title-legal bold left">
-                                                    <h3 class="title-promo">Platinum</h3>
-                                                    <h4 class="price-promo"><s>IDR 12.400.000</s>/ <strong>IDR 10.400.000</strong> </h4>
+                                                    <h3 class="title-promo">PKP READY</h3>
+                                                    <h4 class="price-promo">2 Months Free</h4>
+                                                    <p class="bold">
+                                                        for Sign up Before 30 September 2023
+                                                    </p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
+
                             </div>
                         </div>
                     </div>

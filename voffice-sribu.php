@@ -210,6 +210,13 @@
         font-weight: 600;
       }
     }
+
+    @media (max-width: 600px) {
+      .section1 {
+        height: auto;
+        margin-top: 90px!important;
+      }
+    }
   </style>
 
 </head>
@@ -272,36 +279,34 @@
 
   <section class="section1" style="background-color: #f1f1f1;">
     <div class="container">
-      <div class="row ">
-        <div class="col-md-12">
+      <div class="row place-self-center">
+        <div class="col-md-6">
           <div class="desc">
-            <h1 class="title em text-center">
+            <h1 class="title em">
               <span class="tt-n">Special Offer For</span>
               <br>
               <span class="em-purple">Sribu Members!</span>
             </h1>
-            <p class="text-center bold">
+            <p class="bold">
               free 10 jam private office dan meeting room
             </p>
             <div class="hide-pc">
-              <div class="web-banner web-banner-sribu">
+              <div class="web-banner">
                 <img src="assets/img/sribu/web-banner.jpg" alt="" class="img-fluid">
                 <img src="assets/img/sribu/web-banner-2.jpg" alt="" class="img-fluid">
               </div>
             </div>
 
-            <center>
-              <div class="grid-button">
-                <a href="#more-info" class="btn btn-filled">
-                  Info Selengkapnya <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                </a>
-              </div>
-            </center>
+            <div class="grid-button">
+              <a href="#more-info" class="btn btn-filled">
+                Info Selengkapnya <i class="fa fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
           </div>
 
         </div>
-        <div class="col-md-12 hide-mobile">
-          <div class="web-banner web-banner-sribu">
+        <div class="col-md-6 hide-mobile">
+          <div class="web-banner">
             <img src="assets/img/sribu/web-banner.jpg" alt="" class="img-fluid ">
             <img src="assets/img/sribu/web-banner-2.jpg" alt="" class="img-fluid">
           </div>
@@ -1001,7 +1006,7 @@
                         <p class="mt16">For Sribu Member</p>
                       </div>
                       <div class="table-footer pb-0">
-                        <a data-toggle="modal" data-target="#mintaproposal" rel="nofollow noopener" target="blank">ask for proposals <i class="fa fa-info-circle" aria-hidden="true"></i></a>
+                        <a href="https://bit.ly/vofficesribu" rel="nofollow noopener" target="blank">ask for proposals <i class="fa fa-info-circle" aria-hidden="true"></i></a>
                       </div>
                     </div>
                     <div class="table-content">
@@ -1071,7 +1076,7 @@
                         <p class="mt16">For Sribu Member</p>
                       </div>
                       <div class="table-footer pb-0">
-                        <a data-toggle="modal" data-target="#mintaproposal" rel="nofollow noopener" target="blank">ask for proposals <i class="fa fa-info-circle" aria-hidden="true"></i></a>
+                        <a href="https://bit.ly/vofficesribu" rel="nofollow noopener" target="blank">ask for proposals <i class="fa fa-info-circle" aria-hidden="true"></i></a>
                       </div>
                     </div>
                     <div class="table-content">
@@ -1141,7 +1146,7 @@
                         <p class="mt16">For Sribu Member</p>
                       </div>
                       <div class="table-footer pb-0">
-                        <a data-toggle="modal" data-target="#mintaproposal" rel="nofollow noopener" target="blank">ask for proposals <i class="fa fa-info-circle" aria-hidden="true"></i></a>
+                        <a href="https://bit.ly/vofficesribu" rel="nofollow noopener" target="blank">ask for proposals <i class="fa fa-info-circle" aria-hidden="true"></i></a>
                       </div>
                     </div>
                     <div class="table-content">
@@ -1289,31 +1294,14 @@
   <section id="section5">
     <div class="container">
       <div class="row">
-        <div class="col-md-6">
-          <div class="mapping">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.255162215993!2d106.81821597499038!3d-6.230053693758079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e799d285b7%3A0x1a1359055467a9ec!2svOffice%20Indonesia%20-%20Headquarter%20(Virtual%20Office%20%7C%20Serviced%20Office%20%7C%20Event%20Space%20%7C%20Meeting%20Room)!5e0!3m2!1sen!2sid!4v1690876684961!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="col-md-12">
+          <div class="sec-title p_relative d_block mb_50 centred " id="more-info">
+            <h2 class="fw_bold">Lokasi <strong class="font-purple">vOffice</strong></h2>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="feature boxed3">
-            <h4 class="mb8 bold text-center color-black">Dapatkan Promo & Penawaran Menarik</h4>
-            <p class="text-center mb32">Isi formulir di bawah ini untuk mendapatkan proposal penawaran
-              dan tim kami akan segera menghubungi Anda. Terima kasih</p>
-
-            <form class="form-email" data-success="Thanks for your inquiries, we will be in touch to confirm shortly." data-error="Please fill all fields correctly.">
-
-              <input type="text" name="virtualoffice" hidden="hidden" value="virtualoffice" id="virtualoffice">
-
-              <input type="text" class="validate-required" name="name" placeholder="Nama Lengkap*" required>
-              <input type="text" class="validate-required" name="phone" placeholder="Nomor Telepon / Whatsapp*" required>
-              <input type="text" class="validate-required validate-email" name="email" placeholder="Alamat Email*" required>
-              <input type="text" class="" name="usaha" placeholder="Bidang Usaha">
-
-              <textarea style="color: #0a0a0a" name="message" rows="4" placeholder="Message"></textarea>
-              <div id="html_element" require>
-              </div>
-              <button id="submit-form" type="submit" name="submit">Contact Us Now!</button>
-            </form>
+        <div class="col-md-12">
+          <div class="mapping">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.255162215993!2d106.81821597499038!3d-6.230053693758079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e799d285b7%3A0x1a1359055467a9ec!2svOffice%20Indonesia%20-%20Headquarter%20(Virtual%20Office%20%7C%20Serviced%20Office%20%7C%20Event%20Space%20%7C%20Meeting%20Room)!5e0!3m2!1sen!2sid!4v1690876684961!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
       </div>
@@ -1360,7 +1348,84 @@
 
 
   <?php include "partner-landing-page.php" ?>
-  <?php include "footer-new-landingpage.html" ?>
+
+  <section class="bg-secondary pt24 pb24">
+    <div class="container">
+      <div class="col-md-12 text-center">
+        <div class="row">
+          <div class="col-sm-12">
+            <p class="bold mb8">
+              Virtual Office gladly accepts:
+            </p>
+            <img class="image image-xs" src="img/footer-pay/visa.png" />
+            <img class="image image-xs" src="img/footer-pay/mastercard.png" />
+            <img class="image image-xs" src="img/footer-pay/paypal.png" />
+            <img class="image image-xs" src="img/footer-pay/vo-bcacard.jpg" />
+            <img class="image image-xs" src="img/footer-pay/vo-jcb.jpg" />
+            <img class="image image-xs" src="img/footer-pay/id-bca.gif" />
+            <img class="image image-xs" src="img/footer-pay/vo-prima.jpg" />
+            <img class="image image-xs" src="img/footer-pay/vo-debitbca.jpg" />
+
+          </div>
+        </div>
+        <p class="text-center" id="about-voffice">
+          <span class="sub lang" key="footerone4">
+            Sejak 2003, Virtual Office Indonesia (vOffice) telah melayani lebih dari 50.000 bisnis
+            dan tersedia di lebih dari 42 lokasi. Virtual Office Indonesia memudahkan bisnis untuk berkembang
+            pesat
+            dan beroperasi dengan mudah. Untuk informasi lebih lanjut mengenai Virtual Office Indonesia,
+            silakan hubungi kami di
+            <a href="tel:+622130490000">
+              02130490000
+            </a>
+            or email us at
+            <a href="mailto:cs@voffice.co.id">
+              cs@voffice.co.id
+            </a>
+          </span>
+        </p>
+      </div>
+    </div>
+
+  </section>
+
+
+  <a href="https://bit.ly/vofficesribu" class="btn-whatsapp-pulse link-changer">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <style>
+    .btn-whatsapp-pulse {
+      background: #25d366;
+      color: white;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      font-size: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 0;
+      height: 0;
+      padding: 35px;
+      text-decoration: none;
+      border-radius: 50%;
+      animation-name: pulse;
+      animation-duration: 1.5s;
+      animation-timing-function: ease-out;
+      animation-iteration-count: infinite;
+      z-index: 999;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+      }
+
+      80% {
+        box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+      }
+    }
+  </style>
 
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
@@ -1522,7 +1587,7 @@
       $('#wa-fb-ig5').css("display", "none");
       $('#wa-fb-ig6').css("display", "none");
       $('#wa-fb-ig7').css("display", "none");
-      $('.link-changer').attr('href', 'http://bit.ly/sem-voffice');
+      $('.link-changer').attr('href', 'href="https://bit.ly/vofficesribu');
       field.attr('value', 'virtualoffice_sem');
       field.attr('name', 'virtualoffice_sem');
       console.log(field)

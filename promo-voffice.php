@@ -62,6 +62,48 @@
 
                 <div class="row">
 
+                    <!-- Sprecial Price + Extra 1 Month ( Sale - Bretion ) -->
+                    <div class="col-md-3">
+                        <div class="image-tile hover-tile text-center mb20">
+                            <a data-toggle="#" data-target="#" href="promo-voffice/virtual-office-promo.php">
+                                <img class="background-image" src="images/promo/september/september-Best-deal.png">
+                            </a>
+                            <div class="row">
+                                <div class="col-sm-12" style="padding-right: 2px;">
+                                    <a class="btn btn-lg btn-block border-radius-0 btn-filled color-white m0" data-toggle="#" data-target="#" href="promo-voffice/virtual-office-promo.php">Contact us</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cabang New PIK -->
+                    <div class="col-md-3">
+                        <div class="image-tile hover-tile text-center mb20">
+                            <a data-toggle="#" data-target="#" href="promo-voffice/virtual-office-pik.php">
+                                <img class="background-image" src="images/promo/mei/gold-coast.png">
+                            </a>
+                            <div class="row">
+                                <div class="col-sm-12" style="padding-right: 2px;">
+                                    <a class="btn btn-lg btn-block border-radius-0 btn-filled color-white m0" data-toggle="#" data-target="#" href="promo-voffice/virtual-office-pik.php">Contact us</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cabang New belleza -->
+                    <div class="col-md-3">
+                        <div class="image-tile hover-tile text-center mb20">
+                            <a data-toggle="#" data-target="#" href="promo-voffice/virtual-office-belleza.php">
+                                <img class="background-image" src="images/promo/september/voffice-belleza.png">
+                            </a>
+                            <div class="row">
+                                <div class="col-sm-12" style="padding-right: 2px;">
+                                    <a class="btn btn-lg btn-block border-radius-0 btn-filled color-white m0" data-toggle="#" data-target="#" href="promo-voffice/virtual-office-belleza.php">Contact us</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Cabang New PIK -->
                     <div class="col-md-3">
                         <div class="image-tile hover-tile text-center mb20">
@@ -70,11 +112,15 @@
                             </a>
                             <div class="row">
                                 <div class="col-sm-12" style="padding-right: 2px;">
-                                    <a class="btn btn-lg btn-block border-radius-0 btn-filled color-white m0" data-toggle="#" data-target="#" href="promo-voffice/virtual-office-promo-6.php">Contact us</a>
+                                    <a class="btn btn-lg btn-block border-radius-0 btn-filled color-white m0" data-toggle="#" data-target="#" href="promo-voffice/virtual-office-promo-spesial-bonus.php">Contact us</a>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                </div>
+
+                <div class="row">
 
                     <!-- Union Space Thailan -->
                     <div class="col-md-3">
@@ -96,20 +142,6 @@
 
                     </div>
 
-                    <!-- Cabang New PIK -->
-                    <div class="col-md-3">
-                        <div class="image-tile hover-tile text-center mb20">
-                            <a data-toggle="#" data-target="#" href="promo-voffice/virtual-office-pik.php">
-                                <img class="background-image" src="images/promo/mei/gold-coast.png">
-                            </a>
-                            <div class="row">
-                                <div class="col-sm-12" style="padding-right: 2px;">
-                                    <a class="btn btn-lg btn-block border-radius-0 btn-filled color-white m0" data-toggle="#" data-target="#" href="promo-voffice/virtual-office-promo-6.php">Contact us</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                     <!-- Special Price + Extra 1 Month ( Sale - Bretion ) -->
                     <div class="col-md-3">
                         <div class="image-tile hover-tile text-center mb20">
@@ -119,26 +151,6 @@
                             <div class="row">
                                 <div class="col-sm-12" style="padding-right: 2px;">
                                     <a class="btn btn-lg btn-block border-radius-0 btn-filled color-white m0" data-toggle="#" data-target="#" href="promo-voffice/virtual-office-promo-6.php">Contact us</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                </div>
-
-                <div class="row">
-
-                    <!-- Sprecial Price + Extra 1 Month ( Sale - Bretion ) -->
-                    <div class="col-md-3">
-                        <div class="image-tile hover-tile text-center mb20">
-                            <a data-toggle="#" data-target="#" href="promo-voffice/virtual-office-promo.php">
-                                <img class="background-image" src="images/promo/agustus/promo-agustus.png">
-                            </a>
-                            <div class="row">
-                                <div class="col-sm-12" style="padding-right: 2px;">
-                                    <a class="btn btn-lg btn-block border-radius-0 btn-filled color-white m0" data-toggle="#" data-target="#" href="promo-voffice/virtual-office-promo.php">Contact us</a>
                                 </div>
                             </div>
                         </div>
@@ -173,6 +185,13 @@
                         </div>
                     </div>
 
+
+
+
+                </div>
+
+                <div class="row">
+
                     <!-- Sprecial Price + Extra 1 Month ( Sale - Bretion ) -->
                     <div class="col-md-3">
                         <div class="image-tile hover-tile text-center mb20">
@@ -186,12 +205,6 @@
                             </div>
                         </div>
                     </div>
-
-
-
-                </div>
-
-                <div class="row">
 
                     <!-- MRT -->
                     <div class="col-md-3">

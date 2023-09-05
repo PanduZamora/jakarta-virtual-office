@@ -429,7 +429,7 @@
                     <p class="text-center bold"><span style="color: green" class="fa fa-whatsapp"></span>
                         Whatsapp
                         Number :
-                        <a href="tel:+6282299980022"> 0822-9998-0022</a>
+                        <a href="https://wa.me/6281399333265"> +62 813-9933-3265</a>
                     </p>
                     <p class="lang" key="wacaption">Whether it is an enquiries, a suggestion, or a
                         complaint, please don't hesitate in contacting
