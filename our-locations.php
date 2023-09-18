@@ -390,7 +390,7 @@
                             <div class="city-wrapper">
                                 <p class="h4">vOffice Canggu</p>
                                 <p class="fw-500"> Promenade Shop S12, Jalan Kayu Tulang No 82, Canggu, Kuta Utara Badung, Canggu, Bali 80363</p>
-                                <a href="office-jimbaran.php" class="link">See More</a>
+                                <a href="voffice-canggu.php" class="link">See More</a>
                                 <a href="" class="btn btn-filled" data-toggle="modal" data-target="#enquire" onclick="changeLocation(this);" id="KIH">Enquire Now</a>
                             </div>
                         </div>
@@ -417,9 +417,21 @@
                             <img class="lazy" src="img/img-placeholder.png" data-src="images/lokasi-gedung-voffice/surabaya/spazio.jpg" data-srcset="images/lokasi-gedung-voffice/surabaya/spazio.jpg, images/lokasi-gedung-voffice/surabaya/spazio.jpg " style="width:100%;height:auto;" />
                             <div class="city-wrapper">
                                 <p class="h4"> Spazio</p>
-                                <p class="fw-500"> Level 1 Unit 525A. Mayjen Yono Suwoyo No.Kav 3, Dukuh Pakis, Surabaya</p>
+                                <p class="fw-500"> Level 1 Unit 525A. Mayjen Yono Suwoyo No.Kav 3, Dukuh Pakis, Surabaya</p>
                                 <a href="#" class="link">See More</a>
                                 <a href="" class="btn btn-filled" data-toggle="modal" data-target="#enquire" onclick="changeLocation(this);" id="SPAZIO">Enquire Now</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 text-left mb30 surabaya city-content">
+                            <img class="lazy" src="img/img-placeholder.png" data-src="img/samator/thumb.jpg" data-srcset="img/samator/thumb.jpg, img/samator/thumb.jpg" style="width:100%;height:auto;" />
+                            <div class="city-wrapper">
+                                <p class="h4"> Samator</p>
+                                <p class="fw-500"> Office, Gedung THE SAMATOR
+                                    Jl. Raya Kedung Baruk No. 25-28, Surabaya
+                                    Kel. Kedung Baruk, Kec. Rungkut Jawa Timur, Indonesia 60298
+                                </p>
+                                <a href="voffice-samator.php" class="link">See More</a>
+                                <a href="" class="btn btn-filled" data-toggle="modal" data-target="#enquire" onclick="changeLocation(this);" id="samator">Enquire Now</a>
                             </div>
                         </div>
                         <div class="col-md-4 text-left mb30 bekasi city-content">
@@ -855,6 +867,22 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-sm-4 p-0 pr-sm-2 pl-sm-2">
+                                    <div class="feature feature-3 mb-xs-24">
+                                        <div class="left">
+                                            <img class="lazy" src="img/img-placeholder-square.png" data-src="img/samator/thumb2.jpg" data-srcset="img/samator/thumb2.jpg, img/samator/thumb2.jpg" />
+                                        </div>
+                                        <div class="right">
+                                            <h6 class="bold-h6 mb0">Samator</h6>
+                                            <p class="mb0">
+                                                Office, Gedung THE SAMATOR
+                                                Jl. Raya Kedung Baruk No. 25-28,
+                                                Kel. Kedung Baruk, Kec. Rungkut Jawa Timur, Surabaya
+                                            </p>
+                                            <p class="mb0">Surabaya</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1080,6 +1108,7 @@
                                 <option value="MRTBD">MRT, Bundaran HI</option>
                                 <option value="CTK">Citra Tower, Kemayoran</option>
                                 <option value="BGB">Braga, Bandung</option>
+                                <option value="samator">Samator, Surabaya</option>
                             </select>
                         </div>
                         <textarea style="color: #0a0a0a" name="message" rows="4" placeholder="Message"></textarea>

@@ -1012,7 +1012,7 @@
 
             </div>
         </div>
-        <div class="container">
+        <!-- <div class="container">
             <div data-aos="zoom-in-up">
                 <div class="box-licenses">
                     <div class="row">
@@ -1031,7 +1031,6 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6 content">
-                                    <!-- <h5 class="bold">About Bali</h5> -->
                                     <h3 class="bold">Canggu, Bali</h3>
                                     <h5>June 2023
                                     </h5>
@@ -1057,7 +1056,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </section>
 
 
@@ -1169,7 +1168,7 @@
     </section>
 
     <!-- Kembali Inovation Hub -->
-    <section class="muse-section" style="background-color: #f1f1f1;">
+    <section class="muse-section" style="background-color: #fff;">
         <div class="container">
             <div class="mb-lg-4 mb-xs-1">
                 <div class="row align-items-center">
@@ -1262,6 +1261,108 @@
                             <div class="mb-4 mb-md-0">
                                 <div style="width: 100%">
                                     <iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.0498854621706!2d115.16830161386928!3d-8.6868062908689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd241bf8477e8c9%3A0x7eddef4ab122a0cb!2svOffice%20-%20Kembali%20Hub%20(Virtual%20Office%20%7C%20Serviced%20Office%20%7C%20Meeting%20Room)!5e0!3m2!1sen!2sid!4v1662956251218!5m2!1sen!2sid"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Tab Content -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Canggu -->
+    <section class="muse-section" style="background-color: #f1f1f1;" id="section4">
+        <div class="container">
+            <div class="mb-lg-4 mb-xs-1">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <h5 class="title-location text-bold text-center pb56">
+                            vOffice - Canggu
+                        </h5>
+                    </div>
+                </div>
+
+                <!-- Tab Content -->
+                <div class="tab-content ecommerce-template">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="px-1">
+                                <div class="mb-4">
+                                    <span class="badge-review rounded-pill bg-blue-500 text-white mb-1">
+                                        Address</span>
+                                    <p class="lh-lg mt-5">
+                                        Promenade Shop Unit S11, Jl. Kayu Tulang No. 82, Kel. Canggu, Kec. Kuta Utara, Kab. Badung, Bali - 80365
+                                    </p>
+                                    <span class="badge-review rounded-pill bg-blue-500 text-white mb-1">
+                                        Maps
+                                    </span>
+                                    <p class="lh-lg mt-5">
+                                        Look on
+                                        <a href="https://maps.app.goo.gl/krfWDmYEg7fEp6ec7" target="_blank" class="text-primary-review">
+                                            <strong>
+                                                Google Maps
+                                            </strong>
+                                        </a>
+                                    </p>
+                                    <span class="badge-review rounded-pill bg-blue-500 text-white mb-1">
+                                        Telephone
+                                    </span>
+                                    <p class="mt-5">
+                                        <a href="tel:02129222999" class="text-secondary">
+                                            021 - 29 222 999
+                                        </a>
+                                    </p>
+                                    <a class="btn btn-filled" href="voffice-canggu.php" style="border-radius: 20px; margin-bottom: 20px;">
+                                        vOffice - Canggu
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="px-1 px-1-margin">
+                                <h3 class="text-500">
+                                    <img src="images/google-svg.svg" alt="google logo" width="100" class="img_google">
+                                    Review
+                                </h3>
+                                <div class="row d-flex justify-content-center align-items-center">
+                                    <div class="m-0">
+                                        <h5 class="text-bold">7 Review</h5>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="ratings">
+                                                <i class="fa fa-star rating-color"></i>
+                                                <i class="fa fa-star rating-color"></i>
+                                                <i class="fa fa-star rating-color"></i>
+                                                <i class="fa fa-star rating-color"></i>
+                                                <i class="fa fa-star rating-color"></i>
+                                            </div>
+                                        </div>
+                                        <p class="review-count mt-0">
+                                            <a class="text-primary-review" target="_blank" href="https://www.google.com/search?q=voffice+Jimbaran+Hub&oq=voffice+Jimbaran+Hub&aqs=chrome..69i57j35i39l2j69i60l5.1013j0j4&sourceid=chrome&ie=UTF-8#lrd=0x2dd245120fbebd79:0x7992bb0b00737411,1,,,">
+                                                5.0 of 5 | Read All Review
+                                            </a>
+                                        </p>
+                                        <figure class="text-right">
+                                            <blockquote class="blockquote-review">
+                                                <p class="small text-left">
+                                                    Very nice and cozy area 👍 …
+                                                    <br><strong>- Asti Astari</strong>
+                                                </p>
+                                            </blockquote>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-5 px-1-margin">
+                            <h3 class="text-500">
+                                <img src="images/google-svg.svg" alt="google logo" width="100" class="">
+                                Maps
+                            </h3>
+                            <div class="mb-4 mb-md-0">
+                                <div style="width: 100%">
+                                    <iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.493927491142!2d115.13996287501445!3d-8.64448369140232!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd2392789663871%3A0xfd575b2e9116b16!2svOffice%20-%20Canggu%20Promenade%20Shop%20(Virtual%20Office%20%7C%20Serviced%20Office%20%7C%20Meeting%20Room)!5e0!3m2!1sen!2sid!4v1694765497635!5m2!1sen!2sid"></iframe>
                                 </div>
                             </div>
                         </div>
