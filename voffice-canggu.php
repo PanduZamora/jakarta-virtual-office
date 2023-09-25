@@ -162,7 +162,7 @@
         <ul class="slides">
             <li class="overlay image-bg pt-xs-120">
                 <div class="background-image-holder">
-                    <img alt="image" class="background-image" src="img/canggu/canggu1.jpg">
+                    <img alt="image" class="background-image" src="img/canggu/image-19.jpg">
                 </div>
                 <div class="overlay-black"></div>
                 <div class="container v-align-transform">
@@ -201,6 +201,35 @@
                 <div class="col-sm-12 d-flex-center">
                     <div class="col-md-6">
                         <div class="galleri-canggu">
+                            
+                            <img src="img/canggu/image-20.jpg" class="border-radius-5">
+                            <img src="img/canggu/image-23.jpg" class="border-radius-5">
+                            <img src="img/canggu/image-22.jpg" class="border-radius-5">
+                            <img src="img/canggu/image-21.jpg" class="border-radius-5">
+                            <img src="img/canggu/image-19.jpg" class="border-radius-5">
+
+                            <img src="img/canggu/image-18.jpg" class="border-radius-5">
+                            <img src="img/canggu/image-17.jpg" class="border-radius-5">
+                            <img src="img/canggu/image-16.jpg" class="border-radius-5">
+                            <img src="img/canggu/image-15.jpg" class="border-radius-5">
+
+                            <img src="img/canggu/image-1.jpg" class="border-radius-5">
+                            <img src="img/canggu/image-2.jpg" class="border-radius-5">
+                            <img src="img/canggu/image-3.jpg" class="border-radius-5">
+                            <img src="img/canggu/image-4.jpg" class="border-radius-5">
+                            <img src="img/canggu/image-5.jpg" class="border-radius-5">
+
+                            <img src="img/canggu/image-6.jpg" class="border-radius-5">
+                            <img src="img/canggu/image-7.jpg" class="border-radius-5">
+                            <img src="img/canggu/image-8.jpg" class="border-radius-5">
+                            <img src="img/canggu/image-9.jpg" class="border-radius-5">
+                            <img src="img/canggu/image-10.jpg" class="border-radius-5">
+
+                            <img src="img/canggu/image-11.jpg" class="border-radius-5">
+                            <img src="img/canggu/image-12.jpg" class="border-radius-5">
+                            <img src="img/canggu/image-13.jpg" class="border-radius-5">
+                            <img src="img/canggu/image-14.jpg" class="border-radius-5">
+
                             <img src="img/canggu/canggu1.jpg" class="border-radius-5">
                             <img src="img/canggu/canggu2.jpg" class="border-radius-5">
                             <img src="img/canggu/canggu3.jpg" class="border-radius-5">
@@ -342,7 +371,7 @@
         <div class="container">
             <div class="row items-center-md">
                 <div class="col-sm-6 mb-xs-32">
-                    <img src="img/canggu/canggu1.jpg" alt="Bali" class="border-radius-5 mb24">
+                    <img src="img/canggu/image-19.jpg" alt="Bali" class="border-radius-5 mb24">
                     <h3 class="cardflexible-title bold mb8 color-black">Bali</h3>
                     <div class="hr mb24 left"></div>
                     <p class="article text-justify">

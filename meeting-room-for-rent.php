@@ -229,6 +229,7 @@
                                 <option value="tangerang" id="tangerang">Tangerang</option>
                                 <option value="bekasi" id="bekasi">Bekasi</option>
                                 <option value="cibubur" id="cibubur">Cibubur</option>
+                                <option value="bandung" id="bandung">Bandung</option>
                             </select>
                         </div>
                     </div>
@@ -633,16 +634,35 @@
                                     <img src="images/SO/Surveyor/Meeting Room 1.jpg" />
                                 </div>
                                 <p class="bold">Capacity</p>
-                                <p class="p">6 Pax / 10 Pax</p>
+                                <p class="p">Up to 10 Guests</p>
                                 <hr>
                                 <p class="bold">Size</p>
                                 <p class="p">14 Sqm / 20 Sqm</p>
                                 <hr>
                                 <p class="bold">Price</p>
-                                <p class="p">IDR 250.000/Hour</p>
+                                <p class="p">IDR 255.000/Hour</p>
                                 <hr>
                                 <p class="italic">*also available in Half day & full day package </p>
-                                <a href="https://booking.voffice.co.id/" class="btn btn-filled">Booking Now</a>
+                                <a href="https://booking.voffice.co.id/facility/78" class="btn btn-filled">Booking Now</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 text-left mb30 jakarta south-jakarta city-content">
+                            <div class="mr-wrapper">
+                                <p class="h4">Meeting Room <br>@ Graha Surveyor</p>
+                                <div class="mr-image">
+                                    <img src="images/SO/Surveyor/Meeting Room 1.jpg" />
+                                </div>
+                                <p class="bold">Capacity</p>
+                                <p class="p">Up to 5 Guests</p>
+                                <hr>
+                                <p class="bold">Size</p>
+                                <p class="p">14 Sqm / 20 Sqm</p>
+                                <hr>
+                                <p class="bold">Price</p>
+                                <p class="p">IDR 255.000/Hour</p>
+                                <hr>
+                                <p class="italic">*also available in Half day & full day package </p>
+                                <a href="https://booking.voffice.co.id/facility/77" class="btn btn-filled">Booking Now</a>
                             </div>
                         </div>
                         <div class="col-md-6 text-left mb30 jakarta north-jakarta city-content">
@@ -661,7 +681,7 @@
                                 <p class="p">IDR 255.000/Hour</p>
                                 <hr>
                                 <p class="italic">*also available in Half day & full day package </p>
-                                <a href="https://booking.voffice.co.id/" class="btn btn-filled">Booking Now</a>
+                                <a href="https://booking.voffice.co.id/facility/73" class="btn btn-filled">Booking Now</a>
                             </div>
                         </div>
                         <div class="col-md-6 text-left mb30 jakarta north-jakarta city-content">
@@ -680,7 +700,7 @@
                                 <p class="p">IDR 500.000/Hour</p>
                                 <hr>
                                 <p class="italic">*also available in Half day & full day package </p>
-                                <a href="https://booking.voffice.co.id/" class="btn btn-filled">Booking Now</a>
+                                <a href="https://booking.voffice.co.id/facility/74" class="btn btn-filled">Booking Now</a>
                             </div>
                         </div>
                         <div class="col-md-6 text-left mb30 jakarta south-jakarta city-content">
@@ -699,7 +719,7 @@
                                 <p class="p">IDR 255.000/Hour</p>
                                 <hr>
                                 <p class="italic">*also available in Half day & full day package </p>
-                                <a href="https://booking.voffice.co.id/" class="btn btn-filled">Booking Now</a>
+                                <a href="https://booking.voffice.co.id/facility/215" class="btn btn-filled">Booking Now</a>
                             </div>
                         </div>
                         <div class="col-md-6 text-left mb30 jakarta south-jakarta city-content">
@@ -718,7 +738,7 @@
                                 <p class="p">IDR 250.000/Hour</p>
                                 <hr>
                                 <p class="italic">*also available in Half day & full day package </p>
-                                <a href="https://booking.voffice.co.id/" class="btn btn-filled">Booking Now</a>
+                                <a href="https://booking.voffice.co.id/facility/1827" class="btn btn-filled">Booking Now</a>
                             </div>
                         </div>
                         <div class="col-md-6 text-left mb30 jakarta south-jakarta city-content">
@@ -737,7 +757,7 @@
                                 <p class="p">IDR 500.000/Hour</p>
                                 <hr>
                                 <p class="italic">*also available in Half day & full day package </p>
-                                <a href="https://booking.voffice.co.id/" class="btn btn-filled">Booking Now</a>
+                                <a href="https://booking.voffice.co.id/facility/1821" class="btn btn-filled">Booking Now</a>
                             </div>
                         </div>
                         <div class="col-md-6 text-left mb30 tangerang city-content" style="display:none;">
@@ -756,7 +776,7 @@
                                 <p class="p">IDR 255.000/Hour</p>
                                 <hr>
                                 <p class="italic">*also available in Half day & full day package </p>
-                                <a href="https://booking.voffice.co.id/" class="btn btn-filled">Booking Now</a>
+                                <a href="https://booking.voffice.co.id/facility/232" class="btn btn-filled">Booking Now</a>
                             </div>
                         </div>
                         <div class="col-md-6 text-left mb30 tangerang city-content" style="display:none;">
@@ -775,7 +795,7 @@
                                 <p class="p">IDR 255.000/Hour</p> <!-- IDR 250.000/Hour -->
                                 <hr>
                                 <p class="italic">*also available in Half day & full day package </p>
-                                <a href="https://booking.voffice.co.id/" class="btn btn-filled">Booking Now</a>
+                                <a href="https://booking.voffice.co.id/facility/1851" class="btn btn-filled">Booking Now</a>
                             </div>
                         </div>
                         <div class=" col-md-6 text-left mb30 jakarta east-jakarta city-content">
@@ -794,7 +814,7 @@
                                 <p class="p">IDR 255.000/Hour</p>
                                 <hr>
                                 <p class="italic">*also available in Half day & full day package </p>
-                                <a href="https://booking.voffice.co.id/" class="btn btn-filled">Booking Now</a>
+                                <a href="https://booking.voffice.co.id/facility/231" class="btn btn-filled">Booking Now</a>
                             </div>
                         </div>
                         <div class="col-md-6 text-left mb30 bekasi city-content">
@@ -813,7 +833,7 @@
                                 <p class="p">IDR 255.000/Hour</p>
                                 <hr>
                                 <p class="italic">*also available in Half day & full day package </p>
-                                <a href="https://booking.voffice.co.id/" class="btn btn-filled">Booking Now</a>
+                                <a href="https://booking.voffice.co.id/facility/1807" class="btn btn-filled">Booking Now</a>
                             </div>
                         </div>
                         <div class="col-md-6 text-left mb30 cibubur city-content">
@@ -832,7 +852,7 @@
                                 <p class="p">IDR 255.000/Hour</p>
                                 <hr>
                                 <p class="italic">*also available in Half day & full day package </p>
-                                <a href="https://booking.voffice.co.id/" class="btn btn-filled">Booking Now</a>
+                                <a href="https://booking.voffice.co.id/facility/1812" class="btn btn-filled">Booking Now</a>
                             </div>
                         </div>
                         <div class="col-md-6 text-left mb30 jakarta north-jakarta city-content">
@@ -851,7 +871,45 @@
                                 <p class="p">IDR 255.000/Hour</p>
                                 <hr>
                                 <p class="italic">*also available in Half day & full day package </p>
-                                <a href="https://booking.voffice.co.id/" class="btn btn-filled">Booking Now</a>
+                                <a href="https://booking.voffice.co.id/facility/1809" class="btn btn-filled">Booking Now</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 text-left mb30 jakarta north-jakarta city-content">
+                            <div class="mr-wrapper">
+                                <p class="h4">Meeting Room <br>@ Honey Lady Tower</p>
+                                <div class="mr-image">
+                                    <img src="img/meeting-room/gold-coast-meeting-room.jpeg" />
+                                </div>
+                                <p class="bold">Capacity</p>
+                                <p class="p">Up to 10 Guests</p>
+                                <hr>
+                                <p class="bold">Size</p>
+                                <p class="p">20 Sqm</p>
+                                <hr>
+                                <p class="bold">Price</p>
+                                <p class="p">IDR 255.000/Hour</p>
+                                <hr>
+                                <p class="italic">*also available in Half day & full day package </p>
+                                <a href="https://booking.voffice.co.id/facility/1914" class="btn btn-filled">Booking Now</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 text-left mb30 bandung city-content">
+                            <div class="mr-wrapper">
+                                <p class="h4">Meeting Room <br>@ Gelora Creative Braga, Bandung</p>
+                                <div class="mr-image">
+                                    <img src="img/bandung/braga_bandung_19.jpg" />
+                                </div>
+                                <p class="bold">Capacity</p>
+                                <p class="p">10 Pax</p>
+                                <hr>
+                                <p class="bold">Size</p>
+                                <p class="p">20 Sqm</p>
+                                <hr>
+                                <p class="bold">Price</p>
+                                <p class="p">IDR 150.000/Hour</p>
+                                <hr>
+                                <p class="italic">*also available in Half day & full day package </p>
+                                <a href="https://booking.voffice.co.id/facility/1897" class="btn btn-filled">Booking Now</a>
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -1202,411 +1260,6 @@
         </div>
     </section>
 
-    <!--Modal Pop Up-->
-    <!--=======================================Modal Form========================================-->
-    <div aria-hidden="true" aria-labelledby="myModalLabel" class="modal fade" id="emailUs" role="dialog" tabindex="-1">
-        <div class="modal-dialog modal-lg mb-xs-64">
-            <div class="modal-content">
-                <!-- Modal Header -->
-                <div class="modal-header clearfix">
-                    <button class="close" data-dismiss="modal" type="button">
-                        <span aria-hidden="true">
-                            ×
-                        </span>
-                        <span class="sr-only">
-                            Close
-                        </span>
-                    </button>
-                    <h5 class="modal-title text-center bold pt24" id="myModalLabel">
-                        Have a question or suggestion for us ?
-                    </h5>
-                    <p class="text-center">
-                        Fill out the form below and we'll get back to you
-                        right away. Thanks!
-                    </p>
-                </div>
-                <!--Modal Body-->
-                <form class="form-email" data-error="Please fill all fields correctly." data-success="Thanks for your submission, we will be in touch shortly.">
-                    <input hidden="hidden" id="contact_us" name="contact_us" type="text" value="contact_us">
-                    <div class="modal-body form-body clearfix">
-                        <div class="col-md-6">
-                            <p class="bold mb8">
-                                Which vOffice services you are interested to? *
-                            </p>
-                            <div class="select-option p0">
-                                <i class="ti-angle-down">
-                                </i>
-                                <select class="validate-required" name="service">
-                                    <option value="" selected disabled>-- Services Inquiries --</option>
-                                    <option value="Serviced Office">Serviced Office</option>
-                                    <option value="Virtual Office">Virtual Office</option>
-                                    <option value="Pembuatan PT & CV">Pembuatan PT & CV</option>
-                                    <option value="Ruang Meeting">Ruang Meeting</option>
-                                    <option value="Event Space">Event Space</option>
-                                    <option value="Layanan Penjawab Telepon">Layanan Penjawab Telepon</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <p class="bold mb8">
-                                Full Name *
-                            </p>
-                            <div class="select-option col-md-12 p0">
-                                <input class="validate-required" name="name" placeholder="Nama Lengkap" type="text">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <label>
-                                Contact Number *
-                            </label>
-                            <input class="validate-required" name="phone" placeholder="Contact Number" type="text">
-                        </div>
-                        <div class="col-md-6">
-                            <label>
-                                Email Address *
-                            </label>
-                            <input class="validate-required" name="email" placeholder="Email Address" type="text">
-                        </div>
-                        <div class="col-md-12">
-                            <label>
-                                Any questions or comments ?
-                            </label>
-                            <textarea class="" name="message" placeholder="Message">
-                                </textarea>
-                        </div>
-                    </div>
-                    <div class="modal-footer clearfix">
-                        <div class="col-md-6 col-md-offset-3">
-                            <button type="submit">
-                                Submit
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <!--=======================================End Of Modal Form========================================-->
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-32797576-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-32797576-1');
-    </script>
-
-    <!-- Global site tag (gtag.js) - Google Ads: 809742137 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-809742137"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'AW-809742137');
-    </script>
-
-
-    <!--Start of Tawk.to Script-->
-    <script type="text/javascript">
-        var Tawk_API = Tawk_API || {},
-            Tawk_LoadStart = new Date();
-        (function() {
-            var s1 = document.createElement("script"),
-                s0 = document.getElementsByTagName("script")[0];
-            s1.async = true;
-            s1.src = 'https://embed.tawk.to/5901c65b64f23d19a89af853/default';
-            s1.charset = 'UTF-8';
-            s1.setAttribute('crossorigin', '*');
-            s0.parentNode.insertBefore(s1, s0);
-        })();
-    </script>
-    <!--End of Tawk.to Script-->
-
-    <script>
-        (function(h, o, t, j, a, r) {
-            h.hj = h.hj || function() {
-                (h.hj.q = h.hj.q || []).push(arguments)
-            };
-            h._hjSettings = {
-                hjid: 726839,
-                hjsv: 6
-            };
-            a = o.getElementsByTagName('head')[0];
-            r = o.createElement('script');
-            r.async = 1;
-            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
-    </script>
-
-    <!-- Facebook Pixel Code -->
-    <script>
-        ! function(f, b, e, v, n, t, s) {
-            if (f.fbq) return;
-            n = f.fbq = function() {
-                n.callMethod ?
-                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-            };
-            if (!f._fbq) f._fbq = n;
-            n.push = n;
-            n.loaded = !0;
-            n.version = '2.0';
-            n.queue = [];
-            t = b.createElement(e);
-            t.async = !0;
-            t.src = v;
-            s = b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t, s)
-        }(window, document, 'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '272898386654677');
-        fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=272898386654677&ev=PageView&noscript=1" /></noscript>
-    <!-- End Facebook Pixel Code -->
-
-    <!-- END OF FOOTER SECTION -->
-
-    <!-- Modal -->
-    <div id="myModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content meetroomrent-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Hubungi Kami Sekarang</h4>
-                </div>
-                <div class="modal-body">
-                    <form class="form-email" data-success="Thanks for your inquiries, we will be in touch to confirm shortly." data-error="Please fill all fields correctly.">
-                        <input type="text" name="meeting_room_book" hidden="hidden" value="meeting_room_book" id="meeting_room_book">
-                        <input type="text" class="validate-required" name="name" placeholder="Nama Lengkap*">
-                        <input type="text" class="validate-required" name="phone" placeholder="Nomor Telepon*">
-                        <input type="text" class="" name="namaPerusahaan" placeholder="Nama Perusahaan">
-                        <input type="text" class="validate-required validate-email" name="email" placeholder="Alamat Email*">
-                        <div class="select-option mb10">
-                            <i class="ti-angle-down">
-                            </i>
-                            <select name="location" style="padding: 3%;" id="select-location">
-                                <option disabled="" selected="" value="">
-                                    Location
-                                </option>
-                                <option value="office8">Office 8, Jakarta Selatan</option>
-                                <option value="TRT">Treasury Tower, Jakarta Selatan</option>
-                                <option value="MR">Menara Rajawali, Jakarta Selatan</option>
-                                <option value="CT">Centennial Tower, Jakarta Selatan</option>
-                                <option value="GKM">GKM Tower, Jakarta Selatan</option>
-                                <option value="MK">Menara Kuningan, Jakarta Selatan</option>
-                                <option value="MPT">Metropolitan Tower, Jakarta Selatan</option>
-                                <option value="TCB">The CEO Building, Jakarta Selatan</option>
-                                <option value="GS">Graha Surveyor, Jakarta Selatan</option>
-                                <option value="MBS">MRT Business Space, Jakarta Pusat</option>
-                                <option value="TCT">The City Tower, Jakarta Pusat</option>
-                                <option value="S78">Sudirman 7.8 Jakarta Pusat</option>
-                                <option value="CTKM">Citra Tower Kemayoran, Jakarta Pusat</option>
-                                <option value="KT">Kencana Tower, Jakarta Barat</option>
-                                <option value="GST">Grand Slipi Tower, Jakarta Barat</option>
-                                <option value="K2T">Kirana 2 Tower, Jakarta Utara</option>
-                                <option value="PIK">PIK Avenue, Jakarta Utara</option>
-                                <option value="RM">Rawamangun, Jakarta Timur</option>
-                                <option value="BSD">MyRepublic Plaza BSD, Tangerang</option>
-                                <option value="TGR">The Prominence Tower, Tangerang</option>
-                                <option value="BMT1">JAPFA Tower II, Surabaya</option>
-                                <option value="BMT2">JAPFA Tower II, Surabaya</option>
-                                <option value="IT">Intiland Tower, Surabaya</option>
-                                <option value="SPAZIO">Spazio, Surabaya</option>
-                                <option value="IBIS">Ibis Styles, Bali</option>
-                                <option value="honey-lady">Honey Lady, Jakarta Utara</option>
-                                <option value="plaza-bekasi">Plaza Summarecon Bekasi, Bekasi</option>
-                                <option value="mensana-tower">Mensana Tower, Cibubur</option>
-                            </select>
-                        </div>
-                        <textarea style="color: #0a0a0a" name="message" rows="4" placeholder="Message"></textarea>
-                        <button type="submit">Ok</button>
-                    </form>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-
-    <div aria-hidden="true" aria-labelledby="myModalLabel" class="modal fade" id="contactus" role="dialog" tabindex="-1">
-        <div class="modal-dialog modal-lg mb-xs-64">
-            <div class="modal-content">
-                <!-- Modal Header -->
-                <div class="modal-header clearfix">
-                    <button class="close" data-dismiss="modal" type="button">
-                        <span aria-hidden="true">
-                            ×
-                        </span>
-                        <span class="sr-only">
-                            Close
-                        </span>
-                    </button>
-                    <h5 class="modal-title text-center bold pt24" id="myModalLabel">
-                        Contact Us Now
-                    </h5>
-                    <p class="text-center" style="margin-bottom:0;">
-                        Isi formulir di bawah ini dan kami akan langsung
-                        menghubungi Anda. Terima kasih
-                    </p>
-                    <p class="text-center bold mb0">
-                        <span class="fa fa-whatsapp">
-                        </span>
-                        Whatsapp Number :
-                        <a href="tel:+6281280055105">
-                            0812-8005-5105
-                        </a>
-                    </p>
-                </div>
-                <form class="form-email" data-error="Please fill all fields correctly." data-success="Terima kasih atas pengajuan Anda, kami akan segera menghubungi anda.">
-                    <input hidden="hidden" id="request_meetingroom" name="request_meetingroom" type="text" value="request_meetingroom">
-                    <div class="modal-body form-body clearfix">
-                        <input hidden="" name="ip" type="text" value="">
-                        <input hidden="" name="tracker" id="tracker" type="text" value="meetingroom">
-
-                        <div class="col-md-6">
-                            <input class="validate-required" name="name" placeholder="Nama" type="text">
-                            </input>
-                        </div>
-                        <div class="col-md-6">
-                            <input class="validate-required" name="phone" placeholder="Nomor Kontak" type="text">
-                            </input>
-                        </div>
-                        <div class="col-md-12">
-                            <input class="" name="namaPerusahaan" placeholder="Nama Perusahaan" type="text">
-                            </input>
-                        </div>
-                        <div class="col-md-12">
-                            <input class="validate-required" name="email" placeholder="Alamat Email" type="text">
-                            </input>
-                        </div>
-                        <div class="col-md-12">
-                            <p class="bold mb8">
-                                Pilih Plan
-                            </p>
-                            <div class="select-option p0">
-                                <i class="ti-angle-down">
-                                </i>
-                                <select class="validate-required" name="service">
-                                    <option disabled="" selected="" value="">
-                                        Plan yang dipilih —
-                                    </option>
-                                    <option value="hr">
-                                        Hourly
-                                    </option>
-                                    <option value="plan10">
-                                        Plan 10
-                                    </option>
-                                    <option value="plan30">
-                                        Plan 30
-                                    </option>
-                                    <option value="plan50">
-                                        Plan 50
-                                    </option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <p class="bold mb8">
-                                Pilih Lokasi
-                            </p>
-                            <div class="select-option p0">
-                                <i class="ti-angle-down">
-                                </i>
-                                <select name="location" id="location" required>
-                                    <option selected="selected" value="" disabled>Lokasi yang Anda inginkan</option>
-
-                                    <option value="" disabled>-- Jakarta Selatan --</option>
-                                    <option value="office8">Office 8, Jakarta Selatan</option>
-                                    <option value="TRT">Treasury Tower, Jakarta Selatan</option>
-                                    <option value="MR">Menara Rajawali, Jakarta Selatan</option>
-                                    <option value="CT">Centennial Tower, Jakarta Selatan</option>
-                                    <option value="MK">Menara Kuningan, Jakarta Selatan</option>
-                                    <option value="MPT">Metropolitan Tower, Jakarta Selatan</option>
-                                    <option value="TCB">The CEO Building, Jakarta Selatan</option>
-                                    <option value="GS">Graha Surveyor, Jakarta Selatan</option>
-                                    <option value="GKM">GKM Tower, Jakarta Selatan</option>
-                                    <option value="office8">Metropolitan Tower, Jakarta Selatan</option>
-                                    <option value="GKM">GKM Green Tower, Jakarta Selatan</option>
-                                    <option value="" disabled>-- Jakarta Pusat --</option>
-                                    <option value="TCT">The City Tower, Jakarta Pusat</option>
-                                    <option value="S78">Sudirman 78, Jakarta Pusat</option>
-                                    <option value="CTKM">Citra Tower Kemayoran, Jakarta Pusat</option>
-                                    <option value="S78">Sudirman 78, Jakarta Pusat</option>
-                                    <option value="MBS">MRT Business Space, Jakarta Pusat</option>
-                                    <option value="" disabled>-- Jakarta Barat --</option>
-                                    <option value="KT">Kencana Tower, Jakarta Barat</option>
-                                    <option value="GS">Grand Slipi Tower, Jakarta Barat</option>
-                                    <option value="" disabled>-- Jakarta Utara --</option>
-                                    <option value="K2T">Kirana 2 Tower, Jakarta Utara</option>
-                                    <option value="PIK">PIK Avenue, Jakarta Utara</option>
-                                    <option value="" disabled>-- Surabaya --</option>
-                                    <option value="BMT1">JAPFA Tower II, Surabaya</option>
-                                    <option value="BMT2">JAPFA Tower II, Surabaya</option>
-                                    <option value="IT">Intiland Tower, Surabaya</option>
-                                    <option value="SPAZIO">Spazio, Surabaya</option>
-                                    <option value="" disabled>-- Bali --</option>
-                                    <option value="IBIS">Ibis Styles, Bali</option>
-
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <p class="bold mb8">
-                                Pilih Kapasitas
-                            </p>
-                            <div class="select-option p0">
-                                <i class="ti-angle-down">
-                                </i>
-                                <select class="validate-required" name="capacity">
-                                    <option disabled="" selected="" value="">
-                                        Kapasiti yang dipilih —
-                                    </option>
-                                    <option value="1sampai5">
-                                        1-5 Orang
-                                    </option>
-                                    <option value="5sampai10">
-                                        5-10 Orang
-                                    </option>
-                                    <option value="lebihdari10">
-                                        Lebih dari 10 orang
-                                    </option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <p class="bold mb8">
-                                Pesan
-                            </p>
-                            <textarea class="" name="message" placeholder="Pesan" type="text">
-                            </textarea>
-                        </div>
-                        </input>
-                    </div>
-                    <div class="modal-footer clearfix">
-                        <div class="col-md-6 col-md-offset-3">
-                            <button type="submit">
-                                Submit
-                            </button>
-                        </div>
-                    </div>
-                    </input>
-                </form>
-            </div>
-        </div>
-    </div>
-
     <section class="icon-float">
         <style>
             .icon-float {
@@ -1706,6 +1359,92 @@
     <script src="js/parallax.js"></script>
     <script src="js/scripts.js"></script>
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-32797576-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-32797576-1');
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Ads: 809742137 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-809742137"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'AW-809742137');
+    </script>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {},
+            Tawk_LoadStart = new Date();
+        (function() {
+            var s1 = document.createElement("script"),
+                s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/5901c65b64f23d19a89af853/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+
+    <script>
+        (function(h, o, t, j, a, r) {
+            h.hj = h.hj || function() {
+                (h.hj.q = h.hj.q || []).push(arguments)
+            };
+            h._hjSettings = {
+                hjid: 726839,
+                hjsv: 6
+            };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script');
+            r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+
+    <!-- Facebook Pixel Code -->
+    <script>
+        ! function(f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function() {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '272898386654677');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=272898386654677&ev=PageView&noscript=1" />
+    </noscript>
+    <!-- End Facebook Pixel Code -->
     <!--slide-->
     <script src="plugins/carousel/js/partner.owl.carousel.min.js"></script>
     <script src="plugins/carousel/js/theme-scripts.js"></script>
