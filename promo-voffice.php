@@ -66,6 +66,20 @@
                     <div class="col-md-3">
                         <div class="image-tile hover-tile text-center mb20">
                             <a data-toggle="modal" data-target="#enquire">
+                                <img class="background-image" src="images/promo/oktober/signage-1year.png">
+                            </a>
+                            <div class="row">
+                                <div class="col-sm-12" style="padding-right: 2px;">
+                                    <a class="btn btn-lg btn-block border-radius-0 btn-filled color-white m0" data-toggle="modal" data-target="#enquire">Contact us</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sprecial Price + Extra 1 Month ( Sale - Bretion ) -->
+                    <div class="col-md-3">
+                        <div class="image-tile hover-tile text-center mb20">
+                            <a data-toggle="modal" data-target="#enquire">
                                 <img class="background-image" src="images/promo/september/promo-medan.png">
                             </a>
                             <div class="row">
@@ -94,7 +108,7 @@
                     <div class="col-md-3">
                         <div class="image-tile hover-tile text-center mb20">
                             <a data-toggle="#" data-target="#" href="promo-voffice/virtual-office-promo.php">
-                                <img class="background-image" src="images/promo/september/september-Best-deal.png">
+                                <img class="background-image" src="images/promo/oktober/happy-october.png">
                             </a>
                             <div class="row">
                                 <div class="col-sm-12" style="padding-right: 2px;">
@@ -103,6 +117,10 @@
                             </div>
                         </div>
                     </div>
+
+                </div>
+
+                <div class="row">
 
                     <!-- Cabang New PIK -->
                     <div class="col-md-3">
@@ -117,10 +135,6 @@
                             </div>
                         </div>
                     </div>
-
-                </div>
-
-                <div class="row">
 
                     <!-- Cabang New belleza -->
                     <div class="col-md-3">
@@ -170,65 +184,9 @@
 
                     </div>
 
-                    <!-- Special Price + Extra 1 Month ( Sale - Bretion ) -->
-                    <div class="col-md-3">
-                        <div class="image-tile hover-tile text-center mb20">
-                            <a data-toggle="#" data-target="#" href="promo-voffice/virtual-office-promo-6.php">
-                                <img class="background-image" src="images/promo/mei/atria-sudirman.png">
-                            </a>
-                            <div class="row">
-                                <div class="col-sm-12" style="padding-right: 2px;">
-                                    <a class="btn btn-lg btn-block border-radius-0 btn-filled color-white m0" data-toggle="#" data-target="#" href="promo-voffice/virtual-office-promo-6.php">Contact us</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
 
                 <div class="row">
-
-                    <!-- Sprecial Price + Extra 1 Month ( Sale - Bretion ) -->
-                    <div class="col-md-3">
-                        <div class="image-tile hover-tile text-center mb20">
-                            <a data-toggle="#" data-target="#" href="promo-voffice/virtual-office-promo-1.php">
-                                <img class="background-image" src="images/promo/maret/pindah-vo-12-bulan.jpg">
-                            </a>
-                            <div class="row">
-                                <div class="col-sm-12" style="padding-right: 2px;">
-                                    <a class="btn btn-lg btn-block border-radius-0 btn-filled color-white m0" data-toggle="#" data-target="#" href="promo-voffice/virtual-office-promo-1.php">Contact us</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Sprecial Price + Extra 1 Month ( Sale - Bretion ) -->
-                    <div class="col-md-3">
-                        <div class="image-tile hover-tile text-center mb20">
-                            <a data-toggle="#" data-target="#" href="promo-voffice/virtual-office-promo-2.php">
-                                <img class="background-image" src="images/promo/maret/coworking-promo.jpg">
-                            </a>
-                            <div class="row">
-                                <div class="col-sm-12" style="padding-right: 2px;">
-                                    <a class="btn btn-lg btn-block border-radius-0 btn-filled color-white m0" data-toggle="#" data-target="#" href="promo-voffice/virtual-office-promo-2.php">Contact us</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Sprecial Price + Extra 1 Month ( Sale - Bretion ) -->
-                    <div class="col-md-3">
-                        <div class="image-tile hover-tile text-center mb20">
-                            <a data-toggle="#" data-target="#" href="promo-voffice/virtual-office-promo-3.php">
-                                <img class="background-image" src="images/promo/maret/sign-up-vo-free.jpg">
-                            </a>
-                            <div class="row">
-                                <div class="col-sm-12" style="padding-right: 2px;">
-                                    <a class="btn btn-lg btn-block border-radius-0 btn-filled color-white m0" data-toggle="#" data-target="#" href="promo-voffice/virtual-office-promo-3.php">Contact us</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
                     <!-- MRT -->
                     <div class="col-md-3">
@@ -243,11 +201,6 @@
                             </div>
                         </div>
                     </div>
-
-
-                </div>
-
-                <div class="row">
 
                     <!-- Braga Bandung -->
                     <div class="col-md-3">

@@ -162,8 +162,8 @@ personal assistant" />
                   </p>
                 </div>
               </div>
-              <p class="p"><b class="color-darkgrey">Floor</b> : 18</p>
-              <p class="p"><b class="color-darkgrey">District</b> : SCBD - Senopati</p>
+              <p class="p"><b class="color-darkgrey">Floor</b> : 1</p>
+              <p class="p"><b class="color-darkgrey">District</b> : Braga - Bandung</p>
               <p class="p">
                 <b class="color-darkgrey">Building Information</b>
                 : 32 storeys building, ATM, Employee Canteen, Supermarket, Café, Restaurant,
