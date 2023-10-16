@@ -93,7 +93,7 @@
                     <!-- Sprecial Price + Extra 1 Month ( Sale - Bretion ) -->
                     <div class="col-md-3">
                         <div class="image-tile hover-tile text-center mb20">
-                            <a data-toggle="#" data-target="#" href="promo-voffice/virtual-office-promo.php">
+                            <a  data-toggle="modal" data-target="#enquire">
                                 <img class="background-image" src="images/promo/september/voffice-samator.png">
                             </a>
                             <div class="row">
@@ -122,20 +122,6 @@
 
                 <div class="row">
 
-                    <!-- Cabang New PIK -->
-                    <div class="col-md-3">
-                        <div class="image-tile hover-tile text-center mb20">
-                            <a data-toggle="#" data-target="#" href="promo-voffice/virtual-office-pik.php">
-                                <img class="background-image" src="images/promo/mei/gold-coast.png">
-                            </a>
-                            <div class="row">
-                                <div class="col-sm-12" style="padding-right: 2px;">
-                                    <a class="btn btn-lg btn-block border-radius-0 btn-filled color-white m0" data-toggle="#" data-target="#" href="promo-voffice/virtual-office-pik.php">Contact us</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                     <!-- Cabang New belleza -->
                     <div class="col-md-3">
                         <div class="image-tile hover-tile text-center mb20">
@@ -145,20 +131,6 @@
                             <div class="row">
                                 <div class="col-sm-12" style="padding-right: 2px;">
                                     <a class="btn btn-lg btn-block border-radius-0 btn-filled color-white m0" data-toggle="#" data-target="#" href="promo-voffice/virtual-office-belleza.php">Contact us</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Cabang New PIK -->
-                    <div class="col-md-3">
-                        <div class="image-tile hover-tile text-center mb20">
-                            <a data-toggle="#" data-target="#" href="promo-voffice/virtual-office-promo-spesial-bonus.php">
-                                <img class="background-image" src="images/promo/juli/special-bonus.jpg">
-                            </a>
-                            <div class="row">
-                                <div class="col-sm-12" style="padding-right: 2px;">
-                                    <a class="btn btn-lg btn-block border-radius-0 btn-filled color-white m0" data-toggle="#" data-target="#" href="promo-voffice/virtual-office-promo-spesial-bonus.php">Contact us</a>
                                 </div>
                             </div>
                         </div>
@@ -184,10 +156,6 @@
 
                     </div>
 
-                </div>
-
-                <div class="row">
-
                     <!-- MRT -->
                     <div class="col-md-3">
                         <div class="image-tile hover-tile text-center mb20">
@@ -202,22 +170,7 @@
                         </div>
                     </div>
 
-                    <!-- Braga Bandung -->
-                    <div class="col-md-3">
-                        <div class="image-tile hover-tile text-center mb20">
-                            <a data-toggle="#" data-target="#" href="promo-voffice/virtual-office-promo-5.php">
-                                <img class="background-image" src="images/promo/maret/vo-braga-bandung.jpg">
-                            </a>
-                            <div class="row">
-                                <div class="col-sm-12" style="padding-right: 2px;">
-                                    <a class="btn btn-lg btn-block border-radius-0 btn-filled color-white m0" data-toggle="#" data-target="#" href="promo-voffice/virtual-office-promo-5.php">Contact us</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
-
 
                 <div class="row pt96 pb56">
                     <h2 class="bold text-center"> Serviced Office Promo</h2>
@@ -226,34 +179,6 @@
 
 
                 <div class="row">
-
-                    <!-- Serviced Office -->
-                    <div class="col-md-3">
-                        <div class="image-tile hover-tile text-center mb20">
-                            <a data-toggle="#" data-target="#" href="promo-voffice/serviced-office-promo.php">
-                                <img class="background-image" src="images/promo/Promo SO April.jpg">
-                            </a>
-                            <div class="row">
-                                <div class="col-sm-12" style="padding-right: 2px;">
-                                    <a class="btn btn-lg btn-block border-radius-0 btn-filled color-white m0" data-toggle="#" data-target="#" href="promo-voffice/serviced-office-promo.php">Contact us</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Grand Jati Junction 2jt -->
-                    <div class="col-md-3">
-                        <div class="image-tile hover-tile text-center mb20">
-                            <a data-toggle="#" data-target="#" href="promo-voffice/serviced-office-promo-1.php">
-                                <img class="background-image" src="images/promo/maret/promo-so-medan.png">
-                            </a>
-                            <div class="row">
-                                <div class="col-sm-12" style="padding-right: 2px;">
-                                    <a class="btn btn-lg btn-block border-radius-0 btn-filled color-white m0" data-toggle="#" data-target="#" href="promo-voffice/serviced-office-promo-1.php">Contact us</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
                     <!-- Bumi Mandiri Tower II -->
                     <div class="col-md-3">
@@ -264,20 +189,6 @@
                             <div class="row">
                                 <div class="col-sm-12" style="padding-right: 2px;">
                                     <a class="btn btn-lg btn-block border-radius-0 btn-filled color-white m0" data-toggle="#" data-target="#" href="promo-voffice/serviced-office-promo-2.php">Contact us</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Home Business Package -->
-                    <div class="col-md-3">
-                        <div class="image-tile hover-tile text-center mb20">
-                            <a data-toggle="#" data-target="#" href="promo-voffice/serviced-office-promo-3.php">
-                                <img class="background-image" src="images/promo/mei/so-intiland.png">
-                            </a>
-                            <div class="row">
-                                <div class="col-sm-12" style="padding-right: 2px;">
-                                    <a class="btn btn-lg btn-block border-radius-0 btn-filled color-white m0" data-toggle="#" data-target="#" href="promo-voffice/serviced-office-promo-3.php">Contact us</a>
                                 </div>
                             </div>
                         </div>
